@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Daily Investing Briefings</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 28px; }
+  h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 36px 0 14px; font-size: 18px; letter-spacing: -0.01em; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  ul.briefs { list-style: none; padding: 0; margin: 0; }
+  ul.briefs li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  ul.briefs li:last-child { border-bottom: none; }
+  ul.briefs a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  ul.briefs a:hover { text-decoration: underline; }
+  ul.briefs .date { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    margin-left: 8px;
+  }
+  .pill.latest { color: var(--pos); border-color: rgba(46, 204, 113, 0.3); }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .disclaimer { background: rgba(245, 177, 75, 0.08); border: 1px solid rgba(245, 177, 75, 0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefings</h1>
+  <div class="sub">Automated portfolio review &amp; 10 fresh buy targets, every day.</div>
+</header>
+
+<section class="card disclaimer">
+  Research, not financial advice. Briefings are generated automatically from public web sources at the time stamped on each file. Numbers may be stale by the time you read this — verify with your broker before any trade.
+</section>
+
+<h2>Latest</h2>
+<div class="card">
+  <ul class="briefs">
+    <li>
+      <a href="2026-05-13.html">Wednesday, 13 May 2026 — Portfolio review &amp; 10 buy targets<span class="pill latest">latest</span></a>
+      <span class="date">2026-05-13</span>
+    </li>
+  </ul>
+</div>
+
+<h2>Archive</h2>
+<div class="card">
+  <p class="sub" style="margin:0">No prior briefings yet. Each daily run appends a new entry here.</p>
+</div>
+
+<h2>How this works</h2>
+<div class="card">
+  <p class="sub">A scheduled task runs daily. It reads <code>portfolio/my-portofilo.md</code>, reviews each holding, and produces 10 buy ideas. The next day's run keeps, downgrades or replaces each target based on price action and news. The diff is the value-add.</p>
+  <p class="sub">Source data: <code>buy-targets/YYYY-MM-DD.md</code> (one per day) and <code>briefings/YYYY-MM-DD.html</code> (this folder).</p>
+</div>
+
+<footer>
+  Generated automatically. Last updated 2026-05-13.
+</footer>
+
+</div>
+</body>
+</html>

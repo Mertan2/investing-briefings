@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Daily Briefing — 13 May 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 28px; }
+  h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 36px 0 14px; font-size: 20px; letter-spacing: -0.01em; }
+  h3 { margin: 0 0 6px; font-size: 16px; }
+  .grid { display: grid; gap: 14px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card.warn { border-color: rgba(245, 177, 75, 0.35); }
+  .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; justify-content: space-between; }
+  .ticker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .price {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .tag.buy { color: var(--pos); border-color: rgba(46, 204, 113, 0.3); }
+  .tag.hold { color: var(--warn); border-color: rgba(245, 177, 75, 0.3); }
+  .tag.trim { color: var(--neg); border-color: rgba(255, 90, 110, 0.3); }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px 18px;
+    margin: 10px 0 12px;
+    font-size: 13px;
+  }
+  .meta div span { color: var(--muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .note { color: var(--text); font-size: 14px; margin: 0; }
+  .advice {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--panel-2);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    font-size: 13.5px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .disclaimer { background: rgba(245, 177, 75, 0.08); border: 1px solid rgba(245, 177, 75, 0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Wednesday, 13 May 2026 — Portfolio review &amp; 10 fresh buy targets</div>
+</header>
+
+<section class="card disclaimer">
+  This briefing is automated research, not financial advice. All prices and analyst targets reflect data captured around 13 May 2026 and can be stale by the time you read this. Verify figures with your broker before any trade. Position sizing, tax and FX implications are your call.
+</section>
+
+<h2>Market backdrop</h2>
+<div class="card">
+  <p class="note">AI infrastructure remains the dominant theme: the PHLX Semiconductor Index is up ~65% YTD, memory pricing is in a supercycle (Micron HBM4 for 2026 is sold out), and an "AI-nuclear nexus" is re-rating the nuclear utilities. Several veteran analysts are flagging 1999-style stretch in valuations — discipline on entry and sizing matters.</p>
+</div>
+
+<h2>Portfolio — what you own</h2>
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>SAP SE <span class="ticker">SAP / SAPG</span></h3>
+        <div class="sub">Enterprise SaaS — Business AI platform</div>
+      </div>
+      <div><span class="tag hold">Hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$174.71 ADR · €141.19</div>
+      <div><span>52-wk range</span>$160.66 – $313.28</div>
+      <div><span>Consensus PT</span>$288 (avg)</div>
+      <div><span>Q1 26 EPS</span>$2.01 vs $1.92 (beat)</div>
+    </div>
+    <p class="note">Q1 beat on EPS but missed revenue. Big strategic news: unified SAP Business AI platform, deepened partnerships with Anthropic, AWS, Google, Microsoft, NVIDIA and Palantir, plus the Prior Labs acquisition (tabular foundation models). The 44% pullback from $313 highs gives you a much better entry than three months ago.</p>
+    <div class="advice"><b>Advice:</b> Hold. Watch for Q2 revenue re-acceleration and ARR mix tied to Business AI. Consider adding on dips below $170 if cloud ARR growth stays &gt;25%. Trim only if cloud growth disappoints two quarters in a row.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Oracle <span class="ticker">ORCL</span></h3>
+        <div class="sub">Cloud + database — AI infra ramp</div>
+      </div>
+      <div><span class="tag buy">Buy / Hold strong</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>~$195–198</div>
+      <div><span>Consensus PT</span>$260 (avg, high $400)</div>
+      <div><span>OCI cloud rev</span>+84% y/y to $4.89B</div>
+      <div><span>RPO</span>+438% y/y</div>
+    </div>
+    <p class="note">Backlog growth is the headline: 438% y/y RPO with long-term capacity contracts to OpenAI, Meta and NVIDIA. OCI IaaS at $4.1B. Risk is capex intensity — FCF negative, &gt;$100B debt — so the story breaks if cloud growth ever stalls before contracts monetise.</p>
+    <div class="advice"><b>Advice:</b> Core hold, add measured. ~33% implied upside to consensus, but it's a balance-sheet-heavy bet. Don't size up beyond your tolerance for a capex-cycle drawdown. Key data point: next FCF inflection.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Snap Inc <span class="ticker">SNAP</span></h3>
+        <div class="sub">Social / advertising</div>
+      </div>
+      <div><span class="tag trim">Trim candidate</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$6.12</div>
+      <div><span>Consensus PT</span>$8.15 (Hold)</div>
+      <div><span>Q1 26 revenue</span>$1.53B (+12% y/y)</div>
+      <div><span>Ad revenue</span>+3% y/y</div>
+    </div>
+    <p class="note">Q1 beat but the stock fell on a murky outlook, legal risks and slowing ad growth. Bright spots: North America upfront commitments +10%, SMB spend +30%, Dynamic Product Ads +30%. Overall ad revenue +3% is weak in a strong ad market.</p>
+    <div class="advice"><b>Advice:</b> Lowest-conviction name in the book. Hold for the cost-cut narrative and possible bounce, but this is the funding source if you want to rotate into a higher-quality AI infra name from the targets list below. Hard stop if it loses $5.50.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Greencoat UK Wind <span class="ticker">UKW.L</span></h3>
+        <div class="sub">UK wind infrastructure — income</div>
+      </div>
+      <div><span class="tag buy">Income buy</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>98.5p (close 100.2p on 1 May)</div>
+      <div><span>Consensus PT</span>137.33p (+39%)</div>
+      <div><span>2026 div target</span>10.70p (+3.4% CPI-linked)</div>
+      <div><span>Yield</span>~10.9%</div>
+    </div>
+    <p class="note">Ex-div 14 May (2.68p, paid 29 May) — own it through tomorrow's close to capture. Trades at a meaningful discount to NAV; dividend cover ~1.3x with CPI-linked uplift. The discount has narrowed slowly but the income is real.</p>
+    <div class="advice"><b>Advice:</b> Hold for income, top up on weakness. The combination of 10%+ yield and discount-to-NAV closure is your asymmetric setup. Reinvest the May dividend if you don't need the cash.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Micron Technology <span class="ticker">MU</span></h3>
+        <div class="sub">DRAM / HBM — AI memory supercycle</div>
+      </div>
+      <div><span class="tag buy">Hold, scale-out plan</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$747 (range $706–$782 on 13 May)</div>
+      <div><span>52-wk return</span>+777%</div>
+      <div><span>YTD</span>+150%</div>
+      <div><span>FY26 EPS est</span>$57–$58</div>
+    </div>
+    <p class="note">Your biggest winner. HBM4 sold out for 2026, HBM market share went from ~5% (2024) to 21% (Q2 2025), passing Samsung. Pricing power is real and durable through at least 2026.</p>
+    <div class="advice"><b>Advice:</b> Hold the core, but you should have a written scale-out plan above $800 — memory is still cyclical and a 777% one-year run mathematically tightens future risk/reward. Trim 15–25% on any close above $900 to lock gains; let the rest run with a trailing stop ~20% below the high.</div>
+  </div>
+
+</div>
+
+<h2>Today's 10 buy targets</h2>
+<div class="card">
+  <p class="note" style="margin-bottom:10px">Diversified list across AI compute, AI power, AI software, healthcare and a profitable consumer name. Targets are tracked day-over-day — tomorrow's briefing will keep, replace or downgrade each one based on price action and news flow.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Ticker</th>
+        <th>Thesis</th>
+        <th class="num">Price (~)</th>
+        <th class="num">Avg PT</th>
+        <th>Conviction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>NVIDIA</td><td>NVDA</td><td>AI accelerator dominance; FY26 revenue +65% y/y, data center $194B; ~32x fwd P/E</td><td class="num">—</td><td class="num">—</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>2</td><td>TSMC (ADR)</td><td>TSM</td><td>72% foundry share, +41% Q1 26 revenue, ~24x fwd — cheapest of the AI majors</td><td class="num">—</td><td class="num">—</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>3</td><td>AMD</td><td>AMD</td><td>Q1 26 EPS $1.37 beat; data center +57% y/y; Wedbush PT $400</td><td class="num">—</td><td class="num">$375–400</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>4</td><td>Broadcom</td><td>AVGO</td><td>Custom AI silicon (XPUs/ASICs) + networking; FY26 AI rev &gt;$30B; buy consensus, PT $455</td><td class="num">—</td><td class="num">$455</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>5</td><td>Palantir</td><td>PLTR</td><td>+85% y/y rev Q1 26; FY guide raised to ~$7.66B (+71%); AIP enterprise traction</td><td class="num">~$137</td><td class="num">$194</td><td><span class="tag hold">Med — rich</span></td></tr>
+      <tr><td>6</td><td>Constellation Energy</td><td>CEG</td><td>AI-nuclear nexus leader; MSFT 20-yr PPA live; 20%+ EPS growth through 2029</td><td class="num">—</td><td class="num">$367</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>7</td><td>Cameco</td><td>CCJ</td><td>World's largest pure-play uranium producer; +100% adj EPS in FY25, +55% in 26; Zacks #1</td><td class="num">$113.61</td><td class="num">—</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>8</td><td>Vertiv</td><td>VRT</td><td>Data center cooling/power; $15B backlog; Q1 26 rev +30%, EPS +83%; FY26 guide $6.30–6.40</td><td class="num">~$339</td><td class="num">$281</td><td><span class="tag hold">Med — extended</span></td></tr>
+      <tr><td>9</td><td>Eli Lilly</td><td>LLY</td><td>GLP-1 dominance; Mounjaro+Zepbound ~$36B 2025; oral Orforglipron approval expected Q2 26</td><td class="num">—</td><td class="num">—</td><td><span class="tag buy">High</span></td></tr>
+      <tr><td>10</td><td>Airbnb</td><td>ABNB</td><td>Q1 26 156M nights, +19% y/y; $4.5B FCF; growth + cash flow combo is rare</td><td class="num">—</td><td class="num">—</td><td><span class="tag buy">Med</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>How tomorrow's review will work</h2>
+<div class="card">
+  <p class="note">Each target on the list above is treated as a working hypothesis. Tomorrow I will (a) check news/price moves on each name, (b) keep the ones whose thesis is intact or has strengthened, and (c) replace the ones that have broken thesis, lost momentum, or been outshone by a better setup. The list lives at <code>buy-targets/2026-05-13.md</code> for the diff.</p>
+</div>
+
+<h2>Action checklist for today</h2>
+<div class="card">
+  <ol style="margin:0;padding-left:18px">
+    <li>If you want the Greencoat May dividend (2.68p), be on register by ex-div tomorrow 14 May — buy by today's close.</li>
+    <li>Decide your scale-out plan for MU in writing before the next earnings move.</li>
+    <li>Consider whether SNAP is funding the rotation into one of the top-3 buy targets (NVDA / TSM / AMD / AVGO / CEG).</li>
+    <li>Set a price alert on SAP at $170 and Oracle at $185 for measured adds.</li>
+  </ol>
+</div>
+
+<footer>
+  Generated automatically on 13 May 2026 from public web research. Numbers are point-in-time; verify before trading. Targets file: <code>buy-targets/2026-05-13.md</code>.
+</footer>
+
+</div>
+</body>
+</html>
