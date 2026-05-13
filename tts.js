@@ -49,6 +49,7 @@
     <button data-act="stop" type="button" hidden aria-label="Stop">⏹ Stop</button>
     <label>Voice <select data-act="voice"></select></label>
     <label>Speed <input data-act="rate" type="range" min="0.7" max="1.6" step="0.1" value="1"></label>
+    <button data-act="translate" type="button" title="Sayfayı Türkçeye çevir" style="margin-left:auto">🇹🇷 Türkçe</button>
   `;
   const container = document.querySelector('.wrap, .container, main') || document.body;
   container.insertBefore(bar, container.firstChild);
@@ -141,6 +142,13 @@
     clearHi();
     chunkIdx = chunks.length;
     setUI('idle');
+  });
+
+  const transBtn = bar.querySelector('[data-act="translate"]');
+  transBtn.addEventListener('click', () => {
+    const host = location.hostname.replace(/\./g, '-');
+    const sep = location.search ? '&' : '?';
+    window.location.href = `https://${host}.translate.goog${location.pathname}${location.search}${sep}_x_tr_sl=en&_x_tr_tl=tr&_x_tr_hl=tr${location.hash}`;
   });
 
   window.addEventListener('beforeunload', () => speechSynthesis.cancel());
