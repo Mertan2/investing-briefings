@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Daily Briefing — 14 May 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 28px; }
+  h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 36px 0 14px; font-size: 20px; letter-spacing: -0.01em; }
+  h3 { margin: 0 0 6px; font-size: 16px; }
+  .grid { display: grid; gap: 14px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card.warn { border-color: rgba(245, 177, 75, 0.35); }
+  .card.evening { border-color: rgba(78, 161, 255, 0.4); }
+  .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; justify-content: space-between; }
+  .ticker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .price {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .tag.buy { color: var(--pos); border-color: rgba(46, 204, 113, 0.3); }
+  .tag.hold { color: var(--warn); border-color: rgba(245, 177, 75, 0.3); }
+  .tag.trim { color: var(--neg); border-color: rgba(255, 90, 110, 0.3); }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px 18px;
+    margin: 10px 0 12px;
+    font-size: 13px;
+  }
+  .meta div span { color: var(--muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .note { color: var(--text); font-size: 14px; margin: 0; }
+  .advice {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--panel-2);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    font-size: 13.5px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .diff { font-size: 12px; color: var(--muted); margin-left: 6px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .disclaimer { background: rgba(245, 177, 75, 0.08); border: 1px solid rgba(245, 177, 75, 0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Thursday, 14 May 2026 — Portfolio review &amp; 10 buy targets (1 swap)</div>
+</header>
+
+<section class="card disclaimer">
+  This briefing is automated research, not financial advice. All prices and analyst targets reflect data captured 14 May 2026 and can be stale by the time you read this. Verify figures with your broker before any trade. Position sizing, tax and FX implications are your call.
+</section>
+
+<h2>What changed since yesterday</h2>
+<div class="card evening">
+  <p class="note" style="margin-bottom:10px"><b>Headline:</b> Despite another hot April PPI follow-on, the tech tape printed a new record close on 13 May (Nasdaq +1.20% to 26,402; S&amp;P 500 +0.58% to 7,444) — but only ~⅓ of stocks were green. Concentration is the regime; AI compute is the trade. NVDA cleared a new all-time high today at $227.80 ahead of next week's Q2 print. Utilities the worst sector (-1.1%) on the day, and Constellation joined them on guidance-driven softness. One swap on the target list: <b>PLTR → TLN</b> (rich-multiple growth giving way to a contracted AI-power story).</p>
+  <ul style="margin:6px 0 0;padding-left:18px;font-size:13.5px">
+    <li><b>Portfolio movers:</b> SAP cracked 4.56% on 13 May (Frankfurt close €136.26) — new AI strategy / security headlines pressured the name; cloud backlog is fine but the tape isn't differentiating. ORCL bounced to $189.78 (+1.6%) as the backlog narrative resumed control of the price action. SNAP $5.61, still gripping the $5.50 stop. UKW.L goes ex-div today (2.68p), price adjustment baked into the open. MU +4% on 13 May close — still <i>below</i> $800; scale-out plan still required before that line is taken out.</li>
+    <li><b>Target movers (vs. 13 May reference):</b> NVDA $227.80 (+3.8%, ATH). TSM $400–417 intra-day vs. $414.15. AMD $446 (+7%) — BofA bumped PT to $500; Bernstein raised. AVGO ~$417 (yesterday's $333.97 reference was stale; real level is $416.79 — 52-wk high $437.68). CEG $274.89 (<span class="neg">−5.1%</span>) — Calpine/Crane delay added to the 14.8% one-month drawdown; Mizuho still constructive at $310. CCJ $115.69 (flat) — Scotiabank raised PT to $175. VRT $372.70 (<span class="pos">+9.6%</span>) — Evercore raised PT to $425 from $350; valuation premium remains. LLY ~$1,012 (<span class="pos">+2.4%</span>). ABNB $133.12 (-1.7%) — Wells $181, Citi $175, Oppenheimer $180 all in print. PLTR $130.12 (-4%); -26% YTD and bid–ask is shifting against the high-multiple growth bucket.</li>
+    <li><b>Macro tape:</b> Hot PPI was shrugged off by mega-cap tech but the index breadth is narrow. Brent still elevated. Fed-speak quiet. NVDA earnings 20 May is the macro pivot — sizing matters more than picking.</li>
+  </ul>
+</div>
+
+<h2>Market backdrop</h2>
+<div class="card">
+  <p class="note">13 May was a "narrow-leadership" record day: Nasdaq +1.20% / S&amp;P +0.58% set new closing highs, but two-thirds of S&amp;P names were red and utilities led losses (-1.1%, ~-5% MTD). Semiconductors carried the tape — NVDA +2%, MU +4% — extending the AI-compute beta even as the headline CPI/PPI prints stayed sticky. Today (14 May) NVDA printed a fresh all-time high at $227.80 going into next week's Q2. The risk-skew is now binary on the print: a beat with stronger H2 capex guide validates the whole AI-compute book; a miss or capex-pause comment will pull the index. Position sizing tonight matters more than picking the next name.</p>
+</div>
+
+<h2>Portfolio — what you own</h2>
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>SAP SE <span class="ticker">SAP / SAPG</span></h3>
+        <div class="sub">Enterprise SaaS — Business AI platform</div>
+      </div>
+      <div><span class="tag hold">Hold — wait</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price (Frankfurt)</span>€136.26 (13 May close)</div>
+      <div><span>One-day move</span><span class="neg">−4.56%</span> (13 May)</div>
+      <div><span>Cloud backlog</span>€21.9B</div>
+      <div><span>Drawdown from highs</span>~-27% YTD</div>
+    </div>
+    <p class="note">Stock cracked 4.56% on 13 May despite the broader tech rally — fresh headlines on the new AI strategy and a security-related concern took the wind out of the post-Analyst-Conference tone. The cloud engine is humming (backlog €21.9B), but the share price is being judged on capex intensity and the absence of a near-term re-rating catalyst. Two days in a row of underperformance is a watch-it-but-don't-panic setup.</p>
+    <div class="advice"><b>Advice:</b> Hold; <b>do not add</b> until cloud ARR re-accelerates in Q2 or the security/strategy headline fully passes through. The 27% YTD drawdown plus 18% IRR base case in some sell-side models is the long-side argument; respect the tape near term.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Oracle <span class="ticker">ORCL</span></h3>
+        <div class="sub">Cloud + database — AI infra ramp</div>
+      </div>
+      <div><span class="tag buy">Buy / Hold strong</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$189.78 (14 May)</div>
+      <div><span>One-day move</span><span class="pos">+1.6%</span></div>
+      <div><span>Intra-day range</span>$185.06 – $191.57</div>
+      <div><span>RPO</span>$523B (+433% y/y)</div>
+    </div>
+    <p class="note">Bounce off yesterday's lower band. Backlog story is reasserting: contracted capacity (OpenAI, Meta, NVIDIA) is the bull case; capex intensity / debt load is the bear. The intra-day range continues to be wide but the centre of gravity is drifting up. ORCL is now ~$15 off the 12 May close — the easy "post-pullback" entry has tightened.</p>
+    <div class="advice"><b>Advice:</b> Core hold. Add only on a re-test of $185 or below; chasing strength here gives up too much to the up-case. ~37% implied upside to consensus $260 holds the thesis.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Snap Inc <span class="ticker">SNAP</span></h3>
+        <div class="sub">Social / advertising</div>
+      </div>
+      <div><span class="tag trim">Trim candidate</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$5.61 (14 May)</div>
+      <div><span>Intra-day range</span>$5.31 – $5.68</div>
+      <div><span>Stop</span>$5.50 close — survived again</div>
+      <div><span>52-wk range</span>$3.81 – $10.41</div>
+    </div>
+    <p class="note">Third consecutive session hugging the $5.50 line. Q1 fundamentals (rev +12%, EBITDA +116%, FY EPS $0.60 consensus) support a cost-cut bounce, but the tape is treating the name as a low-quality beta to ad-budget headlines. Geopolitical drag on ad rev (-$20-25M) is the live overhang.</p>
+    <div class="advice"><b>Advice:</b> Lowest-conviction name in the book. Hold for the cost-cut bounce, but this is still the <b>funding source</b> if you want to rotate into a higher-quality AI infra name from the target list. Hard stop if it loses $5.50 on close — second close below funds the rotation.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Greencoat UK Wind <span class="ticker">UKW.L</span></h3>
+        <div class="sub">UK wind infrastructure — income</div>
+      </div>
+      <div><span class="tag buy">Income buy</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Status</span>Ex-div today, 14 May</div>
+      <div><span>Q1 dividend</span>2.68p (paid 29 May)</div>
+      <div><span>Yield</span>~10.9% RPI-linked</div>
+      <div><span>Cover</span>~1.3x</div>
+    </div>
+    <p class="note">Goes ex-div today — expect the open to be marked down by roughly the 2.68p dividend amount. If you held through yesterday's London close you're on the register for the 29 May payment. CPI-linked dividend with strong cover, trading at a meaningful (but slowly closing) discount to NAV.</p>
+    <div class="advice"><b>Advice:</b> Don't trade the gap. Hold for income, reinvest the May dividend if you don't need the cash, and top up on weakness below 95p. The 10%+ yield is the asymmetry — discount closure is the optionality.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Micron Technology <span class="ticker">MU</span></h3>
+        <div class="sub">DRAM / HBM — AI memory supercycle</div>
+      </div>
+      <div><span class="tag buy">Hold, scale-out plan</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Recent close</span>~$776 (post 13 May bounce)</div>
+      <div><span>13 May move</span><span class="pos">+4.0%</span></div>
+      <div><span>Q2 FY26 rev</span>$23.9B record</div>
+      <div><span>Resistance</span>$800 — still untaken</div>
+    </div>
+    <p class="note">+4% on 13 May with the broader chip tape. HBM4 still sold out for 2026; Mizuho says no new HBM supply until late 2027. The $800 ceiling is the live test — has held twice. Stretch targets ($850–$900, with a low-conviction $1,000+ floated by Motley Fool) only matter if the ceiling breaks on volume.</p>
+    <div class="advice"><b>Advice:</b> Hold the core. <b>Write the scale-out plan today before $800 breaks</b>: trim 15–25% on any close above $900, trail the rest ~20% below the high. Memory is still cyclical and a year of straight-line gains tightens future risk/reward arithmetically.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>NVIDIA <span class="ticker">NVDA</span></h3>
+        <div class="sub">AI compute — core long</div>
+      </div>
+      <div><span class="tag buy">Hold into print</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$227.80 (14 May, new ATH)</div>
+      <div><span>Intra-day range</span>$221.57 – $227.84</div>
+      <div><span>Earnings</span>20 May (next week)</div>
+      <div><span>52-wk move</span>~+45%</div>
+    </div>
+    <p class="note">Fresh all-time-high close. With Q2 due 20 May and the index now leaning hard on this single print, the risk-skew gets binary: a beat + stronger H2 guide carries the whole AI-compute book; a miss or capex-pause comment pulls the index. Jensen-in-Beijing and the Corning $500M partnership remain the live secondary catalysts.</p>
+    <div class="advice"><b>Advice:</b> Don't trim into the print if your position is core; do trim if you're over-sized. Adding here is chasing — set price alerts at $215 / $205 for measured adds <i>after</i> the print regardless of direction (volatility around earnings creates the better entry).</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>IonQ <span class="ticker">IONQ</span></h3>
+        <div class="sub">Quantum computing — speculative</div>
+      </div>
+      <div><span class="tag hold">Speculative hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$55.26 (14 May)</div>
+      <div><span>52-wk range</span>$25.89 – $84.64</div>
+      <div><span>Q1 rev</span>$64.7M (+755% y/y, beat)</div>
+      <div><span>Op loss Q1</span>−$271.5M</div>
+    </div>
+    <p class="note">Q1 revenue +755% y/y (beat $49.8M est by $15M) and the SkyWater merger cleared shareholder vote on 7 May. The other side: $271.5M operating loss and stock-based comp at ~2x revenue (~$128.5M) — cash burn is material and the equity dilution path is open. Street targets straddle the gap: bull case $275 ("recurring quantum revenue"), bear case $43 (-22%).</p>
+    <div class="advice"><b>Advice:</b> Position-size as a speculative bucket only. Adding here only if conviction in the AWS/Azure-style quantum-as-a-service narrative is high. Hard size cap recommended; this is a 5–10 year story being priced on multi-decade optionality.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Symbotic <span class="ticker">SYM</span></h3>
+        <div class="sub">Warehouse automation</div>
+      </div>
+      <div><span class="tag hold">Hold — earnings reset</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>~$51.71 (11 May ref)</div>
+      <div><span>Q2 FY26 rev</span>$676.5M (+23% y/y)</div>
+      <div><span>Adj EPS</span>$0.44 (beat)</div>
+      <div><span>Q3 guide</span>$700–720M</div>
+    </div>
+    <p class="note">Strong Q2 print (revenue +23%, net income positive, adj EBITDA more than doubled to $78M, $2B cash, zero debt) but stock is -15% post-print on margin/profitability questions. Analyst PT $70–73 range vs. ~$51.71 price = ~35–40% implied upside. Narrative fair value $64.05.</p>
+    <div class="advice"><b>Advice:</b> Hold the core, no urgency to add. The earnings result was clean; the de-rating is sentiment, not fundamentals. Reassess if it loses $48 on close — that would suggest more than sentiment is at work.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Intel <span class="ticker">INTC</span></h3>
+        <div class="sub">Foundry turnaround / x86</div>
+      </div>
+      <div><span class="tag buy">Watch — valuation rich</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$120.02 (14 May)</div>
+      <div><span>Intra-day range</span>$116.41 – $125.75</div>
+      <div><span>YTD</span>~+230%</div>
+      <div><span>P/E (2026E)</span>~115x</div>
+    </div>
+    <p class="note">Quintupled from the lows. 18A in commercial production with yields tracking ahead of the 2024 roadmap. Apple preliminary deal to manufacture some chips for Apple at Intel Foundry is the live catalyst. Mizuho raised PT to $124, Deutsche to $100 — and the stock is at $120, so the consensus is now catching up to the price, not leading it. P/E ~115x on 2026E earnings.</p>
+    <div class="advice"><b>Advice:</b> Don't chase. Hold any existing position; do <b>not</b> add at the all-time-high level. The Foundry trillion-dollar bull case is real but it's now embedded in the multiple. Trim 20–25% on any close above $128 to lock the move; trail the rest.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Tesla <span class="ticker">TSLA</span></h3>
+        <div class="sub">EV / FSD / robotaxi</div>
+      </div>
+      <div><span class="tag hold">Hold — momentum</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$409.80 (14 May)</div>
+      <div><span>4-week move</span><span class="pos">+15%</span></div>
+      <div><span>12-month move</span><span class="pos">+44%</span></div>
+      <div><span>Catalyst</span>Belgium FSD test approval; China delegation</div>
+    </div>
+    <p class="note">Broke out from a five-month, ~32% correction; trades at highest since March 2026 with market cap $1.63T. Belgium (Flanders) approved supervised FSD testing on public roads; Musk joined the Trump-China delegation, supporting the FSD-regulatory narrative. Vision-based pre-crash airbag deployment is the on-screen story.</p>
+    <div class="advice"><b>Advice:</b> Hold. Adding into a 15% four-week move is reflexive; let the next FSD/robotaxi catalyst pull back or confirm the breakout above $415–420. Hard stop on a close below $380 — that would invalidate the breakout.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Volkswagen ADR <span class="ticker">VWAGY</span></h3>
+        <div class="sub">Auto OEM — value / dividend</div>
+      </div>
+      <div><span class="tag hold">Income hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>~$10.26 – $10.39</div>
+      <div><span>1-yr PT</span>$12.37</div>
+      <div><span>Dividend yield</span>~6.85%</div>
+      <div><span>Recent analyst</span>Berenberg Buy (5 May), JPM Hold (6 May)</div>
+    </div>
+    <p class="note">Boosted Rivian stake on 4 May via private placement — EV-software optionality at low cost basis. Berenberg Buy/JPM Hold rating mix is consistent with the value-trap/optionality debate. Morningstar fair value $23.59 is the most aggressive long-side number; the 1-yr Street target $12.37 (~+20% from spot) is the realistic case.</p>
+    <div class="advice"><b>Advice:</b> Hold for the dividend (6.85%) and the EV-software optionality. Don't size up unless German auto demand turns or the Rivian stake materially re-rates.</div>
+  </div>
+
+</div>
+
+<h2>Today's 10 buy targets — swap: PLTR → TLN</h2>
+<div class="card">
+  <p class="note" style="margin-bottom:10px">9 of 10 names kept; <b>PLTR is downgraded to the watch list</b> (rich-multiple growth bucket continues to lose marginal bid; -26% YTD on a clean Q1 print is the tell). Replacement: <b>Talen Energy (TLN)</b> — the AWS PPA extension to 1.92 GW for 17 years (~$18B revenue) plus the $3.45B Cornerstone deal moves TLN into the contracted-AI-power category we already own via CEG/CCJ, with cleaner near-term setup than CEG (which just took a guide-driven drawdown).</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Ticker</th>
+        <th>Thesis</th>
+        <th class="num">Price (~)</th>
+        <th class="num">Avg PT</th>
+        <th>Conviction</th>
+        <th>Δ vs. 13 May</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>NVIDIA</td><td>NVDA</td><td>Q2 print 20 May; new ATH $227.80; AI capex $650-725B 2026; Jensen-Beijing live</td><td class="num">$227.80</td><td class="num">$272</td><td><span class="tag buy">High</span></td><td><span class="pos">+3.8%</span> KEEP</td></tr>
+      <tr><td>2</td><td>TSMC ADR</td><td>TSM</td><td>April rev +17.5% y/y to $13.08B; Sony image-sensor JV; +104% TTM; 70%+ advanced-node</td><td class="num">$415</td><td class="num">strong-buy</td><td><span class="tag buy">High</span></td><td>+0.2% KEEP</td></tr>
+      <tr><td>3</td><td>AMD</td><td>AMD</td><td>Data center +57% Q1; BofA PT $500 (from $450); Bernstein bump; MI400 ramping</td><td class="num">$446</td><td class="num">$500 (BofA)</td><td><span class="tag buy">High</span></td><td><span class="pos">+7.5%</span> KEEP</td></tr>
+      <tr><td>4</td><td>Broadcom</td><td>AVGO</td><td>AI semis $8.4B Q1 (+106%); Q2 guide $10.7B (+140%); earnings 3 June; $73B AI backlog</td><td class="num">$417</td><td class="num">$458</td><td><span class="tag buy">High</span></td><td>Re-priced (prev. data stale) KEEP</td></tr>
+      <tr><td>5</td><td>Constellation Energy</td><td>CEG</td><td>Q1 EPS beat +5%, rev +27.7%; -14.8% in &lt;1 month on Crane delay; Mizuho $310 PT</td><td class="num">$274.89</td><td class="num">$310 (Mizuho)</td><td><span class="tag buy">High — added dip</span></td><td><span class="neg">-5.1%</span> KEEP / add tier</td></tr>
+      <tr><td>6</td><td>Cameco</td><td>CCJ</td><td>Q1 net earnings $131M; Scotiabank PT $175 (from $150); 137% TTM; uranium pricing strong</td><td class="num">$115.69</td><td class="num">$175 (Scotia)</td><td><span class="tag buy">High</span></td><td>-0.7% KEEP</td></tr>
+      <tr><td>7</td><td>Vertiv</td><td>VRT</td><td>Q1 rev $2.65B (+30%); Evercore PT raised to $425 from $350; Citi $414; thermal-acquisition</td><td class="num">$372.70</td><td class="num">$425 (Evercore)</td><td><span class="tag buy">High — upgraded</span></td><td><span class="pos">+9.6%</span> KEEP</td></tr>
+      <tr><td>8</td><td>Eli Lilly</td><td>LLY</td><td>Q1 rev $19.8B (+55%); Mounjaro $8.66B (+125%); orforglipron 20k Rx; $4.5B new US capex</td><td class="num">$1,012</td><td class="num">$1,085</td><td><span class="tag buy">High</span></td><td><span class="pos">+2.4%</span> KEEP</td></tr>
+      <tr><td>9</td><td>Airbnb</td><td>ABNB</td><td>Q1 rev +18%, FY guide raised; Wells $181 / Citi $175 / Oppenheimer $180; 60% new code AI-gen</td><td class="num">$133.12</td><td class="num">$178 (avg of 3)</td><td><span class="tag buy">Med — upgraded</span></td><td>-1.7% KEEP</td></tr>
+      <tr><td>10</td><td>Talen Energy <b>(NEW)</b></td><td>TLN</td><td>AWS PPA expanded to 1.92 GW / 17 yrs (~$18B); $3.45B Cornerstone deal; MS PT $498</td><td class="num">~$380</td><td class="num">$498 (MS)</td><td><span class="tag buy">High — new</span></td><td>SWAP IN (was PLTR)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Watch-list (next swap-in candidates)</h2>
+<div class="card">
+  <ul style="margin:0;padding-left:18px;font-size:13.5px">
+    <li><b>PLTR</b> — downgrade to watch; not broken thesis but the multiple is being re-priced. Re-enter on a base-and-break setup, not on a single-day pop.</li>
+    <li><b>CRWV</b> (CoreWeave) — $111.31, +4.2% today; BofA $140 / DB $135 PTs. Pure-play AI cloud, growth premium. Watching for the next leg after the 7 May guide-down digest.</li>
+    <li><b>NXE</b> (NexGen Energy), <b>UEC</b> (Uranium Energy) — uranium beta to CCJ.</li>
+    <li><b>ASML</b>, <b>AMAT</b>, <b>MRVL</b>, <b>ADI</b> — chip-capex broader plays if AVGO/AMD lose momentum.</li>
+    <li><b>OKLO</b> — SMR with NVDA/Los Alamos collab, higher risk.</li>
+    <li><b>NVO</b> (Novo Nordisk) — GLP-1 #2 at cheaper multiple than LLY.</li>
+  </ul>
+</div>
+
+<h2>Action checklist — carry into 15 May</h2>
+<div class="card">
+  <ol style="margin:0;padding-left:18px">
+    <li><b>NVDA Q2 (20 May):</b> If position is core, hold into print. If over-sized, trim 10–20% tonight. Set post-print add alerts at $215 / $205.</li>
+    <li><b>MU:</b> Scale-out plan needs to be written tonight. $800 ceiling has held twice; the next break is the trigger.</li>
+    <li><b>UKW.L:</b> Ex-div priced in this morning's open; don't sell the gap.</li>
+    <li><b>SAP:</b> Don't add — wait for the AI-strategy/security headlines to clear or Q2 cloud ARR to print before sizing up.</li>
+    <li><b>SNAP:</b> $5.50 stop still live. A close below = funding source rotates to NVDA / TSM / AMD / TLN.</li>
+    <li><b>CEG:</b> If you've been waiting for an entry, $275 is the first level the dip-buyers will defend; Mizuho still at $310. Don't average down aggressively until Crane-delay impact is sized.</li>
+    <li><b>TLN (new):</b> The contracted-revenue thesis carries less binary risk than CEG right now. Starter position only — Morgan Stanley $498 PT is the upside path.</li>
+    <li><b>INTC:</b> Trim trigger remains a close above $128.</li>
+    <li><b>TSLA:</b> Stop on a close below $380.</li>
+  </ol>
+</div>
+
+<footer>
+  Generated automatically on 14 May 2026 from public web research. Numbers are point-in-time; verify before trading. Targets file: <code>buy-targets/2026-05-14.md</code>.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
