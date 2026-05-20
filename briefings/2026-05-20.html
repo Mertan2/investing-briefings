@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Daily Briefing — 20 May 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 28px; }
+  h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 36px 0 14px; font-size: 20px; letter-spacing: -0.01em; }
+  h3 { margin: 0 0 6px; font-size: 16px; }
+  .grid { display: grid; gap: 14px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card.warn { border-color: rgba(245, 177, 75, 0.35); }
+  .card.evening { border-color: rgba(78, 161, 255, 0.4); }
+  .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; justify-content: space-between; }
+  .ticker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .price {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .tag.buy { color: var(--pos); border-color: rgba(46, 204, 113, 0.3); }
+  .tag.hold { color: var(--warn); border-color: rgba(245, 177, 75, 0.3); }
+  .tag.trim { color: var(--neg); border-color: rgba(255, 90, 110, 0.3); }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px 18px;
+    margin: 10px 0 12px;
+    font-size: 13px;
+  }
+  .meta div span { color: var(--muted); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .note { color: var(--text); font-size: 14px; margin: 0; }
+  .advice {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--panel-2);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    font-size: 13.5px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .diff { font-size: 12px; color: var(--muted); margin-left: 6px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .disclaimer { background: rgba(245, 177, 75, 0.08); border: 1px solid rgba(245, 177, 75, 0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Wednesday, 20 May 2026 — NVDA print AMC, ADI print AM, FOMC minutes 2pm ET. All 10 targets held into the binary.</div>
+</header>
+
+<section class="card disclaimer">
+  Research, not financial advice. Prices reflect Tuesday 19 May 2026 closes plus Wednesday 20 May pre-market reads where available. Three binaries fire today (ADI 7am ET, FOMC minutes 2pm ET, NVDA AMC) — anything in here can be made stale by 8:30pm. Verify with your broker before trading. Position sizing, tax and FX implications are your call.
+</section>
+
+<h2>What changed since Tuesday — and a correction</h2>
+<div class="card evening">
+  <p class="note" style="margin-bottom:10px"><b>Headline:</b> Tuesday closed broadly red into print day. <b>S&amp;P −0.55%, Nasdaq −0.55%, Dow −0.85%, Russell −0.65%</b> — the AI cohort kept selling, but more importantly <b>Brent did <i>not</i> retrace</b>. The Mon nuclear-freeze "deal" headline was unconfirmed; Brent settled <b>$111.22 (+up not down)</b>, the US 10Y stayed ~4.60%, and the <b>30-year yield touched levels last seen in 2007</b>. <b>Trump publicly said he called off a scheduled Iran attack</b> citing "serious negotiations" — but oil hasn't believed him. <b>NVDA prints in ~9 hours.</b> Pre-market $220.11 (−0.99%). <b>HD print this morning was in-line</b> (rev $41.77B, +4.8% y/y; EPS $3.43 slight beat; same-store flat) — confirms the housing-consumer is "fine, not strong." <b>ADI Q2 FY26 prints at 7am ET</b> — consensus $3.51B rev / $2.89 EPS. <b>FOMC minutes drop 2pm ET</b>, three hours before NVDA.</p>
+  <p class="note" style="margin-bottom:10px"><b>Correction from yesterday's brief:</b> we wrote "Brent settled ~$107 after a Mon $111 spike" — actual Tuesday close was <b>$111.22</b>, essentially flat with Monday's spike. The retrace on the nuclear-freeze headline did not hold. <b>That makes the ABNB → AMAT swap thesis <i>stronger</i>, not weaker</b> — sustained Brent above $105 was the trigger, and Tuesday delivered $111 not $107. Mistake noted; thesis intact.</p>
+  <ul style="margin:6px 0 0;padding-left:18px;font-size:13.5px">
+    <li><b>Portfolio movers (Tue close):</b> <b>MU $664.50 (−2.5%)</b> — kept selling after Mon's $681.54 close; chart is now firmly broken vs the $700 line; first add alert $670 fired Tuesday but we said not to use it ahead of NVDA. <b>INTC $105.36 (−2.60%)</b> — <b>broke the $105 close trigger we wrote down Monday</b>; first time below the trim line. <b>TSLA $409.99 (−2.9%)</b> — three-day losing streak; stop at $380 close, cushion now ~7.3%. <b>SAP $174.62 (~flat)</b> — finally paused the four-day rip; the relative-strength signal is still intact. <b>ORCL $183.39 (−1.1%)</b> — drifting in the consolidation shelf. <b>SNAP $5.55 (−2.5%)</b> — trim sequence rolling on. <b>SYM $46.61 (−1.6%)</b> — broke the $48 close trigger we flagged Monday; trim is now on the table. <b>IONQ $48.62 (−6.4%)</b> — gave back the Monday flat day; still inside the $37.99–$60.13 SkyWater collar. <b>VWAGY ~$10.20 area</b> — defensive. <b>UKW.L ~98p</b> — drifting, ex-div, 10.5%+ forward yield doing the work.</li>
+    <li><b>Target movers:</b> <b>NVDA $222.32 → pre-mkt $220.11</b> — implied move ~8.65%, Goldman desk whisper $80B vs $78B Street, Q2 guide whisper $84–87B vs $85B Street; key three: GM trajectory to mid-75s, Q2 guide direction, China commentary (H20 blacklisted, H200 stuck). <b>TSM $402.90 (−0.5%)</b> — drift; AI/HPC 61% of Q1 mix unchanged. <b>AMD $418.50 (−2.7%)</b> — gave back ground; Bernstein PT $525 / KeyBanc $530 hold. <b>AVGO $420.71 (+0.2%)</b> — defended the level. <b>ASML €1,248 (−3.2%)</b> — pulled back further; thesis intact. <b>CCJ ~$105 (−2.7%)</b> — uranium spot ~$86/lb. <b>VRT $322.63 (−5.0%)</b> — the air-pocket extended; investor day today/tomorrow in Greenville, SC is the catalyst. <b>LLY $1,012.55 (+2.2%)</b> — <b>broke above $1,000 cleanly</b>; the breakout we flagged Monday fired. <b>AMAT $406.91 (−1.5%)</b> — first day as a target, settled inside the $410 entry zone. <b>TLN $314.57 (−4.6%)</b> — deeper add tier; AWS PPA story intact. <b>ABNB</b> (out of basket) — Brent $111 confirms the OUT.</li>
+    <li><b>One macro shock that didn't fire:</b> Trump said Tuesday he <b>called off the scheduled Iran attack</b> citing serious peace negotiations. Oil didn't believe it (Brent $111.22). The 30Y at 2007 highs says the bond market doesn't either. <b>This is the binary that hasn't resolved</b> — and it's compressing AI multiples by mechanically lifting the discount rate.</li>
+    <li><b>No swaps today.</b> 10/10 KEPT. The right action on the three-binary day (ADI AM / FOMC 2pm / NVDA AMC) is to be sized, not to be active. Tomorrow's brief does the swap based on what prints actually said.</li>
+    <li><b>Week ahead:</b> <b>Wed (today):</b> ADI Q2 FY26 7am ET, FOMC minutes 2pm ET, <b>NVDA Q1 FY27 AMC</b>. <b>Thu:</b> WMT pre-market, flash S&amp;P Global PMIs, SNOW after-hours. <b>Later in week:</b> PANW, TGT, ZS, INTU.</li>
+  </ul>
+</div>
+
+<h2>Market backdrop</h2>
+<div class="card">
+  <p class="note">Three forces remain pinned and the bond market is now the loudest voice in the room. <b>(1) Oil:</b> Brent $111.22 Tuesday — flat to Monday's spike, not the retrace the nuclear-freeze headline implied. Trump publicly cancelled a scheduled strike yet oil priced no Iran de-escalation premium back in; the tape is saying "show us, don't tell us." <b>(2) Rates:</b> US 10Y ~4.60%, <b>30Y at levels last seen 2007</b>. CME odds embed roughly 40% probability of a 25bp Fed <i>hike</i> at the next meeting (was 10% three weeks ago). FOMC minutes from the late-April meeting drop at 2pm ET — the meeting where Miran dissented for a cut and Hammack/Kashkari/Logan opposed the easing bias — <b>four dissents, the most since 1992</b>. Any hawkish read in those minutes adds 8–15bp to the 10Y three hours before NVDA. <b>(3) AI compute:</b> the cohort sold for a second straight session despite no name-specific news. NVDA itself is absorbing it better than the derivatives — MU, VRT, AMD, ASML all down more than NVDA on the day. That's classic "print de-risk" — the tape is hedging Wednesday by selling Tuesday. <b>Setup for NVDA tonight:</b> options imply ~8.65% post-print move; the buyside bar is the $80B whisper not the $78B headline; Q2 guide direction matters more than the print magnitude. If NVDA delivers $84–87B Q2 guide AND GM ≥75% AND quantifies China haircut — the cohort rips into Thursday. If any one of those slips, the air-pocket continues. <b>What you can't game</b> is Iran. That's a sleeve, not a position.</p>
+</div>
+
+<h2>Portfolio — what you own</h2>
+<div class="grid">
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>SAP SE <span class="ticker">SAP / SAPG</span></h3>
+        <div class="sub">Enterprise SaaS — Business AI platform</div>
+      </div>
+      <div><span class="tag buy">Buy / relative-strength leader</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price (ADR)</span>$174.62</div>
+      <div><span>Day move</span>~flat</div>
+      <div><span>Four-session run</span><span class="pos">~+12%</span></div>
+      <div><span>Deutsche Bank PT</span>€200 (Buy, reiterated)</div>
+    </div>
+    <p class="note">First non-up day in five — that's a normal cooling, not a topping pattern. <b>"Autonomous Enterprise" / Joule pitch from Sapphire 2026 keeps anchoring the narrative</b>; Anthropic + AWS + Google + MSFT + NVDA + Palantir partner stack is the structural moat. SAP is still the only large-cap name in the book up materially while the chip cohort is in its second week of de-risk — that signal is the cleanest hedge to the NVDA-print binary inside your portfolio itself.</p>
+    <div class="advice"><b>Advice:</b> <b>Hold the core; do not chase here.</b> A pause day after four greens is healthy. Opportunistic add zone unchanged: any Xetra pullback &lt;€138. Post-NVDA: if the cohort rips Thursday, SAP <i>under</i>performs the bounce — that's fine, the trade was relative-strength, not chip beta.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Oracle <span class="ticker">ORCL</span></h3>
+        <div class="sub">Cloud + database — AI infra ramp</div>
+      </div>
+      <div><span class="tag buy">Core hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$183.39 (Tue close)</div>
+      <div><span>Tue range</span>$181.00–$188.72</div>
+      <div><span>Wedbush PT</span>$275</div>
+      <div><span>Backlog</span>$553B (incl. $300B OpenAI 5-yr)</div>
+    </div>
+    <p class="note">Drifted another $2 inside the post-breakout shelf. <b>$523B backlog at year-end (now ~$553B after Q3 adds)</b> is the only number that matters — the OpenAI $300B 5-year contract anchors it; MSFT's parallel $625B backlog with 45% OpenAI exposure validates the duration of the cloud-AI spend. ORCL is consolidating in the same zone as last week. The catalyst stack is OpenAI execution datapoints (Stargate capacity-online milestones, GPU-shipments-by-region) plus the next earnings print.</p>
+    <div class="advice"><b>Advice:</b> Core hold. <b>$183 is the bottom of the post-breakout shelf</b> and would be a clean incremental add zone — <i>but do not add into NVDA print tonight</i>; sympathy down-trade on a miss could put $175–178 in play within 24h. Wait for Thursday. PT range $235–275 still implies 28–50% upside.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Snap Inc <span class="ticker">SNAP</span></h3>
+        <div class="sub">Social / advertising — funding source</div>
+      </div>
+      <div><span class="tag trim">Trim — sequence running</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$5.55 (Tue close)</div>
+      <div><span>Tue range</span>$5.48–$5.77</div>
+      <div><span>YTD</span>−52%</div>
+      <div><span>Consensus PT</span>$7.64 (Neutral)</div>
+    </div>
+    <p class="note">Dribbled lower again; the dead-cat bounce never confirmed. Q1 fundamentals are still fine on paper (rev $1.53B +12%, EBITDA +116% to $233M) but the only short-term re-rate line (Perplexity $400M partnership) was killed 6 May. With Brent at $111 and AI-infra capex still the only theme being paid for in this tape, SNAP has neither narrative nor catalyst.</p>
+    <div class="advice"><b>Advice:</b> <b>Funding source — continue the trim sequence.</b> $5.55 is a worse exit than yesterday's $5.69 but a better one than Friday's $5.49. <b>Use the freed capital post-NVDA for adds in NVDA / AVGO / AMAT / TLN at post-print levels</b>, not pre-print here.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Greencoat UK Wind <span class="ticker">UKW.L</span></h3>
+        <div class="sub">UK wind infrastructure — income</div>
+      </div>
+      <div><span class="tag buy">Income hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>~98p area</div>
+      <div><span>Status</span>Ex-div since 14 May</div>
+      <div><span>Q1 dividend</span>2.68p (paid 29 May)</div>
+      <div><span>Forward yield</span>~10.5%+</div>
+    </div>
+    <p class="note">Drifting; the UK gilt complex is rising with the US Treasury curve and that mechanically caps NAV-discount closure. <b>Pure ballast in a tape that's all chip-print and Iran</b> — nothing here is touched directly by either binary. The forward yield (~10.5% at 98p) is the entire near-term return; the catalyst optionality (BoE inflection or NAV reset) is dormant.</p>
+    <div class="advice"><b>Advice:</b> Hold for income. <b>Reinvest the 29 May dividend</b> if you don't need the cash. Top-up tier &lt;95p remains the discipline; we may see it if the 30Y keeps grinding higher.</div>
+  </div>
+
+  <div class="card warn">
+    <div class="row">
+      <div>
+        <h3>Micron Technology <span class="ticker">MU</span></h3>
+        <div class="sub">DRAM / HBM — AI memory supercycle</div>
+      </div>
+      <div><span class="tag hold">Hold — first add alert fired, chart still broken</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$664.50</div>
+      <div><span>Tue range</span>$661.10–$674.00</div>
+      <div><span>From $818.67 ATH (11 May)</span><span class="neg">−18.8%</span></div>
+      <div><span>Analyst PTs</span>$950 BofA / $1,000 DA Davidson / $1,100 Melius</div>
+    </div>
+    <p class="note"><b>The first add alert from yesterday ($670) fired intraday Tuesday</b> — but the rule we wrote was "do not add ahead of NVDA Wednesday." That rule is still right. Two more sessions until the print's downstream digests; HBM3E/HBM4 fully sold out through 2026, BofA $950 / DA Davidson $1,000 / Melius $1,100 PTs unchanged. The chart still says lower lows are possible; <b>next real measured support is $620</b>.</p>
+    <div class="advice"><b>Advice:</b> Hold the core. <b>Do not add today.</b> Set add alerts: <b>$670</b> (already touched, save for tomorrow if it re-tags), <b>$620</b> (real entry if NVDA misses on HBM/Blackwell mix). <b>Reclaim of $715 close</b> is the technical bull-confirm and adds become aggressive above it. <b>If NVDA tonight says GM ≥75% AND quantifies HBM as &gt;50% of memory cost growth</b>, $850 is back in scope inside 5–10 sessions.</div>
+  </div>
+
+  <div class="card warn">
+    <div class="row">
+      <div>
+        <h3>NVIDIA <span class="ticker">NVDA</span></h3>
+        <div class="sub">AI compute — Q1 FY27 prints in ~9 hours</div>
+      </div>
+      <div><span class="tag buy">Hold into print</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$222.32 (Tue) / $220.11 pre-mkt</div>
+      <div><span>Earnings</span>Wed 20 May 4:20pm ET</div>
+      <div><span>Implied move</span>~8.65%</div>
+      <div><span>UBS PT</span>$275</div>
+    </div>
+    <p class="note">T-minus hours. <b>Consensus: rev ~$78B / EPS $1.77 / DC ~$73B.</b> Goldman desk whisper $80B; some shops model DC &gt;$75B. <b>Three reads for tonight, all decided by the guide not the headline:</b> (1) <b>Q2 guide</b> — Street $85B, whispers $84–87B; below $84 reads as a soft Blackwell ramp and the cohort goes lower for two sessions. (2) <b>GM trajectory</b> — guide for FY27 was "mid-70s exiting the year"; the read here is whether Q1 hit ~75% or stalled at 74.5%, which proxies Blackwell yield. (3) <b>China</b> — H20 blacklisted, H200 approved-but-no-sales-confirmed; <b>does management put a number on the China haircut</b>, and if yes is it $5B or $10B+ per quarter? Stock has fallen on 4 of the last 5 prints despite headline beats. Mkt cap ~$5.40T.</p>
+    <div class="advice"><b>Advice:</b> If core, <b>hold into the print</b> — binary skew still favours upside on a Q2 guide-raise. If oversized, <b>last chance to trim 10–20% is today's open–noon window</b> (before pre-print de-risk extends). Pre-set post-print add alerts at <b>$215 / $205 / $195</b> regardless of direction. On a beat, only chase above a <b>$245 close</b>. <b>Do not add at $220 ahead of the print.</b></div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>IonQ <span class="ticker">IONQ</span></h3>
+        <div class="sub">Quantum computing — speculative</div>
+      </div>
+      <div><span class="tag hold">Speculative hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$48.62 (Tue close)</div>
+      <div><span>Day move</span><span class="neg">−6.4%</span></div>
+      <div><span>SkyWater merger</span>$15 cash + $20 stock per SKYT</div>
+      <div><span>VWAP collar</span>$37.99–$60.13</div>
+    </div>
+    <p class="note">Tuesday's −6.4% gave back the Monday flat — the long-duration speculative bucket is the first thing sold when 30Y yields print 2007 highs. The structural story (SKYT closes Q2/Q3, vertical integration on quantum supply chain) is unchanged but the multiple compresses with the discount rate. <b>$48.62 is still inside the collar</b> ($37.99–$60.13) so deal mechanics ($15 cash + $20 stock per SKYT share) are intact; tail risk only opens if IONQ breaks $37.99.</p>
+    <div class="advice"><b>Advice:</b> Hold the speculative bucket; <b>do not size it up here</b> — the 30Y is the wrong tape for long-duration spec. Watch the $37.99 collar floor; below it, exchange-ratio math worsens and deal-uncertainty discount returns. SkyWater close is the only catalyst worth waiting for.</div>
+  </div>
+
+  <div class="card warn">
+    <div class="row">
+      <div>
+        <h3>Symbotic <span class="ticker">SYM</span></h3>
+        <div class="sub">Warehouse automation</div>
+      </div>
+      <div><span class="tag trim">Trim — $48 close trigger broken</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$46.61 (Tue close)</div>
+      <div><span>Day move</span><span class="neg">−1.6%</span></div>
+      <div><span>From Q2 print</span><span class="neg">~−16.8%</span></div>
+      <div><span>PT range</span>$42–$70</div>
+    </div>
+    <p class="note"><b>The $48 close trigger we wrote down Monday fired Tuesday.</b> First decisive close below it; the basing-under-trigger pattern has now flipped to range-extension. Q2 numbers (rev $676.5M, return to net income, Q3 guide $700–720M, backlog $22.4B) and the Walmart 13F-confirmed 15M-share stake are unchanged — this is sentiment / multiple compression, not fundamentals. But the rule we set was "first close &lt;$48 reopens the trim discussion" and that close just printed.</p>
+    <div class="advice"><b>Advice:</b> <b>Open the trim discussion — small.</b> Suggest 10–15% trim on any bounce to $48.50–$49 area, not into further weakness. The thesis isn't broken, but the chart has rolled and the AI-infra capital is going elsewhere right now. Greenbox / Walmart fulfillment activation cadence remains the only idiosyncratic re-rate catalyst.</div>
+  </div>
+
+  <div class="card trim">
+    <div class="row">
+      <div>
+        <h3>Intel <span class="ticker">INTC</span></h3>
+        <div class="sub">Foundry turnaround / x86</div>
+      </div>
+      <div><span class="tag trim">Trim — $105 close trigger broken</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$105.36 (Tue close)</div>
+      <div><span>Day move</span><span class="neg">−2.60%</span></div>
+      <div><span>Citi PT</span>$130 (raised from $95)</div>
+      <div><span>Benchmark PT</span>$140 (Buy)</div>
+    </div>
+    <p class="note"><b>The $105 close trigger from yesterday broke.</b> Tuesday closed $105.36 — first close below the trim-execute level we set. The PT moves stick (Citi $130, Benchmark $140) and the political optionality (Trump "should have asked for more") still does work over multi-quarter horizons, but the technical signal we wrote is the technical signal we wrote. Consensus PT $86.67 across 48 analysts still anchors below spot. YTD +174% means there is still profit to take.</p>
+    <div class="advice"><b>Advice:</b> <b>Execute the 10–15% trim now</b> (size we set yesterday — kept smaller because of Citi / Benchmark PT moves). Trigger fired on a close basis; this isn't catching a knife, this is following a rule. <b>Keep the residual core</b> as a structurally-undervalued Apple-foundry / Trump-political optionality position. If $115 retests appear later, second trim discussion reopens.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Tesla <span class="ticker">TSLA</span></h3>
+        <div class="sub">EV / FSD / robotaxi</div>
+      </div>
+      <div><span class="tag hold">Hold — chop, stop alive at ~7% cushion</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>$409.99 (Tue close)</div>
+      <div><span>Day move</span><span class="neg">−2.9%</span></div>
+      <div><span>3-day losing streak</span><span class="neg">~−5%</span></div>
+      <div><span>Stop</span>$380 close — ~7.3% cushion</div>
+    </div>
+    <p class="note">Three down sessions in a row; cushion to the $380 stop has tightened from ~10% Friday to ~7.3% Tuesday. <b>Model Y price hikes Monday ($500–$1,000) still in the tape</b> — first hike since 2024 — but the question is whether demand absorbs them at this oil price / rate environment. Robotaxi: 39 unsupervised vehicles across Dallas/Houston, up from 9 start-of-April / 26 start-of-May (Musk: revenue not material 2026). v15 FSD "certainly by early 2027" remains the slip-risk.</p>
+    <div class="advice"><b>Advice:</b> Hold; <b>$380 close stop is now live, cushion thin</b>. If you want to firm up, trim into bounces $460+ only (not $440 — too close). Phoenix / Miami / Orlando / Tampa / Vegas H1 2026 launches remain the only real re-rate catalysts. If $380 closes, walk; the thesis can re-establish from $340 with FSD v15 datapoints.</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <h3>Volkswagen ADR <span class="ticker">VWAGY</span></h3>
+        <div class="sub">Auto OEM — value / dividend</div>
+      </div>
+      <div><span class="tag hold">Income hold</span></div>
+    </div>
+    <div class="meta">
+      <div><span>Price</span>~$10.20 area</div>
+      <div><span>VOW3 (Xetra)</span>~€88.24</div>
+      <div><span>Forward yield</span>~7.1%</div>
+      <div><span>Rivian stake</span>VW largest shareholder</div>
+    </div>
+    <p class="note">Defensive on the day. The Rivian software-partnership milestone triggered VW's planned <b>€1B follow-on investment</b> into the joint venture per recent disclosures, confirming the EV-software optionality is on track. Brent at $111 is mixed for VW — bad for retail vehicle demand, less bad for the commercial book — but the income story does the work either way at ~7.1% forward yield.</p>
+    <div class="advice"><b>Advice:</b> Hold for the dividend and the Rivian optionality. <b>Don't size up here</b>; the Iran/oil setup makes the macro for European auto worse before better. Sit on the coupon.</div>
+  </div>
+
+</div>
+
+<h2>Today's 10 buy targets — 0 swaps (all 10 KEPT into NVDA print)</h2>
+<div class="card">
+  <p class="note" style="margin-bottom:10px">Three binaries fire today (ADI 7am ET, FOMC minutes 2pm ET, NVDA AMC). <b>The right action is to be sized, not to be active</b>. 10/10 kept from 19 May. <b>One conviction upgrade: LLY broke above $1,000 cleanly</b> — the technical setup we flagged Monday confirmed; conviction goes from "High" to "High — breakout confirmed." Two stocks are now <b>inside their stated add zones</b>: CCJ ($105 &lt; $110 add tier), TLN ($314.57 — the cleanest entry of cycle). VRT is into a third air-pocket day at $322.63 vs PT avg $422.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Ticker</th>
+        <th>Thesis</th>
+        <th class="num">Price</th>
+        <th class="num">Avg PT</th>
+        <th>Conviction</th>
+        <th>Δ vs. 19 May</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>NVIDIA</td><td>NVDA</td><td>Q1 FY27 print tonight 4:20pm ET; consensus $78B rev / $1.77 EPS / $73B DC; whisper $80B; implied move ~8.65%</td><td class="num">$220 (pre)</td><td class="num">$275 (UBS)</td><td><span class="tag buy">High — print tonight</span></td><td><span class="neg">−1.0%</span> KEEP / hold into print</td></tr>
+      <tr><td>2</td><td>TSMC ADR</td><td>TSM</td><td>2026 rev growth &gt;30%; HPC 61% of Q1 mix; CapEx $52–56B high end; record 66.2% GM in Q1 2026</td><td class="num">~$402.90</td><td class="num">$423 (avg)</td><td><span class="tag buy">High</span></td><td><span class="neg">−0.5%</span> KEEP</td></tr>
+      <tr><td>3</td><td>AMD</td><td>AMD</td><td>Bernstein PT $525 / KeyBanc $530 / Baird $625 hold; DC $5.8B +57%; high-beta NVDA-print sympathy</td><td class="num">$418.50</td><td class="num">$525 (Bernstein)</td><td><span class="tag buy">High</span></td><td><span class="neg">−2.7%</span> KEEP — sympathy beta into print</td></tr>
+      <tr><td>4</td><td>Broadcom</td><td>AVGO</td><td>UBS PT $490; Q2 print 3 June (rev guide $22B +47% y/y, AI semi $10.7B); Google TPU + Meta MTIA stack</td><td class="num">$420.71</td><td class="num">$490 (UBS)</td><td><span class="tag buy">High</span></td><td><span class="pos">+0.2%</span> KEEP — held the level</td></tr>
+      <tr><td>5</td><td>ASML</td><td>ASML</td><td>SK Hynix $7.97B / 30-EUV order (March 2026) plus FY26 guide €36–40B; backlog €38.8B</td><td class="num">€1,248</td><td class="num">$1,624 (US)</td><td><span class="tag buy">High</span></td><td><span class="neg">−3.2%</span> KEEP — deeper entry zone</td></tr>
+      <tr><td>6</td><td>Cameco</td><td>CCJ</td><td>Q1 rev $845M / EBITDA $509M; India 22M lb deal; uranium spot ~$86/lb; Citi sees $100–125 H2 2026</td><td class="num">~$105</td><td class="num">$175 (Scotia)</td><td><span class="tag buy">High — add tier active</span></td><td><span class="neg">−2.7%</span> KEEP — inside add zone</td></tr>
+      <tr><td>7</td><td>Vertiv</td><td>VRT</td><td>FY26 guide raised: EPS $6.35 mid (+51%) / rev $13.75B (+34%); 23 Buys vs 1 Sell; investor day today/tomorrow</td><td class="num">$322.63</td><td class="num">$422 (avg of 3)</td><td><span class="tag buy">High — add zone deepened</span></td><td><span class="neg">−5.0%</span> KEEP — third air-pocket day</td></tr>
+      <tr><td>8</td><td>Eli Lilly</td><td>LLY</td><td>Q1 EPS $8.55 / rev $19.8B; Mounjaro+Zepbound $12.8B; FY guide $82–85B; <b>cleared $1,000 cleanly</b></td><td class="num">$1,012.55</td><td class="num">$1,210 (avg)</td><td><span class="tag buy">High — breakout confirmed</span></td><td><span class="pos">+2.2%</span> KEEP — upgraded conviction</td></tr>
+      <tr><td>9</td><td>Applied Materials</td><td>AMAT</td><td>Q2 FY26 beat: rev $7.91B / EPS $2.86; Q3 guide $8.95B / $3.36 (+23%/+36%); CEO sees WFE &gt;30% CY26</td><td class="num">$406.91</td><td class="num">~$500+</td><td><span class="tag buy">High</span></td><td><span class="neg">−1.5%</span> KEEP — inside entry zone</td></tr>
+      <tr><td>10</td><td>Talen Energy</td><td>TLN</td><td>Morgan Stanley raised PT (range $479–$498 across notes); AWS PPA 1.92 GW / $18B through 2042; X-energy SMR optionality</td><td class="num">$314.57</td><td class="num">~$490 (MS)</td><td><span class="tag buy">High — add tier deepened</span></td><td><span class="neg">−4.6%</span> KEEP — cleanest entry of cycle</td></tr>
+    </tbody>
+  </table>
+  <p class="note" style="margin-top:10px;font-size:12.5px;color:var(--muted)">No swaps. <b>OUT</b> (since Tue): ABNB (Iran/Brent thesis confirmed by $111 close). <b>Re-entry trigger for ABNB:</b> Brent sustained &lt;$95 + named Iran de-escalation event (formal signing OR confirmed end to Strait of Hormuz disruption).</p>
+</div>
+
+<h2>Why zero swaps today</h2>
+<div class="card">
+  <p class="note" style="margin-bottom:8px"><b>The three binaries fire in &lt;9 hours.</b> ADI prints at 7am ET (chip-capex breadth signal); FOMC minutes drop 2pm ET (the late-April four-dissent meeting — first read on whether Miran's cut-dissent or the three opposed-easing-bias dissents shape the next meeting bias); NVDA AMC. The right action on a three-binary day is to be <b>sized</b>, not to be <b>active</b>. Tomorrow's brief — with print, minutes and ADI in the tape — is where swaps belong.</p>
+  <p class="note" style="margin-bottom:8px"><b>Conviction upgrades from this run:</b> LLY's clean breakout above $1,000 (Tue +2.2%, intraday high $1,021.78). The technical setup we flagged Monday — "clean breakout setup under $1,000" — confirmed; conviction "High" → "High — breakout confirmed." On NVDA-print day this matters: LLY is the non-AI ballast in the targets list. If chip cohort gives up another 5–10% on a miss, the LLY position holds the basket together.</p>
+  <p class="note" style="margin-bottom:8px"><b>Adds <i>inside</i> the basket are the right move post-print (not pre):</b> if NVDA delivers, AMAT ($406.91 — inside the $410–$415 zone we wrote) and ASML (€1,248) become the cleanest size-ups (lower-multiple WFE plays with the same TSMC/SK Hynix capex tailwind). CCJ ($105) and TLN ($314.57) are inside their respective add zones <i>regardless</i> of print outcome — the AI-power thesis is structurally insulated from any single Q1 number. VRT ($322.63) is the contrarian add — third air-pocket day, FY26 guide hasn't moved, 23/1 buy/sell ratings haven't moved; the investor day in Greenville today/tomorrow is the catalyst.</p>
+  <p class="note"><b>Trims on the portfolio side, not the targets:</b> INTC's $105.36 close fired the rule; the 10–15% trim executes today. SYM's $46.61 close opened the trim discussion (10–15% on $48.50–$49 bounces). MU's first add alert touched $670 but pre-print rule blocks adds. SNAP trim sequence continues.</p>
+</div>
+
+<h2>Watch-list (next swap-in candidates)</h2>
+<div class="card">
+  <ul style="margin:0;padding-left:18px;font-size:13.5px">
+    <li><b>ADI</b> — <b>prints 7am ET today</b>. Consensus $3.51B rev (+33%) / $2.89 EPS (+56%). Mgmt guided $3.5B ±$100M / EPS $2.88 ±$0.15. <b>If beat-and-guide-up, ADI swaps in tomorrow</b> — the chip-capex broadening signal. If in-line, stay watch.</li>
+    <li><b>LMT</b> — $521.59 area; Citi PT $571. Iran-tail hedge; oil at $111 + Trump strike-cancellation-not-believed-by-tape keeps this in scope. Trim a NVDA-print winner into LMT if escalation confirmed.</li>
+    <li><b>RTX</b> — Patriot-restock tailwind; pairs with LMT.</li>
+    <li><b>COP</b> $120.85 / <b>EOG</b> +29% YTD — direct Brent &gt;$105 plays. Best swap-in if Iran escalation confirmed AND NVDA disappoints (forces a rotation out of chip-cohort).</li>
+    <li><b>CEG</b> — $260.81 Mon; cheap vs prior peak but momentum still poor. Wait for stabilization.</li>
+    <li><b>PLTR</b> — $135.14 Mon; basing under $145, three-day streak intact. $145 close break makes it a swap candidate.</li>
+    <li><b>CRWV</b> — $103.59 area; high-beta NVDA derivative. Don't anticipate; <b>only swap in post-print on confirmed beat</b>, otherwise the chase is too late.</li>
+    <li><b>OKLO</b> — $62.00; July 4 Groves criticality is the catalyst worth waiting for.</li>
+    <li><b>MRVL</b> — near $182.58 ATH (14 May); custom-silicon ASIC story; reports end of May.</li>
+    <li><b>NVO</b> — losing GLP-1 head-to-head with LLY (which just broke $1,000); avoid.</li>
+    <li><b>Gold ~$4,560/oz</b> — pure Iran/30Y-yield safe-haven; not a swap candidate but a one-position tactical sleeve if 30Y prints fresh 2007 highs Thursday.</li>
+  </ul>
+</div>
+
+<h2>Action checklist — for Wednesday close / Thursday open</h2>
+<div class="card">
+  <ol style="margin:0;padding-left:18px">
+    <li><b>NVDA Q1 FY27 — tonight 4:20pm ET.</b> Hold if core. If oversized, last 10–20% trim window is today's open–noon. <b>Pre-set post-print add alerts at $215 / $205 / $195</b>; on a beat, only chase above a <b>$245 close</b>. Do not add at $220 ahead of the print.</li>
+    <li><b>INTC — execute the 10–15% trim today</b> (rule fired: $105 close). Keep residual as Apple-foundry / political optionality.</li>
+    <li><b>SYM — open the trim discussion (small, 10–15%)</b> on $48.50–$49 bounces; rule fired ($48 close break). Do not trim into further weakness.</li>
+    <li><b>SNAP — continue trim sequence.</b> Capital freed → post-print adds in NVDA / AVGO / AMAT / TLN on Thursday.</li>
+    <li><b>MU — hold, do not add today.</b> $670 add alert touched Tuesday but pre-print rule blocks adds. Save $670 / $620 alerts for tomorrow's tape. Bull-confirm is reclaim of $715 close.</li>
+    <li><b>TSLA — $380 close stop still live; ~7.3% cushion.</b> Don't add. Trim on bounces $460+ if firming up.</li>
+    <li><b>SAP — let it run.</b> Five-day pause is healthy; opportunistic add &lt;€138 Xetra unchanged.</li>
+    <li><b>ORCL — do not add into print.</b> $183 is the post-breakout shelf bottom and a clean Thursday add zone if NVDA cooperates.</li>
+    <li><b>VRT — third air-pocket day is the entry, not the exit.</b> $322 vs PT avg $422. Tranche-add post-NVDA if available; investor day today/tomorrow is the catalyst.</li>
+    <li><b>CCJ — add tier active.</b> $105 inside the &lt;$110 zone; uranium spot ~$86/lb.</li>
+    <li><b>TLN — add tier deepened.</b> $314.57 is the cleanest entry of the cycle vs the ~$490 PT range.</li>
+    <li><b>AMAT — entry zone reached.</b> $406.91 inside $410–$415 we wrote; scale carefully, full size by Thursday close.</li>
+    <li><b>ASML — deeper entry zone.</b> €1,248 vs FY26 guide €36–40B; SK Hynix order is in the backlog.</li>
+    <li><b>Macro watch:</b> <b>ADI 7am ET</b>, <b>FOMC minutes 2pm ET</b>, <b>NVDA 4:20pm ET</b>. Brent vs $105 / $115. US 30Y vs 2007 high. Iran headline tape (binary, ungame-able).</li>
+    <li><b>Tail hedges, optional:</b> if Iran escalation confirmed on the day, one-position sleeves in <b>LMT</b> ($571 PT), <b>COP</b> ($120.85), or gold (~$4,560/oz). If NVDA disappoints AND oil holds $111+, the rotation out of chips into energy/defense is the trade for the rest of the week.</li>
+  </ol>
+</div>
+
+<h2>Rules for tomorrow's run (Thu 21 May, post-print)</h2>
+<div class="card">
+  <ol style="margin:0;padding-left:18px;font-size:13.5px">
+    <li><b>NVDA print scoring:</b> rev ≥$80B AND Q2 guide ≥$85B AND GM ≥75% → "clean beat-and-raise" tier → adds across AMAT / ASML / AVGO / TSM. Rev $78–80B AND guide $83–85B → "in-line, no rotation" tier → KEEP all 10. Rev &lt;$78B OR guide &lt;$83B OR GM &lt;74% → "soft" tier → ADI / COP / LMT swap candidates into the basket.</li>
+    <li><b>ADI scoring:</b> beat-and-guide-up → swap in tomorrow (replacing the weakest KEEP — probably AMD if sympathy beta hit, or VRT if air-pocket extends into single-name capitulation).</li>
+    <li><b>FOMC minutes scoring:</b> three-or-more "saw upside risks to inflation" mentions → 10Y &gt;4.70%, defensive rotation extends; pull AI-cohort target weight, raise CCJ/TLN/LMT-style energy/defense. Two-or-fewer → 10Y holds 4.55–4.65%, the chip cohort can rip on NVDA.</li>
+    <li><b>Stops we wrote:</b> TSLA $380 close (live, ~7% cushion). SNAP $5.50 (already broken; trim ongoing). INTC $105 (broken — trim executing today). SYM $48 (broken — trim discussion).</li>
+    <li><b>Add zones we wrote:</b> MU $670 / $620. SAP &lt;€138 Xetra. ORCL $183 post-print. CCJ &lt;$110. TLN under $330 (already there). AMAT $410–415 (already there). VRT &lt;$330 (already there). ASML &lt;€1,260 (already there). LLY add zone re-opens on first dip back to $1,000–1,005.</li>
+  </ol>
+</div>
+
+<footer>
+  Generated automatically on 20 May 2026 from public web research. Tuesday 19 May closes used as anchor; Wednesday 20 May pre-market reads incorporated where available. NVDA print is at 4:20pm ET tonight — anything here can be overwritten by tomorrow's run. Targets file: <code>buy-targets/2026-05-20.md</code>.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
