@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Friday, 5 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Friday, 5 June 2026 — jobs day. Catch-up edition covering the whole first June week. Portfolio review + 10 buy targets + the regime that just flipped.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on the morning of Friday 5 June 2026. There was a five-day gap since the last briefing (31 May), so this note reconciles the entire 1–5 June week. Prices are 4 June closes / latest available quotes and may have moved. The May jobs report lands at 8:30 a.m. ET today — its actual figure was not yet on the wire at generation time, so it is flagged as a live catalyst, not a result. Verify with your broker before any trade.
+</section>
+
+<h2>The regime flipped — two big things at once</h2>
+<div class="card lede">
+  <p>The 31 May scenario tree had three branches. The week resolved into the <strong class="neg">down branch I rated "lower-probability but the fat tail": Iran retaliated militarily.</strong> The US launched what it called "defensive strikes" in southern Iran; Tehran answered by firing ballistic missiles at Kuwait. The maritime MoU was never signed — it still "needs Trump's final approval." Brent spiked back through $95 (WTI $96 / Brent ~$98 on 2 Jun) before easing to ~$94 by Thursday on a thin Israel–Lebanon ceasefire glimmer. <strong>This is a hot-conflict premium, not a peace dividend.</strong></p>
+  <p>The second shock was self-inflicted by the AI cohort. <strong>Broadcom printed a blow-out quarter on Wed 3 Jun</strong> — revenue $22.2B (+48%), AI semiconductors $10.8B (+143%), AI bookings &gt;$30B, FY26 AI guide reaffirmed ~$56B, FY27 AI reiterated &gt;$100B, Q3 AI guided to $16.0B (+200% YoY). The numbers were <em>better</em> than the whisper. The stock still <strong class="neg">collapsed −12.59% to $418.91 on Thursday</strong> because expectations had run past even those guides. That single candle sparked a semiconductor de-risking and a <strong>rotation OUT of AI into the Dow and non-tech</strong> — the Dow hit a record 51,561.93 (+1.73%) on Thursday while the Nasdaq <em>fell</em>. Late-cycle dispersion turned into an outright leadership change.</p>
+  <p>Net for the book: the oil-down / rate-compression thesis that underpinned half of last week's adds is <strong>off the table for now</strong>, the AI-capex sleeve is being repriced, and the pre-stated <strong>Iran-retaliation rule that flips LMT/RTX from ballast to long has fired.</strong> Today's jobs print arrives into that.</p>
+</div>
+
+<h2>Where things stand (4 June closes)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">7,585 <span class="pos">+0.41%</span></div><div class="k">off 7,600; 9-day streak snapped 2 Jun</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">26,831 <span class="neg">−0.09%</span></div><div class="k">lagging on chip rotation</div></div>
+  <div class="stat"><div class="k">Dow</div><div class="v">51,561.93 <span class="pos">+1.73%</span></div><div class="k">record — money rotated INTO it</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$94 <span class="warn">war premium</span></div><div class="k">spiked ~$98 (2 Jun); $95 back in play</div></div>
+  <div class="stat"><div class="k">AVGO</div><div class="v">$418.91 <span class="neg">−12.59%</span></div><div class="k">great print, sold the expectations</div></div>
+  <div class="stat"><div class="k">NVDA</div><div class="v">$218.66 <span class="pos">+1.94%</span></div><div class="k">bucked the selloff; held $215</div></div>
+  <div class="stat"><div class="k">Gold</div><div class="v">~$4,461 <span class="neg">−2% wk</span></div><div class="k">safe-haven bid vs. energy-inflation</div></div>
+  <div class="stat"><div class="k">May jobs</div><div class="v">cons. 85–105K</div><div class="k">UR 4.3% · prints 8:30am TODAY</div></div>
+</div>
+<p class="sub">The tell of the week is the AVGO/NVDA split: a flawless AVGO print drew a −12.6% candle while NVDA closed <em>green</em> at $218.66 — the market is no longer paying up for AI-capex beats, but it still rewards the franchise name. Gold's behaviour is the other oddity: an Iran war should bid it, but an energy-driven inflation shock keeps the Fed restrictive, so it slipped ~2% on the week — caught between two forces.</p>
+
+<h2>Your portfolio — Friday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (4 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$218.66</td><td>The cohort's relative winner — closed +1.94% on the day AVGO crashed and chips sold off, holding the $215 reclaim. $225 sleep trigger still un-hit; $205 = Tier-2 add. Franchise premium intact; let it work. <strong>Watch $215 — a close back under re-arms the under-line regime.</strong></td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">~$231</td><td><strong>Reports Wednesday 10 Jun</strong> — the next single-name catalyst in the book. UBS lifted PT to $285, Scotiabank to $290 ahead of the print. Do not chase into earnings; $215 first pullback tier, $200 trailing stop. OCI/AI-infra story is exactly the kind of non-semiconductor AI exposure the rotation favours.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$971</td><td><span class="neg">−9.84% Thursday</span> — caught the AVGO semiconductor selloff after going parabolic. Reports 24 Jun. Trailing stop ~$880–$900 (10-day MA). Fresh-add only on a $720 pullback OR a clean $1,000 close — do not chase a name that just dropped 10% in a de-risking tape.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">~$417</td><td>Held the range; robotaxi narrative intact. Now a rotation-neutral ballast (not AI-semis, not defense). $380 close stop (~9% cushion). No action.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">~$112</td><td>Pulled back from ~$121 with the chip group. Third-trim still dormant at a $130 close (execute into $140+). No action under $130; the 2026 run has been enormous, so let the stop framework do the work.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$6.13</td><td><span class="pos">Surged ~+7%</span> Thursday on an S&amp;P upgrade backing the turnaround. <strong>Now ABOVE the $5.85 trim trigger</strong> — this is the funding-source bounce the rule was written for. <span class="warn">Trim into strength</span> to fund the defense swap-in; $5.50 remains the broken-line stop.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$65–70</td><td>Longest-duration name in the book → the biggest loser when an energy-inflation shock re-arms yields, which is exactly this week's risk. Federal-quantum cohort lift intact; Street PT ~$70. <strong>Do not size up into a rising-rate, risk-off overlay.</strong></td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$46.56</td><td><span class="neg">−6% Thursday</span>, sitting right on the $46 close line that reopens the risk-management trim. If it closes under $46, trim; above $52 reopens the upper trim. Watch, don't pre-act.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€151</td><td>Core hold (Xetra). The EU "Iran-signing gap-up" catalyst is now pushed <em>further</em> out — a hot conflict, not a deal. Defensive, non-US, non-semiconductor; fine to hold through the rotation. Add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.3</td><td>Dormant ballast (mkt cap ~$53B). Headlines on talks with Chinese EV makers over European assets — optionality, not a thesis yet. Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~100p</td><td>The week's quiet hero: a war-premium / risk-off overlay doesn't touch RPI-linked regulated wind cashflow. ~10–11% forward yield; reinvest the recent dividend. Steady-income anchor — exactly what you want when AI leadership wobbles.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">Note: the local <code>portfolio/my-portofilo.md</code> file was lost in a tooling incident before this run and was rebuilt from the 31 May holdings snapshot (all 11 names above). Re-verify it is correct before the next run — see the footnote at the bottom.</p>
+</div>
+
+<h2>The 10 buy targets — Friday (9 KEEP · 1 swap: MRVL → LMT)</h2>
+<p class="sub">The regime change forces exactly one disciplined, rule-based move. <strong>MRVL leaves</strong> — custom-silicon was the cohort hit hardest by the AVGO de-rating, it was already sitting at its price target, and a rotation OUT of AI-capex is precisely the "thesis weakened + better setup confirmed" trigger. <strong>LMT enters</strong> — the 31 May watch-list said in writing that an <em>Iran military retaliation flips LMT/RTX from ballast to long.</em> That condition fired this week. RTX, energy and gold queue behind it. Everything else is KEEP, but conviction has been re-sorted around the new leadership.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (4 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 31 May</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>NVDA</strong></td><td>Closed +1.94% on the day chips sold off — the franchise the market still pays up for; held the $215 reclaim; $225 sleep un-hit</td><td class="num">$218.66</td><td class="num">~$305 avg</td><td><span class="tag high">High</span></td><td>KEEP — cohort winner</td></tr>
+      <tr><td>2</td><td><strong>TSM</strong></td><td>Held ~$437 through the selloff; CoWoS sold out through 2027; new TSMC–Applied "EPIC" $5B advanced-packaging pact</td><td class="num">~$436.69</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP — resilient</td></tr>
+      <tr><td>3</td><td><strong>AVGO</strong></td><td><strong>Print BEAT, stock de-rated −12.6%.</strong> Rev $22.2B (+48%), AI $10.8B (+143%), Q3 AI guide $16B (+200%), FY26 AI ~$56B, FY27 &gt;$100B — a positioning flush, not a thesis break</td><td class="num">$418.91</td><td class="num">$475 avg</td><td><span class="tag med">High*</span></td><td><span class="tag new">KEEP — contrarian add</span></td></tr>
+      <tr><td>4</td><td><strong>ADI</strong></td><td>Swap-in executed at Tue 2 Jun open (replaced ASML); defensive analog/industrial-AI; lower-beta than the GPU/custom-silicon names getting repriced</td><td class="num">~$415</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP — just entered</td></tr>
+      <tr><td>5</td><td><strong>AMAT</strong></td><td>Closed <span class="pos">+1.99% at $499.66</span> even in the selloff on the new $5B TSMC "EPIC" packaging partnership; WFE leverage to AI; near PT</td><td class="num">$499.66</td><td class="num">$510 avg</td><td><span class="tag high">High</span></td><td>KEEP — EPIC deal tailwind</td></tr>
+      <tr><td>6</td><td><strong>CCJ</strong></td><td>Uranium with a fresh <strong>energy-security bid</strong> — the Iran/Hormuz war premium turns the prior "oil-down tactical" call back into a structural tailwind; FY26 19.5–21.5M lb</td><td class="num">$114.02</td><td class="num">$148 avg</td><td><span class="tag high">High</span></td><td>KEEP — conviction UP</td></tr>
+      <tr><td>7</td><td><strong>VRT</strong></td><td>Data-center power/cooling; dipped into the aggressive add zone with the AI pullback; FY26 EPS $6.35 mid (+51%)</td><td class="num">$331.44</td><td class="num">$387–$414</td><td><span class="tag high">High</span></td><td>KEEP — add zone live</td></tr>
+      <tr><td>8</td><td><strong>LLY</strong></td><td><span class="pos">+4.3% to $1,125</span> Thursday on a new Weight&nbsp;Watchers partnership + multi-franchise GLP-1 momentum — a <strong>defensive winner</strong> as money left AI</td><td class="num">$1,125.27</td><td class="num">$1,251 (BofA)</td><td><span class="tag high">High</span></td><td>KEEP — rotation beneficiary</td></tr>
+      <tr><td>9</td><td><strong>TLN</strong></td><td>Independent nuclear/power producer; AWS PPA + SMR optionality; a defensive, oil-insensitive power-demand play that holds up in a risk-off tape</td><td class="num">$375.26</td><td class="num">$475 avg</td><td><span class="tag high">High</span></td><td>KEEP — defensive</td></tr>
+      <tr><td>10</td><td><strong>LMT</strong></td><td><strong>Iran-retaliation rule FIRED</strong> (US strikes + Iran missiles at Kuwait). PrSM production framework quadrupled under "Operation Epic Fury"; $1T+ FY26 defense budget</td><td class="num">$517.15</td><td class="num">$665 med</td><td><span class="tag new">High</span></td><td><span class="tag new">SWAP-IN → replaces MRVL</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Swapped out (to watch-list):</strong> <strong>MRVL</strong> — custom-silicon cohort de-rated hardest in the AVGO flush and the name was already at its B. Riley target; rotated out on regime, re-entry on a cohort base ≥ the $200 line holding with an AVGO-stabilisation confirmation. <strong>*AVGO conviction note:</strong> the High rating is retained because the fundamentals strengthened, but it is explicitly a <em>contrarian-add</em> stance into a −12.6% candle, not a momentum call — size in tranches, not at once.</p>
+
+<h2>What happened to each prior target (1–5 Jun scorecard)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>Outcome this week</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong></td><td>Held $215 reclaim; +1.94% to $218.66 on selloff day</td><td>KEEP — strongest relative</td></tr>
+      <tr><td><strong>TSM</strong></td><td>~$437; EPIC $5B packaging pact with AMAT</td><td>KEEP</td></tr>
+      <tr><td><strong>AVGO</strong></td><td>Beat across the board, −12.59% on expectations</td><td>KEEP (contrarian)</td></tr>
+      <tr><td><strong>ADI</strong></td><td>Swap executed Tue 2 Jun open as scheduled</td><td>KEEP</td></tr>
+      <tr><td><strong>AMAT</strong></td><td>+1.99% to $499.66 on the TSMC EPIC deal</td><td>KEEP</td></tr>
+      <tr><td><strong>CCJ</strong></td><td>$114; war/energy-security bid restored the tailwind</td><td>KEEP — upgraded</td></tr>
+      <tr><td><strong>VRT</strong></td><td>$331; pulled into the add zone with the AI dip</td><td>KEEP</td></tr>
+      <tr><td><strong>LLY</strong></td><td>+4.3% to $1,125; Weight Watchers deal</td><td>KEEP — defensive</td></tr>
+      <tr><td><strong>TLN</strong></td><td>$375; defensive power; oil-insensitive</td><td>KEEP</td></tr>
+      <tr><td><strong>MRVL</strong></td><td>Custom-silicon cohort de-rated post-AVGO; at PT</td><td><span class="warn">REPLACED → LMT</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — the new backdrop</h2>
+<div class="card">
+  <ul>
+    <li><strong>Iran (dominant):</strong> hot conflict, not a deal. US "defensive strikes" in southern Iran; Iran fired ballistic missiles at Kuwait; the MoU still awaits Trump's signature. A thin Israel–Lebanon ceasefire is the only de-escalation thread. <strong>Brent ~$94, with $95 flipped back to a live trigger and a $98 spike already printed.</strong></li>
+    <li><strong>Rotation:</strong> the AVGO −12.6% candle moved leadership OUT of AI-semis and INTO the Dow / non-tech (Dow record 51,561; Nasdaq red same day). Owning the non-AI sleeve (LLY, ORCL-as-software, defense, energy, regulated income) is suddenly where the bid is.</li>
+    <li><strong>Jobs (today):</strong> consensus 85–105K, unemployment 4.3%, prints 8:30am ET. The cross-current: a <em>soft</em> print would normally help duration, but an energy-driven inflation shock keeps the Fed pinned — so a weak number may NOT rescue the long-duration / IONQ end of the book. Watch the reaction more than the headline.</li>
+    <li><strong>Gold ~$4,461:</strong> down ~2% on the week despite the war — the energy-inflation-keeps-rates-high force is, for now, beating the safe-haven bid. A hedge to watch, not yet a chase.</li>
+    <li><strong>Next single-name catalyst:</strong> <strong>ORCL earnings Wed 10 Jun</strong> — the portfolio's own AI-infrastructure read, into a tape that currently prefers software-AI over silicon-AI.</li>
+  </ul>
+</div>
+
+<h2>Iran scenario tree — updated</h2>
+<div class="card">
+  <div class="scenario down"><strong>Current path — active conflict</strong> — Brent holds a $94–$100 war premium; energy/defense (CCJ, LMT, + queued RTX) bid; AI-capex stays repriced; gold caught between haven-bid and rate-fear. This is where we are.</div>
+  <div class="scenario base"><strong>Stalemate / frozen conflict</strong> — strikes pause without a signature; Brent drifts $90–$95; rotation persists but stops widening; NVDA/AVGO base out. Most likely from here.</div>
+  <div class="scenario up"><strong>Genuine de-escalation / signature</strong> — Brent back toward $88–$92; defense (LMT/RTX) becomes a trim, AI-capex sleeve re-rates, EU complex (SAP/VWAGY) finally gets its gap-up. The bull un-lock, lower odds near-term.</div>
+  <p class="sub">The tell remains <strong>Brent $95</strong>: sustained above = conflict premium intact (stay long energy/defense); a clean break back below = the de-escalation case building (start trimming the war sleeve).</p>
+</div>
+
+<h2>Action checklist into next week</h2>
+<div class="card">
+  <ul>
+    <li><strong>SNAP:</strong> it's above $5.85 on the upgrade pop — <span class="warn">trim into strength</span> per the funding-source rule; recycle into the defense/energy sleeve.</li>
+    <li><strong>LMT (new):</strong> scale in on the Iran-retaliation trigger; it's a process long while Brent holds &gt; $95. RTX is next in the queue if the conflict premium persists.</li>
+    <li><strong>AVGO:</strong> contrarian add in tranches into the −12.6% flush — do NOT chase a single fill; the fundamentals (FY27 AI &gt;$100B) back the name even if positioning needed to reset.</li>
+    <li><strong>MRVL:</strong> off the active 10 → watch-list; re-entry needs the custom-silicon cohort to base above $200 with AVGO stabilising.</li>
+    <li><strong>ORCL:</strong> do not chase into the 10 Jun print; $215 pullback tier, $200 trailing stop. It's the portfolio's software-AI read in a software-AI-favouring tape.</li>
+    <li><strong>CCJ / TLN:</strong> energy-security + power-demand now structural again with the war premium — add CCJ &lt;$110, TLN &lt;$385.</li>
+    <li><strong>MU / INTC / SYM:</strong> let stops work — MU ~$880, INTC $130 close (trim), SYM $46 close (trim reopen). No adds into a de-risking semiconductor tape.</li>
+    <li><strong>IONQ:</strong> do not size up into a rising-rate, risk-off overlay — longest-duration name in the book.</li>
+    <li><strong>Stops live:</strong> TSLA $380 close · SNAP $5.50 · SYM $46 close · INTC $130 close · MU ~$880 · NVDA $215-reclaim / $205 / $225 · ORCL $200 · Brent $95 (the regime switch).</li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. The Iran conflict is fluid and can gap oil and equities sharply intraday; today's jobs print can do the same. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 5 June 2026 from public web sources. Note: this run also repaired a damaged local git repository and rebuilt two lost local files (<code>publish.sh</code> and the gitignored <code>portfolio/my-portofilo.md</code>, reconstructed from the 31 May holdings snapshot — please re-verify). Next briefing: Monday 8 June 2026.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
