@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Saturday, 13 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Saturday, 13 June 2026 — weekend edition. The binary resolved <em>mixed</em>: Brent held firmly below $95 (de-escalation confirmed for a 2nd day) but a fresh Iranian drone attack and a terms dispute re-seeded the head-fake. Portfolio review + 10 buy targets.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Saturday 13 June 2026, covering the 12 June close and the weekend's Iran developments. This is a fast, headline-driven tape — the Iran deal is still unsigned and can swing the whole book over a weekend. Verify with your broker before any trade.
+</section>
+
+<h2>The weekend binary resolved — mixed, and the mix is the signal</h2>
+<div class="card lede">
+  <p>Yesterday's note hung the entire book on one question: does the Iran deal sign over the weekend, and does Brent stay below $95? Two days in, the answer is split — and the split itself is the read.</p>
+  <p><strong>De-escalation is confirmed on the one tell that matters.</strong> <strong class="neg">Brent crude fell further to ~$87</strong>, a roughly two-month low, holding decisively below the $95 regime line for a <em>second</em> session — no longer one thin relief day. Equities rose again: <strong class="pos">the S&amp;P 500 added 0.5% to 7,431.46, the Nasdaq rose 0.31% to 25,888.84, and the Dow gained 0.7% to 51,202.26</strong> (a fresh push back above 51,000). The AI-capex sleeve held its bounce. This is exactly the branch our scoring grid pre-committed to: <em>"Brent holds &lt; $95 → keep the AI-capex sleeve leading."</em></p>
+  <p><strong class="warn">But the diplomacy got messier, not cleaner — so this is not an all-clear.</strong> The deal is <strong>still unsigned</strong>, and over the weekend: <strong>Trump rejected the leaked Iran ceasefire terms as "fake news,"</strong> said Iran's account "bears no relation to the truth," and called the negotiators <strong>"very dishonorable people."</strong> Overnight, <strong class="neg">Iran launched a drone attack on Indian commercial ships leaving the Strait of Hormuz — the US shot down two Iranian one-way attack drones.</strong> That sits against Pakistani PM Sharif's claim that a <strong>"final, agreed-upon text"</strong> was reached (a 14-point document, Hormuz reopening within 30 days, a possible signing "this weekend in Europe" with VP Vance attending). Closer on paper <em>and</em> more contentious at the same time.</p>
+  <p><strong>Net: a 10-KEEP weekend.</strong> Brent at $87 says de-escalation loudly enough to keep the AI-capex/semis tilt; the drone attack and the "dishonorable" spat say don't retire the war-sleeve hedge yet. No thesis broke and no watch-list setup cleanly confirmed — so there's no reason to churn into thin weekend volume (the exact whipsaw the last note warned against). The symmetric <strong>RTX re-entry trigger never fired</strong>: it required Brent <em>reclaiming</em> $95, and Brent fell to $87 instead. Convictions get re-sorted — AI-capex/semis up on a 2-day confirmation; <strong>LMT explicitly on-the-block</strong> (the drone attack is the only thing keeping it in).</p>
+</div>
+
+<h2>Where things stand (12 June close + weekend)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">7,431.46 <span class="pos">+0.5%</span></div><div class="k">2nd straight risk-on day</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">25,888.84 <span class="pos">+0.31%</span></div><div class="k">AI complex held the bounce</div></div>
+  <div class="stat"><div class="k">Dow</div><div class="v">51,202.26 <span class="pos">+0.7%</span></div><div class="k">+353 pts; back above 51,000</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$87 <span class="neg">−3.4%</span></div><div class="k">~2-month low; firmly &lt; $95</div></div>
+  <div class="stat"><div class="k">NVDA</div><div class="v">$204.87 <span class="warn">flat</span></div><div class="k">held &gt;$200; did NOT reclaim $215</div></div>
+  <div class="stat"><div class="k">ORCL</div><div class="v">~$183.94 <span class="warn">basing</span></div><div class="k">range $179–$185.90; not above $185 yet</div></div>
+  <div class="stat"><div class="k">TSLA</div><div class="v">$406.43 <span class="pos">+1.8%</span></div><div class="k">SpaceX cross-current turned bullish</div></div>
+  <div class="stat"><div class="k">SPCX (SpaceX)</div><div class="v">$160.95 <span class="pos">+19%</span></div><div class="k">priced $135, opened $150; ~$2.2T intraday</div></div>
+  <div class="stat"><div class="k">Iran deal</div><div class="v"><span class="warn">UNSIGNED</span></div><div class="k">"final text" claimed; drone attack + terms spat</div></div>
+</div>
+<p class="sub">The two tells: (1) <strong>Brent stayed below $95 — and fell to $87</strong>, the market pricing de-escalation regardless of the diplomatic noise → keep the AI-capex tilt. (2) The <strong>diplomacy turned contentious</strong> — a fresh drone attack and Trump rejecting the leaked terms — keeping the head-fake branch alive even as price says risk-on. A signed deal in Europe flips LMT to a trim; a snap of Brent back above $95 re-arms the whole war trade.</p>
+
+<h2>Your portfolio — Saturday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (12 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$204.87</td><td><span class="warn">Held above $200 a 2nd day</span> (range $203.44–$207.07) but <strong>did NOT reclaim the $215 regime line</strong>. The de-escalation + AI-capex relief kept it steady; the $205/$195 add ladder that filled into the dip is in the money. Still a hold-and-confirm — a close back above <strong>$215</strong> re-arms the bull regime. No chase.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">~$183.94</td><td>Traded $179.00–$185.90 — <strong>basing around $184</strong> rather than rolling over, which is constructive, but it hasn't <em>cleanly cleared</em> $185. Record fundamentals intact (OCI +93%, RPO $638B); the $40B raise / −$23.7B FCF is still the structural overhang. <strong>Core HOLD</strong>; needs a close above ~$185 to confirm the base; the $200 milestone is still lost.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$1,000</td><td>Recovered toward <strong>$1,000</strong> with the semi group. <strong>Reports 24 June</strong> — the next single-name catalyst. A clean <strong>$1,000 close</strong> is the fresh-add trigger; $720 the deep-pullback alternative. Trailing ~$880–$900. No chase into the print.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">$406.43</td><td><span class="pos">The SpaceX cross-current resolved bullish.</span> SPCX priced $135, opened $150 and <strong>closed $160.95 (+19%)</strong>, briefly ~$2.2T intraday — and rather than draining TSLA it <em>lifted</em> it on <strong>merger optionality</strong> (Wedbush's Ives put ~80% odds on a TSLA-SpaceX merger within a year; SpaceX's president acknowledged "synergies"). TSLA pared its intraday dip to close <strong>+1.8%</strong>, well clear of the $380 stop. The drain we hedged for became a tailwind.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">~$108</td><td>Bounced with the chip group off ~$107. Third-trim still dormant at a $130 close (execute into $140+). No action down here.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$5.8–6.1</td><td>Relief bounce near the <strong>$5.85 trim trigger</strong>. A poke above $6.13 on the risk-on = a trim window; otherwise no-action. $5.50 remains the broken-line stop.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$66</td><td>The longest-duration name → still benefiting from de-escalation + softer oil (lower inflation impulse). The hot +172K jobs print still caps it; Street PT ~$70. Relief, not a reason to size up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42–43</td><td>Bounced with the tape but <strong>still below the $46 close line</strong> the trim fired on. No fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€148</td><td>EU defensive — the <strong>"Iran-signing gap-up" catalyst stays on the table</strong> if the deal signs in Europe this weekend, but the drone attack + terms dispute is a live offset. Q2 ahead. Add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.45</td><td>Dormant ballast with the same EU gap-up optionality if the deal signs. Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor — RPI-linked regulated wind cashflow, ~10–11% forward yield, indifferent to the war premium. Reinvest the dividend. The ballast that let the rest of the book ride the two-session whipsaw.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The book's tape risk kept easing: NVDA held $200, MU toward $1,000, ORCL based ~$184, and the SpaceX IPO turned into a TSLA tailwind rather than a drain. The two swing factors into the new week: (1) does the Iran deal actually <em>sign</em> in Europe, and (2) does the drone-attack friction escalate and snap Brent back above $95.</p>
+</div>
+
+<h2>The 10 buy targets — Saturday (10 KEEP · 0 swaps)</h2>
+<p class="sub">A mixed weekend is a hold, not a churn. Brent firmly below $95 for a 2nd day <em>confirms</em> the de-escalation tilt (so the AI-capex/semis sleeve stays); a fresh Iranian drone attack and Trump rejecting the leaked terms keep the head-fake branch alive (so the war-sleeve hedge — held via LMT — doesn't get retired). No name's thesis broke, and no watch-list setup cleanly confirmed, so there's nothing to force into thin weekend volume. The <strong>RTX re-entry trigger did not fire</strong> — it needed Brent <em>reclaiming</em> $95; Brent fell to $87 instead. Convictions re-sorted: AI-capex/semis up on a 2-day confirmation; <strong>LMT explicitly on-the-block</strong> — a clean signature flips it to the trim and the likely next swap-out.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (12 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 12 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>NVDA</strong></td><td><strong>Closed $204.87 — held above $200 a 2nd day but did NOT reclaim $215</strong>; franchise steady as the financing fear keeps easing; the $205/$195 dip-adds remain in the money — a $215 close re-arms the bull regime</td><td class="num">$204.87</td><td class="num">~$305 avg</td><td><span class="tag high">High</span></td><td>KEEP — steady (still &lt;$215)</td></tr>
+      <tr><td>2</td><td><strong>AMAT</strong></td><td>Cohort relative-strength; WFE leverage + TSMC "EPIC" $5B packaging deal re-rates as the AI-capex relief extends to a 2nd day; ATH $501.70 (4 Jun) back in view</td><td class="num">~$500</td><td class="num">$510 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>TSM</strong></td><td>May revenue <strong>+30% YoY</strong>, CoWoS sold out through 2027; the −6% flush was a de-rate not a break — leads as AI-logic re-rates on the confirmed risk-on</td><td class="num">~$420</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>TLN</strong></td><td>Re-entered small Fri; the de-escalation held a <strong>2nd</strong> day (Brent ~$87) → the thin-confirmation caveat is half-answered and the AI-capex-power re-rate is building; Barclays $411 / MS $498 OW</td><td class="num">~$345</td><td class="num">$411–$498 OW</td><td><span class="tag med">Med</span></td><td>KEEP — UPGRADE (2-day confirm)</td></tr>
+      <tr><td>5</td><td><strong>VRT</strong></td><td>Data-center power/cooling — Bernstein Outperform (9 Jun); the ORCL-capex-fear crosshair stays eased with the risk-on extending; ~$300–$311 aggressive add zone intact</td><td class="num">~$315</td><td class="num">$377 mean</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower Semiconductor (AI-power) deal; the steady analog that barely flinched and rides the relief</td><td class="num">~$398</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>CCJ</strong></td><td>Uranium / energy-security is <strong>structural, not oil-linked</strong> — holds even as Brent deflates to $87; full production restored, NAV/sh → $66; the &lt;$110 add zone filled</td><td class="num">~$104</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide data, Ebglyss q8w, Jefferies $1,350) — a defensive that lags on a 2nd risk-on day, but the core anchor that doesn't need the war premium</td><td class="num">~$1,150</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — core anchor</td></tr>
+      <tr><td>9</td><td><strong>AVGO</strong></td><td><strong>Held ~$385.38</strong> with the AI relief — Strong Buy, 48-analyst mean PT <strong>$522</strong> — but <em>still no base</em>; FY27 AI &gt;$100B intact; adds <strong>PAUSED until a real base confirms</strong></td><td class="num">~$385</td><td class="num">$522 mean</td><td><span class="tag med">Med</span></td><td>KEEP — held, still no base</td></tr>
+      <tr><td>10</td><td><strong>LMT</strong></td><td>Structural $1T+ FY26 defense budget intact, but the <strong>war premium is deflating hard</strong> (Brent $87) → a clear trim on a signature; <strong>held ONLY because the fresh drone attack keeps the re-escalation seed alive</strong></td><td class="num">~$520</td><td class="num">$665 med</td><td><span class="tag hold">Med</span></td><td><span class="tag hold">KEEP — ON-THE-BLOCK</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>No swap-out this run.</strong> The watch-list queue produced no clean trigger: <strong>RTX</strong> needed Brent <em>reclaiming</em> $95 to re-enter — Brent fell to $87, so it stays benched; <strong>energy (COP/EOG/XOM)</strong> gave back even more war premium and stays off; <strong>ASML / MRVL</strong> never based. The drone attack is a <em>seed</em>, not a confirmed re-escalation (Brent didn't budge up on it), so it does not re-arm the war sleeve. An honest mixed-weekend read is a hold, not a churn.</p>
+
+<h2>What happened to each prior target (12→13 Jun scorecard)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>Outcome over the weekend</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong></td><td>$204.87; held &gt;$200 a 2nd day, still under $215</td><td>KEEP — steady</td></tr>
+      <tr><td><strong>AMAT</strong></td><td>~$500; AI-capex relief extends, ATH back in view</td><td>KEEP</td></tr>
+      <tr><td><strong>TSM</strong></td><td>~$420; AI-logic re-rate on the confirmed risk-on</td><td>KEEP</td></tr>
+      <tr><td><strong>TLN</strong></td><td>~$345; de-escalation held a 2nd day → re-rate building</td><td><span class="pos">KEEP — upgraded</span></td></tr>
+      <tr><td><strong>VRT</strong></td><td>~$315; financing-fear crosshair stays eased</td><td>KEEP</td></tr>
+      <tr><td><strong>ADI</strong></td><td>~$398; steady analog rides the relief</td><td>KEEP</td></tr>
+      <tr><td><strong>CCJ</strong></td><td>~$104; uranium holds as Brent deflates to $87</td><td>KEEP</td></tr>
+      <tr><td><strong>LLY</strong></td><td>~$1,150; defensive lags a 2nd risk-on day</td><td>KEEP — core anchor</td></tr>
+      <tr><td><strong>AVGO</strong></td><td>~$385.38; held the bounce, still no base</td><td>KEEP — adds paused</td></tr>
+      <tr><td><strong>LMT</strong></td><td>~$520; war premium deflating, but drone attack keeps the seed alive</td><td><span class="warn">KEEP — on-the-block</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — de-escalation confirmed, but contested</h2>
+<div class="card">
+  <ul>
+    <li><strong>Iran (de-escalating on price, contested on paper, UNSIGNED):</strong> <strong class="neg">Brent fell further to ~$87</strong> (2-month low) — the market is pricing de-escalation regardless of the noise. But the diplomacy got messier: <strong>Trump rejected the leaked terms as "fake news,"</strong> called Iran "very dishonorable," and the US <strong>downed two Iranian attack drones</strong> that targeted Indian ships leaving Hormuz — against Pakistan's claim of a <strong>"final, agreed text"</strong> (14-point doc, Hormuz reopen in 30 days, a possible signing "this weekend in Europe," VP Vance attending). Closer and more contentious at once.</li>
+    <li><strong>AI-infrastructure financing fear — eased (2nd day):</strong> NVDA held $200, AVGO held $385, MU toward $1,000, ORCL based ~$184. <strong>Not all-clear</strong> — AVGO still hasn't based, ORCL hasn't cleared $185, NVDA hasn't reclaimed $215. But the bleed has clearly stopped.</li>
+    <li><strong>SpaceX IPO aftermath:</strong> SPCX closed $160.95 (+19% off the $135 price), ~$2.2T intraday — a <em>bullish</em> read-through for TSLA via merger optionality, not the flow-drain we hedged for.</li>
+    <li><strong>Rates / jobs:</strong> May payrolls HOT at +172K (vs. 85–105K), UR 4.3% — higher-for-longer still hangs over the longest-duration sleeve, but Brent at $87 lowers the inflation impulse, a mild offset for IONQ and TLN.</li>
+    <li><strong>Indices:</strong> a 2nd straight risk-on day — Dow 51,202 (back above 51k), S&amp;P 7,431, Nasdaq 25,889. AI/semis steady, defensives lagged again.</li>
+  </ul>
+</div>
+
+<h2>Iran scenario tree — de-escalation leading, head-fake re-seeded</h2>
+<div class="card">
+  <div class="scenario up"><strong>Signature this weekend (leading, but contested)</strong> — the deal signs in Europe (Vance attending); Brent $85–$90 holds; <strong>LMT becomes a clear trim → the next swap-out</strong>; the AI-capex sleeve (NVDA/AMAT/TSM/AVGO/TLN) re-rates further; the EU complex (SAP/VWAGY) gaps up. The price tape already leans this way — the drone-attack noise is the wrinkle.</div>
+  <div class="scenario base"><strong>Stalemate — "final text" but no pen</strong> — the most likely path right now: Brent stays $85–$90, risk-on holds, but the "dishonorable"/drone friction keeps a signature slipping ("this weekend" → "next week"). AVGO grinds out a base; LMT stays held-not-trimmed.</div>
+  <div class="scenario down"><strong>Head-fake / collapse</strong> — the drone attacks escalate, the terms blow up, strikes resume; Brent snaps back &gt; $95 → re-promote RTX off the bench (the symmetric rule reverses), re-arm LMT, cut TLN back. The drone attack is the <em>seed</em> of this branch — watched, not yet triggered.</div>
+  <p class="sub">The tell is unchanged — <strong>Brent $95</strong>: at <strong>$87 and falling</strong> = stay tilted to AI-capex/semis/EU. A snap back above $95 (which the drone attacks could cause) = the head-fake, re-arm the war sleeve. The weekend signature — or its collapse — is still the binary.</p>
+</div>
+
+<h2>Action checklist into the new week</h2>
+<div class="card">
+  <ul>
+    <li><strong>NVDA:</strong> held &gt;$200 a 2nd day; a <span class="pos">close back above $215</span> re-arms the bull regime; the $205/$195 dip-adds are working. Don't chase — let it confirm.</li>
+    <li><strong>LMT (on-the-block):</strong> held <span class="warn">only</span> because the drone attack keeps the re-escalation seed alive — a clean signature flips it to a trim and the likely next swap-out.</li>
+    <li><strong>TLN:</strong> the 2-day Brent-&lt;$95 confirm justifies starting to <span class="pos">size up</span> from the small Friday re-entry; full size only if a signature lands AND the AI-capex bounce keeps building.</li>
+    <li><strong>RTX (out):</strong> stays benched — the drone attack is a seed, not a trigger; re-entry only on Brent <em>reclaiming</em> $95.</li>
+    <li><strong>AVGO:</strong> adds stay <span class="neg">PAUSED</span> — two flat-to-green days are not a base.</li>
+    <li><strong>ORCL:</strong> needs a <strong>close above ~$185</strong> to confirm the base it's building; a roll-over keeps the financing-fear overhang live.</li>
+    <li><strong>TSLA:</strong> the SpaceX cross-current turned bullish — watch merger headlines as a <em>tailwind</em> now; the $380 close stop is intact but far away.</li>
+    <li><strong>SAP / VWAGY:</strong> the EU gap-up is on the table <em>if</em> the deal signs in Europe — the swing factor for the European sleeve.</li>
+    <li><strong>MU:</strong> toward $1,000 ahead of the 24 Jun print — a $1,000 close is the fresh-add trigger; no chase into the report.</li>
+    <li><strong>Stops live:</strong> TSLA $380 close · SNAP $5.50 · SYM $46 close (fired, still under) · INTC $130 close · MU ~$880 · NVDA $215-reclaim to flip / $205 / $195 ladder · ORCL needs a close &gt; ~$185 · <strong>Brent $95 — the binary, at $87 and falling.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This is a fast, headline-driven tape — the Iran deal is unsigned and a weekend drone-attack escalation could snap Brent back above $95 and reverse the whole tilt. The 10-KEEP call is a deliberate non-churn into thin weekend volume; LMT is flagged on-the-block as the next likely swap on a clean signature. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 13 June 2026 from public web sources. The weekend resolved the binary mixed — Brent confirmed de-escalation while a drone attack re-seeded the head-fake. Next briefing follows the next scheduled run; the Iran signature (or its collapse) remains the key swing.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
