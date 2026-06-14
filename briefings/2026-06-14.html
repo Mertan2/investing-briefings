@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Sunday, 14 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Sunday, 14 June 2026 — weekend edition, Day 3 of the binary. The de-escalation tilt <em>firmed</em>: Brent held ~$87–88, the Saturday drone-attack head-fake seed did not escalate, and the signature went concrete (Geneva venue, named signatories, around the G7). One swap — LMT out, ASML in. Portfolio review + 10 buy targets.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Sunday 14 June 2026. US markets were closed Saturday and Sunday, so the last prints are the Friday 12 June close; the moving pieces this weekend are the Iran signature and the price of Brent crude. This is a fast, headline-driven tape — the deal is still unsigned and can swing the whole book. Verify with your broker before any trade.
+</section>
+
+<h2>Day 3 of the binary — the de-escalation tilt firmed, and the signature has a date</h2>
+<div class="card lede">
+  <p>Three days into the question that has framed the whole book — does the Iran deal sign, and does Brent stay below $95 — Sunday added two tells on top of Saturday's mixed read, both pointing the same way.</p>
+  <p><strong>De-escalation confirmed a 3rd signal — and the Saturday head-fake seed faded.</strong> <strong class="neg">Brent held ~$87–88</strong>, firmly below the $95 regime line for a third straight weekend session (down from a ~$125 April high; still up ~45% on the year). Just as important: the Saturday wrinkle — the Iranian drone attack on Indian ships in Hormuz and Trump's "fake news / very dishonorable" spat — <strong>did not escalate over Sunday.</strong> No fresh strikes surfaced, and Brent did not snap back up. The one thing keeping the war-sleeve hedge alive yesterday weakened.</p>
+  <p><strong class="pos">And the signature went from vague to concrete.</strong> Reporting now names a venue — <strong>Geneva</strong> — signatories — <strong>VP JD Vance and envoy Steve Witkoff for the US, parliament speaker Mohammad Bagher Ghalibaf for Iran</strong> — and a timing window: <strong>"as soon as Sunday 15 June," slipping around the G7 summit (Evian, France, 15–17 June).</strong> The interim memorandum would <strong>extend the ceasefire roughly two months, reopen the Strait of Hormuz, and lift the US blockade.</strong> The last gate: <strong class="warn">Iran's Supreme Leader must still approve</strong>, and the Iranian foreign ministry cautioned "we have not yet reached a conclusion." Concrete and imminent — but <strong>still unsigned.</strong></p>
+  <p><strong>Net: one swap this run — LMT out, ASML in.</strong> This is no longer Saturday's "mixed weekend, don't churn" tape. Two of the three conditions that kept LMT in the book have firmed — the drone seed faded and the signature is now concretely scheduled — so the pre-committed rule fires: <em>a clean signature path flips LMT to the trim and the next swap-out.</em> It is deliberately an <strong>anticipatory, starter-sized</strong> move: the ink is not dry, so we pre-position into the signature rather than declare it done. The symmetric <strong>RTX re-entry trigger still did not fire</strong> — it needs Brent <em>reclaiming</em> $95, and Brent held $87–88.</p>
+</div>
+
+<h2>Where things stand (no new prints — markets closed; last close 12 June + weekend)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500 (12 Jun)</div><div class="v">7,431.46 <span class="pos">+0.5%</span></div><div class="k">last print; closed Sat/Sun</div></div>
+  <div class="stat"><div class="k">Nasdaq (12 Jun)</div><div class="v">25,888.84 <span class="pos">+0.31%</span></div><div class="k">AI complex held the bounce</div></div>
+  <div class="stat"><div class="k">Dow (12 Jun)</div><div class="v">51,202.26 <span class="pos">+0.7%</span></div><div class="k">back above 51,000</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$87–88 <span class="neg">stable-low</span></div><div class="k">3rd session firmly &lt; $95</div></div>
+  <div class="stat"><div class="k">Iran deal</div><div class="v"><span class="warn">UNSIGNED</span></div><div class="k">Geneva venue, signing "as soon as Sun"</div></div>
+  <div class="stat"><div class="k">Signatories</div><div class="v" style="font-size:14px;">Vance/Witkoff · Ghalibaf</div><div class="k">last gate: Supreme Leader approval</div></div>
+  <div class="stat"><div class="k">NVDA (12 Jun)</div><div class="v">$204.87 <span class="warn">flat</span></div><div class="k">held &gt;$200; not above $215</div></div>
+  <div class="stat"><div class="k">TSLA (12 Jun)</div><div class="v">$406.43 <span class="pos">+1.8%</span></div><div class="k">SpaceX merger = tailwind</div></div>
+  <div class="stat"><div class="k">G7 summit</div><div class="v" style="font-size:15px;">Evian · 15–17 Jun</div><div class="k">signing may land around it</div></div>
+</div>
+<p class="sub">The two tells now point the same way: (1) <strong>Brent stayed at $87–88</strong> a 3rd session and the drone-attack seed did not escalate → the de-escalation tilt firms. (2) The <strong>signature went concrete</strong> — a European venue, named signatories, a dated window around the G7 — with only the Supreme Leader's approval left. A signed deal flips the war sleeve to a trim (executed this run via LMT); a snap of Brent back above $95 reverses it.</p>
+
+<h2>Your portfolio — Sunday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (12 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$204.87</td><td><span class="warn">Held above $200</span> (range $203.44–$207.07) but <strong>still has not reclaimed the $215 regime line</strong>. The de-escalation + AI-capex relief keeps it steady; the $205/$195 add ladder is in the money. Hold-and-confirm — a close back above <strong>$215</strong> re-arms the bull regime. No chase into a firming-but-unsigned weekend.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">~$183.94</td><td>Basing around $184 (last traded $179.00–$185.90) rather than rolling over. Record fundamentals intact (OCI +93%, RPO $638B), but the $40B raise / capex burn (FY26 capex toward ~$55.7B) is the structural overhang, and a fresh <strong>AI-capex probe</strong> is a new risk-headline. <strong>Core HOLD</strong>; needs a close above ~$185 to confirm the base; the $200 milestone is still lost.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$1,000</td><td>Recovered toward <strong>$1,000</strong> with the semi group. <strong>Reports 24 June</strong> — the next single-name catalyst. A clean <strong>$1,000 close</strong> is the fresh-add trigger; $720 the deep-pullback alternative. Trailing ~$880–$900. No chase into the print.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">$406.43</td><td><span class="pos">The SpaceX cross-current stays a tailwind.</span> SPCX closed its debut +19% at $160.95; Wedbush's Ives holds ~<strong>80% odds of a TSLA-SpaceX merger within a year</strong>, and the merger optionality lifted TSLA rather than draining it. Watch merger headlines as a positive; well clear of the $380 close stop.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">~$108</td><td>Bounced with the chip group off ~$107. Third-trim still dormant at a $130 close (execute into $140+). No action down here.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$5.8–6.1</td><td>Relief bounce near the <strong>$5.85 trim trigger</strong>. A poke above $6.13 on the risk-on = a trim window; otherwise no-action. $5.50 remains the broken-line stop.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$66</td><td>The longest-duration name → still benefiting from de-escalation + softer oil (lower inflation impulse). The hot +172K jobs print still caps it; Street PT ~$70. Relief, not a reason to size up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42–43</td><td>Still <strong>below the $46 close line</strong> the trim fired on. No fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€148</td><td>EU defensive — the <strong>"signature gap-up" catalyst is now more live</strong> with the venue in Europe (Geneva) and the G7 in Evian. A clean signing this week is the European sleeve's single biggest tailwind. Q2 ahead. Add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.45</td><td>Dormant ballast with the same EU gap-up optionality — now firmer given the European venue. Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor — RPI-linked regulated wind cashflow, ~10–11% forward yield, indifferent to the war premium. Reinvest the dividend. The ballast that let the rest of the book ride a three-session whipsaw.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">No new prints — the book sits on Friday's close. The two swing factors into the new week: (1) does the Iran deal actually <em>sign</em> in Geneva around the G7, and (2) does the faded drone-attack friction re-light and snap Brent back above $95.</p>
+</div>
+
+<h2>The 10 buy targets — Sunday (9 KEEP · 1 swap: LMT → ASML)</h2>
+<p class="sub">Saturday was a deliberate 10-KEEP non-churn into a mixed weekend. Sunday changed the calculus: the de-escalation firmed to a 3rd signal, the drone-attack head-fake seed faded, and the signature went concrete (Geneva, named signatories, around the G7). That fires the pre-committed rule — <strong>LMT, flagged on-the-block yesterday, becomes the trim and the swap-out.</strong> In comes <strong>ASML</strong>, the lower-beta AI-capex re-rate beneficiary the watch-list had queued as "a closer call on the 2-day confirm." It is an <em>anticipatory, starter-sized</em> swap: the ink isn't dry, so we pre-position rather than declare victory. <strong>RTX stays benched</strong> — its trigger is Brent <em>reclaiming</em> $95, and Brent held $87–88.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (12 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 13 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>NVDA</strong></td><td>Held above $200 (closed $204.87) but <strong>still has NOT reclaimed $215</strong>; franchise steady as the financing fear eases into a firming de-escalation; the $205/$195 dip-adds remain in the money — a $215 close re-arms the bull regime</td><td class="num">$204.87</td><td class="num">~$305 avg</td><td><span class="tag high">High</span></td><td>KEEP — steady (still &lt;$215)</td></tr>
+      <tr><td>2</td><td><strong>AMAT</strong></td><td>Cohort relative-strength; WFE leverage + TSMC "EPIC" $5B packaging deal re-rates as the AI-capex relief extends into a firming signature; ATH $501.70 (4 Jun) back in view</td><td class="num">~$500</td><td class="num">$510 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>TSM</strong></td><td>May revenue <strong>+30% YoY</strong>, CoWoS sold out through 2027; the −6% flush was a de-rate not a break — leads as AI-logic re-rates on the confirmed risk-on</td><td class="num">~$420</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>TLN</strong></td><td>The de-escalation held a <strong>3rd</strong> signal (Brent ~$87–88) → the thin-confirmation caveat is largely answered and the AI-capex-power re-rate is building; Barclays $411 / MS $498 OW</td><td class="num">~$345</td><td class="num">$411–$498 OW</td><td><span class="tag med">Med</span></td><td>KEEP — UPGRADE (3-signal)</td></tr>
+      <tr><td>5</td><td><strong>VRT</strong></td><td>Data-center power/cooling — Bernstein Outperform (9 Jun); the ORCL-capex-fear crosshair stays eased with the risk-on extending; ~$300–$311 aggressive add zone intact</td><td class="num">~$315</td><td class="num">$377 mean</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower Semiconductor (AI-power) deal; the steady analog that rides the relief without the volatility</td><td class="num">~$398</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>CCJ</strong></td><td>Uranium / energy-security is <strong>structural, not oil-linked</strong> — holds even as Brent sits at $87–88; full production restored, NAV/sh → $66; the &lt;$110 add zone filled</td><td class="num">~$104</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide data, Ebglyss q8w, Jefferies $1,350) — a defensive that lags on risk-on, but the core anchor that doesn't need the war premium</td><td class="num">~$1,150</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — core anchor</td></tr>
+      <tr><td>9</td><td><strong>AVGO</strong></td><td><strong>Held ~$385.38</strong> with the AI relief — Strong Buy, 48-analyst mean PT <strong>$522</strong> — but <em>still no base</em>; FY27 AI &gt;$100B intact; adds <strong>PAUSED until a real base confirms</strong></td><td class="num">~$385</td><td class="num">$522 mean</td><td><span class="tag med">Med</span></td><td>KEEP — held, still no base</td></tr>
+      <tr><td>10</td><td><strong>ASML</strong></td><td><strong>NEW — in for LMT.</strong> The lower-beta AI-capex re-rate beneficiary — EUV / High-NA monopoly into the firming signature; a calmer way to own the re-rate than TLN's volatility. The 3-signal de-escalation + concrete signature schedule promotes it off the bench</td><td class="num">~$1,734</td><td class="num">Street raises</td><td><span class="tag new">NEW</span></td><td><span class="tag new">SWAP IN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>The swap: LMT OUT → ASML IN (anticipatory).</strong> LMT was explicitly on-the-block yesterday, held <em>only</em> because the drone attack kept the re-escalation seed alive. That seed faded over Sunday and the signature is now concretely scheduled (Geneva, Vance/Witkoff + Ghalibaf, around the G7), so the framework's pre-committed trim fires. The structural $1T+ FY26 defense budget is fine — but the war premium deflates into an imminent signature. <strong>RTX stays benched</strong> (its trigger is Brent <em>reclaiming</em> $95). <strong>Honest caveat:</strong> the ink is not dry — if the Supreme Leader rejects or the signing collapses and Brent snaps back &gt; $95, this reverses: LMT re-arms and RTX comes off the bench.</p>
+
+<h2>What happened to each prior target (13→14 Jun scorecard)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>Outcome over Sunday</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong></td><td>No new print; held &gt;$200 a 3rd weekend day, still under $215</td><td>KEEP — steady</td></tr>
+      <tr><td><strong>AMAT</strong></td><td>AI-capex relief extends as the signature firms</td><td>KEEP</td></tr>
+      <tr><td><strong>TSM</strong></td><td>AI-logic re-rate intact on the confirmed risk-on</td><td>KEEP</td></tr>
+      <tr><td><strong>TLN</strong></td><td>De-escalation held a 3rd signal → re-rate building</td><td><span class="pos">KEEP — upgraded</span></td></tr>
+      <tr><td><strong>VRT</strong></td><td>Financing-fear crosshair stays eased</td><td>KEEP</td></tr>
+      <tr><td><strong>ADI</strong></td><td>Steady analog rides the relief</td><td>KEEP</td></tr>
+      <tr><td><strong>CCJ</strong></td><td>Uranium holds as Brent sits at $87–88</td><td>KEEP</td></tr>
+      <tr><td><strong>LLY</strong></td><td>Defensive lags the risk-on; core anchor</td><td>KEEP — core anchor</td></tr>
+      <tr><td><strong>AVGO</strong></td><td>Held the bounce, still no base</td><td>KEEP — adds paused</td></tr>
+      <tr><td><strong>LMT</strong></td><td>Drone seed faded + signature concrete → war premium deflating</td><td><span class="neg">SWAPPED OUT → ASML</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — de-escalation firming, signature concrete but unsigned</h2>
+<div class="card">
+  <ul>
+    <li><strong>Iran (de-escalation firming, signature dated, UNSIGNED):</strong> <strong class="neg">Brent held ~$87–88</strong> a 3rd session — the market is pricing de-escalation through the weekend noise. The signature is now <strong>concrete</strong>: a <strong>Geneva</strong> venue, <strong>Vance + Witkoff (US) / Ghalibaf (Iran)</strong> as signatories, timing <strong>"as soon as Sunday 15 Jun"</strong> slipping around the <strong>G7 (Evian, 15–17 Jun)</strong>; the interim MoU <strong>extends the ceasefire ~2 months, reopens Hormuz, lifts the blockade.</strong> Last gate: <strong>Supreme Leader approval</strong> (Iran FM: "we have not yet reached a conclusion"). The Saturday drone-attack seed did <strong>not</strong> escalate.</li>
+    <li><strong>AI-infrastructure financing fear — eased (3rd day):</strong> NVDA held $200, AVGO held $385, MU toward $1,000, ORCL based ~$184. <strong>Not all-clear</strong> — AVGO still hasn't based, ORCL hasn't cleared $185 (and faces a fresh AI-capex probe headline), NVDA hasn't reclaimed $215. But the bleed has stopped, and a signature would extend the relief.</li>
+    <li><strong>SpaceX / TSLA:</strong> the SPCX debut (+19% to $160.95) reads through <em>bullish</em> for TSLA via merger optionality (~80% Ives odds) — a tailwind, not the flow-drain we hedged for.</li>
+    <li><strong>Rates / jobs:</strong> May payrolls HOT at +172K (vs. 85–105K), UR 4.3% — higher-for-longer still hangs over the longest-duration sleeve, but Brent at $87–88 lowers the inflation impulse, a mild offset for IONQ and TLN.</li>
+    <li><strong>Indices:</strong> no new prints (closed Sat/Sun); last close 12 Jun — Dow 51,202, S&amp;P 7,431, Nasdaq 25,889. The week opens on whether the signature actually lands.</li>
+  </ul>
+</div>
+
+<h2>Iran scenario tree — de-escalation leading, signature imminent</h2>
+<div class="card">
+  <div class="scenario up"><strong>Signature this week (now the leading path)</strong> — the deal signs in Geneva (Vance/Witkoff + Ghalibaf), likely around the G7; Brent $85–$90 holds; <strong>LMT trim already executed</strong> (this swap); the AI-capex sleeve (NVDA/AMAT/TSM/AVGO/TLN/<strong>ASML</strong>) re-rates further; the EU complex (SAP/VWAGY) gaps up on the European venue. This run pre-positions for it.</div>
+  <div class="scenario base"><strong>Stalemate — "dated text" but no pen</strong> — still possible: the Supreme Leader withholds approval and the signing slips past the G7. Brent stays $85–$90, risk-on holds, AVGO grinds out a base. The ASML swap still works (AI-capex); the EU gap-up waits.</div>
+  <div class="scenario down"><strong>Head-fake / collapse</strong> — the Supreme Leader rejects, the terms blow up, strikes resume; Brent snaps back &gt; $95 → re-promote RTX off the bench, <strong>re-arm LMT (reverse this swap)</strong>, cut TLN back. The faded drone seed could re-light this branch — watched, not triggered.</div>
+  <p class="sub">The tell is unchanged — <strong>Brent $95</strong>: at <strong>$87–88 and stable</strong> = stay tilted to AI-capex/semis/EU. A snap back above $95 = the head-fake; reverse the LMT→ASML swap and re-arm the war sleeve. The signature — or its collapse — is still the binary, now with a date on it.</p>
+</div>
+
+<h2>Action checklist into the new week</h2>
+<div class="card">
+  <ul>
+    <li><strong>LMT (swapped out → ASML):</strong> the on-the-block name finally trims — the drone seed faded and the signature went concrete. <span class="warn">Reverses</span> if the signing collapses and Brent snaps &gt; $95.</li>
+    <li><strong>ASML (new):</strong> starter-sized; the lower-beta AI-capex re-rate. <span class="pos">Add into confirmation</span> of the re-rate or a clean signature.</li>
+    <li><strong>NVDA:</strong> held &gt;$200 a 3rd weekend day; a <span class="pos">close back above $215</span> re-arms the bull regime; the $205/$195 dip-adds are working. Don't chase — let it confirm.</li>
+    <li><strong>TLN:</strong> the 3-signal Brent-&lt;$95 confirm justifies <span class="pos">sizing up</span>; full size only if a signature lands AND the AI-capex bounce keeps building.</li>
+    <li><strong>RTX (out):</strong> stays benched — re-entry only on Brent <em>reclaiming</em> $95; it's the reverse-side hedge if the signature collapses.</li>
+    <li><strong>AVGO:</strong> adds stay <span class="neg">PAUSED</span> — still no base.</li>
+    <li><strong>ORCL:</strong> needs a <strong>close above ~$185</strong> to confirm the base; the fresh AI-capex probe headline is a new risk to watch.</li>
+    <li><strong>SAP / VWAGY:</strong> the EU gap-up is now <em>more</em> live with the European signing venue (Geneva) and the G7 in Evian — the swing factor for the European sleeve.</li>
+    <li><strong>MU:</strong> toward $1,000 ahead of the 24 Jun print — a $1,000 close is the fresh-add trigger; no chase into the report.</li>
+    <li><strong>Stops live:</strong> TSLA $380 close · SNAP $5.50 · SYM $46 close (fired, still under) · INTC $130 close · MU ~$880 · NVDA $215-reclaim to flip / $205 / $195 ladder · ORCL needs a close &gt; ~$185 · <strong>Brent $95 — the binary, at $87–88 and stable.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This is a fast, headline-driven tape — the Iran deal is concretely scheduled but unsigned, and a Supreme-Leader rejection or a re-lit drone-attack escalation could snap Brent back above $95 and reverse the whole tilt. The single LMT→ASML swap is an anticipatory, starter-sized pre-position into the signature, explicitly reversible. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 14 June 2026 from public web sources. Day 3 of the binary firmed toward de-escalation: Brent held $87–88, the drone-attack seed faded, and the signature went concrete (Geneva, around the G7). One swap — LMT out, ASML in — pre-positions into the signature. Next briefing follows the next scheduled run; the Iran signature (or its collapse) remains the key swing.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
