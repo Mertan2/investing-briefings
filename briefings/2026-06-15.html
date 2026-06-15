@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Monday, 15 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Monday, 15 June 2026 — Day 4 of the binary, <strong>RESOLVED</strong>. The deal is done: Trump declared the Iran agreement "now complete" (blockade ending, Hormuz reopening), signing set for Geneva at the close of the G7 (Évian, 15–17 Jun). Brent crashed ~5% to ~$80.73; futures surged (Nasdaq +1.9%). Yesterday's anticipatory LMT→ASML swap is vindicated. Portfolio review + 10 buy targets — 10 KEEP, 0 swaps.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Monday 15 June 2026, around the US market open. Prices marked "12 Jun" are Friday's close; the deal news and oil crash broke over the weekend, and equities are opening sharply higher. This is a fast, headline-driven tape — the formal signing still lands at the G7's conclusion (15–17 Jun). Verify with your broker before any trade.
+</section>
+
+<h2>Day 4 of the binary — resolved: the deal is "complete" and oil crashed</h2>
+<div class="card lede">
+  <p>Four sessions into the question that has framed the whole book — does the Iran deal sign, and does Brent stay below $95 — the binary <strong>resolved</strong> over Sunday night. Both gates fell the same way.</p>
+  <p><strong class="pos">The deal is done.</strong> President Trump declared the Iran agreement <strong>"now complete"</strong> — the US blockade to end and the <strong>Strait of Hormuz to reopen</strong> — with the formal signing set for <strong>Geneva at the conclusion of the G7 summit (Évian, France, 15–17 June)</strong>: a 60-day ceasefire plus the interim memorandum. This is the step the weekend's "concrete but unsigned" tape was waiting on.</p>
+  <p><strong class="neg">Oil crashed, confirming it.</strong> <strong>Brent fell ~5% to ~$80.73</strong> (WTI ~$81) — not merely holding below the $95 regime line but breaking <em>far</em> below it. The market is no longer pricing a <em>tilt</em> toward de-escalation; it is pricing de-escalation as <strong>done.</strong></p>
+  <p><strong class="pos">And risk-on surged.</strong> <strong>Nasdaq 100 futures +1.9%, S&amp;P 500 +1.2%, Dow +1%</strong> pre-open, with the AI/semis complex leading — exactly the relief leg the financing-fear-eased thesis needed.</p>
+  <p><strong>Net: a confirm day, not a churn day — 10 KEEP, 0 swaps.</strong> This is precisely the scenario the run pre-committed to: <em>signature this week / Brent holds below $95 → confirm the swap, keep ASML and TLN sized up, the AI-capex sleeve leading.</em> Yesterday's <em>anticipatory</em> LMT→ASML swap is therefore <strong>vindicated</strong>, not reversed — ASML graduates from a starter pre-position to a confirmed AI-capex re-rate. The symmetric <strong>RTX re-entry trigger did the opposite of fire</strong> — it needed Brent <em>reclaiming</em> $95, and Brent went the other way to ~$81. Churning on the confirmation print would be the mistake; the discipline is to hold all 10 and re-sort conviction.</p>
+</div>
+
+<h2>Where things stand (Monday gap-up open; 12 Jun close + weekend deal)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">Iran deal</div><div class="v"><span class="pos">"COMPLETE"</span></div><div class="k">signing Geneva, at G7 close</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$80.73 <span class="neg">−4.9%</span></div><div class="k">far below the $95 binary</div></div>
+  <div class="stat"><div class="k">Nasdaq 100 fut.</div><div class="v"><span class="pos">+1.9%</span></div><div class="k">AI/semis leading</div></div>
+  <div class="stat"><div class="k">S&amp;P 500 fut.</div><div class="v"><span class="pos">+1.2%</span></div><div class="k">risk-on open</div></div>
+  <div class="stat"><div class="k">Dow fut.</div><div class="v"><span class="pos">+1.0%</span></div><div class="k">broad advance</div></div>
+  <div class="stat"><div class="k">G7 summit</div><div class="v" style="font-size:15px;">Évian · 15–17 Jun</div><div class="k">signing at its conclusion</div></div>
+  <div class="stat"><div class="k">NVDA (12 Jun)</div><div class="v">$205.19 <span class="pos">gaps up</span></div><div class="k">$215 reclaim back in play; DB PT $220</div></div>
+  <div class="stat"><div class="k">TSLA (12 Jun)</div><div class="v">$406.43 <span class="pos">+1.8%</span></div><div class="k">SpaceX merger = tailwind</div></div>
+</div>
+<p class="sub">Both gates fell the same way: (1) the deal is <strong>"complete,"</strong> signing in Geneva at the G7's close, and (2) <strong>Brent crashed ~5% to ~$81</strong> — far below the $95 binary. De-escalation is no longer a tilt; it is confirmed. The single remaining risk is a last-second collapse at the summit that snaps Brent back above $95 — far lower-probability now, but the reason the book stays explicitly reversible.</p>
+
+<h2>Your portfolio — Monday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (12 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$205.19</td><td><span class="pos">Gaps up</span> with futures +1.9% on the risk-on. The signed deal + <strong>Deutsche Bank PT raise to $220</strong> put a <strong>$215 reclaim</strong> genuinely back in play after weeks under it. The $205/$195 add ladder is in the money; a close back above <strong>$215</strong> re-arms the bull regime — a real shot today. Don't chase above $215 until it closes there.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">~$183.94</td><td><span class="pos">Rallies on the risk-on</span> but still needs a <strong>close above ~$185</strong> to confirm the base. Record fundamentals intact (OCI +93%, RPO $638B); the $40B raise / FY26 capex burn (~$55.7B) remains the structural overhang. Citi nudged its PT (Neutral); Street avg ~$267. <strong>Core HOLD</strong>; the $200 milestone is still lost.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$1,000</td><td>Recovered toward <strong>$1,000</strong> with the semi group. <strong>Reports 24 June AMC</strong> — consensus EPS ~$19.72 / rev ~$34.38B (+270% YoY); company guided record rev $33.5B ±$0.75B, GM ~81%; <strong>options price a ±20% move.</strong> A clean <strong>$1,000 close</strong> is the fresh-add trigger; $720 the deep alternative. Trail ~$880–$900. No chase into the print.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">$406.43</td><td><span class="pos">The SpaceX cross-current stays a tailwind.</span> SPCX held its debut (+19% to $160.95); Ives holds ~<strong>80% odds of a TSLA-SpaceX merger within a year</strong> (market-implied ~51% before May-2027). Watch merger headlines as a positive; well clear of the $380 close stop.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">~$124.57</td><td>Re-rated up from ~$108 with the chip group. <strong>Approaching the $130 third-trim line</strong> (execute into $140+). No action yet — watch for a $130 close.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$5.26</td><td><span class="neg">Slipped</span> (analysts cut PTs) back below the $5.85 trim trigger and toward the <strong>$5.50 broken-line stop.</strong> No trim window here; watch the $5.50 line — a close under fires the stop.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$57.85</td><td>Eased from ~$66. The longest-duration name → benefits from de-escalation + the oil crash (lower inflation impulse), but the hot +172K jobs print (higher-for-longer) still caps it; Street PT ~$70. Relief, not a reason to size up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42–43</td><td>Still <strong>below the $46 close line</strong> the trim fired on. No fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€148 / ~$164</td><td>EU defensive — the <strong>"signature gap-up" catalyst is now LIVE.</strong> The deal signs in <strong>Europe (Geneva)</strong> with the <strong>G7 in Évian</strong>; a clean European signing this week is the EU sleeve's single biggest tailwind. Q2 ahead. Add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.45</td><td>Dormant ballast with the <strong>same EU gap-up optionality, now live</strong> given the European venue. Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor — RPI-linked regulated wind cashflow, ~10–11% forward yield, indifferent to the war premium. Reinvest the dividend. The ballast that let the book ride the entire binary without flinching.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The book sits on Friday's close and opens sharply higher on the deal. The single swing factor left into the week: does the formal pen hit paper at the G7 (15–17 Jun), or does a last-second hitch snap Brent back above $95.</p>
+</div>
+
+<h2>The 10 buy targets — Monday (10 KEEP · 0 swaps)</h2>
+<p class="sub">The binary resolved in the book's favor — deal "complete," Brent ~$81, futures +1.9% — so today is the <strong>"confirm the swap"</strong> branch, not a churn. The move is to <strong>keep all 10 and re-sort conviction.</strong> <strong>ASML upgrades to High</strong> — yesterday's anticipatory starter is now a confirmed AI-capex re-rate. <strong>TLN's power re-rate is confirmed</strong> by the oil crash. <strong>RTX stays benched</strong> (Brent went to $81, not back above $95) and <strong>LMT does not re-arm</strong> — defense faces a second leg lower. <strong>AVGO adds stay paused</strong> (no base, even on a green tape).</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (12 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 14 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>NVDA</strong></td><td>Gaps up on the risk-on (futures +1.9%); the signed deal + <strong>Deutsche Bank PT raise to $220</strong> put a <strong>$215 reclaim</strong> genuinely back in play; the $205/$195 dip-adds are in the money — a $215 close re-arms the bull regime</td><td class="num">$205.19</td><td class="num">~$305 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>2</td><td><strong>AMAT</strong></td><td>WFE leverage + TSMC "EPIC" $5B packaging deal; the AI-capex relief is now <strong>confirmed</strong> by the signature, not just hoped for; ATH $501.70 (4 Jun) back in view on the risk-on</td><td class="num">~$500</td><td class="num">$510 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>TSM</strong></td><td>May revenue <strong>+30% YoY</strong>, CoWoS sold out through 2027; leads as AI-logic re-rates on the <strong>confirmed</strong> risk-on — the −6% June flush was a de-rate, not a break</td><td class="num">~$420</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>TLN</strong></td><td>De-escalation is now <strong>confirmed (Brent ~$81)</strong> → the thin-confirmation caveat is fully answered; the cleanest AI-capex-power re-rate; PT $472 avg / MS $498 OW</td><td class="num">~$363</td><td class="num">$472 / $498 OW</td><td><span class="tag med">Med</span></td><td>KEEP — re-rate confirmed</td></tr>
+      <tr><td>5</td><td><strong>VRT</strong></td><td>Data-center power/cooling — Bernstein Outperform (9 Jun); the ORCL-capex-fear crosshair stays eased with the risk-on extending; ~$300–$311 aggressive add zone intact</td><td class="num">~$315</td><td class="num">$377 mean</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower Semiconductor (AI-power) deal; the steady analog that rides the relief without the volatility</td><td class="num">~$398</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>CCJ</strong></td><td>Uranium / energy-security is <strong>structural, not oil-linked</strong> — holds firm even as Brent crashes to ~$81; full production restored, NAV/sh → $66; the &lt;$110 add zone filled</td><td class="num">~$104</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide, Ebglyss q8w, Jefferies $1,350) — a defensive that <em>lags</em> on a risk-on day, but the core anchor that never needed the war premium</td><td class="num">~$1,150</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — core anchor</td></tr>
+      <tr><td>9</td><td><strong>AVGO</strong></td><td>Strong Buy, 48-analyst mean PT <strong>$522</strong>; FY27 AI &gt;$100B intact — but <em>still no base</em> after the −12.59% de-rate; adds <strong>PAUSED until a real base confirms</strong> even on the risk-on</td><td class="num">~$385</td><td class="num">$522 mean</td><td><span class="tag med">Med</span></td><td>KEEP — still no base</td></tr>
+      <tr><td>10</td><td><strong>ASML</strong></td><td><strong>CONFIRMED — was the anticipatory swap-in for LMT.</strong> EUV / High-NA monopoly — the lower-beta AI-capex re-rate; the signature <em>landing</em> upgrades it from a starter pre-position to full conviction; the surge to $1,749 (8 Jun) shows the bid</td><td class="num">~$1,734</td><td class="num">Street raises</td><td><span class="tag high">High</span></td><td><span class="tag high">UPGRADE — confirmed</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Zero swaps — the disciplined confirm.</strong> The binary resolved in the book's favor, so the move is to keep all 10 and re-sort conviction rather than churn on the print. <strong>ASML upgrades to High</strong> (anticipatory starter → confirmed re-rate); <strong>TLN's power re-rate is confirmed</strong> by the oil crash; <strong>RTX stays benched</strong> and <strong>LMT does not re-arm</strong> — defense faces a second leg lower as the war premium prices out. <strong>Honest caveat:</strong> the pen hits paper at the G7's conclusion (15–17 Jun); a last-second collapse + a Brent snap back &gt; $95 would re-arm the war sleeve — watched, far from triggered.</p>
+
+<h2>What happened to each prior target (14→15 Jun scorecard)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>Outcome over Sunday night / Monday open</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong></td><td>Gaps up on the risk-on; $215 reclaim back in play; DB PT → $220</td><td>KEEP</td></tr>
+      <tr><td><strong>AMAT</strong></td><td>AI-capex relief confirmed by the signature</td><td>KEEP</td></tr>
+      <tr><td><strong>TSM</strong></td><td>AI-logic re-rate leads on the confirmed risk-on</td><td>KEEP</td></tr>
+      <tr><td><strong>TLN</strong></td><td>De-escalation confirmed (Brent ~$81) → power re-rate confirmed</td><td><span class="pos">KEEP — confirmed</span></td></tr>
+      <tr><td><strong>VRT</strong></td><td>Financing-fear crosshair stays eased</td><td>KEEP</td></tr>
+      <tr><td><strong>ADI</strong></td><td>Steady analog rides the relief</td><td>KEEP</td></tr>
+      <tr><td><strong>CCJ</strong></td><td>Uranium holds firm as Brent crashes to ~$81</td><td>KEEP</td></tr>
+      <tr><td><strong>LLY</strong></td><td>Defensive lags the risk-on; core anchor</td><td>KEEP — core anchor</td></tr>
+      <tr><td><strong>AVGO</strong></td><td>Lifts on the green tape, still no base</td><td>KEEP — adds paused</td></tr>
+      <tr><td><strong>ASML</strong></td><td>Signature landed → the anticipatory swap-in is vindicated</td><td><span class="pos">KEEP — UPGRADE to High</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — de-escalation confirmed, deal "complete"</h2>
+<div class="card">
+  <ul>
+    <li><strong>Iran (de-escalation CONFIRMED):</strong> Trump declared the deal <strong>"now complete"</strong> — <strong>blockade to end, Hormuz to reopen</strong> — signing in <strong>Geneva at the conclusion of the G7 (Évian, 15–17 Jun)</strong>: a 60-day ceasefire + interim MoU. <strong class="neg">Brent crashed ~5% to ~$80.73</strong> (WTI ~$81), breaking far below the $95 binary. The last operational step is the formal signing at the summit's close.</li>
+    <li><strong>AI-infrastructure financing fear — relief leg confirmed:</strong> futures +1.9% (Nasdaq), AI/semis leading. NVDA gaps toward a $215 retest, ORCL rallies off ~$184, MU toward $1,000 into its print. <strong>Not all-clear</strong> — AVGO still hasn't based, ORCL hasn't <em>closed</em> &gt;$185, NVDA hasn't <em>closed</em> &gt;$215 — but the bleed is over and the signature extends the relief.</li>
+    <li><strong>SpaceX / TSLA:</strong> the SPCX debut (+19% to $160.95) reads through <em>bullish</em> for TSLA via merger optionality (~80% Ives / ~51% market odds) — a tailwind, not the flow-drain we hedged.</li>
+    <li><strong>Defense:</strong> the peace deal sets up a <strong>second leg lower</strong> in LMT/RTX as the war premium prices out — RTX (munition-restock-sensitive) leads the fade. This validates the LMT trim and keeps RTX off the book.</li>
+    <li><strong>Rates / jobs:</strong> May payrolls HOT at +172K (vs. 85–105K), UR 4.3% — higher-for-longer still hangs over the longest-duration sleeve, but <strong>Brent at ~$81 sharply lowers the inflation impulse</strong>, a real offset for IONQ and TLN.</li>
+    <li><strong>Indices:</strong> last close 12 Jun — Dow 51,202, S&amp;P 7,431, Nasdaq 25,889 — opening sharply higher on the deal.</li>
+  </ul>
+</div>
+
+<h2>Iran scenario tree — resolved, de-escalation confirmed</h2>
+<div class="card">
+  <div class="scenario up"><strong>Deal signs at the G7 (the realized path)</strong> — "complete" becomes inked in Geneva (15–17 Jun); Brent holds $78–$85; the <strong>LMT trim is vindicated</strong>; the AI-capex sleeve (NVDA/AMAT/TSM/AVGO/TLN/<strong>ASML</strong>) re-rates further; the EU complex (SAP/VWAGY) gaps up on the European venue. This run rides it.</div>
+  <div class="scenario base"><strong>Signing slips a few days</strong> — "complete" but the pen waits past the summit; Brent stays $78–$85, risk-on holds, AVGO grinds a base. The book is unchanged — ASML/TLN still work, the EU gap-up just waits a beat.</div>
+  <div class="scenario down"><strong>Last-second collapse</strong> — the signing blows up, strikes resume; Brent snaps back &gt; $95 → re-promote RTX off the bench, <strong>re-arm LMT (reverse the swap)</strong>, cut TLN back. Much lower-probability now (deal is "complete," oil crashed 5%) — watched, not triggered.</div>
+  <p class="sub">The tell is unchanged — <strong>Brent $95</strong>: at <strong>~$81 and falling</strong> = stay tilted to AI-capex/semis/EU. A snap back above $95 = the collapse branch; reverse the war sleeve. The binary has resolved; only an inking failure reopens it.</p>
+</div>
+
+<h2>Action checklist into the week</h2>
+<div class="card">
+  <ul>
+    <li><strong>ASML (confirmed):</strong> yesterday's anticipatory swap-in is <span class="pos">vindicated</span> — upgraded to High. Add into a clean inking + continued AI-capex strength.</li>
+    <li><strong>NVDA:</strong> gaps up; a <span class="pos">close back above $215</span> re-arms the bull regime — a real shot today (DB PT $220). The $205/$195 dip-adds are working. Don't chase above $215 until it closes there.</li>
+    <li><strong>TLN:</strong> the confirmed Brent-&lt;$95 de-escalation justifies <span class="pos">sizing up</span> the power re-rate.</li>
+    <li><strong>RTX / LMT (out):</strong> stay off the book — Brent went to ~$81, not above $95. Re-arm <em>only</em> on a signing collapse + Brent snap &gt; $95.</li>
+    <li><strong>AVGO:</strong> adds stay <span class="neg">PAUSED</span> — still no base, even on a green tape.</li>
+    <li><strong>ORCL:</strong> rallies on the risk-on but needs a <strong>close above ~$185</strong> to confirm the base.</li>
+    <li><strong>SAP / VWAGY:</strong> the EU gap-up is now <span class="pos">LIVE</span> with the European signing venue (Geneva) and the G7 in Évian.</li>
+    <li><strong>INTC:</strong> re-rated to ~$124.57 — <span class="warn">approaching the $130 third-trim line</span> (execute into $140+).</li>
+    <li><strong>MU:</strong> toward $1,000 ahead of the 24 Jun print — options price ±20%; a $1,000 close is the fresh-add trigger; no chase into the report.</li>
+    <li><strong>SNAP:</strong> slipped to ~$5.26 — watch the <span class="neg">$5.50 stop</span>; the $5.85 trim trigger is out of reach.</li>
+    <li><strong>Stops live:</strong> TSLA $380 close · SNAP $5.50 · SYM $46 close (fired, still under) · INTC $130 close (approaching) · MU ~$880 · NVDA $215-reclaim to flip / $205 / $195 ladder · ORCL needs a close &gt; ~$185 · <strong>Brent $95 — the binary, RESOLVED at ~$81 and falling.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. The Iran deal is declared "complete" with signing set for the G7's conclusion (15–17 Jun) — concrete, but the formal pen has not literally touched paper, so a last-second collapse that snaps Brent back above $95 could reverse the tilt. The book holds all 10 targets and stays explicitly reversible (RTX/LMT re-arm on a collapse). Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 15 June 2026 from public web sources. Day 4 of the binary resolved: the Iran deal is "complete" (signing in Geneva at the G7's close), Brent crashed ~5% to ~$81, and futures surged. Yesterday's anticipatory LMT→ASML swap is vindicated — 10 KEEP, 0 swaps, ASML upgraded to High. Next briefing follows the next scheduled run; the formal G7 signing (or a last-second collapse) is the remaining swing.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
