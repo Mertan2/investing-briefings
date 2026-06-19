@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Friday, 19 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Friday, 19 June 2026 — <strong>both headwinds resolved bullish in 24 hours.</strong> The Iran binary is <strong>fully resolved</strong> — the 14-point deal was signed <em>electronically</em> Wed 17 Jun by Trump &amp; President Pezeshkian (Versailles, G7), so there is <strong>no Geneva ceremony today</strong>; Hormuz is reopening, Brent broke <strong>below $78</strong>. And the 17 Jun hawkish-Fed shock proved a <strong>one-day repricing</strong>: on 18 Jun the AI sleeve <em>led</em> the comeback (Nasdaq +1.91%, S&amp;P +1.08%, Russell +2.12%), with <strong>ASML at a record high intraday</strong> and AMAT at an ATH. Portfolio review + 10 buy targets — <strong>10 KEEP, no swap, two upgrades (ASML &amp; MRVL back to High).</strong></div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Friday 19 June 2026. Prices marked "18 Jun" are Thursday's close. The Iran deal was signed electronically on 17 Jun (no Geneva ceremony today); the one remaining live macro variable is the Fed's rate path. This is a fast, macro-driven market — verify with your broker before any trade.
+</section>
+
+<h2>Both of yesterday's headwinds resolved the bullish way in 24 hours</h2>
+<div class="card lede">
+  <p>Yesterday the book carried two cautions: an Iran deal whose pen hadn't formally landed, and a Fed that had just turned hawkish. Friday opens with <strong>both gone.</strong></p>
+  <p><strong class="pos">Iran — fully resolved, caveat closed.</strong> The 14-point deal was <strong>signed electronically on Wednesday 17 June</strong> by President Trump and Iran's President Pezeshkian (at Versailles during the G7, with Pakistan mediating). Because it is already signed, <strong>there is no Geneva signing ceremony today</strong> — negotiating teams still travel to Switzerland, but the pen has hit paper. The Strait of Hormuz is reopening (tankers crossing again, Kuwait raising production), and <strong class="neg">Brent fell below $78</strong> (WTI below $75) — the lowest since early March. The war sleeve is <strong>permanently off</strong>; the long-running "a last-second collapse + Brent &gt; $95 re-arms RTX/LMT" reversal branch is <strong>effectively closed.</strong></p>
+  <p><strong class="warn">Fed — the shock was a one-day repricing, not a regime.</strong> On 18 June the tape staged a powerful comeback <strong>led by the AI/semis sleeve</strong>: <strong>Nasdaq +1.91%</strong> to 26,517.93, <strong>S&amp;P +1.08%</strong> to 7,500.58, <strong>Russell 2000 +2.12%</strong> to 2,979.77 (the Dow the laggard at +0.14%). The very names downgraded yesterday <em>for</em> rate-exposure snapped back <strong>hardest</strong>: <strong class="pos">ASML +3.5% to $1,867.83, printing a record high $1,938.49 intraday</strong>, and <strong class="pos">AMAT +4.4% to $592.92 with an all-time-high $623.35 intraday</strong> (Citi PT $710 from $550). Higher-for-longer is still on the board — 9 of 18 officials pencil a 2026 hike — but the discount-rate scare was digested in a single session.</p>
+  <p><strong>Net: 10 KEEP, no swap, two upgrades.</strong> No thesis broke, so the framework holds the 10 (it replaces only on a broken thesis, a confirmed better setup, or a target hit — none fired). But the tape forced two upgrades that <strong>reverse yesterday's defensive re-sort</strong>: <strong>ASML Med→High</strong> (yesterday's "most rate-exposed" call was refuted within one session — it made a record high) and <strong>MRVL Med→High</strong> (S&amp;P 500 inclusion lands <strong>Monday 22 Jun</strong> = forced passive buying; B. Riley lifted its PT to <strong>$345</strong> from $240; it named ex-Adobe CFO Dan Durn). The book tilts back to offense — but the <strong>rate path stays the one and only tell</strong>.</p>
+</div>
+
+<h2>Where things stand (18 Jun close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">26,517.93 <span class="pos">+1.91%</span></div><div class="k">AI sleeve led the comeback</div></div>
+  <div class="stat"><div class="k">S&amp;P 500 / Russell 2000</div><div class="v">+1.08% <span class="pos">/ +2.12%</span></div><div class="k">Dow the laggard at +0.14%</div></div>
+  <div class="stat"><div class="k">Iran deal</div><div class="v"><span class="pos">SIGNED 17 Jun</span></div><div class="k">electronic; no Geneva ceremony today</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">&lt;$78 <span class="neg">↓</span></div><div class="k">WTI &lt;$75; Hormuz reopening</div></div>
+  <div class="stat"><div class="k">ASML</div><div class="v">$1,867.83 <span class="pos">record-hi intraday</span></div><div class="k">$1,938.49 high; downgrade refuted</div></div>
+  <div class="stat"><div class="k">NVDA</div><div class="v">$210.69 <span class="pos">+2.95%</span></div><div class="k">reclaimed $210; $215 in reach</div></div>
+  <div class="stat"><div class="k">INTC</div><div class="v">~$137 <span class="pos">+10.6%</span></div><div class="k">Apple–Intel deal; $130 trim FIRED</div></div>
+  <div class="stat"><div class="k">ORCL</div><div class="v">$183.35 <span class="neg">base voided</span></div><div class="k">closed &lt;$185; must reclaim</div></div>
+</div>
+<p class="sub">A textbook reversal session: the Fed-scare selloff was bought, and the AI/semis complex <em>led</em> the rebound — ASML printed a record high intraday, AMAT an ATH, NVDA reclaimed $210, TLN re-rated +5.5% on a Goldman Buy. The single fundamental standout was INTC (+10.6% on the Apple-Intel partnership). The one blemish: ORCL closed below the $185 line, voiding the base it spent the week building.</p>
+
+<h2>Your portfolio — Friday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (18 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$210.69</td><td><span class="pos">Reclaimed $210</span> (+2.95%), leading the comeback off the Fed scare. The <strong>$215 reclaim</strong> — the single line that flips it fully bullish — is now back within one good session. Street Strong Buy, avg PT ~$299. The $205/$195 ladder stays the dip-add plan.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">$183.35</td><td><span class="neg">Base confirm VOIDED.</span> Traded $177.70–$185.35 and <strong>closed below the $185 line</strong> that framed the whole base. Record fundamentals (OCI +93%, RPO $638B) intact, but the technical now says it must <strong>reclaim $185 on a close</strong> to repair the base. Core HOLD; watch $185 reclaim on the upside, $177 support on the downside.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">~$137</td><td><span class="pos">+10.64% — the $130 third-trim line FIRED.</span> Ripped on the <strong>Apple–Intel partnership</strong> (Apple to work with Intel on U.S. chip design + manufacturing) — the "American answer to TSMC" turnaround narrative ignited (Apple + Tesla + CHIPS Act). Per the framework, <strong>trim the planned slice</strong> on the close above $130 and let the rest run; the turnaround finally has a fundamental hook. Watch for follow-through vs. a one-day pop.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">$400.49</td><td>Holds well above the <strong>$380 close stop</strong> (+1.04%). The <span class="warn">SpaceX-merger debate stays loud</span> — SpaceX (public since 12 Jun) and the Cursor ~$60B deal feed the "one Musk AI empire" narrative; Oppenheimer pushes back. Net a tailwind via optionality. Watch headlines; stop far away.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$1,050</td><td><strong>Reports FQ3 next Wed 24 June (2:30pm MT)</strong> — guided rev ~$33.5B (±$0.75B), GM ~81%, EPS ~$19.15 (±$0.40); <strong>options price a ±17.6% swing.</strong> +244% YTD, &gt;$1T cap; TD Cowen PT $1,500. The cleanest near-term <em>fundamental</em> (not macro) catalyst. No chase into the number; trail ~$880–$900; a $1,000 close = fresh-add.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$4.79</td><td><span class="neg">The $5.50 stop stays FIRED — and it bled even on a risk-on day</span> (−7.17%), a tell of relative weakness. The $2,195 Specs AR-glasses launch + activist-pressure overhang persists. The broken-line exit is live; it needs a close back above $5.50 to void it, and it is going the wrong way.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$58</td><td>The longest-duration name in the book; it participated in the AI-sleeve comeback but stays the <span class="warn">most rate-path-sensitive holding</span> (a hot inflation print hits pre-earnings quantum hardest). Street PT ~$70. No reason to size up here.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42</td><td>Still <strong>below the $46 close line</strong> the trim fired on; tight range, no fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€144</td><td>The European venue never produced a "signature gap-up," and with the deal signed electronically (no Geneva ceremony) that catalyst is now spent. A Business-AI-platform launch is the live fundamental catalyst; Q2 ahead; add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.3</td><td>Dormant ballast; the EU gap-up optionality is now spent (deal signed). Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor — RPI-linked regulated wind cashflow, ~10–11% forward yield. Higher-for-longer is a mild headwind to bond-proxy yields, but the inflation linkage cushions it. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The book's character flipped back to offense: with Iran closed, the only macro swing left is the rate path — and the AI sleeve just showed it re-expands fast when the rate scare fades. Two holdings did real work: INTC ripped +10.6% on the Apple-Intel deal (third trim fired) and NVDA reclaimed $210. The one blemish is ORCL's voided base (closed &lt; $185); SNAP's exit stays live ($4.79, bleeding even on a green day). The cleanest near-term positive remains MU's 24 Jun print.</p>
+</div>
+
+<h2>The 10 buy targets — Friday (10 KEEP · no swap · two upgrades)</h2>
+<p class="sub">Both framing variables resolved bullish in 24 hours — the Iran deal is signed (no Friday ceremony) and the AI sleeve <em>led</em> the Fed-scare comeback (ASML/AMAT at/near records). No thesis broke, so the framework holds the 10. But the tape forced two upgrades that <strong>reverse yesterday's defensive re-sort</strong>: <strong>ASML Med→High</strong> (its "most rate-exposed" downgrade was refuted within one session — record high) and <strong>MRVL Med→High</strong> (S&amp;P 500 inclusion 22 Jun + B. Riley $345 + new CFO). The dated mechanical catalysts — <strong>MRVL inclusion Mon 22 Jun, MU print Wed 24 Jun</strong> — anchor the week.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (18 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 18 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>NVDA</strong></td><td>The AI bellwether; <strong>reclaimed $210</strong> (+2.95%) leading the comeback — the <strong>$215 reclaim</strong> is now back within a single good session; a close above re-arms the bull regime. Street avg ~$299; $205/$195 stays the dip-add ladder</td><td class="num">$210.69</td><td class="num">~$299 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>2</td><td><strong>TLN</strong></td><td><strong>Re-rate roaring</strong> — $416.70 → $434.31 (+5.5%) on <strong>Goldman Sachs initiating Buy, PT $499</strong>; contracted, rate-insensitive power cashflow (AWS $18B PPA to 2042, 13.1GW incl. 2.2GW nuclear, X-energy SMRs); 24/7 "a double at minimum"</td><td class="num">$434.31</td><td class="num">$499 (GS) / $548 high</td><td><span class="tag high">High</span></td><td>KEEP — leader</td></tr>
+      <tr><td>3</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide, Ebglyss q8w, Jefferies $1,350); the defensive core anchor that held its ground while the AI sleeve led — no near-term print risk; needs neither the war premium nor easy money</td><td class="num">~$1,126</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — core anchor</td></tr>
+      <tr><td>4</td><td><strong>CCJ</strong></td><td>Uranium / energy-security is <strong>structural, real-asset, rate-insensitive</strong> — not oil-linked (holds ~$101 as Brent breaks below $78); full production restored, NAV/sh → $66; the &lt;$110 add zone filled</td><td class="num">~$101</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>MU</strong></td><td>Reports <strong>FQ3 Wed 24 Jun</strong> — a <em>fundamental</em> catalyst that ignores the Fed; guided rev ~$33.5B / GM ~81% / EPS ~$19.15; +244% YTD, &gt;$1T cap; TD Cowen PT $1,500; options price ±17.6%. No chase into the print</td><td class="num">~$1,050</td><td class="num">$1,500 (TD Cowen)</td><td><span class="tag med">Med</span></td><td>KEEP — print 24 Jun</td></tr>
+      <tr><td>6</td><td><strong>MRVL</strong></td><td><strong>UPGRADE Med→High.</strong> <strong>S&amp;P 500 inclusion lands Mon 22 Jun</strong> (with Flex, replacing Pool &amp; Campbell's) = forced passive buying; <strong>B. Riley PT $345 (from $240)</strong> on Nvidia-collab strength + index entry; named ex-Adobe CFO Dan Durn; reaffirmed Q2 FY27 guide. The cleanest dated catalyst in the book</td><td class="num">~$300</td><td class="num">$345 (B. Riley)</td><td><span class="tag high">High</span></td><td><span class="tag up">UPGRADE</span></td></tr>
+      <tr><td>7</td><td><strong>AMAT</strong></td><td>WFE leader; <strong>+4.4% to $592.92, ATH $623.35 intraday</strong> as semi-cap led the comeback; <strong>Citi PT $710 (from $550)</strong>; the rate-shock pullback proved an entry, exactly as flagged — not a chase</td><td class="num">$592.92</td><td class="num">$710 (Citi)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, <strong>2026 capex $52–56B</strong>, CoWoS sold out through 2027; AI-logic leadership + lower-multiple than the high-beta semis = the steady core of the AI sleeve</td><td class="num">~$420</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady analog</strong> — lower beta, participated in the comeback without the whipsaw</td><td class="num">~$418</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>10</td><td><strong>ASML</strong></td><td><strong>UPGRADE Med→High.</strong> Yesterday's "most rate-exposed" downgrade was <strong>refuted in one session</strong> — <strong>+3.5% to $1,867.83 and a record high $1,938.49 intraday.</strong> EUV / High-NA monopoly, moat intact; the High-NA adoption-delay caveat remains the one watch-item, but the rate-compression thesis failed</td><td class="num">$1,867.83</td><td class="num">Street raises</td><td><span class="tag high">High</span></td><td><span class="tag up">UPGRADE</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>No swap, two upgrades.</strong> The two variables that framed yesterday's caution — an unsigned Iran deal and a hawkish Fed — both resolved bullish inside 24 hours, so the disciplined move is to <strong>hold the 10 and reverse the defensive re-sort</strong> (ASML &amp; MRVL back to High), not to chase new names. <strong>VRT</strong> stays on the watch-list in its $300–$311 add zone and is now <strong>first in the re-entry queue</strong> — but one comeback session is not yet "rate picture stabilized"; it needs the next CPI/PCE/jobs print to confirm. <strong>Retired caveat:</strong> with the pen already signed electronically, the Iran-collapse reversal branch is no longer the live risk — the only live risk now is the Fed (a hot inflation or jobs print re-arms the rate scare).</p>
+
+<h2>What happened to each prior target (18→19 Jun scorecard)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>Outcome over 18 Jun</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong></td><td>+2.95% to $210.69, reclaimed $210, led the comeback; $215 in reach</td><td>KEEP</td></tr>
+      <tr><td><strong>TLN</strong></td><td>+5.5% to $434.31 on Goldman initiating Buy, PT $499</td><td><span class="pos">KEEP — leader</span></td></tr>
+      <tr><td><strong>LLY</strong></td><td>Defensive anchor held while the AI sleeve led</td><td>KEEP — core anchor</td></tr>
+      <tr><td><strong>CCJ</strong></td><td>Uranium/real-asset holds ~$101, rate-insensitive, Brent &lt;$78</td><td>KEEP</td></tr>
+      <tr><td><strong>MU</strong></td><td>24 Jun print (±17.6%, TD Cowen $1,500) — fundamental catalyst</td><td>KEEP — print 24 Jun</td></tr>
+      <tr><td><strong>MRVL</strong></td><td>S&amp;P inclusion 22 Jun + B. Riley $345 (from $240) + new CFO Durn</td><td><span class="pos">UPGRADE → High</span></td></tr>
+      <tr><td><strong>AMAT</strong></td><td>+4.4% to $592.92, ATH $623.35 intraday; Citi PT $710</td><td>KEEP</td></tr>
+      <tr><td><strong>TSM</strong></td><td>AI-logic leader; 2026 capex $52–56B, ~+30% revenue guide</td><td>KEEP</td></tr>
+      <tr><td><strong>ADI</strong></td><td>Steady analog, participated without the whipsaw</td><td>KEEP</td></tr>
+      <tr><td><strong>ASML</strong></td><td>+3.5% to $1,867.83, record high $1,938.49 intraday — downgrade refuted</td><td><span class="pos">UPGRADE → High</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — Iran fully resolved, the Fed scare faded in a day</h2>
+<div class="card">
+  <ul>
+    <li><strong class="pos">Iran (fully resolved):</strong> the 14-point deal was <strong>signed electronically Wed 17 Jun</strong> by Trump and President Pezeshkian (Versailles, G7, Pakistan mediating) — the Strait of Hormuz to reopen, the U.S. to lift oil sanctions, Iran reaffirming no nuclear weapons. <strong>No Geneva ceremony on Friday 19 Jun</strong> (already signed; teams still travel). Tankers crossing Hormuz again, Kuwait raising output; <strong class="neg">Brent &lt;$78 / WTI &lt;$75</strong>, lowest since early March. The war premium is gone and the reversal branch is closed. (Domestic critics, incl. Sen. Schumer, call it a weak deal — political, not market-moving.)</li>
+    <li><strong>Fed (the one remaining live variable):</strong> the 17 Jun hawkish pivot under new Chair Warsh (held 3.50–3.75%; 2026 dot 3.4%→3.8%; next move flipped cut→HIKE; 9 of 18 officials pencil a 2026 hike; Sept-hike odds ~49%) sparked a one-day selloff — <strong>fully recovered on 18 Jun</strong> as the AI sleeve led the bounce. Higher-for-longer remains the <em>primary tell</em>, but the market has decided the AI fundamentals outweigh a slower-rate-cut path for now.</li>
+    <li><strong>The book's sensitivity:</strong> with Iran closed, the <strong>only</strong> macro swing left is the rate path (CPI/PCE/jobs). The AI sleeve has shown it re-expands fast when the rate scare fades; the next inflation/jobs print is the binary that re-arms or buries the hawkish trade.</li>
+    <li><strong>Semis leadership:</strong> the comeback was <em>led</em> by chip-gear — ASML record high intraday, AMAT ATH intraday, Citi PT raises — confirming the AI-capex cycle (TSMC 2026 capex $52–56B, ~+30% revenue) is the tape's dominant structural driver.</li>
+    <li><strong>Defense:</strong> the signed peace deal keeps LMT/RTX <strong>off</strong> the book; with the pen landed, no re-arm trigger remains.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — post-resolution</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — Iran closed, Fed scare digested (the realized path)</strong> — the deal is signed, Brent holds &lt;$80, and the AI sleeve leads on fundamentals (ASML/AMAT records, MRVL inclusion 22 Jun, MU print 24 Jun). The book is positioned offense-forward: NVDA/AMAT/ASML/TSM/MRVL/MU carry it, TLN/CCJ/LLY anchor it.</div>
+  <div class="scenario up"><strong>Up branch — the next inflation/jobs print runs cool</strong> — September-hike odds fade, yields ease, and the AI multiple re-expands further (the highest-beta names extend); VRT re-promotes off the watch-list.</div>
+  <div class="scenario down"><strong>Down branch — a hot CPI/PCE/jobs print</strong> — the rate scare re-arms, the AI sleeve de-rates again (ASML/MRVL/NVDA the highest-beta), rotate back toward LLY/CCJ/TLN and cash, re-downgrade the highest-multiple names. This — not Iran — is now the only live down-tail.</div>
+  <p class="sub">The tell is singular now: the <strong>rate path</strong> — September-hike odds (~49%) and the 10-year yield, confirmed or denied by the next CPI/PCE and payrolls. Rising = defensive; falling = the AI multiple extends.</p>
+</div>
+
+<h2>Action checklist into the rest of the week</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> both headwinds resolved bullish — <span class="pos">Iran signed</span>, Fed scare digested in a day. Book tilts back to offense, but <span class="warn">respect the rate path</span> — 9 of 18 officials still pencil a hike, so this is a one-session reprieve, not an all-clear.</li>
+    <li><strong>MRVL:</strong> <span class="pos">S&amp;P 500 inclusion Mon 22 Jun</span> = forced passive buying; upgraded to High on B. Riley $345 + new CFO. The ~$300 level into the inclusion is the catalyst-driven entry.</li>
+    <li><strong>MU:</strong> reports <span class="pos">24 Jun (Wed)</span> — the cleanest near-term <em>fundamental</em> catalyst (rev ~$33.5B, GM ~81%, EPS ~$19.15; TD Cowen $1,500; options ±17.6%). No chase into the number; a $1,000 close is the fresh-add trigger.</li>
+    <li><strong>ASML / AMAT:</strong> <span class="pos">upgraded/held on the record-high comeback</span> — add on AI-capex strength, trim only if the rate scare re-arms.</li>
+    <li><strong>NVDA:</strong> reclaimed $210; a close above <strong>$215</strong> re-arms the bull regime — now within one session. The $205/$195 dip-adds stay the plan.</li>
+    <li><strong>ORCL (holding):</strong> <span class="neg">base voided</span> ($183.35, closed &lt; $185) — must reclaim $185 on a close to repair; $177 is support.</li>
+    <li><strong>INTC (holding):</strong> <span class="pos">+10.6% on the Apple-Intel deal — $130 third-trim FIRED</span>; trim the planned slice on the close above $130 and let the rest run.</li>
+    <li><strong>SNAP (holding):</strong> the <span class="neg">$5.50 stop stays FIRED</span> ($4.79, bled even on a risk-on day) — the broken-line exit is live; reclaim $5.50 on a close to void it.</li>
+    <li><strong>RTX / LMT (out):</strong> stay off — the deal is signed (electronically); the Brent-$95 re-arm trigger is retired.</li>
+    <li><strong>VRT:</strong> first in the re-entry queue from its $300–$311 add zone; needs the next CPI/PCE/jobs print to confirm "rates stabilized" before it re-promotes.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close · SNAP $5.50 (FIRED, $4.79) · SYM $46 close (fired, ~$42) · INTC $130 trim (FIRED, ~$137) · MU ~$880–$900 / $1,000 close + 24 Jun print · NVDA $215-reclaim to flip / $205 / $195 ladder · ORCL base voided (reclaim $185 on a close) · MRVL 22 Jun S&amp;P inclusion · <strong>primary &amp; only tell: September-hike odds (~49%) + the 10-year yield.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. The Iran deal was signed electronically on 17 Jun (no Geneva ceremony today); the one remaining live macro variable is the Fed's rate path, which the 18 Jun AI-led comeback digested in a single session. The book holds all 10 targets, makes no swap, and upgrades ASML &amp; MRVL back to High as the defensive re-sort reverses. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 19 June 2026 from public web sources. Both of yesterday's headwinds resolved bullish in 24 hours: the Iran deal was signed electronically 17 Jun (no Geneva ceremony today; Brent &lt;$78), and the 17 Jun hawkish-Fed shock was a one-day repricing — the AI sleeve LED the 18 Jun comeback (Nasdaq +1.91%, ASML record high intraday, AMAT ATH). 10 KEEP, no swap, two upgrades: ASML &amp; MRVL back to High (defensive re-sort reversed). NVDA $210.69 reclaimed $210; TLN $434 on Goldman Buy/$499; INTC ~$137 (+10.6%, $130 trim fired); ORCL $183.35 closed &lt;$185 (base voided); SNAP $4.79 still bleeding. The rate path is now the one and only tell. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
