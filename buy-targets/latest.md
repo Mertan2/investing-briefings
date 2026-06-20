@@ -1,3 +1,3 @@
 Pointer file — always reflects the most recent target set.
 
-Latest: [2026-06-19.md](2026-06-19.md)
+Latest: [2026-06-20.md](2026-06-20.md)
