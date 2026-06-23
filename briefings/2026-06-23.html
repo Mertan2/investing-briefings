@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Tuesday, 23 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Tuesday, 23 June 2026 — <strong>markets reopened, and the pre-committed down-branch is already the tape — before the PCE print.</strong> Monday's reopen was a textbook <strong>rotation out of mega-cap / high-beta AI into small-caps and value</strong>: the <strong>Russell 2000 closed at 3,000 for the first time ever (+2.12%)</strong> and the Dow was green, while the <strong>Nasdaq fell −1.32%</strong> and <strong>MRVL <em>sold</em> its S&amp;P 500 inclusion news (−3.90%)</strong>. <strong>9 KEEP · 1 SWAP (MRVL → CEG) · 1 downgrade (ASML High→Med).</strong> Two binaries ahead: <strong>MU FQ3 Wed 24</strong> and the decisive <strong>Core PCE Thu 25</strong>.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Tuesday 23 June 2026. US equity markets <strong>reopened Monday 22 June</strong> after the Juneteenth long weekend; no run was logged Monday, so this briefing scores <strong>both the Mon 22 reopen and the Tue 23 session</strong>. Prices are intraday/last as researched and may be stale by the time you read this. The dominant live macro variable is the Fed's rate path, which prints as <strong>Core PCE on Thursday 25 June</strong>. Verify with your broker before any trade.
+</section>
+
+<h2>The down-branch is no longer the forecast — it's the tape</h2>
+<div class="card lede">
+  <p>Markets <strong>reopened Monday 22 June</strong> after the Juneteenth long weekend, and the rotation the prior run pre-committed to is <strong>already playing out — ahead of Thursday's Core PCE, not after it.</strong> Monday was a textbook <strong class="warn">rotation out of mega-cap / high-beta AI into small-caps and value</strong>:</p>
+  <ul>
+    <li>The <strong class="pos">Russell 2000 closed at 3,000 for the first time ever (+2.12%)</strong> and the <strong class="pos">Dow was green (+0.29%, +148.01)</strong> — the rate-sensitive value / small-cap trade led.</li>
+    <li>But the <strong class="neg">Nasdaq fell −1.32% to 26,166.60</strong> and the <strong class="neg">S&amp;P slipped −0.37% to 7,472.79</strong>, dragged by mega-cap tech: <strong>Alphabet −5%, Amazon −4.8%, Microsoft −3%, Meta −2.3%, SpaceX −16%</strong> (its third straight down day).</li>
+    <li>The cleanest tell for our book: <strong class="neg">MRVL <em>sold</em> the S&amp;P 500 inclusion news, −3.90% on 22 June</strong> after a ~90% two-week run to a 52-wk high <strong>$324.20</strong>. The mechanical catalyst fired and resolved as a <strong>sell-the-event</strong> — exactly the risk the 21 Jun run flagged.</li>
+  </ul>
+  <p><strong>What this means:</strong> the market has begun pricing the <strong>hot-PCE scenario via rotation, before the data.</strong> The 21 Jun run's pre-committed response — "a hot PCE re-arms the rate scare → re-downgrade the highest-beta AI names (ASML, MRVL, NVDA) toward the defensive sleeve" — is now being executed by the tape itself. So the disciplined move two days before a genuine binary is to <strong>stage the defensive response, not over-trade it</strong>: <strong>one swap, one downgrade.</strong></p>
+  <ul>
+    <li><strong class="warn">SWAP — MRVL OUT → CEG IN.</strong> MRVL's only reason to sit in the active 10 was the dated S&amp;P-inclusion catalyst; that catalyst is <strong>spent and sold</strong>, and the name is high-beta into a re-arming rate scare. In comes <strong>CEG (Constellation Energy)</strong> — rate-insensitive nuclear / AI-power, the archetype of Monday's rotation winner, joining <strong>TLN</strong> for a two-name power sleeve that <em>wants</em> a hot-PCE week.</li>
+    <li><strong class="neg">DOWNGRADE — ASML High→Med.</strong> The 21 Jun run named ASML the <strong>most rate-exposed</strong> name and <strong>first on the re-downgrade list</strong>. With the rotation front-running the print, the downgrade is the pre-committed response, staged early. <strong>AMAT</strong> moves to a watch (Med) for the same reason.</li>
+    <li><strong>NVDA stays High but is flagged the highest-beta holding</strong> — it slipped to <strong>$208.65</strong> (below $210; did NOT reclaim $215) and is leading the de-rate; the <strong>$205/$195 dip-add ladder</strong> is live.</li>
+  </ul>
+  <p><strong>Two binaries still ahead:</strong> <strong>MU FQ3 Wed 24 Jun (AMC)</strong> — consensus ~$34.66B rev / ~$19.95 EPS vs company guide $33.5B / $19.15, GM ~81%, HBM sold out through 2026; <strong>~13% implied move</strong> (no chase) — and the decisive <strong class="warn">Core PCE Thursday 25 June</strong> (May core ran 2.9% YoY). <strong>The honest read: the rotation has positioned the whole market for a hot print; an in-line firm number may be partly discounted, so the surprise that hurts most now is an <em>even-hotter</em> one.</strong></p>
+</div>
+
+<h2>Where things stand (Mon 22 reopen + Tue 23)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500 (22 Jun)</div><div class="v">7,472.79 <span class="neg">−0.37%</span></div><div class="k">dragged by mega-cap tech</div></div>
+  <div class="stat"><div class="k">Nasdaq (22 Jun)</div><div class="v">26,166.60 <span class="neg">−1.32%</span></div><div class="k">AI sleeve de-rated</div></div>
+  <div class="stat"><div class="k">Russell 2000 (22 Jun)</div><div class="v"><span class="pos">3,000 +2.12%</span></div><div class="k">first-ever 3,000 close</div></div>
+  <div class="stat"><div class="k">Dow (22 Jun)</div><div class="v"><span class="pos">+148.01 +0.29%</span></div><div class="k">value/rotation leadership</div></div>
+  <div class="stat"><div class="k">MRVL (22 Jun)</div><div class="v"><span class="neg">−3.90%</span></div><div class="k">sold the S&amp;P inclusion (hi $324.20)</div></div>
+  <div class="stat"><div class="k">NVDA (23 Jun)</div><div class="v">$208.65 <span class="neg">&lt;$210</span></div><div class="k">leading the de-rate; no $215 reclaim</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$79–80</div><div class="k">ceasefire holds; &lt;&lt; $95</div></div>
+  <div class="stat"><div class="k">Thu 25 Jun</div><div class="v"><span class="warn">Core PCE</span></div><div class="k">the binary; May core 2.9% YoY</div></div>
+</div>
+<p class="sub">The Monday reopen wasn't a sell-off — it was a <strong>rotation</strong>. Money left the high-multiple AI complex (Nasdaq −1.32%, GOOGL/AMZN/MSFT down hard) and crowded into small-caps (Russell first-ever 3,000 close) and value (Dow green), front-running Thursday's Core PCE. MRVL's S&amp;P inclusion — the week's cleanest mechanical catalyst — resolved as a sell-the-event. The whole book now points at two dates: MU's print Wednesday and the rate-path binary Thursday.</p>
+
+<h2>Your portfolio — Tuesday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$208.65</td><td><span class="neg">Slipped below $210</span> (range $207.64–$213.99); did <strong>not</strong> reclaim $215 — leading the mega-cap de-rate as the rotation front-runs PCE. The <strong>$205/$195 dip-add ladder</strong> is the plan; a <strong>$215 close</strong> still flips it fully bullish. <span class="warn">Highest-beta holding into Thursday.</span></td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">~$175.07</td><td><span class="neg">Base DEEPLY VOIDED</span> — broke <strong>below the $177 support</strong>, ~−5.3% on the week. The Microsoft cloud-lease talks produced <strong>no deal</strong> (security/compliance; a &gt;$3B deal that didn't close). Record fundamentals (OCI +93%, RPO $638B, $70B FY27 capex) intact, but the technical is broken and the AI-capex-financing worry is back. Core HOLD — the <strong>weakest holding</strong>; a $185 reclaim is now far off.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">~$139.00</td><td><span class="pos">Apple-deal pop HELD and EXTENDED</span> — ATH <strong>$141.45 on 22 Jun</strong>; the $130 third-trim fired well above the line. A value/turnaround name that <em>benefits</em> from the rotation. Let the rest run; trail toward ~$125.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">~$405.05</td><td>Holds <strong>well above the $380 close stop</strong> (+1.14%) despite the <span class="warn">SpaceX −16% / 3-day losing streak</span> cross-current — the "one Musk AI empire" optionality cuts both ways short-term. Stop far away.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$1,050</td><td><strong>Reports FQ3 Wed 24 June (AMC)</strong> — consensus ~$34.66B rev / ~$19.95 EPS vs guide $33.5B / $19.15, GM ~81%, HBM sold out through 2026; <strong>~13% implied move</strong>. The cleanest near-term <em>fundamental</em> (not macro) catalyst. No chase into the number; trail ~$880–$900; a $1,000 close = fresh-add.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$4.8</td><td><span class="neg">The $5.50 stop stays FIRED</span> — relative weakness persists (the $2,195 Specs AR-glasses launch + activist-pressure overhang). The broken-line exit is live; needs a close back above $5.50 to void it.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$58</td><td>The longest-duration name in the book and the <span class="warn">most rate-path-sensitive holding</span> — hit hardest by Monday's rotation; a hot Thursday PCE compounds it. Street PT ~$70. No reason to size up into the print.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42</td><td>Still <strong>below the $46 close line</strong> the trim fired on; tight range, no fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€144</td><td>The EU "signature gap-up" catalyst is spent (the Iran deal is now a "roadmap to a final deal in 60 days," technical talks ongoing). A Business-AI-platform launch is the live fundamental catalyst; Q2 ahead; add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.3</td><td>Dormant ballast; the EU gap-up optionality is spent. Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor — RPI-linked regulated wind cashflow, ~10–11% forward yield. Higher-for-longer is a mild headwind to bond-proxy yields, but the inflation linkage cushions it — and a hot PCE actually <em>helps</em> the RPI link. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The rotation re-sorted the book. The rate-insensitive / value names led — INTC ripped to a new ATH on the Apple deal, TSLA held above its stop. The high-beta AI exposure de-rated — NVDA slipped below $210, IONQ took the rotation hardest. And the open blemish got worse: ORCL broke its $177 support to ~$175 (Microsoft deal fizzled, base deeply voided). The two open watch-items into the week: MU's print Wednesday and Thursday's PCE.</p>
+</div>
+
+<h2>The 10 buy targets — Tuesday (9 KEEP · 1 SWAP · 1 downgrade)</h2>
+<p class="sub">Markets reopened into a rotation that front-runs Thursday's PCE, so the pre-committed defensive response is <strong>staged early</strong>: <strong>MRVL out</strong> (S&amp;P-inclusion catalyst spent, sold the news, high-beta into re-arming rates) → <strong>CEG in</strong> (rate-insensitive nuclear / AI-power, the rotation winner, second power name alongside TLN); <strong>ASML downgraded High→Med</strong> (most rate-exposed, first re-downgrade). The book now tilts to the rotation winners (TLN/CEG/CCJ/LLY/ADI) with the high-beta AI sleeve trimmed in conviction.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (23 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 21 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>TLN</strong></td><td><strong>The rotation leader</strong> — contracted, rate-insensitive power cashflow (AWS $18B PPA to 2042, 13.1GW incl. 2.2GW nuclear, X-energy SMRs); held strong at $438.85 while mega-cap tech fell; the name to own into a hot-PCE week</td><td class="num">$438.85</td><td class="num">$472 avg / $499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP — now #1</td></tr>
+      <tr><td>2</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide, Ebglyss q8w, Jefferies $1,350); the <strong>defensive core anchor</strong> — held ~$1,100 through the rotation; first beneficiary if Thu PCE runs hot</td><td class="num">~$1,100</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — core anchor</td></tr>
+      <tr><td>3</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; full production restored, NAV/sh → $66; the rotation-friendly real-asset name; the &lt;$110 add zone filled</td><td class="num">~$101</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>CEG</strong></td><td><strong>NEW — the swap-in.</strong> Rate-insensitive nuclear / AI-power; the archetype of Monday's rotation winner; joins TLN for a two-name power sleeve that <em>wants</em> a hot-PCE week. The cleanest baseload-for-AI story outside TLN, on data-center PPAs</td><td class="num">~$300s</td><td class="num">Street Buy</td><td><span class="tag up">High</span></td><td><span class="tag new">NEW (in for MRVL)</span></td></tr>
+      <tr><td>5</td><td><strong>NVDA</strong></td><td>AI bellwether; slipped to $208.65 (below $210; no $215 reclaim) and <strong>leading the de-rate</strong> — the <strong>highest-beta holding</strong> into Thu PCE; Street avg ~$299; $205/$195 dip-add ladder. Hold, do not chase</td><td class="num">$208.65</td><td class="num">~$299 avg</td><td><span class="tag high">High</span></td><td>KEEP — highest-beta</td></tr>
+      <tr><td>6</td><td><strong>MU</strong></td><td><strong>Reports FQ3 Wed 24 Jun</strong> — the week's fundamental catalyst; consensus ~$34.66B rev / ~$19.95 EPS vs guide $33.5B / $19.15, GM ~81%; HBM sold out through 2026; ~13% implied move. No chase into the print</td><td class="num">~$1,050</td><td class="num">$1,500 (TD Cowen)</td><td><span class="tag med">Med</span></td><td>KEEP — print 24 Jun</td></tr>
+      <tr><td>7</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady analog</strong> — lower beta, the calmest way to stay long the sleeve while the rate scare re-arms</td><td class="num">~$418</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, <strong>2026 capex $52–56B</strong>, CoWoS sold out through 2027; AI-logic leadership at a <strong>lower multiple</strong> than the high-beta semis = the steady core as multiples compress</td><td class="num">~$420</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>AMAT</strong></td><td>WFE leader; ATH $623.35 intraday on 18 Jun, Citi PT $710; <strong>rate-sensitive</strong> — trim first if Thu PCE re-arms the scare in full. Held on conviction but watched</td><td class="num">~$590</td><td class="num">$710 (Citi)</td><td><span class="tag med">Med</span></td><td><span class="tag down">DOWNGRADE → watch</span></td></tr>
+      <tr><td>10</td><td><strong>ASML</strong></td><td>EUV / High-NA monopoly, moat intact — but the <strong>most rate-exposed name in the book</strong>, and with Monday's rotation front-running a hot PCE, it is the <strong>first re-downgrade</strong>. High-NA adoption-delay the watch-item</td><td class="num">~$1,840</td><td class="num">Street raises</td><td><span class="tag med">Med</span></td><td><span class="tag down">DOWNGRADE High→Med</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Out of the active 10: MRVL</strong> — swapped out. Its only reason to sit in the active 10 was the dated S&amp;P-inclusion catalyst, which fired and resolved as a <strong>sell-the-event (−3.90%)</strong>; the thesis (AI custom silicon, now an S&amp;P member) is intact, so re-entry is on a <strong>confirmed base above ~$300</strong> with the rate scare easing. <strong>VRT</strong> stays first in the re-entry queue from its $300–$311 add zone but its promotion is gated on Thursday's PCE confirming "rates stabilized" — and the rotation says rates are <em>not</em> stabilizing, so it stays benched. <strong>The honest read:</strong> the market has begun pricing the hot-PCE scenario via rotation, before the data — the down-branch is now the tape, not just the forecast. The book is tilted to the rotation winners with the high-beta AI sleeve trimmed; the full response waits on Thursday's print.</p>
+
+<h2>What changed (21→23 Jun: the reopen scored two sessions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>What happened on the reopen</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MRVL</strong></td><td><span class="neg">Sold the S&amp;P 500 inclusion news −3.90%</span> on 22 Jun after a ~90% run to a 52-wk high $324.20; mechanical catalyst spent</td><td><span class="neg">SWAP OUT → CEG</span></td></tr>
+      <tr><td><strong>CEG</strong></td><td>Rate-insensitive nuclear / AI-power — the rotation winner; pairs with TLN as the power sleeve that wants a hot-PCE week</td><td><span class="pos">SWAP IN (NEW)</span></td></tr>
+      <tr><td><strong>ASML</strong></td><td>Most rate-exposed name; the rotation front-runs a hot PCE → the pre-committed first re-downgrade, staged early</td><td><span class="neg">DOWNGRADE High→Med</span></td></tr>
+      <tr><td><strong>AMAT</strong></td><td>Rate-sensitive WFE; trim first if PCE re-arms the scare in full</td><td><span class="neg">DOWNGRADE → watch (Med)</span></td></tr>
+      <tr><td><strong>NVDA</strong></td><td>$208.65, slipped below $210, no $215 reclaim — leading the de-rate</td><td>KEEP — highest-beta</td></tr>
+      <tr><td><strong>TLN</strong></td><td>$438.85, held strong while tech fell — the rotation leader</td><td>KEEP — now #1</td></tr>
+      <tr><td><strong>LLY / CCJ / ADI / TSM</strong></td><td>Rate-insensitive / lower-beta — the rotation-friendly core</td><td>KEEP</td></tr>
+      <tr><td><strong>MU</strong></td><td>FQ3 print Wed 24 Jun (~$34.66B / ~$19.95 EPS, GM ~81%; ~13% implied)</td><td>KEEP — print 24 Jun</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — the rotation is front-running the binary</h2>
+<div class="card">
+  <ul>
+    <li><strong class="warn">Fed / PCE (the dominant live tell — and it prints Thursday):</strong> Warsh's Fed held at 3.50–3.75% on 17 Jun but flipped the dot plot to a <strong>hike</strong> (9 of 18 officials pencil a 2026 hike; 2026 median PCE raised to 3.6%, core to 3.3%). <strong>Core PCE Thursday 25 Jun</strong> is the binary; May core ran <strong>2.9% YoY</strong> (highest since Sep 2025), driven by shelter (+3.4%), transport services (+4.1%), medical (+3.6%). <strong>Monday's rotation shows the market front-running a firm/hot print</strong> — money rotated out of high-multiple AI into small-caps/value <em>before</em> the data. This is the print that confirms or buries the rotation.</li>
+    <li><strong>The rotation (the actual event):</strong> a Russell 2000 first-ever <strong>3,000 close (+2.12%)</strong> and a green Dow against a −1.32% Nasdaq is the cleanest sign the rate trade is re-arming. The AI sleeve de-rates fastest when this happens; the rate-insensitive sleeve (TLN/CEG/CCJ/LLY/ADI) is where the flows are going.</li>
+    <li><strong>Iran (interim deal holding; finalization on a 60-day track):</strong> Qatar/Pakistan-mediated technical talks continue in Switzerland after the formal Bürgenstock meeting was postponed; the parties have a <strong>roadmap to a final deal in 60 days</strong>. The <strong>operational ceasefire holds</strong> — VP Vance: 12M+ barrels crossed Hormuz overnight, "the Iranians, for the second night in a row, did not shoot at any ships." <strong>Brent ~$79–80</strong> — ~$15 below the $95 re-arm line; the war sleeve stays <strong>off</strong>. A collapse + Brent &gt;$95 is the (low-probability) re-arm trigger.</li>
+    <li><strong>Semis leadership flips to a liability:</strong> the same chip-gear that <em>led</em> the 18 Jun comeback (ASML record high, AMAT ATH) is now the most rate-exposed into Thursday — which is why ASML is downgraded and AMAT is on watch.</li>
+    <li><strong>Defense:</strong> ceasefire holding + Brent low → LMT/RTX stay <strong>off</strong>; re-promote only on a diplomatic collapse pushing Brent above $95.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into MU Wed 24 → PCE Thu 25</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the rotation persists into the binary</strong> — small-caps/value/rate-insensitive lead, mega-cap AI drifts lower on light volume until Thursday decides the regime. The book is now tilted to the rotation winners (TLN/CEG/CCJ/LLY/ADI) with the AI sleeve trimmed in conviction (ASML→Med, AMAT→Med, MRVL out). No further action pre-PCE beyond the staged downgrades.</div>
+  <div class="scenario up"><strong>Up branch — Thu PCE runs cool</strong> (below the ~2.9–3.0% feared core) — September-hike odds fade, yields ease, the AI multiple re-expands; <strong>re-upgrade NVDA/ASML/AMAT</strong>, and <strong>VRT re-promotes</strong> off the watch-list. The rotation reverses.</div>
+  <div class="scenario down"><strong>Down branch — Thu PCE runs hot (the forecast, and now the tape)</strong> — the rate scare is fully armed, the AI sleeve de-rates further; complete the re-downgrade (NVDA toward the dip-add ladder, AMAT trimmed), lean harder into TLN/CEG/CCJ/LLY/ADI and cash. Because the market is <em>already</em> rotating, an <strong>in-line firm print may be partly discounted</strong> — the surprise that hurts most is an <em>even-hotter</em> number. <em>Secondary tail:</em> an Iran collapse + Brent &gt;$95 re-arms the war sleeve (low-probability).</div>
+  <p class="sub">The dominant tell is the <strong>rate path</strong> — Core PCE Thursday 25 June + September-hike odds + the 10-year yield + the <strong>Russell-over-Nasdaq rotation spread</strong>. Widening = rate scare arming (defensive); reversing = AI multiple extends. Secondary: <strong>Brent vs. $95.</strong></p>
+</div>
+
+<h2>Action checklist into the week (Tue 23 → Thu 25)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> markets reopened into a <span class="warn">rotation that front-runs Thursday's PCE</span> — small-caps/value led (Russell first-ever 3,000 close), mega-cap AI de-rated (Nasdaq −1.32%). The down-branch is now the tape; the staged response is one swap + one downgrade.</li>
+    <li><strong>MRVL → CEG:</strong> <span class="neg">MRVL sold the S&amp;P inclusion news (−3.90%)</span> — catalyst spent → swapped OUT; <span class="pos">CEG IN</span> as the rate-insensitive power name beside TLN. Re-enter MRVL only on a confirmed base above ~$300.</li>
+    <li><strong>ASML / AMAT:</strong> <span class="neg">ASML downgraded High→Med</span> (most rate-exposed, first re-downgrade); <span class="neg">AMAT to a watch</span> — trim first if PCE re-arms the scare in full.</li>
+    <li><strong>MU:</strong> reports <span class="pos">Wed 24 Jun (AMC)</span> — the cleanest near-term <em>fundamental</em> catalyst (~$34.66B rev / ~$19.95 EPS, GM ~81%; ~13% implied move). No chase into the number; a $1,000 close is the fresh-add trigger.</li>
+    <li><strong class="warn">PCE (Thu 25 Jun):</strong> the dominant macro tell — May core ran 2.9% YoY. Pre-committed: a hot print completes the re-downgrade (NVDA toward the ladder, AMAT trimmed); a cool print re-upgrades the AI sleeve and promotes VRT.</li>
+    <li><strong>NVDA:</strong> slipped to <span class="neg">$208.65 (below $210)</span>; a close above <strong>$215</strong> still re-arms the bull regime. The $205/$195 dip-adds are the plan; highest-beta into Thursday.</li>
+    <li><strong>ORCL (holding):</strong> <span class="neg">base DEEPLY voided</span> (~$175, broke $177 support; Microsoft deal fizzled) — the weakest holding; a $185 reclaim on a close is now far off.</li>
+    <li><strong>INTC (holding):</strong> <span class="pos">ATH $141.45 on the Apple deal — third trim FIRED</span>; let the rest run, trail toward ~$125. A rotation beneficiary.</li>
+    <li><strong>SNAP (holding):</strong> the <span class="neg">$5.50 stop stays FIRED</span> (~$4.8) — the broken-line exit is live; reclaim $5.50 on a close to void.</li>
+    <li><strong>Oil / Iran:</strong> <span class="warn">Brent ~$79–80</span>; the ceasefire is holding (no Hormuz shots, 12M+ barrels crossing), 60-day roadmap to a final deal — the war sleeve stays off; the only re-arm is a collapse + Brent &gt;$95.</li>
+    <li><strong>RTX / LMT (out):</strong> stay off — ceasefire holds, Brent low; re-promote only on a collapse pushing Brent above $95.</li>
+    <li><strong>VRT:</strong> first in the re-entry queue from its $300–$311 add zone; gated on Thursday's PCE confirming "rates stabilized" — the rotation says <em>not yet</em>.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close ($405.05) · SNAP $5.50 (FIRED, ~$4.8) · SYM $46 close (fired, ~$42) · INTC $130 trim (FIRED, ~$139, ATH $141.45; trail ~$125) · MU ~$880–$900 / $1,000 close + 24 Jun print · NVDA $215-reclaim to flip / $205 / $195 ladder · ORCL base deeply voided (~$175, broke $177) · ASML downgraded High→Med · AMAT → watch · <strong>primary tell: Core PCE Thursday 25 Jun (May core 2.9% YoY) + September-hike odds + the 10-year yield + the Russell-over-Nasdaq rotation spread; secondary: Brent vs. $95.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. US equity markets reopened Monday 22 June after the Juneteenth long weekend; no run was logged Monday, so this briefing scores both the Mon 22 reopen and the Tue 23 session. The reopen was a rotation out of mega-cap / high-beta AI into small-caps and value (Russell 2000 first-ever 3,000 close +2.12%, Dow green, Nasdaq −1.32%), front-running Thursday's Core PCE; MRVL sold its S&amp;P 500 inclusion news (−3.90%). The response is staged: 9 KEEP, 1 SWAP (MRVL → CEG), 1 downgrade (ASML High→Med; AMAT to a watch). Two binaries remain: MU FQ3 Wed 24 June and the decisive Core PCE Thu 25 June (May core 2.9% YoY). Iran's ceasefire holds (Brent ~$79–80, 60-day roadmap), war sleeve off. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 23 June 2026 from public web sources. Markets reopened Monday 22 June after the Juneteenth long weekend (no run logged Monday, so this run scores both the Mon 22 reopen and the Tue 23 session). The reopen was a textbook rotation out of mega-cap / high-beta AI into small-caps and value — Russell 2000 closed at 3,000 for the first time ever (+2.12%) and the Dow was green (+0.29%, +148.01), while the Nasdaq fell −1.32% to 26,166.60 and the S&amp;P slipped −0.37% to 7,472.79 (Alphabet −5%, Amazon −4.8%, Microsoft −3%, SpaceX −16%). MRVL sold its S&amp;P 500 inclusion news (−3.90%) after a ~90% run to a 52-wk high $324.20 — the mechanical catalyst fired and resolved as a sell-the-event. The market has begun pricing a hot Core PCE (Thu 25 Jun; May core 2.9% YoY) via rotation, before the data — so the pre-committed down-branch is now the tape. Staged response: 9 KEEP, 1 SWAP (MRVL OUT, catalyst spent → CEG IN, rate-insensitive nuclear/AI-power beside TLN), 1 downgrade (ASML High→Med, the most rate-exposed name; AMAT to a watch). NVDA slipped to $208.65 (below $210, no $215 reclaim) — highest-beta, leading the de-rate. ORCL broke its $177 support to ~$175 (Microsoft cloud deal fizzled, base deeply voided) — the weakest holding. INTC ripped to an ATH $141.45 on the Apple deal (third trim fired). The two binaries ahead: MU FQ3 Wed 24 June (~$34.66B rev / ~$19.95 EPS, GM ~81%, ~13% implied move; no chase) and the decisive Core PCE Thu 25 June. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
