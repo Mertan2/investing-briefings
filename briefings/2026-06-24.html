@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Wednesday, 24 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Wednesday, 24 June 2026 — <strong>MU print day, and the rotation became a rout.</strong> The 23 June session did <em>not</em> resolve as the clean small-cap rotation the prior morning run projected — it escalated into a <strong>global semiconductor rout</strong>: the <strong>Russell 2000 also fell (−0.96%)</strong> alongside the Nasdaq (−2.21%) and S&amp;P (−1.44%), the <strong class="neg">SOX crashed −7.87%</strong> (all 30 components red), VIX spiked to 19.49, and the 10-year fell to 4.47% on a flight to safety. <strong>9 KEEP · 1 SWAP (AMAT → NEM) · 1 downgrade (TSM High→Med).</strong> Two binaries now stacked: <strong>MU FQ3 tonight</strong> and the decisive <strong>Core PCE Thu 25</strong>.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Wednesday 24 June 2026. Prices are the <strong>23 June close</strong> as researched and may be stale by the time you read this. The dominant live macro variable is the Fed's rate path, which prints as <strong>Core PCE on Thursday 25 June</strong>; the immediate fundamental catalyst is <strong>Micron's FQ3 report tonight (24 June, after the close)</strong>. Verify with your broker before any trade.
+</section>
+
+<h2>The rotation became a rout — and two binaries are now stacked back-to-back</h2>
+<div class="card lede">
+  <p>The 23 June <em>morning</em> run projected the down-branch as a clean small-cap rotation. The 23 June <strong>session</strong> delivered something worse and more honest: a <strong class="neg">broad global semiconductor rout</strong>, not a rotation. The cleanest tell that this was <strong>de-risking, not rotation</strong>:</p>
+  <ul>
+    <li>The <strong class="neg">Russell 2000 <em>also</em> fell −0.96%</strong> — the rate-insensitive small-cap leg that <em>led</em> Monday's reopen broke down too — alongside the <strong class="neg">Nasdaq −2.21%</strong> and <strong class="neg">S&amp;P −1.44%</strong>. Only the <strong>Dow held flat (−0.09%)</strong>.</li>
+    <li>The <strong class="neg">Philadelphia Semiconductor Index (SOX) crashed −7.87% to 13,482.51 — all 30 components red.</strong></li>
+    <li><strong>Trigger offshore:</strong> Korea's <strong class="neg">KOSPI fell −9.99%</strong> (steepest in 3+ months); <strong>Samsung and SK Hynix each −12%+</strong> (a 20-minute trading halt fired) after regulators flagged the chip rally as <strong>overheated</strong> — compounded by a <strong>BofA rate-hike note</strong> two days ahead of Core PCE.</li>
+    <li><strong>Fear, not rotation:</strong> <strong class="warn">VIX +12.79% to 19.49</strong>, the <strong>10-year yield fell to 4.47%</strong> (flight to safety into bonds), <strong>oil −3%</strong>, and the day's winners were classic defensives (<strong class="pos">IBM +4.2%, Public Storage +4.4%, Accenture +3.3%</strong>).</li>
+  </ul>
+  <p><strong>What this means:</strong> the de-risking has <strong>broadened from rotation to a chip-led drawdown</strong>, and it lands the book directly between two binaries stacked back-to-back. The disciplined move is <strong>not to over-trade</strong> two prints away: <strong>9 KEEP · 1 SWAP · 1 downgrade.</strong></p>
+  <ul>
+    <li><strong class="warn">SWAP — AMAT OUT → NEM IN.</strong> AMAT was already the watch-listed, <strong>most rate-exposed WFE name with no dated catalyst</strong>, and it took the full −7.87% SOX rout. In comes <strong>NEM (Newmont)</strong> — the gold/haven name <strong>pre-flagged on the 23 Jun watch-list</strong>. It benefits from <strong>all three live forces at once</strong>: a risk-off tape, a hot Core PCE, and the <strong>falling real yields</strong> (10yr → 4.47%) the flight-to-safety just produced.</li>
+    <li><strong class="neg">DOWNGRADE — TSM High→Med.</strong> Even the <strong>lower-multiple, highest-quality AI-logic core</strong> got caught in the global chip de-rate and remains rate-exposed into PCE.</li>
+    <li><strong>NVDA stays High</strong> but is again flagged the highest-beta name — it <strong class="neg">−4.13% to $200.04</strong>, broke below $205 and <strong>filled the first rung of the dip-add ladder</strong> ($195 next). $200 is the dip-add zone, not a thesis break.</li>
+  </ul>
+  <p><strong>Two binaries now stacked:</strong> <strong>MU FQ3 tonight (Wed 24 Jun, AMC)</strong> — consensus ~$34.66B rev / ~$19.95 EPS (FactSet ~$35B / ~$20.57), GM guide ~81%, HBM sold out through 2026, HBM4 volume-shipping for NVDA's Vera Rubin; 27-analyst Strong Buy, <strong>zero sells</strong>, Stifel $1,500 — but <strong>SK Hynix holds ~62% HBM share and leads on HBM4 per-pin speed, and the stock fell ~8–13% into the number, so <em>no chase</em></strong> — and the decisive <strong class="warn">Core PCE Thursday 25 June</strong> (May core expected to tick up 3.3%→3.4% YoY; the dot plot has flipped to a hike). <strong>The next 48 hours decide whether this is a buyable dip or the start of a regime change.</strong></p>
+</div>
+
+<h2>Where things stand (23 June close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">7,365 <span class="neg">−1.44%</span></div><div class="k">broad de-risk</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v"><span class="neg">−2.21%</span></div><div class="k">chip-led drawdown</div></div>
+  <div class="stat"><div class="k">Russell 2000</div><div class="v"><span class="neg">−0.96%</span></div><div class="k">small-cap leg broke too</div></div>
+  <div class="stat"><div class="k">SOX (semis)</div><div class="v"><span class="neg">−7.87%</span></div><div class="k">13,482.51 · all 30 red</div></div>
+  <div class="stat"><div class="k">KOSPI (Korea)</div><div class="v"><span class="neg">−9.99%</span></div><div class="k">Samsung / SK Hynix −12%</div></div>
+  <div class="stat"><div class="k">VIX</div><div class="v"><span class="warn">19.49 +12.79%</span></div><div class="k">fear, not rotation</div></div>
+  <div class="stat"><div class="k">10-yr yield</div><div class="v">4.47% <span class="pos">↓</span></div><div class="k">flight to safety</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$78 <span class="neg">−3%</span></div><div class="k">Iran license; Hormuz flowing</div></div>
+</div>
+<p class="sub">This was not Monday's rotation. The small-cap and value leg that led the reopen <strong>broke down with everything else</strong> (Russell −0.96%), the VIX jumped to 19.49, and money fled into bonds (10yr to 4.47%) and defensives (IBM/PSA/ACN green) — the signature of <strong>broad de-risking</strong>, set off by a 10% crash in Korea's chip complex and a BofA rate-hike note, two days before Core PCE. The whole book now points at two dates one day apart: <strong>MU tonight</strong> and the <strong>rate-path binary Thursday.</strong></p>
+
+<h2>Your portfolio — Wednesday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (23 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$200.04 <span class="neg">−4.13%</span></td><td><span class="neg">Broke below $205</span> — filling the <strong>first rung of the dip-add ladder</strong>; <strong>$195 is the next rung.</strong> The <strong>highest-beta holding</strong> into two prints. A $215 close still flips it fully bullish — now a long way up. Hold; let the ladder work, <strong>do not chase</strong> into MU/PCE.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">$165.16 <span class="neg">−5.66%</span></td><td><span class="neg">Base SHATTERED</span> — now deeply below the long-watched $177, down hard again on the broad de-risk. Record fundamentals (OCI +93%, RPO $638B) intact, but the technical is broken and the AI-capex-financing worry compounds the rate scare. <strong>The weakest holding</strong>; a $185 reclaim is far off. Core hold, no add.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num">$132.28 <span class="neg">−6.14%</span></td><td>Gave back from the <strong>$141.45 ATH</strong> despite a <span class="warn">same-day BofA double-upgrade to $135</span> — the rout overwhelmed the upgrade. Still above the <strong>$130 third-trim line but now testing it</strong>; trail ~$125. A turnaround name now caught in the chip de-rate.</td></tr>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num">~$1,075</td><td><strong>Reports FQ3 TONIGHT (Wed 24 June, AMC)</strong> — the immediate catalyst; consensus ~$34.66B rev / ~$19.95 EPS (FactSet ~$35B / ~$20.57), GM ~81%, HBM sold out through 2026, HBM4 shipping for Vera Rubin; <strong>~13% implied move (already partly realized in the ~8–13% pre-print drop)</strong>. <strong>No chase</strong>; trail ~$880–$900; a $1,000 close = fresh-add. SK Hynix ~62% HBM share / faster HBM4 is the risk.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">~$395–405</td><td>Holds above the <strong>$380 close stop</strong> but lower with the broad de-risk; the SpaceX cross-current persists. Stop still well away; no action.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$4.8</td><td><span class="neg">The $5.50 stop stays FIRED</span> — relative weakness persists. The broken-line exit is live; needs a close back above $5.50 to void it.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$55</td><td>The longest-duration name and the <span class="warn">most rate-path-sensitive holding</span> — hit hardest by the chip-and-rate de-risk; a hot Thursday PCE compounds it. No reason to size up into the prints.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42</td><td>Still <strong>below the $46 close line</strong> the trim fired on; no fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€144</td><td>Dormant; the EU gap-up catalyst is spent. A Business-AI-platform launch is the live fundamental catalyst; Q2 ahead; add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.3</td><td>Dormant ballast; Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor — and <span class="pos">a relative winner on a risk-off day</span>: the 10-year fell to 4.47%, which <em>helps</em> bond-proxy yields, and the RPI linkage cushions a hot PCE. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The chip-led rout re-sorted the book the opposite way from Monday's rotation: this time the <strong>relative winners were the rate-insensitive / income names</strong> (UKW helped by falling yields), while the <strong>AI/semis sleeve led the drawdown</strong> — NVDA broke $205 to its dip-add ladder, INTC gave back its ATH, IONQ took the longest-duration hit. And the open blemish got worse: <strong>ORCL shattered its base to $165</strong>, the clear weakest holding. The two open watch-items: MU's print tonight and Thursday's PCE.</p>
+</div>
+
+<h2>The 10 buy targets — Wednesday (9 KEEP · 1 SWAP · 1 downgrade)</h2>
+<p class="sub">A chip-led rout two prints away from resolution argues for a <strong>staged, not wholesale, defensive shift</strong>: <strong>AMAT out</strong> (the most rate-exposed WFE name, no dated catalyst, took the full SOX rout) → <strong>NEM in</strong> (gold/haven + inflation hedge — wins on a risk-off tape, a hot PCE, <em>and</em> falling real yields); <strong>TSM downgraded High→Med</strong> (even the lower-multiple core got caught). The book leans on the power/defensive sleeve (TLN/CEG/CCJ/LLY) and the new haven (NEM) while NVDA works its dip-add ladder.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (23 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 23 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>TLN</strong></td><td><strong>The relative-safety leader</strong> — contracted, rate-insensitive power cashflow (AWS $18B PPA to 2042, 13.1GW incl. 2.2GW nuclear); the name the book leans on while the chip sleeve de-rates</td><td class="num">~$435</td><td class="num">$472 avg / $499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP — #1</td></tr>
+      <tr><td>2</td><td><strong>CEG</strong></td><td>Rate-insensitive nuclear / AI-power; nation's largest power producer post-Calpine; Meta 20-yr 1.1GW PPA; the second power name that <em>wants</em> a risk-off, hot-PCE tape</td><td class="num">~$300s</td><td class="num">Street Buy</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide, Ebglyss q8w, Jefferies $1,350); the <strong>defensive core anchor</strong> — needs neither cheap money nor the chip cycle; first beneficiary if Thu PCE runs hot</td><td class="num">~$1,100</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — anchor</td></tr>
+      <tr><td>4</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; full production restored, NAV/sh → $66; the &lt;$110 add zone filled</td><td class="num">~$101</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>NEM</strong></td><td><strong>NEW — the swap-in.</strong> Gold/haven + inflation hedge; wins on <strong>all three live forces</strong>: a risk-off tape (VIX 19.49), a hot Core PCE, and falling real yields (10yr → 4.47%). Pre-flagged on the 23 Jun watch-list; the cleanest diversifier away from the routed semis sleeve</td><td class="num">~$70s</td><td class="num">Street Buy</td><td><span class="tag up">High</span></td><td><span class="tag new">NEW (in for AMAT)</span></td></tr>
+      <tr><td>6</td><td><strong>NVDA</strong></td><td>AI bellwether; <strong>−4.13% to $200.04 — broke below $205, first dip-add rung filled</strong> ($195 next); the <strong>highest-beta holding</strong> into two prints; Street avg ~$299. Hold the ladder, do not chase</td><td class="num">$200.04</td><td class="num">~$299 avg</td><td><span class="tag high">High</span></td><td>KEEP — dip-add live</td></tr>
+      <tr><td>7</td><td><strong>MU</strong></td><td><strong>Reports FQ3 TONIGHT (Wed 24 Jun, AMC)</strong> — the immediate catalyst; consensus ~$34.66B rev / ~$19.95 EPS (FactSet ~$35B / ~$20.57), GM ~81%, HBM sold out through 2026, HBM4 shipping for Vera Rubin; fell ~8–13% into the print. <strong>No chase</strong> — SK Hynix ~62% HBM share leads HBM4 speed</td><td class="num">~$1,075</td><td class="num">$1,500 (Stifel)</td><td><span class="tag med">Med</span></td><td>KEEP — print tonight</td></tr>
+      <tr><td>8</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady, lower-beta analog</strong> — the calmest way to stay long the sleeve while the chip de-rate runs</td><td class="num">~$405</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, 2026 capex $52–56B, CoWoS sold out through 2027 — but even the <strong>lower-multiple AI-logic core</strong> got caught in the global chip rout and is rate-exposed into PCE</td><td class="num">~$400</td><td class="num">$450+ avg</td><td><span class="tag med">Med</span></td><td><span class="tag down">DOWNGRADE High→Med</span></td></tr>
+      <tr><td>10</td><td><strong>ASML</strong></td><td>EUV / High-NA monopoly, moat intact — but the <strong>most rate-exposed name in the book</strong>; led the SOX −7.87% rout down; stays Med pending a PCE that confirms rates have stabilized</td><td class="num">~$1,780</td><td class="num">Street raises</td><td><span class="tag med">Med</span></td><td>KEEP — Med</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Out of the active 10: AMAT</strong> — swapped out. The most rate-exposed WFE name, on the watch-list with no dated catalyst, it took the full −7.87% SOX rout; re-entry only after PCE confirms rates stabilized and the chip de-rate ends (WFE-leader thesis intact, Citi $710). <strong>MRVL</strong> stays out from 23 Jun (S&amp;P-inclusion catalyst spent; re-entry on a confirmed base above ~$300). <strong>VRT</strong> stays first in the re-entry queue from its $300–$311 add zone but its promotion is gated on Thursday's PCE confirming "rates stabilized" — and the rout says rates are <em>not</em> stabilizing, so it stays benched. <strong>The honest read:</strong> the de-risking has broadened from rotation to a chip-led drawdown; the book leans on the power/defensive sleeve plus the new haven (NEM), and the full response waits on the two prints.</p>
+
+<h2>What changed (23→24 Jun: the rout)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>What happened</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>AMAT</strong></td><td>Most rate-exposed WFE name, no dated catalyst; took the full <span class="neg">−7.87% SOX rout</span></td><td><span class="neg">SWAP OUT → NEM</span></td></tr>
+      <tr><td><strong>NEM</strong></td><td>Gold/haven + inflation hedge — wins on a risk-off tape, a hot PCE, <em>and</em> falling real yields (10yr 4.47%)</td><td><span class="pos">SWAP IN (NEW)</span></td></tr>
+      <tr><td><strong>TSM</strong></td><td>Even the lower-multiple AI-logic core got caught in the global chip de-rate; rate-exposed into PCE</td><td><span class="neg">DOWNGRADE High→Med</span></td></tr>
+      <tr><td><strong>NVDA</strong></td><td><span class="neg">−4.13% to $200.04</span> — broke below $205, first dip-add rung filled ($195 next)</td><td>KEEP — highest-beta</td></tr>
+      <tr><td><strong>ORCL</strong></td><td><span class="neg">−5.66% to $165.16</span> — base shattered, deeply below $177</td><td>KEEP — weakest holding</td></tr>
+      <tr><td><strong>INTC</strong></td><td><span class="neg">−6.14% to $132.28</span> — gave back the ATH despite a BofA double-upgrade to $135; testing $130</td><td>KEEP — trail ~$125</td></tr>
+      <tr><td><strong>TLN / CEG / CCJ / LLY</strong></td><td>The rate-insensitive power/defensive sleeve — the relative-safety core</td><td>KEEP</td></tr>
+      <tr><td><strong>MU</strong></td><td>Fell ~8–13% into its own FQ3 print (tonight, ~$34.66B / ~$19.95 EPS, GM ~81%)</td><td>KEEP — print tonight</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — two binaries stacked back-to-back</h2>
+<div class="card">
+  <ul>
+    <li><strong class="warn">MU FQ3 (tonight, Wed 24 Jun AMC) — the immediate fundamental catalyst:</strong> consensus ~$34.66B rev / ~$19.95 EPS (FactSet ~$35B / ~$20.57), GM guide ~81% (vs 74.4% in FQ2, 36.8% a year ago); HBM sold out through 2026, HBM4 volume-shipping for NVDA's Vera Rubin with yields ahead of HBM3E; 27-analyst Strong Buy, <strong>zero sells</strong>, Stifel $1,500, Wedbush $1,300, RBC $1,200. <strong>The risk:</strong> SK Hynix holds ~62% HBM share and leads on HBM4 per-pin speed; the stock fell ~8–13% into the number, so <strong>no chase</strong> — a soft print on a fragile tape is the near-term tail.</li>
+    <li><strong class="warn">Core PCE (Thursday 25 Jun) — the dominant binary:</strong> May core expected to tick <strong>up to 3.3%→3.4% YoY</strong>; the June SEP raised 2026 median PCE to 3.6% (core 3.3%) and <strong>flipped the dot plot to a 25-bp HIKE</strong> (median), with futures pricing ~30bp of hikes by year-end. This is the print that decides whether the chip-and-rate de-risk is a dip or a regime.</li>
+    <li><strong>The de-risk broadened (the actual event):</strong> 23 Jun was <em>not</em> the clean rotation the morning run projected — the <strong>Russell 2000 also fell −0.96%</strong>, the SOX crashed −7.87% (all 30 red), VIX +12.79% to 19.49, the 10yr fell to 4.47%, and defensives led (IBM/PSA/ACN green). The trigger was <strong>Korea</strong> (KOSPI −9.99%, Samsung/SK Hynix −12%, regulators flagging an overheated chip rally) plus a <strong>BofA rate-hike note</strong>.</li>
+    <li><strong>Iran (interim deal holding; oil supply easing):</strong> Brent <strong>~$78</strong> — Washington granted Iran a 60-day license to sell oil; Iran shipped 30M+ barrels through Hormuz this week (highest since the conflict began) and cut cargo prices to China; Kuwait/UAE using alternative routes. Ceasefire holds; the war sleeve stays <strong>off</strong> (Brent ~$17 below the $95 re-arm line).</li>
+    <li><strong>Defense:</strong> ceasefire holding + Brent low → LMT/RTX stay <strong>off</strong>; re-promote only on a collapse pushing Brent above $95.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into MU tonight → PCE Thu 25</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the chip-led de-risk holds through the prints</strong> — AI/semis chop on light conviction until the two binaries resolve; the book leans on the power/defensive sleeve (TLN/CEG/CCJ/LLY) + the new haven (NEM) while NVDA works its dip-add ladder. No further action pre-PCE beyond the staged swap/downgrade.</div>
+  <div class="scenario up"><strong>Up branch — MU beats clean AND Thu PCE runs cool</strong> — the chip de-rate was a shakeout; September-hike odds fade, yields ease, the AI multiple re-expands; <strong>re-upgrade TSM/ASML</strong>, re-add AMAT, NVDA reclaims $215, and <strong>VRT re-promotes</strong>. The buyable-dip read.</div>
+  <div class="scenario down"><strong>Down branch — MU disappoints OR Thu PCE runs hot (the tape's lean)</strong> — the rate scare + chip de-rate compound into a regime; NVDA works toward $195, ORCL keeps bleeding, the semis sleeve de-rates further; lean harder into TLN/CEG/CCJ/LLY/NEM and cash. <em>Secondary tail:</em> an Iran collapse + Brent &gt;$95 re-arms the war sleeve (low-probability).</div>
+  <p class="sub">The dominant tell is the <strong>rate path</strong> — Core PCE Thursday + September-hike odds + the 10-year yield + the <strong>SOX</strong> (does it stabilize above ~13,500 or keep bleeding?). Secondary: <strong>Brent vs. $95.</strong></p>
+</div>
+
+<h2>Action checklist into the prints (Wed 24 → Thu 25)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the rotation became a <span class="warn">global chip-led rout</span> — SOX −7.87% (all 30 red), Russell also down (−0.96%), VIX 19.49, 10yr to 4.47%, defensives green. De-risking, not rotation; the staged response is one swap + one downgrade.</li>
+    <li><strong>AMAT → NEM:</strong> <span class="neg">AMAT took the full SOX rout</span> with no catalyst → swapped OUT; <span class="pos">NEM IN</span> as the gold/haven that wins on risk-off + hot PCE + falling real yields. Re-enter AMAT only after PCE confirms rates stabilized.</li>
+    <li><strong>TSM:</strong> <span class="neg">downgraded High→Med</span> — even the lower-multiple AI-logic core got caught; ASML stays Med (most rate-exposed).</li>
+    <li><strong class="warn">MU (tonight):</strong> reports <span class="pos">Wed 24 Jun AMC</span> — the immediate catalyst (~$34.66B rev / ~$19.95 EPS, GM ~81%; ~13% implied, ~8–13% already realized). No chase; a $1,000 close is the fresh-add trigger; a clean beat that holds = the buyable-dip tell.</li>
+    <li><strong class="warn">PCE (Thu 25 Jun):</strong> the dominant macro tell — May core expected 3.3%→3.4% YoY. Pre-committed: a hot print completes the de-rate (NVDA toward $195, semis trimmed); a cool print re-upgrades the sleeve and promotes VRT.</li>
+    <li><strong>NVDA:</strong> <span class="neg">$200.04 (broke below $205)</span> — first dip-add rung filled, <strong>$195 next</strong>; a close above <strong>$215</strong> still re-arms the bull regime. Highest-beta into both prints; hold, do not chase.</li>
+    <li><strong>ORCL (holding):</strong> <span class="neg">base SHATTERED</span> (~$165, deeply below $177) — the weakest holding; a $185 reclaim is far off.</li>
+    <li><strong>INTC (holding):</strong> <span class="neg">gave back the ATH to $132.28</span> despite a BofA double-upgrade to $135; <strong>testing the $130 third-trim</strong>; trail ~$125.</li>
+    <li><strong>SNAP (holding):</strong> the <span class="neg">$5.50 stop stays FIRED</span> (~$4.8); reclaim $5.50 on a close to void.</li>
+    <li><strong>Oil / Iran:</strong> <span class="warn">Brent ~$78</span>; ceasefire holding (60-day oil license to Iran, 30M+ barrels through Hormuz) — the war sleeve stays off; the only re-arm is a collapse + Brent &gt;$95.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close (~$395–405) · SNAP $5.50 (FIRED, ~$4.8) · SYM $46 close (fired, ~$42) · INTC $130 trim (FIRED, $132.28, testing the line; trail ~$125) · MU ~$880–$900 / $1,000 close + tonight's print · NVDA $215-reclaim to flip / $205 filled / <strong>$195 next</strong> · ORCL base shattered (~$165, below $177) · TSM downgraded High→Med · ASML Med · AMAT swapped out · <strong>primary tell: Core PCE Thursday 25 Jun (May core ~3.3–3.4% YoY) + September-hike odds + the 10-year yield (4.47%) + the SOX; secondary: Brent vs. $95.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. The 23 June session did not resolve as the clean small-cap rotation the prior morning run projected — it escalated into a global semiconductor rout: the Russell 2000 also fell (−0.96%) alongside the Nasdaq (−2.21%) and S&amp;P (−1.44%), the SOX crashed −7.87% (all 30 components red) on a Korea-led chip crash (KOSPI −9.99%, Samsung/SK Hynix −12%) plus a BofA rate-hike note, VIX +12.79% to 19.49, the 10-year fell to 4.47%. Holdings: NVDA −4.13% to $200.04 (broke below $205, dip-add ladder live), ORCL −5.66% to $165.16 (base shattered, weakest holding), INTC −6.14% to $132.28 (gave back ATH, testing $130). Staged response: 9 KEEP, 1 SWAP (AMAT → NEM), 1 downgrade (TSM High→Med). Two binaries stacked: MU FQ3 tonight (Wed 24 June, AMC) and the decisive Core PCE Thu 25 June. Iran's ceasefire holds (Brent ~$78), war sleeve off. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 24 June 2026 from public web sources. The 23 June session did not resolve as the clean small-cap rotation the prior morning run projected — it escalated into a global semiconductor rout: the Russell 2000 also fell (−0.96%) alongside the Nasdaq (−2.21%) and S&amp;P (−1.44%); only the Dow held flat (−0.09%). The Philadelphia Semiconductor Index (SOX) crashed −7.87% to 13,482.51 with all 30 components red, set off by Korea's KOSPI falling −9.99% (Samsung and SK Hynix each −12%+, a 20-minute trading halt) after regulators flagged the chip rally as overheated, compounded by a BofA rate-hike note two days before Core PCE. The risk metrics confirmed fear, not rotation: VIX +12.79% to 19.49, the 10-year yield down to 4.47% (flight to safety), oil −3%, defensives leading (IBM +4.2%, Public Storage +4.4%, Accenture +3.3%). The AI/semis sleeve led the drawdown: NVDA −4.13% to $200.04 (broke below $205, filling the first rung of the dip-add ladder; $195 next), INTC −6.14% to $132.28 (gave back the $141.45 ATH despite a same-day BofA double-upgrade to $135; testing the $130 third-trim), ORCL −5.66% to $165.16 (base shattered, deeply below $177 — the weakest holding), and MU itself fell ~8–13% into its own print. The disciplined response two prints away: 9 KEEP, 1 SWAP (AMAT OUT — most rate-exposed WFE name, no catalyst, took the full SOX rout → NEM IN, gold/haven that wins on risk-off + hot PCE + falling real yields, pre-flagged on the 23 Jun watch-list), 1 downgrade (TSM High→Med — even the lower-multiple AI-logic core got caught). The book leans on the power/defensive sleeve (TLN, CEG, CCJ, LLY) plus the new haven while NVDA works its dip-add ladder. Two binaries are now stacked back-to-back: MU FQ3 tonight (Wed 24 June, AMC — consensus ~$34.66B rev / ~$19.95 EPS, GM ~81%, HBM sold out through 2026; ~13% implied, ~8–13% already realized; no chase, SK Hynix ~62% HBM share leads HBM4 speed) and the decisive Core PCE Thursday 25 June (May core expected ~3.3–3.4% YoY; the dot plot has flipped to a hike). The next 48 hours decide whether this is a buyable dip or the start of a regime change. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
