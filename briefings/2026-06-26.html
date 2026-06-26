@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Friday, 26 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Friday, 26 June 2026 — <strong>the 48-hour binary resolved, and it landed RISK-ON.</strong> Both stacked prints fired in <em>opposite</em> directions, yet the market chose the bullish reading: <strong class="pos">MU blew the doors off</strong> (FQ3 rev <strong>$41.46B</strong> vs ~$35B, EPS <strong>$25.11</strong> vs ~$20.78, Q4 guide <strong>$50B</strong> / ~86% GM) and ripped <strong class="pos">+17–19% to ~$1,233</strong> — while <strong class="warn">Core PCE ran HOT</strong> (core <strong>3.4% YoY</strong>, hottest since Oct 2023). The tell: <strong>the market shrugged off the hot print</strong> — the SOX <em>reversed up</em>, ASML +4.45%, QCOM +9% — the chip-led rout did NOT broaden into a regime. <strong>9 KEEP · 1 SWAP (NEM → VRT) · 2 UPGRADES (TSM, ASML Med→High).</strong></div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Friday 26 June 2026. Prices are the <strong>25 June close</strong> (with early 26 June indications where noted) and may be stale by the time you read this. The two binaries that defined the prior run — <strong>Micron's FQ3 print</strong> and <strong>Core PCE</strong> — have both resolved; this briefing scores the outcome. Verify with your broker before any trade.
+</section>
+
+<h2>The binary resolved — a split that the market read RISK-ON</h2>
+<div class="card lede">
+  <p>The 24 June run framed two binaries stacked back-to-back: <strong>MU FQ3</strong> (Wed AMC) and the decisive <strong>Core PCE</strong> (Thu). Both fired — and they fired in <em>opposite</em> directions. What matters is which one the tape chose to trade:</p>
+  <ul>
+    <li><strong class="pos">MU blew the doors off — the up-branch tell fired clean.</strong> FQ3 revenue <strong>$41.46B</strong> (vs ~$35B expected, +345% YoY from $9.30B), EPS <strong>$25.11</strong> (vs ~$20.78), and a Q4 guide of <strong>$50B ± $1B</strong> (vs $43.58B consensus) at <strong>~86% gross margin</strong>. Data-center revenue rose <em>sevenfold</em> to $11.5B. The stock ripped <strong class="pos">+17–19%</strong> to ~$1,233. The AI-memory super-cycle isn't just intact — it's <strong>accelerating</strong>.</li>
+    <li><strong class="warn">Core PCE ran HOT — the down-branch tell also fired.</strong> May core PCE rose to <strong>3.4% YoY</strong> (from 3.3%), the <strong>highest since Oct 2023</strong>; headline hit 4.1% (highest since Apr 2023); core MoM +0.3% (in line). Traders still expect a <strong>September hike</strong>, though they trimmed the odds slightly.</li>
+    <li><strong class="pos">The decisive fact — the market ABSORBED the hot print.</strong> Thursday 25 Jun: <strong>S&amp;P 500 −0.01%</strong> to 7,357.49, <strong>Dow +0.14%</strong>, Nasdaq −0.46% to 25,358.60. Treasury yields <em>slipped</em> despite the hot inflation. The <strong>SOX reversed up</strong> — MU +17%, <strong>QCOM +9%</strong> (doubled its 2029 non-handset guide to $40B), <strong>ASML +4.45%</strong>, Sandisk/WDC/KLA/AMAT green. The chip-led rout of 23 Jun did <strong>not</strong> compound into a regime change.</li>
+  </ul>
+  <p><strong>What this means:</strong> the feared down-branch — "hot PCE + chip de-rate compound into a regime" — <strong>did not happen</strong>. The buyable-dip read won. The new, <em>narrower</em> drag is <strong>Mag7-specific</strong>: <strong class="neg">Apple −6%</strong> on MacBook/iPad price increases (Microsoft hiked Xbox too); the Nasdaq's 4-day losing streak (its first since February) is mega-cap-led, <strong>not</strong> chip-led. The disciplined response is to <strong>lean back toward the AI/semis sleeve</strong> the rout had de-rated — while keeping the rate-insensitive power/uranium ballast (PCE was genuinely hot; the Sept hike is live):</p>
+  <ul>
+    <li><strong class="pos">UPGRADE — TSM Med→High and ASML Med→High.</strong> The chip de-rate <em>reversed</em>. ASML, the name the prior run benched as "most rate-exposed," <strong>led the recovery +4.45%</strong> as the market absorbed hot PCE — the rate fear that capped it is being priced through. TSM's lower-multiple AI-logic core is no longer the one to fear.</li>
+    <li><strong class="warn">SWAP — NEM OUT → VRT IN.</strong> The 24 Jun haven swap was <strong>directly tested and failed</strong>: into the hot PCE, <strong>gold fell to a ~7-month low (~$4,074)</strong> and <strong>NEM dropped ~4% to ~$94</strong> — the haven bid never showed; risk-on and real yields won. In comes <strong>VRT (Vertiv)</strong>, the queued AI-power/cooling re-entry (~$330, in its add zone): it rides MU's capex confirmation AND sits in the rate-insensitive power sleeve. The rate-hedge role passes to <strong>TLN / CEG / CCJ</strong> — real-asset power/uranium that actually held.</li>
+    <li><strong>MU and NVDA both validated.</strong> The "no chase" call into MU's print was right — the blowout did the work; MU is now a big winner but extended. NVDA's <strong>dip-add ladder worked</strong>: it traded down to <strong>$192.13 intraday Thu</strong> (through the $195 rung), held, and closed $198.91 — back to ~$202 early Friday.</li>
+  </ul>
+</div>
+
+<h2>Where things stand (25 June close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">7,357.49 <span class="neg">−0.01%</span></div><div class="k">essentially flat — hot PCE absorbed</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">25,358.60 <span class="neg">−0.46%</span></div><div class="k">4th down day (Mag7-led, not chips)</div></div>
+  <div class="stat"><div class="k">Dow</div><div class="v">51,920.62 <span class="pos">+0.14%</span></div><div class="k">green again</div></div>
+  <div class="stat"><div class="k">SOX (semis)</div><div class="v"><span class="pos">reversed UP</span></div><div class="k">MU +17%, QCOM +9%, ASML +4.45%</div></div>
+  <div class="stat"><div class="k">Core PCE (May)</div><div class="v"><span class="warn">3.4% YoY</span></div><div class="k">hottest since Oct 2023; hike still on</div></div>
+  <div class="stat"><div class="k">10-yr yield</div><div class="v">slipped <span class="pos">↓</span></div><div class="k">fell <em>despite</em> the hot print</div></div>
+  <div class="stat"><div class="k">Gold</div><div class="v"><span class="neg">~7-mo low</span></div><div class="k">~$4,074 — the haven bid failed</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v">~$78</div><div class="k">Iran license; war sleeve off</div></div>
+</div>
+<p class="sub">The honest read of the resolution: <strong>two prints fired in opposite directions, and the market voted for the bullish one.</strong> A blowout from MU plus a hot PCE that yields and equities <em>shrugged off</em> = the chip de-rate was a shakeout, not a regime. The drag that remains is narrow and Mag7-specific (Apple −6% on price hikes), and the one trade that <em>didn't</em> work was the gold haven — which fell to a 7-month low into the hottest PCE in nearly three years. That fails the NEM thesis and frees the swap.</p>
+
+<h2>Your portfolio — Friday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (25 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="pos">~$1,233 +17–19%</span></td><td><strong class="pos">The blowout.</strong> FQ3 rev <strong>$41.46B</strong> (vs ~$35B), EPS <strong>$25.11</strong> (vs ~$20.78), Q4 guide <strong>$50B</strong> / ~86% GM, data-center +7×. The "no chase" call was right — the print did the work. Now <strong>extended</strong> after a ~$160 single-day pop; <strong>trail up toward ~$1,080–$1,120</strong>; let the winner run, don't add into the spike.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$198.91</td><td><span class="pos">Dip-add ladder worked.</span> Traded to <strong>$192.13 intraday Thu</strong> (through the $195 rung), held, and recovered to close $198.91 — ~$202 early Friday. The rout shakeout filled the ladder and bounced. A <strong>$215 close</strong> still the line that flips it fully bullish; Street avg ~$299. Hold; the dip-add thesis is validated.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="pos">~$131 +6.31%</span></td><td><strong class="pos">Re-accelerating turnaround.</strong> Surged on the <strong>Apple foundry deal</strong> (Trump-announced US chip build) + a <strong>BofA double-upgrade</strong> (PT to $135, then $160; &gt;$6 EPS by 2030) + reported onshoring of Nvidia/Apple/"TerraFab" under Intel manufacturing. Intraday high $140.72. The <strong>$130 third-trim line held</strong> and the story is back on offense; trail ~$125, let it work.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num">~$160</td><td>Still the <span class="neg">weakest holding</span> — traded $155–$166, base remains broken below $177. Record fundamentals (OCI +93%, RPO $638B) intact but the AI-capex-financing overhang persists. <strong>Stabilizing, not repairing</strong>; a $185 reclaim is far off. Core hold, no add.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="neg">$375.12</span></td><td><span class="neg">The $380 close stop is FIRED.</span> Closed below the long-watched $380 line on the Mag7 drag; the SpaceX cross-current persists. Per the framework this is the de-risk trigger — <strong>trail tightened / trim discipline live</strong>; needs a close back above $380 to void the exit.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num">~$4.8</td><td><span class="neg">The $5.50 stop stays FIRED</span> — relative weakness persists. Needs a close back above $5.50 to void the exit.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">~$51 <span class="neg">−7%</span></td><td>The longest-duration, <span class="warn">most rate-path-sensitive holding</span> — the one name still pressured by the hot PCE even as the broad tape re-risked. No size-up while the Sept-hike odds stay live.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">~$42</td><td>Still below the <strong>$46 close line</strong> the trim fired on; no fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~€144</td><td>Dormant; the EU gap-up catalyst is spent. Business-AI-platform launch the live fundamental; Q2 ahead; add &lt;€138 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num">~$10.3</td><td>Dormant ballast; Q2 print 24 Jul. No action.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~104p</td><td>The steady-income anchor; the RPI linkage cushions a hot PCE and slipping yields help the bond-proxy. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The resolution re-sorted the book back toward the <strong>AI/semis winners</strong>: <strong>MU blew out (+17–19%)</strong>, <strong>NVDA's dip-add ladder worked</strong> ($192 low held), and <strong>INTC re-accelerated</strong> on the Apple foundry deal + BofA double-upgrade — the turnaround the rout had briefly threatened is back on offense. Two open items moved the other way: <strong>TSLA broke its $380 stop</strong> (the day's only fresh stop trigger), and <strong>ORCL</strong> is stabilizing but still the weakest holding below $177. SNAP and SYM stay on their fired stops.</p>
+</div>
+
+<h2>The 10 buy targets — Friday (9 KEEP · 1 SWAP · 2 upgrades)</h2>
+<p class="sub">The binary resolved risk-on, so the move is to <strong>lean back into the AI/semis sleeve the rout de-rated</strong> while keeping the rate-insensitive ballast (PCE was genuinely hot). <strong>TSM &amp; ASML upgraded Med→High</strong> — the chip de-rate reversed and ASML <em>led</em> the recovery (+4.45%). <strong>NEM swapped out → VRT in</strong> — the haven trade failed directly (gold to a 7-month low into the hot print), and VRT rides MU's capex confirmation from inside the rate-insensitive power sleeve. The power/uranium names (TLN/CEG/CCJ) now carry the rate hedge.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (25 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 24 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>MU</strong></td><td><strong class="pos">The vindication.</strong> FQ3 blowout — rev $41.46B (vs ~$35B), EPS $25.11, Q4 guide $50B / ~86% GM, data-center +7×; the AI-memory super-cycle is accelerating. Now <strong>extended</strong> after +17–19%; own it, don't chase the spike</td><td class="num">~$1,233</td><td class="num">$1,500 (Stifel)</td><td><span class="tag high">High</span></td><td>KEEP — blowout</td></tr>
+      <tr><td>2</td><td><strong>NVDA</strong></td><td>AI bellwether; the <strong>dip-add ladder worked</strong> — $192.13 intraday low (through the $195 rung), held, closed $198.91, ~$202 Fri. A $215 close re-arms full upside; Street avg ~$299</td><td class="num">$198.91</td><td class="num">~$299 avg</td><td><span class="tag high">High</span></td><td>KEEP — ladder validated</td></tr>
+      <tr><td>3</td><td><strong>TLN</strong></td><td><strong>The rate-insensitive power leader</strong> — contracted cashflow (AWS $18B PPA to 2042, 13.1GW incl. 2.2GW nuclear); now the book's primary rate hedge with the gold haven gone; 15-analyst avg ~$472, Goldman Buy/$499</td><td class="num">~$412</td><td class="num">$472 avg / $499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>CEG</strong></td><td>Rate-insensitive nuclear / AI-power; nation's largest power producer post-Calpine; Meta 20-yr 1.1GW PPA; the second leg of the rate-hedge sleeve; 18-analyst Buy, PT ~$374</td><td class="num">~$270</td><td class="num">$374 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, capex $52–56B, CoWoS sold out through 2027 — the lower-multiple AI-logic core; the <strong>chip de-rate reversed</strong>, so the rate fear that downgraded it on 24 Jun is lifting</td><td class="num">~$435</td><td class="num">$450+ avg</td><td><span class="tag up">High</span></td><td><span class="tag up">UPGRADE Med→High</span></td></tr>
+      <tr><td>6</td><td><strong>ASML</strong></td><td>EUV / High-NA monopoly, moat intact; <strong>led the recovery +4.45% to ~$1,841</strong> — the "most rate-exposed" name bounced hardest as the market absorbed hot PCE, refuting the rate-fear downgrade</td><td class="num">~$1,841</td><td class="num">Street raises</td><td><span class="tag up">High</span></td><td><span class="tag up">UPGRADE Med→High</span></td></tr>
+      <tr><td>7</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady, lower-beta analog</strong> — the calmest way to stay long the re-risking sleeve</td><td class="num">~$413</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; full production restored, NAV/sh → $66; part of the rate-hedge ballast; the &lt;$110 add zone live</td><td class="num">~$103.58</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>LLY</strong></td><td>Structural GLP-1 winner (Retatrutide, Ebglyss q8w, Jefferies $1,350); the <strong>defensive anchor</strong> — held green (+1.14%) into the hot PCE, validating its "first beneficiary if PCE runs hot" role</td><td class="num">~$1,130</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — anchor</td></tr>
+      <tr><td>10</td><td><strong>VRT</strong></td><td><strong class="pos">NEW — the swap-in.</strong> AI-power / data-center cooling; the queued re-entry off the watch-list, in its <strong>~$326–$333 add zone</strong>. Rides MU's $50B-capex confirmation AND sits in the rate-insensitive power sleeve — a cleaner risk/reward than the gold haven that just failed; ~$377 mean PT</td><td class="num">~$326–333</td><td class="num">~$377 avg</td><td><span class="tag new">High</span></td><td><span class="tag new">NEW (in for NEM)</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Out of the active 10: NEM</strong> — swapped out. The haven thesis was <em>directly tested and failed</em>: into the hottest PCE since Oct 2023, <strong>gold fell to a ~7-month low (~$4,074)</strong> and NEM dropped ~4% to ~$94; risk-on and real yields beat the haven bid. NEM/GLD stay on the watch-list for a re-entry only if gold reclaims its trend or a genuine risk-off tape returns. <strong>AMAT</strong> stays out — its re-entry gate was "PCE confirms rates <em>stabilized</em>," and PCE ran hot, so the gate is <strong>not</strong> met even though the chip de-rate reversed. <strong>MRVL</strong> stays out (S&amp;P-inclusion catalyst spent; re-entry on a confirmed base above ~$300). <strong>The honest read:</strong> the rout was a shakeout, the AI-memory super-cycle is accelerating (MU's $50B guide), and the book leans back toward the AI/semis winners while the power/uranium sleeve carries the live rate risk.</p>
+
+<h2>What changed (24→26 Jun: the binary resolved)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>What happened</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NEM</strong></td><td>Haven thesis failed — gold to a ~7-month low (~$4,074) into the hot PCE; NEM ~−4% to ~$94. Risk-on + real yields beat the haven bid</td><td><span class="neg">SWAP OUT → VRT</span></td></tr>
+      <tr><td><strong>VRT</strong></td><td>AI-power/cooling; queued re-entry in its ~$330 add zone; rides MU's $50B capex confirmation from inside the rate-insensitive power sleeve</td><td><span class="pos">SWAP IN (NEW)</span></td></tr>
+      <tr><td><strong>TSM</strong></td><td>Chip de-rate reversed; the lower-multiple AI-logic core is no longer the one to fear into a market that absorbed hot PCE</td><td><span class="pos">UPGRADE Med→High</span></td></tr>
+      <tr><td><strong>ASML</strong></td><td><span class="pos">+4.45% to ~$1,841</span> — the "most rate-exposed" name led the recovery, refuting the rate-fear downgrade</td><td><span class="pos">UPGRADE Med→High</span></td></tr>
+      <tr><td><strong>MU</strong></td><td><span class="pos">FQ3 blowout</span> — rev $41.46B, EPS $25.11, Q4 guide $50B / ~86% GM; +17–19% to ~$1,233</td><td>KEEP — extended, no chase</td></tr>
+      <tr><td><strong>NVDA</strong></td><td>Dip-add ladder worked — $192.13 intraday low (through $195 rung), held, closed $198.91, ~$202 Fri</td><td>KEEP — validated</td></tr>
+      <tr><td><strong>INTC</strong> (holding)</td><td><span class="pos">+6.31%</span> on the Apple foundry deal + BofA double-upgrade (PT $135→$160); $130 third-trim held</td><td>KEEP — turnaround re-accelerating</td></tr>
+      <tr><td><strong>TSLA</strong> (holding)</td><td><span class="neg">$375.12 — broke the $380 close stop</span> on the Mag7 drag</td><td>STOP FIRED — trim discipline live</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — post-resolution</h2>
+<div class="card">
+  <ul>
+    <li><strong class="pos">MU FQ3 — resolved BLOWOUT:</strong> revenue $41.46B (vs ~$35B; +345% YoY), EPS $25.11 (vs ~$20.78), net income $28.24B, data-center +7× to $11.5B, cloud memory +300%+ to $13.77B; <strong>Q4 guide $50B ± $1B</strong> (vs $43.58B consensus) at <strong>~86% gross margin</strong>. The HBM/AI-memory super-cycle is accelerating, not peaking. The stock ripped +17–19% to ~$1,233 — the "no chase" discipline was right.</li>
+    <li><strong class="warn">Core PCE — resolved HOT but absorbed:</strong> May core 3.4% YoY (from 3.3%, highest since Oct 2023); headline 4.1% (highest since Apr 2023); core MoM +0.3% (in line). Traders still price a September hike, with odds trimmed slightly. Crucially, <strong>equities and yields shrugged it off</strong> — the S&amp;P closed flat, the Dow rose, the 10-year <em>fell</em>. The rate scare did not become a regime.</li>
+    <li><strong>The de-risk narrowed, not broadened:</strong> the chip-led rout of 23 Jun <em>reversed</em> (SOX up, MU +17%, QCOM +9%, ASML +4.45%). The remaining drag is <strong>Mag7-specific</strong> — Apple −6% (MacBook/iPad price increases), Microsoft hiking Xbox — and the Nasdaq's 4-day losing streak (first since February) is mega-cap-led.</li>
+    <li><strong>The haven trade failed:</strong> into the hottest PCE in nearly three years, <strong>gold fell to a ~7-month low (~$4,074)</strong> and NEM dropped ~4%. Real yields and risk-on appetite beat the inflation-hedge bid — which is why the rate hedge now sits in real-asset power/uranium (TLN/CEG/CCJ), not gold.</li>
+    <li><strong>Iran (interim deal holding):</strong> Brent <strong>~$78</strong> — the 60-day oil license holds, Hormuz flowing; ceasefire intact; the war sleeve stays <strong>off</strong> (Brent ~$17 below the $95 re-arm line). LMT/RTX stay benched.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — post-resolution (into the next prints)</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the buyable-dip read holds</strong> — the rout was a shakeout; AI/semis re-risk grinds higher on MU's super-cycle confirmation while the power/uranium sleeve (TLN/CEG/CCJ) carries the live rate risk. No further wholesale shift; let the upgrades (TSM/ASML) and the VRT add work.</div>
+  <div class="scenario up"><strong>Up branch — the Mag7 drag fades AND rate fears keep easing</strong> — if Apple/Microsoft price-hike worry is digested and Sept-hike odds keep slipping, the AI multiple re-expands fully; NVDA reclaims $215, re-add AMAT once "rates stabilized" is confirmed, AVGO re-promotes on a base. The full risk-on.</div>
+  <div class="scenario down"><strong>Down branch — the Mag7 weakness spreads OR a second hot inflation print</strong> — if the mega-cap de-rate broadens beyond Apple or July CPI/PCE confirms the 3.4% trend, the Sept hike firms, rate-exposed AI names (ASML/NVDA/IONQ) give back, and the power/uranium ballast leads again. <em>Secondary tail:</em> an Iran collapse + Brent &gt;$95 re-arms the war sleeve (low-probability).</div>
+  <p class="sub">The dominant tell shifts from "the binary" to <strong>(1) the breadth of the Mag7 drag</strong> (does Apple's −6% stay idiosyncratic or spread?), <strong>(2) September-hike odds + the 10-year yield</strong> (the hot PCE was absorbed once — does it stay absorbed?), and <strong>(3) whether the SOX holds its reversal.</strong> Secondary: <strong>Brent vs. $95.</strong></p>
+</div>
+
+<h2>Action checklist (post-binary)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the 48-hour binary resolved <span class="pos">RISK-ON</span> — MU blew out (+17–19%), the market absorbed a hot PCE (S&amp;P flat, Dow green, yields down), and the chip rout reversed. The rout was a <strong>shakeout, not a regime</strong>.</li>
+    <li><strong>TSM &amp; ASML:</strong> <span class="pos">upgraded Med→High</span> — the chip de-rate reversed; ASML led the recovery +4.45%. Lean back into the AI/semis sleeve the rout had de-rated.</li>
+    <li><strong>NEM → VRT:</strong> the <span class="neg">haven trade failed</span> (gold ~7-mo low, NEM −4% into hot PCE) → swapped OUT; <span class="pos">VRT IN</span> in its ~$330 add zone (AI-power, rate-insensitive). NEM/GLD to the watch-list.</li>
+    <li><strong class="pos">MU (holding):</strong> blowout — rev $41.46B, EPS $25.11, Q4 guide $50B / ~86% GM; +17–19% to ~$1,233. <strong>No chase</strong> the spike; trail up toward ~$1,080–$1,120; let the winner run.</li>
+    <li><strong>NVDA (holding):</strong> <span class="pos">dip-add ladder worked</span> — $192.13 low held, closed $198.91, ~$202 Fri. <strong>$215 close</strong> re-arms full upside; hold.</li>
+    <li><strong class="pos">INTC (holding):</strong> +6.31% on the Apple foundry deal + BofA double-upgrade (PT $135→$160); the $130 third-trim held; the turnaround is re-accelerating. Trail ~$125.</li>
+    <li><strong class="neg">TSLA (holding):</strong> <span class="neg">$375.12 — the $380 close stop is FIRED</span>; trim discipline live; needs a close back above $380 to void.</li>
+    <li><strong>ORCL (holding):</strong> ~$160, stabilizing $155–$166 but still the weakest holding below $177; no add until a $185 reclaim.</li>
+    <li><strong>SNAP (holding):</strong> the <span class="neg">$5.50 stop stays FIRED</span> (~$4.8); reclaim $5.50 on a close to void.</li>
+    <li><strong>IONQ (holding):</strong> ~−7%; the one name still pressured by the hot PCE — no size-up while the Sept-hike odds are live.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close (<span class="neg">FIRED, $375.12</span>) · SNAP $5.50 (FIRED, ~$4.8) · SYM $46 close (fired, ~$42) · INTC $130 trim (held, ~$131; trail ~$125) · MU trail ~$1,080–$1,120 (post-blowout, no chase) · NVDA $215-reclaim to flip / $195 rung held ($192 low) · ORCL base broken (~$160, below $177) · <strong>TSM &amp; ASML upgraded Med→High</strong> · NEM swapped out (haven failed) · AMAT stays out (rate-stabilization gate not met) · <strong>primary tells: the breadth of the Mag7 drag, September-hike odds + the 10-year yield, and whether the SOX holds its reversal; secondary: Brent vs. $95.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. The 48-hour binary resolved as a split that the market read risk-on: Micron's FQ3 blew out (rev $41.46B vs ~$35B, EPS $25.11 vs ~$20.78, Q4 guide $50B / ~86% GM, data-center +7×) and ripped +17–19% to ~$1,233, while Core PCE ran hot (core 3.4% YoY, the highest since Oct 2023; headline 4.1%) — yet the S&amp;P closed flat, the Dow rose, yields slipped, and the SOX reversed up (QCOM +9%, ASML +4.45%). The chip-led rout was a shakeout, not a regime; the remaining drag is Mag7-specific (Apple −6% on price hikes). Holdings: MU +17–19% (blowout), NVDA dip-add ladder worked ($192.13 low held, closed $198.91), INTC +6.31% on the Apple foundry deal + BofA double-upgrade (PT $135→$160), TSLA broke its $380 stop ($375.12), ORCL stabilizing but still weakest (~$160). Response: 9 KEEP, 1 SWAP (NEM OUT — haven failed as gold hit a ~7-month low into the hot PCE → VRT IN, AI-power in its ~$330 add zone), 2 upgrades (TSM &amp; ASML Med→High as the chip de-rate reversed). Iran's ceasefire holds (Brent ~$78), war sleeve off. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 26 June 2026 from public web sources. The two binaries the 24 June run stacked back-to-back — Micron's FQ3 print and Core PCE — both resolved, and they fired in opposite directions, yet the market chose the bullish reading. MU blew the doors off: FQ3 revenue $41.46B (vs ~$35B expected, +345% YoY), EPS $25.11 (vs ~$20.78), net income $28.24B, data-center revenue up sevenfold to $11.5B, and a Q4 guide of $50B ± $1B (vs $43.58B consensus) at ~86% gross margin — the stock ripped +17–19% to ~$1,233 and the AI-memory super-cycle is accelerating, not peaking. Core PCE ran hot: May core rose to 3.4% YoY (from 3.3%, the highest since October 2023), headline hit 4.1% (highest since April 2023), and traders still price a September hike with odds trimmed slightly. The decisive fact: the market absorbed the hot print — the S&amp;P 500 closed flat (−0.01% to 7,357.49), the Dow rose (+0.14% to 51,920.62), the Nasdaq slipped just −0.46% to 25,358.60 (its fourth down day, first since February, and Mag7-led not chip-led), Treasury yields fell, and the SOX reversed up (MU +17%, QCOM +9% on a doubled 2029 non-handset guide to $40B, ASML +4.45%, Sandisk/WDC/KLA/AMAT green). The chip-led rout of 23 June was a shakeout, not a regime; the remaining drag is narrow and Apple-specific (−6% on MacBook/iPad price increases, with Microsoft hiking Xbox). Holdings: MU +17–19% (the blowout, now extended — own it, don't chase); NVDA's dip-add ladder worked ($192.13 intraday low through the $195 rung, held, closed $198.91, ~$202 Friday); INTC +6.31% on the Apple foundry deal (Trump-announced US chip build) plus a BofA double-upgrade (PT to $135 then $160, &gt;$6 EPS by 2030) — the $130 third-trim held and the turnaround is re-accelerating; TSLA broke its $380 close stop ($375.12) on the Mag7 drag — the day's only fresh stop trigger; ORCL stabilizing $155–$166 but still the weakest holding below $177. The disciplined response: 9 KEEP, 1 SWAP, 2 upgrades. SWAP — NEM OUT (the 24 June haven swap was directly tested and failed: into the hottest PCE in nearly three years, gold fell to a ~7-month low ~$4,074 and NEM dropped ~4% to ~$94 — the haven bid never showed, risk-on and real yields won) → VRT IN (Vertiv, AI-power/cooling, the queued re-entry in its ~$326–$333 add zone, riding MU's $50B-capex confirmation from inside the rate-insensitive power sleeve). UPGRADES — TSM Med→High and ASML Med→High, as the chip de-rate reversed and ASML, the name benched as "most rate-exposed," led the recovery +4.45%. AMAT stays out (its re-entry gate of "rates stabilized" is not met since PCE ran hot); MRVL stays out (catalyst spent). The rate hedge now sits in real-asset power/uranium (TLN, CEG, CCJ), not the failed gold haven, with LLY the defensive anchor (held green into the hot print). Iran's ceasefire holds (Brent ~$78), the war sleeve stays off. The honest read: the feared regime-change down-branch did not materialize — the rout was a shakeout, the AI-memory super-cycle is accelerating, and the book leans back toward the AI/semis winners while the power sleeve carries the live rate risk. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
