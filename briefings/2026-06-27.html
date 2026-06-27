@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Saturday, 27 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Saturday, 27 June 2026 — <strong>weekend review: the risk-on read got TESTED, and partly broke.</strong> Friday's tape challenged the 26 June "shakeout, not a regime" call: <strong class="neg">MU faded its blowout</strong> (−6.69% to <strong>$1,132</strong>, gave back half the +17% pop), <strong class="neg">the Mag7 drag spread</strong> (Nasdaq's <strong>5th straight down day</strong>, Apple −6.12% — worst day in a year, MSFT −3.5%), and the <strong class="warn">Fed is confirmed hawkish</strong> (the June dot plot flipped to a <strong>2026 hike</strong>). The offsets: the <strong class="pos">SOX rose +3.2%</strong> on memory leadership and <strong class="pos">Brent crashed to ~$73</strong> (−10% week) — a real disinflationary counterweight. <strong>9 KEEP · 1 SWAP (ASML → QCOM).</strong></div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Saturday 27 June 2026 (US markets closed for the weekend). Prices are the <strong>26 June close</strong> and may be stale by the time you read this. This is a weekend review scoring how the prior run's "risk-on / shakeout" read held up against Friday's tape. Verify with your broker before any trade.
+</section>
+
+<h2>The risk-on read got tested — and partly broke</h2>
+<div class="card lede">
+  <p>The 26 June run called the chip-led rout a <strong>"shakeout, not a regime"</strong> and leaned back into the AI/semis sleeve. Friday's session <em>tested</em> that read — and three things partly broke it:</p>
+  <ul>
+    <li><strong class="neg">MU faded its blowout.</strong> The stock fell <strong>−6.69% to $1,132.33</strong>, giving back roughly <strong>half</strong> the +17% post-earnings pop. The "no chase into the spike" discipline was vindicated a second time — anyone who chased the ~$1,233 intraday peak is now underwater. The super-cycle thesis is intact (arguably <em>stronger</em>), but the easy money is gone.</li>
+    <li><strong class="neg">The Mag7 drag is SPREADING — the down-branch tell.</strong> The Nasdaq fell −0.24% to <strong>25,297.62</strong>, its <strong>fifth consecutive losing session</strong>; <strong>Apple −6.12%</strong> (its worst single day in over a year, ~$265B erased) and <strong>Microsoft −3.5%</strong>, both blaming surging memory/RAM costs for price hikes ("RAMageddon"). The S&amp;P closed −0.05% to 7,354.02 (still ~flat) and the Dow −0.09%, but breadth deteriorated.</li>
+    <li><strong class="warn">The Fed is CONFIRMED HAWKISH.</strong> Under Chair Kevin Warsh, the June dot plot <strong>flipped to project a 2026 HIKE</strong> (17 of 18 officials see inflation risks to the upside); September-hike odds sit <strong>~62–63%</strong>, December ~80%; the 10-year is <strong>4.38%</strong>. This directly <strong>refutes</strong> the 26 June premise that "the market absorbed hot PCE / rate fear is lifting" — the premise the ASML upgrade rested on.</li>
+  </ul>
+  <p><strong>But two offsets keep this from being a clean down-branch:</strong> the <strong class="pos">SOX actually rose +3.2%</strong> Friday on memory leadership (MU led early before fading), and <strong class="pos">Brent crashed to ~$72.95</strong> (−3.07% on the day, ~−10% on the week, the lowest since 27 Feb) on US–Iran peace progress — a genuine <strong>disinflationary</strong> counterweight to the hawkish Fed and a consumer tailwind. Gold <strong>failed again</strong> (~$3,994), validating the 26 June NEM swap-out.</p>
+  <p><strong>The key new frame — the "RAMageddon" double-edge:</strong> the AI-memory super-cycle that powered MU's blowout is now causing <strong>downstream cost inflation</strong> that hits the Mag7 device makers — Apple and Microsoft both raising prices on memory costs. It is <strong class="pos">bullish</strong> for memory pricing power (MU/WDC/SNDK) but <strong class="neg">bearish</strong> for mega-cap demand and margins — which is exactly why the Mag7 drag spreads <em>even as</em> the SOX holds. The disciplined response: <strong>trim the most rate-exposed name and lean on the rate-insensitive ballast.</strong></p>
+  <ul>
+    <li><strong class="warn">SWAP — ASML OUT → QCOM IN.</strong> The 26 June ASML Med→High upgrade was explicitly premised on "rate fear lifting." The confirmed-hawkish Fed refutes that — the <strong>most rate-exposed, highest-multiple EUV name</strong> should not carry top-conviction status into a rate-up regime. ASML stays a quality monopoly (moat intact) but goes to the <strong>watch-list</strong> pending rate clarity. In comes <strong>QCOM</strong> (~$205) — a <strong>low-multiple (~13–14×) semis name</strong> (far less duration risk) with a <em>fresh, confirmed</em> Investor-Day catalyst: FY29 non-handset doubled to ~$40B, <strong>Meta + Microsoft</strong> named as customers, data-center AI + auto.</li>
+    <li><strong class="pos">LLY is the standout.</strong> +6.15% Friday, named the <strong>"clear winner"</strong> of the ADA weight-loss conference — the defensive anchor working exactly as designed into a hawkish/risk-off tilt.</li>
+    <li><strong>No whipsaw elsewhere.</strong> TSM stays High (lower-multiple logic core, far less rate-exposed than ASML), the power/uranium sleeve (TLN/CEG/CCJ) is <strong>more</strong> valuable now the hawkish Fed is confirmed, and VRT — the 26 June swap-in — fell through its add zone (~$303–315) but the thesis is intact (Bernstein Buy, Roth $355).</li>
+  </ul>
+</div>
+
+<h2>Where things stand (26 June close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">7,354.02 <span class="neg">−0.05%</span></div><div class="k">~flat — but breadth weakening</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">25,297.62 <span class="neg">−0.24%</span></div><div class="k">5th straight down day (Mag7-led)</div></div>
+  <div class="stat"><div class="k">Dow</div><div class="v">51,876.11 <span class="neg">−0.09%</span></div><div class="k">slipped with the tape</div></div>
+  <div class="stat"><div class="k">SOX (semis)</div><div class="v"><span class="pos">+3.2%</span></div><div class="k">memory leadership; diverged UP</div></div>
+  <div class="stat"><div class="k">Fed / rates</div><div class="v"><span class="warn">hawkish</span></div><div class="k">dot plot flipped to a 2026 HIKE</div></div>
+  <div class="stat"><div class="k">Sept-hike odds</div><div class="v"><span class="warn">~62–63%</span></div><div class="k">10-yr 4.38%; Dec ~80%</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="pos">~$72.95</span></div><div class="k">−10% week — disinflationary</div></div>
+  <div class="stat"><div class="k">Gold</div><div class="v"><span class="neg">~$3,994</span></div><div class="k">failed again — haven stays dead</div></div>
+</div>
+<p class="sub">The honest read of the test: <strong>the 26 June "shakeout" call is half-confirmed at best.</strong> MU faded, the Mag7 drag spread to a 5-day Nasdaq slide, and the Fed is confirmed hawkish — but the SOX rose, oil crashed (a real disinflationary force pushing <em>against</em> the hike threat), and gold failed again. The "RAMageddon" double-edge — memory costs that lift the makers and squeeze the device makers — explains why the SOX and the Nasdaq split. The move is to <strong>trim the most rate-exposed name (ASML), lean on the rate-insensitive ballast, and keep the AI-infra winners while respecting that the easy phase is over.</strong></p>
+
+<h2>Your portfolio — Saturday read (11 positions)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (26 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="neg">$1,132.33 −6.69%</span></td><td><strong class="neg">Faded the blowout.</strong> Gave back roughly half the +17% post-earnings pop. The "no chase" call was right <em>again</em>. Super-cycle intact and arguably stronger (RAMageddon confirms memory pricing power), but volatile and corrected. Hold the core; the <strong>$1,080–$1,120 trail zone</strong> is now in play.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$192.53 <span class="neg">−1.64%</span></td><td><strong>Back in the dip-add zone</strong> — below the $195 rung it held on 25 Jun ($192.13 low). The ladder is being re-tested; next rung the low-$190s/high-$180s. A <strong>$215 close</strong> still the line that flips it fully bullish; Street avg ~$299. Hold.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="pos">~$134</span></td><td><strong class="pos">Holding the turnaround.</strong> Record $133.99 on 18 Jun; the Apple foundry deal + BofA double-upgrade (PT $135→$160) intact; up ~260% YTD. The $130 third-trim held; trail ~$128–$130, let it work.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="neg">$148.53</span></td><td><span class="neg">NEW LOWS</span> — broke below $155; the weakest holding keeps weakening. Record fundamentals (OCI +93%, RPO $638B) intact but the AI-capex-financing overhang is winning. A $185 reclaim is far off. Core hold, <strong>no add</strong>; watch for a base or capitulation.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">$379.71</td><td><strong>Recovered to right AT the $380 stop</strong> — the 25 Jun break ($375.12) is borderline un-fired. Austin robotaxi went <strong>fully unsupervised</strong> 22 Jun (a positive); JPM upgraded to Neutral ($475 PT) 5 Jun. Needs a clean close above $380 to fully void; trim discipline live until then.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">$4.41</span></td><td><span class="neg">New lows; the $5.50 stop stays FIRED.</span> Pressured by PT cuts (Citi $6.50, JPM $6, RBC $8) + a UK youth-social-media regulatory threat. Reclaim $5.50 on a close to void.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">$49.31 <span class="neg">−2.47%</span></td><td>The longest-duration, <span class="warn">most rate-path-sensitive holding</span> — hurt directly by the confirmed-hawkish Fed (dot plot flipped to a hike). No size-up while Sept-hike odds (~62–63%) stay live.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">$41.50</td><td>Flat, still below the <strong>$46 close line</strong> the trim fired on; no fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="pos">~$155 ADR +4.75%</span></td><td>An <strong>up-day</strong> Friday (~€133 Xetra). Business-AI-platform launch the live fundamental; Q2 ahead. Below the old ~$164 ADR mark after an earlier-week pullback; add &lt;€130 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">$8.58 −2.94%</span></td><td><strong class="warn">DATA CORRECTION</strong> — prior briefings cited ~$10.3; the verified, cross-confirmed price is <strong>$8.58</strong>, near 52-week lows. Dormant ballast; Q2 print 24 Jul. Reference corrected going forward.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">104.40p</td><td>The steady-income anchor; RPI linkage cushions inflation and the bond-proxy benefits if yields ease on the oil-driven disinflation. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The test re-sorted the read: the AI/semis winners are <strong>not</strong> immune — <strong>MU faded its blowout</strong> (−6.69%), <strong>NVDA is back in its dip-add zone</strong>, and <strong>ORCL made new lows</strong> below $155. The bright spots: <strong>INTC held its turnaround</strong> (~$134), <strong>SAP rose +4.75%</strong>, and <strong>TSLA recovered to its $380 stop line</strong>. SNAP made new lows, and IONQ remains the one most exposed to the confirmed-hawkish rate path.</p>
+</div>
+
+<h2>The 10 buy targets — Saturday (9 KEEP · 1 SWAP)</h2>
+<p class="sub">The tape tested the risk-on read, so the move is to <strong>trim the most rate-exposed name and lean on the rate-insensitive ballast</strong> while keeping the AI-infra winners. <strong>ASML swapped out → QCOM in</strong> — the 26 Jun "rate fear lifting" upgrade premise was refuted by the confirmed-hawkish Fed, and QCOM is the cleaner fit: a low-multiple (~13–14×) semis name with a fresh Investor-Day catalyst (FY29 non-handset doubled to ~$40B, Meta + Microsoft customers). The power/uranium sleeve (TLN/CEG/CCJ) and LLY carry the rate hedge.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (26 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 26 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>MU</strong></td><td><strong class="neg">Faded the blowout</strong> — −6.69% to $1,132, gave back half the +17% pop; "no chase" vindicated again. Super-cycle intact and <em>stronger</em> via RAMageddon (memory pricing power); volatile, easy money gone</td><td class="num">~$1,132</td><td class="num">$1,500 (Stifel)</td><td><span class="tag high">High</span></td><td>KEEP — faded</td></tr>
+      <tr><td>2</td><td><strong>NVDA</strong></td><td>AI bellwether; <strong>back in the dip-add zone</strong> at $192.53 — below the $195 rung it held last time; watch the ladder. A $215 close re-arms full upside; Street avg ~$299</td><td class="num">$192.53</td><td class="num">~$299 avg</td><td><span class="tag high">High</span></td><td>KEEP — testing rung</td></tr>
+      <tr><td>3</td><td><strong>TLN</strong></td><td><strong>The rate-insensitive power leader</strong> — contracted cashflow (AWS $18B PPA to 2042, 13.1GW incl. 2.2GW nuclear); the book's primary rate hedge, <strong>more valuable now the hawkish Fed is confirmed</strong>; GS Buy/$499</td><td class="num">~$399</td><td class="num">$472 avg / $499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>CEG</strong></td><td>Rate-insensitive nuclear / AI-power; nation's largest power producer post-Calpine; Meta 20-yr 1.1GW PPA; second leg of the rate-hedge sleeve</td><td class="num">~$264</td><td class="num">$374 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, capex $52–56B, CoWoS sold out through 2027; the <strong>lower-multiple AI-logic core</strong> — far less rate-exposed than ASML, the right way to hold logic in a rate-up tape</td><td class="num">~$435</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; full production restored, NAV/sh → $66; rate-hedge ballast; the &lt;$110 add zone live; avg PT ~$132</td><td class="num">~$103</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>LLY</strong></td><td><strong class="pos">The standout</strong> — +6.15% Friday, the ADA conference's "clear winner" (Retatrutide, Ebglyss q8w, Jefferies $1,350); the defensive anchor working perfectly into a hawkish/risk-off tilt</td><td class="num">~$1,128</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP — anchor working</td></tr>
+      <tr><td>8</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady, lower-beta analog</strong> — the right ballast for a defensive tilt</td><td class="num">~$413</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; <strong>fell through its add zone</strong> to ~$303–315 (day-two on the swap, underwater) but thesis intact — Bernstein Buy, Roth $355, Oppenheimer $353; the add zone re-prices lower</td><td class="num">~$303–315</td><td class="num">~$355 (Roth)</td><td><span class="tag high">High</span></td><td>KEEP — testing</td></tr>
+      <tr><td>10</td><td><strong>QCOM</strong></td><td><strong class="pos">NEW — the swap-in.</strong> Low-multiple (~13–14×) semis with a fresh, confirmed Investor-Day catalyst: FY29 non-handset doubled to ~$40B (&gt;$15B data-center AI + $10B auto), Dragonfly C1000 / AI300, <strong>Meta + Microsoft</strong> customers; far less rate-exposed than ASML</td><td class="num">~$205</td><td class="num">Street raises</td><td><span class="tag new">High</span></td><td><span class="tag new">NEW (in for ASML)</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Out of the active 10: ASML</strong> — swapped out. The 26 Jun "rate fear lifting" upgrade premise was <em>directly refuted</em> by the confirmed-hawkish Fed (the dot plot flipped to a hike); the most rate-exposed, highest-multiple EUV name moves to the watch-list — moat intact, re-add when the rate regime clarifies. <strong>AMAT</strong> stays out — its "rates stabilized" gate is now <em>further</em> from met, even though it closed strong (~$627) on the Broadcom/EPIC packaging news. <strong>MRVL</strong> stays out (catalyst spent; re-entry on a confirmed base above ~$300). <strong>NEM</strong> stays out (gold failed again to ~$3,994). <strong>The honest read:</strong> the risk-on call is being tested — MU faded, the Mag7 drag is spreading, the Fed is confirmed hawkish — but the oil-driven disinflation and the holding SOX keep it from a clean regime change.</p>
+
+<h2>What changed (26→27 Jun: the risk-on read tested)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Ticker</th><th>What happened</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ASML</strong></td><td>The 26 Jun "rate fear lifting" upgrade premise was refuted — the Fed dot plot flipped to a 2026 hike; the most rate-exposed, highest-multiple EUV name into a confirmed-hawkish regime</td><td><span class="neg">SWAP OUT → QCOM</span></td></tr>
+      <tr><td><strong>QCOM</strong></td><td>Low-multiple (~13–14×) semis with a fresh, confirmed Investor-Day catalyst — FY29 non-handset doubled to ~$40B, Meta + Microsoft customers, data-center AI + auto; far less rate-exposed</td><td><span class="pos">SWAP IN (NEW)</span></td></tr>
+      <tr><td><strong>MU</strong> (target + holding)</td><td><span class="neg">−6.69% to $1,132</span> — faded the blowout, gave back half the +17% pop; "no chase" vindicated again</td><td>KEEP — thesis intact, easy money gone</td></tr>
+      <tr><td><strong>NVDA</strong></td><td>$192.53 (−1.64%) — back in the dip-add zone, below the $195 rung it held on 25 Jun</td><td>KEEP — testing the ladder</td></tr>
+      <tr><td><strong>LLY</strong></td><td><span class="pos">+6.15%</span> — named the "clear winner" of the ADA weight-loss conference; the defensive anchor working</td><td>KEEP — the standout</td></tr>
+      <tr><td><strong>ORCL</strong> (holding)</td><td><span class="neg">$148.53 — new lows</span>, broke below $155; the weakest holding keeps weakening</td><td>HOLD — no add, watch for a base</td></tr>
+      <tr><td><strong>VRT</strong></td><td>Fell through its $326–333 add zone to ~$303–315; underwater on day two, but thesis intact (Bernstein Buy, Roth $355)</td><td>KEEP — add zone re-prices lower</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Macro state — the test (scoring the 26 June close)</h2>
+<div class="card">
+  <ul>
+    <li><strong class="neg">The risk-on read got tested:</strong> MU faded its blowout (−6.69%), the Mag7 drag spread (Nasdaq's 5th straight down day, Apple −6.12% worst in a year, MSFT −3.5%), and the Fed is confirmed hawkish (dot plot flipped to a 2026 hike). The 26 June "shakeout, not a regime" call is <strong>half-confirmed at best</strong>.</li>
+    <li><strong>The "RAMageddon" double-edge</strong> is the dominant new narrative: the AI-memory super-cycle is <strong class="pos">bullish for memory makers</strong> (MU/WDC/SNDK pricing power) but <strong class="neg">bearish for Mag7 device makers</strong> (Apple/Microsoft raising prices on memory costs, hurting demand/margins). This is why the SOX rose (+3.2%) while the Nasdaq fell.</li>
+    <li><strong class="warn">The Fed — confirmed hawkish:</strong> under Chair Warsh, the June dot plot projects a <strong>2026 hike</strong>; Sept-hike odds ~62–63%, December ~80%; the 10-year sits 4.38%. Higher-for-longer is the AI-multiple's enemy; the rate-insensitive sleeve (power/uranium/LLY) is the ballast.</li>
+    <li><strong class="pos">The disinflationary offset — oil crashed:</strong> <strong>Brent ~$72.95</strong> (−3.07% day, ~−10% week, lowest since 27 Feb) on US–Iran peace progress; Saudi resumed Ras Tanura loading, Gulf exports ~75% of prewar levels, Hormuz open. Lower energy is <strong>disinflationary</strong> and a consumer tailwind — the one force pushing <em>against</em> the hawkish Fed.</li>
+    <li><strong>The haven trade stays dead:</strong> gold ~$3,994 (a fresh ~7-month-low area), ~5% down YTD, ~20% below its January record — the confirmed-hawkish Fed and reduced Middle-East premium are headwinds. NEM stays off; the 26 Jun swap-out is validated.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into the new week</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — choppy, rotation-driven consolidation</strong> — the RAMageddon cost-pass-through caps the Mag7 while the memory/AI-infra winners (MU/NVDA/TSM) and the rate-insensitive power/uranium + LLY sleeve hold the book. Range-bound, no clean trend; let QCOM's catalyst and the ballast work.</div>
+  <div class="scenario up"><strong>Up branch — oil's disinflation overrides the hawkish Fed</strong> — if Brent's ~10% weekly crash starts cooling the inflation data enough to soften the Sept-hike threat, AND the Mag7 selloff finds a floor, the AI multiple re-expands; NVDA reclaims $215 and ASML re-promotes off the watch-list.</div>
+  <div class="scenario down"><strong>Down branch — the Mag7 de-rate broadens into a full risk-off</strong> — if the 5-day Nasdaq slide extends, the confirmed-hawkish Fed compresses multiples, rate-exposed AI names (NVDA/IONQ, and ASML on the watch-list) give back, ORCL makes fresh lows, and the power/uranium + LLY ballast leads. MU keeps fading the blowout.</div>
+  <p class="sub">The tells: <strong>(1) does the Mag7 selloff find a floor</strong> or extend past 5 days; <strong>(2) Sept-hike odds + the 10-year</strong> (4.38%) vs. the <strong>oil disinflation</strong> — which wins; <strong>(3) does MU stabilize</strong> after the fade or keep giving back; and <strong>(4) does the SOX hold</strong> its +3.2% divergence from the Nasdaq.</p>
+</div>
+
+<h2>Action checklist (weekend review)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the risk-on read got <span class="warn">tested and partly broke</span> — MU faded (−6.69%), the Mag7 drag spread (Nasdaq's 5th down day), the Fed is confirmed hawkish (dot plot flipped to a hike). Offsets: the SOX rose +3.2% and oil crashed (disinflationary). <strong>Half-confirmed, not a clean regime change.</strong></li>
+    <li><strong>ASML → QCOM:</strong> the <span class="neg">"rate fear lifting" upgrade premise was refuted</span> by the confirmed-hawkish Fed → ASML swapped OUT to the watch-list; <span class="pos">QCOM IN</span> (~$205, low-multiple, fresh Investor-Day catalyst, less rate-exposed).</li>
+    <li><strong class="neg">MU (holding):</strong> faded the blowout −6.69% to $1,132, gave back half the pop; "no chase" vindicated again. Hold the core; the <strong>$1,080–$1,120 trail zone</strong> is in play.</li>
+    <li><strong>NVDA (holding):</strong> <span class="warn">back in the dip-add zone</span> ($192.53, below the $195 rung). Watch the ladder; <strong>$215 close</strong> re-arms full upside.</li>
+    <li><strong class="pos">INTC (holding):</strong> holding the turnaround ~$134 (Apple foundry deal + BofA double-upgrade intact); $130 third-trim held; trail ~$128–$130.</li>
+    <li><strong class="neg">ORCL (holding):</strong> <span class="neg">new lows $148.53</span>, below $155 — the weakest holding keeps weakening; no add, watch for a base.</li>
+    <li><strong>TSLA (holding):</strong> $379.71 — recovered to right at the $380 stop (borderline un-fired); robotaxi fully unsupervised 22 Jun; needs a clean close above $380 to fully void.</li>
+    <li><strong class="pos">LLY (target):</strong> +6.15%, the ADA "clear winner" — the defensive anchor working into the hawkish tilt.</li>
+    <li><strong>SNAP (holding):</strong> <span class="neg">new lows $4.41</span>, the $5.50 stop stays FIRED (PT cuts + UK regulatory threat).</li>
+    <li><strong>VWAGY (holding):</strong> <span class="warn">data correction</span> — verified $8.58 (prior briefings cited ~$10.3), near 52-week lows; dormant, Q2 24 Jul.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close (<span class="warn">borderline, $379.71</span>) · SNAP $5.50 (FIRED, $4.41) · SYM $46 close (fired, ~$41.50) · INTC $130 trim (held, ~$134; trail ~$128–$130) · MU trail ~$1,080–$1,120 (faded the blowout) · NVDA $215-reclaim to flip / back in the $192 dip-add zone · ORCL new lows (~$148.53, below $155) · <strong>ASML swapped out</strong> (rate-fear premise refuted) · AMAT stays out (rate gate further from met) · NEM stays out (gold failed again) · <strong>primary tells: does the Mag7 selloff find a floor, Sept-hike odds + the 10-year (4.38%) vs. the oil disinflation, whether MU stabilizes, and whether the SOX holds its +3.2% divergence.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Saturday review scores how the prior run's risk-on / "shakeout, not a regime" read held up against Friday 26 June's tape — and it was tested. Micron <em>faded</em> its blowout (−6.69% to $1,132.33, giving back half the +17% post-earnings pop, vindicating the "no chase" call a second time); the Mag7 drag spread (the Nasdaq's fifth straight down day to 25,297.62, Apple −6.12% in its worst day in over a year on memory-cost-driven price hikes, Microsoft −3.5%); and the Fed is confirmed hawkish under Chair Warsh, with the June dot plot flipped to project a 2026 hike (September-hike odds ~62–63%, the 10-year 4.38%). Two offsets keep it from a clean down-branch: the SOX rose +3.2% on memory leadership, and Brent crashed to ~$72.95 (−10% on the week, the lowest since February) on US–Iran peace progress — a genuine disinflationary counterweight; gold failed again (~$3,994), validating the NEM swap-out. The "RAMageddon" double-edge is the key new frame: the AI-memory super-cycle is bullish for makers (MU/WDC/SNDK) but bearish for Mag7 device makers (Apple/Microsoft raising prices). Response: 9 KEEP, 1 SWAP — ASML OUT (the 26 June "rate fear lifting" upgrade premise was refuted by the confirmed-hawkish Fed; the most rate-exposed, highest-multiple EUV name to the watch-list) → QCOM IN (low-multiple ~13–14×, fresh Investor-Day catalyst: FY29 non-handset doubled to ~$40B, Meta + Microsoft customers, data-center AI + auto; far less rate-exposed). Holdings: MU $1,132 (faded), NVDA $192.53 (back in the dip-add zone), INTC ~$134 (holding the turnaround), ORCL $148.53 (new lows below $155, weakest holding), TSLA $379.71 (recovered to its $380 stop), SNAP $4.41 (new lows, stop fired), VWAGY $8.58 (data correction from ~$10.3). The disciplined move: trim the most rate-exposed name, lean on the rate-insensitive power/uranium + LLY ballast, and keep the AI-infra winners (MU/NVDA/TSM) while respecting that the easy phase is over. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<footer>
+  Generated automatically on 27 June 2026 from public web sources (US markets closed for the weekend; prices are the 26 June close). This Saturday review scores how the prior run's risk-on / "shakeout, not a regime" read held up against Friday's tape — and it was tested. Three developments partly broke the narrative: MU faded its blowout (−6.69% to $1,132.33, giving back half the +17% post-earnings pop and vindicating the "no chase" call again); the Mag7 drag spread, not stayed idiosyncratic (the Nasdaq slipped −0.24% to 25,297.62, its fifth consecutive losing session, Apple fell −6.12% in its worst day in over a year on memory-cost-driven price hikes, Microsoft −3.5%); and the Fed is confirmed hawkish under Chair Kevin Warsh, with the June dot plot flipped to project a 2026 hike (September-hike odds ~62–63%, December ~80%, the 10-year at 4.38%). Two offsets keep it from being a clean down-branch: the SOX actually rose +3.2% on memory leadership, and Brent crude crashed to ~$72.95 (−3.07% on the day, ~−10% on the week, the lowest since 27 February) on US–Iran peace progress — a genuine disinflationary counterweight to the hawkish Fed and a consumer tailwind. Gold failed again (~$3,994), validating the 26 June NEM swap-out. The dominant new frame is the "RAMageddon" double-edge: the AI-memory super-cycle that powered MU's blowout is now causing downstream cost inflation that hits the Mag7 device makers — bullish for memory pricing power (MU/WDC/SNDK) but bearish for mega-cap demand and margins, which is exactly why the SOX and the Nasdaq split. The disciplined response is 9 KEEP, 1 SWAP: ASML OUT → QCOM IN. The 26 June upgrade of ASML to High was explicitly premised on "rate fear lifting as the market absorbed hot PCE," and the confirmed-hawkish Fed refutes that premise, so the most rate-exposed, highest-multiple EUV name moves to the watch-list (moat intact, re-add on rate clarity); in comes QCOM (~$204.90), a low-multiple (~13–14×) semis name with far less duration risk and a fresh, confirmed 24 June Investor-Day catalyst (FY2029 non-handset revenue doubled to ~$40B, targeting >$15B data-center AI + $10B auto, Dragonfly C1000 / AI300, Meta and Microsoft named as customers, acquiring Modular). LLY is the standout among the targets (+6.15%, the ADA conference's "clear winner," the defensive anchor working into the hawkish tilt); TSM stays High (the lower-multiple logic core, far less rate-exposed than ASML); the power/uranium sleeve (TLN/CEG/CCJ) is more valuable now the hawkish Fed is confirmed; and VRT, the 26 June swap-in, fell through its add zone to ~$303–315 (underwater on day two but thesis intact, Bernstein Buy, Roth $355). Holdings: MU $1,132 faded the blowout; NVDA $192.53 back in the dip-add zone below the $195 rung; INTC ~$134 holding the turnaround; ORCL $148.53 made new lows below $155, the weakest holding; TSLA $379.71 recovered to its $380 stop line (robotaxi fully unsupervised 22 June); SNAP $4.41 new lows with the stop fired; IONQ $49.31 the most rate-sensitive holding; SAP ~$155 ADR up +4.75%; VWAGY $8.58 (a data correction from the ~$10.3 prior briefings cited, near 52-week lows); UKW.L 104.40p the income anchor. AMAT stays out (the rate-stabilization gate is now further from met), MRVL stays out (catalyst spent), NEM stays out (gold failed again). Iran peace progress is reinforced (Brent ~$73, Hormuz open), so the war sleeve stays off — but the lower oil is now a disinflation story, not a war story. The honest read: the risk-on call is being tested — MU faded, the Mag7 drag is spreading, and the Fed is confirmed hawkish — but the disinflationary oil crash and the holding SOX keep it from a clean regime change; the disciplined move is to trim the most rate-exposed name, lean on the rate-insensitive ballast, and keep the memory/AI-infra winners while respecting that the easy phase is over. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
