@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Sunday, 28 June 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Sunday, 28 June 2026 — <strong>weekend edition; no new tape.</strong> US markets have not traded since the Friday 26 June close the Saturday run already scored, so a second no-tape day is a <strong>HOLD, not a churn: 10 KEEP, 0 swaps, convictions unchanged.</strong> The one genuinely new development worth surfacing is structural, not price: the <strong class="neg">OpenAI IPO-delay report</strong> (NYT — push the listing to 2027 to chase a ~$1T valuation; ~$600B of targeted compute against ~$25B of revenue) reignited the <strong class="neg">AI-capex-financing / "bubble" fear</strong> on Friday. That sits <em>underneath</em> Saturday's two frames — the <strong>confirmed-hawkish Fed</strong> and the <strong>"RAMageddon" double-edge</strong> — and it points the same way: lean on the rate-insensitive ballast, keep the AI-infra winners, respect that the easy phase is over.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Sunday 28 June 2026 (US markets closed for the weekend). Prices are the <strong>26 June close</strong>, carried unchanged across the weekend, and may be stale by the time you read this. This is a weekend hold edition — no session has traded since the Saturday review, so the targets and convictions are unchanged; the value-add is the one new structural thread (the OpenAI IPO delay) and the week-ahead map. Verify with your broker before any trade.</section>
+
+<h2>A second no-tape day — but a new thread under the surface</h2>
+<div class="card lede">
+  <p>No US equity session has traded since Friday 26 June, the close the Saturday 27 June run already scored (S&amp;P 7,354.02, Nasdaq 25,297.62 — its 5th straight down day, MU faded to $1,132, the Fed confirmed hawkish). A weekend with no prints is a <strong>hold, not a churn</strong>: the 10 buy targets and their convictions carry over unchanged. But one development from Friday's tape deserves a clearer frame than the Saturday review gave it, because it is the deepest of the three forces now pressing on the AI complex:</p>
+  <ul>
+    <li><strong class="neg">The OpenAI IPO delay — the AI-capex-financing fear, named.</strong> A New York Times report says OpenAI's advisors laid out two paths: go public <em>this year</em> below $1T, or <strong>wait until 2027</strong> to chase a ~$1T valuation — and Sam Altman reportedly rejected any cut to the trillion-dollar target, i.e. the company leans toward <strong>delaying</strong>. The numbers underneath are the point: OpenAI has signalled something on the order of <strong>~$600B of targeted future compute capacity</strong> against a reported <strong>~$25B of annualized revenue</strong>, and it is not yet profitable. That reframes the whole AI-infra build as tracing back to a small group of capital-hungry, still-private, unprofitable buyers — and it crept the "bubble" question back into Friday's tape (TheStreet flagged a <em>reported OpenAI IPO delay</em> as a driver of the 26 June tech sell-off).</li>
+    <li><strong>This is the same overhang that has dogged ORCL since 10 June.</strong> Oracle's record Q4 (OCI +93%, RPO $638B) was sold on a $40B raise and a −$23.7B free-cash-flow capex burn — the market punishing the <em>financing</em> of AI infrastructure, not the demand. The OpenAI story is that same fear at the source of the demand curve. It is why ORCL keeps making new lows ($148.53) even as the fundamentals hold.</li>
+    <li><strong>It stacks with — does not replace — Saturday's two frames.</strong> The <strong class="warn">confirmed-hawkish Fed</strong> (dot plot flipped to a 2026 hike, Sept-hike odds ~62–63%, 10-yr 4.38%) raises the discount rate on every long-duration AI dollar; the <strong>"RAMageddon" double-edge</strong> lifts the memory makers while squeezing the Mag7 device makers; and the OpenAI-financing question asks whether the <em>end demand</em> can ever earn its return. Three different pressures, one direction.</li>
+  </ul>
+  <p><strong>The disinflationary offset still stands.</strong> <strong class="pos">Brent ~$73</strong> (−10% on the week, the lowest since late February) on US–Iran peace progress — Gulf exports back to ~75% of prewar levels, Saudi loading at Ras Tanura, Hormuz open — is the one macro force pushing <em>against</em> the hawkish Fed. Lower energy is disinflationary and a consumer tailwind; if it bends the September-hike odds, it is the cleanest path to the up-branch.</p>
+  <p><strong>The response is unchanged because nothing traded:</strong> keep the rate-insensitive power/uranium sleeve (TLN/CEG/CCJ) and the LLY defensive anchor as ballast, hold the AI-infra winners (MU/NVDA/TSM) but with no chase, and let QCOM's fresh Investor-Day catalyst work. <strong>10 KEEP, 0 swaps.</strong></p>
+</div>
+
+<h2>Where things stand (26 June close, carried into Sunday)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">7,354.02 <span class="neg">−0.05%</span></div><div class="k">Fri close — ~flat, breadth weak</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">25,297.62 <span class="neg">−0.24%</span></div><div class="k">5th straight down day (Mag7-led)</div></div>
+  <div class="stat"><div class="k">Dow</div><div class="v">51,876.11 <span class="neg">−0.09%</span></div><div class="k">slipped with the tape</div></div>
+  <div class="stat"><div class="k">SOX (semis)</div><div class="v"><span class="pos">+3.2%</span></div><div class="k">Fri — memory leadership; diverged UP</div></div>
+  <div class="stat"><div class="k">Fed / rates</div><div class="v"><span class="warn">hawkish</span></div><div class="k">dot plot flipped to a 2026 HIKE</div></div>
+  <div class="stat"><div class="k">Sept-hike odds</div><div class="v"><span class="warn">~62–63%</span></div><div class="k">10-yr 4.38%; Dec ~80%</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="pos">~$73</span></div><div class="k">−10% week — disinflationary</div></div>
+  <div class="stat"><div class="k">New thread</div><div class="v"><span class="neg">OpenAI IPO</span></div><div class="k">delay to 2027 → AI-capex fear back</div></div>
+</div>
+<p class="sub">Nothing has traded since these levels printed Friday. The Sunday job is not to re-price — it is to name the structural force that the Saturday review left implicit. The <strong>OpenAI IPO delay</strong> is the AI-capex-financing fear at its source: ~$600B of targeted compute against ~$25B of revenue, in a still-private, unprofitable company that a large share of the AI build ultimately depends on. Layered on the confirmed-hawkish Fed and the RAMageddon cost double-edge, it argues for the same disciplined tilt — <strong>rate-insensitive ballast + AI-infra winners, no chase</strong> — into a genuinely dense week ahead.</p>
+
+<h2>Your portfolio — Sunday read (11 positions, prices = Fri 26 Jun close)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (26 Jun)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="neg">$1,132.33</span></td><td><strong class="neg">Faded the blowout</strong> (−6.69% Fri), gave back roughly half the +17% post-earnings pop — "no chase" vindicated again. Super-cycle intact and arguably stronger (RAMageddon confirms memory pricing power), but volatile. Hold the core; the <strong>$1,080–$1,120 trail zone</strong> is in play after the fade.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num">$192.53</td><td><strong>Back in the dip-add zone</strong> — below the $195 rung it held on 25 Jun ($192.13 low). The ladder is re-tested; next rung the low-$190s/high-$180s. A <strong>$215 close</strong> still flips it fully bullish; Street avg ~$299. The most direct holding exposed to the OpenAI-capex fear — hold, watch the ladder.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="pos">~$134</span></td><td><strong class="pos">Holding the turnaround.</strong> Record $133.99 on 18 Jun; Apple foundry deal + BofA double-upgrade (PT $135→$160) intact; up ~260% YTD. The $130 third-trim held; trail ~$128–$130, let it work.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="neg">$148.53</span></td><td><span class="neg">New lows</span> below $155 — the weakest holding. <strong>The OpenAI IPO delay is the cleanest read-through here:</strong> the AI-capex-financing overhang that has punished ORCL's $40B raise / −$23.7B FCF burn since 10 Jun is the <em>same</em> fear. Record fundamentals (OCI +93%, RPO $638B) intact but the financing question is winning. Core hold, <strong>no add</strong>; watch for a base.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num">$379.71</td><td><strong>Recovered to right AT the $380 stop</strong> — the 25 Jun break ($375.12) is borderline un-fired. Austin robotaxi went <strong>fully unsupervised</strong> 22 Jun (a positive); JPM Neutral ($475 PT) 5 Jun. Needs a clean close above $380 to fully void; trim discipline live until then.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">$4.41</span></td><td><span class="neg">New lows; the $5.50 stop stays FIRED.</span> Pressured by PT cuts (Citi $6.50, JPM $6, RBC $8) + a UK youth-social-media regulatory threat. Reclaim $5.50 on a close to void.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num">$49.31</td><td>The longest-duration, <span class="warn">most rate-path-sensitive holding</span> — and the most exposed to <em>both</em> the confirmed-hawkish Fed <em>and</em> the AI-financing-risk-off. No size-up while Sept-hike odds (~62–63%) stay live.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num">$41.50</td><td>Flat, still below the <strong>$46 close line</strong> the trim fired on; no fresh news. Let the stop framework run; no adds until it reclaims $46 on a close.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="pos">~$155 ADR</span></td><td>An <strong>up-day</strong> Friday (+4.75%, ~€133 Xetra) — a relative bright spot. Business-AI-platform launch the live fundamental; Q2 ahead. Below the old ~$164 ADR mark; add &lt;€130 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">$8.58</span></td><td>Verified $8.58 (the 27 Jun data correction from the ~$10.3 prior briefings had cited), near 52-week lows. Dormant ballast; Q2 print 24 Jul.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">104.40p</td><td>The steady-income anchor; RPI linkage cushions inflation and the bond-proxy benefits if yields ease on the oil-driven disinflation. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">No position changed over the weekend — these are Friday's marks. The portfolio's center of gravity is squarely in the eye of the three forces: <strong>NVDA, ORCL, IONQ and MU</strong> all carry direct AI-capex / rate-path exposure, with ORCL the textbook read-through to the OpenAI-financing fear. The ballast is <strong>INTC</strong> (self-help turnaround, up-trending), <strong>SAP</strong> (Friday's up-day), and the income/value tail (<strong>UKW.L, VWAGY</strong>). The discipline into the new week is unchanged: hold the winners, no chase, let the stops run.</p>
+</div>
+
+<h2>The 10 buy targets — Sunday (10 KEEP · 0 swaps · convictions unchanged)</h2>
+<p class="sub">A second no-tape weekend day is a <strong>hold</strong>: the Saturday 27 June set carries over verbatim — <strong>ASML stays on the watch-list, QCOM stays the swap-in</strong>, and the rate-insensitive power/uranium sleeve (TLN/CEG/CCJ) plus the LLY anchor carry the rate hedge. The OpenAI IPO-delay thread does not force a swap — it <em>reinforces</em> the existing tilt (rate-insensitive ballast over the highest-multiple AI-capex names). Prices are Friday's close.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (26 Jun)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 27 Jun</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>MU</strong></td><td><strong class="neg">Faded the blowout</strong> — gave back half the +17% pop; "no chase" vindicated again. Super-cycle intact and <em>stronger</em> via RAMageddon (memory pricing power); the most insulated AI name from the OpenAI-financing fear (it sells into a sold-out HBM book, not a single buyer)</td><td class="num">~$1,132</td><td class="num">$1,500 (Stifel)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>2</td><td><strong>NVDA</strong></td><td>AI bellwether; <strong>back in the dip-add zone</strong> at $192.53 — below the $195 rung it held last time; watch the ladder. The name most exposed to the OpenAI-capex narrative, but a $215 close re-arms full upside; Street avg ~$299</td><td class="num">$192.53</td><td class="num">~$299 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>TLN</strong></td><td><strong>The rate-insensitive power leader</strong> — contracted cashflow (AWS $18B PPA to 2042, 13.1GW incl. 2.2GW nuclear); the book's primary rate hedge, <strong>more valuable now the hawkish Fed is confirmed</strong>; GS Buy/$499</td><td class="num">~$399</td><td class="num">$472 avg / $499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>CEG</strong></td><td>Rate-insensitive nuclear / AI-power; nation's largest power producer post-Calpine; Meta 20-yr 1.1GW PPA; second leg of the rate-hedge sleeve — sells contracted power, insulated from the AI-financing question</td><td class="num">~$264</td><td class="num">$374 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, capex $52–56B, CoWoS sold out through 2027; the <strong>lower-multiple AI-logic core</strong> — far less rate-exposed than ASML, the right way to hold logic in a rate-up tape</td><td class="num">~$435</td><td class="num">$450+ avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; full production restored, NAV/sh → $66; rate-hedge ballast; the &lt;$110 add zone live; avg PT ~$132</td><td class="num">~$103</td><td class="num">$129–$148</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor</strong> — +6.15% Friday, the ADA conference's "clear winner" (Retatrutide, Ebglyss q8w, Jefferies $1,350); works perfectly into a hawkish/risk-off tilt and is fully detached from the AI-capex debate</td><td class="num">~$1,128</td><td class="num">$1,350 (Jef)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>ADI</strong></td><td>Beat FQ2 on record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady, lower-beta analog</strong> — the right ballast for a defensive tilt</td><td class="num">~$413</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; in its re-priced <strong>~$303–315 add zone</strong> after falling through $326–333; thesis intact (Bernstein Buy, Roth $355, Oppenheimer $353) — the AI-financing fear is the one to watch on this name</td><td class="num">~$303–315</td><td class="num">~$355 (Roth)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>10</td><td><strong>QCOM</strong></td><td>Low-multiple (~13–14×) semis with a fresh, confirmed Investor-Day catalyst: FY29 non-handset doubled to ~$40B (&gt;$15B data-center AI + $10B auto), Dragonfly C1000 / AI300, <strong>Meta + Microsoft</strong> customers; a self-help story far less tethered to the AI-capex-and-rates trade</td><td class="num">~$205</td><td class="num">Street raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Out of the active 10 (unchanged): ASML</strong> stays on the watch-list — re-add only when the rate regime clarifies (the OpenAI-financing fear is a further reason to keep the most rate-exposed, highest-multiple EUV name benched). <strong>AMAT</strong> stays out (the "rates stabilized" gate is further from met). <strong>MRVL</strong> stays out (catalyst spent; re-entry on a confirmed base above ~$300). <strong>NEM</strong> stays out (gold failed again to ~$3,994). <strong>The honest read:</strong> nothing traded, so the set is a hold — but the new OpenAI thread argues the disciplined tilt is correct, not that it needs changing.</p>
+
+<h2>What's new since Saturday (27→28 Jun)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>OpenAI IPO</strong></td><td>NYT report: advisors laid out go-public-this-year (below $1T) vs. <strong>delay to 2027</strong> to chase ~$1T; Altman rejected any cut to the target → leans toward delaying. ~$600B targeted compute vs. ~$25B revenue, not yet profitable</td><td><span class="neg">AI-capex-financing fear, named at the source</span> — the deepest of the three pressures on the AI complex</td></tr>
+      <tr><td><strong>ORCL</strong></td><td>No new tape, but the OpenAI story <em>is</em> the ORCL overhang — the market punishing AI-infra <em>financing</em> ($40B raise, −$23.7B FCF burn) since 10 Jun</td><td>HOLD — the weakest holding's overhang now has a clearer name</td></tr>
+      <tr><td><strong>Fed / rates</strong></td><td>Unchanged over the weekend: dot plot projects a 2026 hike, Sept-hike odds ~62–63%, 10-yr 4.38%</td><td>Rate-insensitive sleeve (TLN/CEG/CCJ/LLY) stays the ballast</td></tr>
+      <tr><td><strong>Oil / Iran</strong></td><td>Brent ~$73 (−10% week), Hormuz open, Gulf exports ~75% of prewar — peace progress holding</td><td>The disinflationary offset; the cleanest path to the up-branch if it bends hike odds</td></tr>
+      <tr><td><strong>The 10 targets</strong></td><td>No session traded → no keep/downgrade/replace decisions to make</td><td><span class="warn">10 KEEP · 0 swaps · convictions unchanged</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (Mon 29 Jun →)</h2>
+<div class="card">
+  <ul>
+    <li><strong>The Mag7 floor test, day 6.</strong> The first thing the Monday open answers: does the Nasdaq's <strong>5-day slide</strong> find a floor, or extend into a sixth down day? A floor with the SOX holding its +3.2% divergence is the base case; a sixth down day that drags the SOX with it is the down-branch starting to broaden.</li>
+    <li><strong>Does MU stabilize or keep giving back?</strong> After the −6.69% fade to $1,132, watch whether it holds above the <strong>$1,080–$1,120 trail zone</strong> or keeps unwinding the blowout pop.</li>
+    <li><strong>Rate path vs. oil.</strong> The tension that governs the whole book: does the Brent crash (~$73) start cooling the inflation data enough to soften the ~62–63% Sept-hike odds, or does the confirmed-hawkish Fed (10-yr 4.38%) keep compressing AI multiples?</li>
+    <li><strong>The AI-financing narrative.</strong> Does the OpenAI IPO-delay story fade as a one-headline scare, or harden into a sustained de-rate of the AI-capex names (NVDA, ORCL, VRT, the power sleeve)? This is the new variable to watch all week.</li>
+    <li><strong>QCOM confirmation.</strong> Does the swap-in hold ~$205 and confirm the Investor-Day catalyst, or fade with the broader semis?</li>
+    <li><strong>Quarter-end.</strong> 30 June is the quarter/half-year-end — watch for window-dressing and rebalancing flows that can distort the tape independent of the macro.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into the new week</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — choppy, rotation-driven consolidation</strong> — the RAMageddon cost-pass-through caps the Mag7, the OpenAI-financing fear simmers without breaking, and the memory/AI-infra winners (MU/NVDA/TSM) plus the rate-insensitive power/uranium + LLY sleeve hold the book. Range-bound; let QCOM's catalyst and the ballast work.</div>
+  <div class="scenario up"><strong>Up branch — oil's disinflation overrides the hawkish Fed</strong> — if Brent's ~10% weekly crash starts cooling inflation enough to soften the Sept-hike threat, AND the Mag7 selloff finds a floor, the AI multiple re-expands; NVDA reclaims $215, ASML re-promotes off the watch-list, and the OpenAI headline fades.</div>
+  <div class="scenario down"><strong>Down branch — the AI-capex de-rate broadens into a full risk-off</strong> — if the OpenAI-financing fear hardens AND the 5-day Nasdaq slide extends, the confirmed-hawkish Fed compresses multiples, the rate-exposed AI names (NVDA/IONQ/VRT, and ASML on the watch-list) give back, ORCL makes fresh lows, and the power/uranium + LLY ballast leads.</div>
+  <p class="sub">The tells: <strong>(1) does the Mag7 selloff find a floor</strong> or extend past 5 days; <strong>(2) does the OpenAI / AI-capex-financing fear harden</strong> or fade; <strong>(3) Sept-hike odds + the 10-year</strong> (4.38%) vs. the <strong>oil disinflation</strong> — which wins; and <strong>(4) does MU stabilize</strong> after the fade.</p>
+</div>
+
+<h2>Action checklist (weekend hold)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> a second no-tape day → <span class="warn">HOLD, not a churn</span>. 10 KEEP, 0 swaps, convictions unchanged. The new thread is structural — the <span class="neg">OpenAI IPO delay</span> names the AI-capex-financing fear; it reinforces the existing tilt rather than changing it.</li>
+    <li><strong class="neg">The new variable:</strong> OpenAI weighing a delay to 2027 (~$600B targeted compute vs. ~$25B revenue) → the AI-capex-financing question at its source. Watch whether it fades or hardens into a sustained de-rate. Cleanest read-through is <strong>ORCL</strong>; broader exposure is NVDA/VRT/IONQ.</li>
+    <li><strong>Targets:</strong> ASML stays on the watch-list, QCOM stays the swap-in; the power/uranium sleeve (TLN/CEG/CCJ) + LLY carry the rate hedge and are the most insulated from the AI-financing fear.</li>
+    <li><strong class="neg">MU (holding):</strong> faded the blowout to $1,132; hold the core; the <strong>$1,080–$1,120 trail zone</strong> is the level to watch into Monday.</li>
+    <li><strong>NVDA (holding):</strong> <span class="warn">back in the dip-add zone</span> ($192.53, below the $195 rung). Watch the ladder; <strong>$215 close</strong> re-arms full upside.</li>
+    <li><strong class="pos">INTC (holding):</strong> holding the turnaround ~$134 (Apple foundry + BofA double-upgrade intact); $130 third-trim held; trail ~$128–$130.</li>
+    <li><strong class="neg">ORCL (holding):</strong> <span class="neg">new lows $148.53</span> — the weakest holding; the OpenAI story clarifies its overhang. No add; watch for a base.</li>
+    <li><strong>TSLA (holding):</strong> $379.71 — recovered to right at the $380 stop (borderline un-fired); robotaxi fully unsupervised 22 Jun; needs a clean close above $380 to fully void.</li>
+    <li><strong>SNAP (holding):</strong> <span class="neg">new lows $4.41</span>, the $5.50 stop stays FIRED.</li>
+    <li><strong>Stops / levels live (carried, no tape):</strong> TSLA $380 close (<span class="warn">borderline, $379.71</span>) · SNAP $5.50 (FIRED, $4.41) · SYM $46 close (fired, ~$41.50) · INTC $130 trim (held, ~$134; trail ~$128–$130) · MU trail ~$1,080–$1,120 (faded the blowout) · NVDA $215-reclaim to flip / back in the $192 dip-add zone · ORCL new lows (~$148.53, below $155) · <strong>ASML on the watch-list</strong> · AMAT / MRVL / NEM stay out · <strong>primary tells: does the Mag7 selloff find a floor, does the OpenAI / AI-capex-financing fear harden, Sept-hike odds + the 10-year (4.38%) vs. the oil disinflation, and whether MU stabilizes.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Sunday 28 June 2026 weekend edition is a hold — no US equity session has traded since the Friday 26 June close the Saturday review already scored, so the 10 buy targets and their convictions carry over unchanged (10 KEEP, 0 swaps; ASML stays on the watch-list, QCOM stays the swap-in). The one genuinely new development is structural rather than price: a New York Times report says OpenAI is weighing whether to go public this year below a $1 trillion valuation or delay its IPO until 2027 to chase ~$1 trillion, with Sam Altman reportedly rejecting any cut to the trillion-dollar target — and the numbers underneath (OpenAI has signalled on the order of ~$600 billion of targeted future compute capacity against ~$25 billion of annualized revenue, while still unprofitable) reignited the AI-capex-financing / "bubble" fear that pressured Friday's tech tape. That fear is the same overhang that has punished Oracle's AI-infrastructure financing (a $40B raise and a −$23.7B free-cash-flow capex burn) and driven ORCL to new lows ($148.53) since 10 June; it now has a clearer name. It stacks with — rather than replaces — Saturday's two frames: the confirmed-hawkish Fed (the June dot plot flipped to project a 2026 hike, September-hike odds ~62–63%, the 10-year at 4.38%) and the "RAMageddon" double-edge (the AI-memory super-cycle lifting the memory makers while squeezing the Mag7 device makers). Three different pressures pointing one direction. The disinflationary offset still stands — Brent crude ~$73 (−10% on the week, the lowest since late February) on US–Iran peace progress, Hormuz open, Gulf exports back to ~75% of prewar levels — the one macro force pushing against the hawkish Fed and the cleanest path to the up-branch if it bends the hike odds. The disciplined response is unchanged because nothing traded: keep the rate-insensitive power/uranium sleeve (TLN/CEG/CCJ) and the LLY defensive anchor as ballast, hold the AI-infra winners (MU/NVDA/TSM) with no chase, and let QCOM's fresh Investor-Day catalyst work. Holdings, at Friday's close: MU $1,132.33 (faded the blowout −6.69%, the $1,080–$1,120 trail zone in play); NVDA $192.53 (back in the dip-add zone below the $195 rung); INTC ~$134 (holding the turnaround); ORCL $148.53 (new lows, the weakest holding, the cleanest OpenAI read-through); TSLA $379.71 (recovered to its $380 stop, borderline un-fired); SNAP $4.41 (new lows, stop fired); IONQ $49.31 (the most rate- and financing-sensitive holding); SAP ~$155 ADR (Friday's up-day, +4.75%); VWAGY $8.58 (near 52-week lows); SYM ~$41.50; UKW.L 104.40p (the income anchor). The week ahead is dense: the Mag7 floor test (does the Nasdaq's 5-day slide find a floor), whether MU stabilizes, the rate-path-versus-oil tension, whether the OpenAI / AI-capex-financing narrative fades or hardens, QCOM's confirmation, and quarter-end rebalancing flows around 30 June. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 28 June 2026 from public web sources (US markets closed for the weekend; prices are the 26 June close, carried unchanged across the weekend). This Sunday weekend edition is a hold — no US equity session has traded since the Friday 26 June close the Saturday 27 June review already scored, so the 10 buy targets and their convictions carry over unchanged (10 KEEP, 0 swaps; ASML stays on the watch-list, QCOM stays the swap-in, the rate-insensitive power/uranium sleeve TLN/CEG/CCJ plus the LLY anchor carry the rate hedge). The one genuinely new development is structural rather than price: a New York Times report says OpenAI's advisors laid out two paths — go public this year below a $1 trillion valuation, or delay the IPO until 2027 to chase ~$1 trillion — and Sam Altman reportedly rejected any cut to the trillion-dollar target, so the company leans toward delaying. The figures underneath are the point: OpenAI has signalled something on the order of ~$600 billion of targeted future compute capacity against a reported ~$25 billion of annualized revenue, while still unprofitable, which reframes the entire AI-infrastructure build as ultimately tracing back to a small group of capital-hungry, still-private, unprofitable buyers — and that reignited the AI-capex-financing / "bubble" fear on Friday's tech tape. It is the same overhang that has punished Oracle's AI-infrastructure financing (a $40B raise, a −$23.7B free-cash-flow capex burn) and driven ORCL to new lows ($148.53) since 10 June; the fear now has a clearer name. It stacks with — does not replace — Saturday's two frames: the confirmed-hawkish Fed (the June dot plot flipped to project a 2026 hike under Chair Warsh, September-hike odds ~62–63%, December ~80%, the 10-year at 4.38%) raising the discount rate on every long-duration AI dollar, and the "RAMageddon" double-edge (the AI-memory super-cycle lifting the memory makers MU/WDC/SNDK while squeezing the Mag7 device makers Apple/Microsoft on memory costs). Three different pressures, one direction. The disinflationary offset still stands — Brent crude ~$73 (−10% on the week, the lowest since late February) on US–Iran peace progress, with Hormuz open, Saudi loading at Ras Tanura, and Gulf exports back to ~75% of prewar levels — the one macro force pushing against the hawkish Fed and the cleanest path to the up-branch if it bends the hike odds. Because nothing traded, the response is unchanged: keep the rate-insensitive ballast (power/uranium + LLY), hold the AI-infra winners (MU/NVDA/TSM) with no chase, and let QCOM's fresh Investor-Day catalyst (FY29 non-handset doubled to ~$40B, Meta + Microsoft customers) work. Holdings at Friday's close: MU $1,132.33 (faded the blowout, the $1,080–$1,120 trail zone in play), NVDA $192.53 (back in the dip-add zone below the $195 rung), INTC ~$134 (holding the turnaround), ORCL $148.53 (new lows, the weakest holding, the cleanest read-through to the OpenAI-financing fear), TSLA $379.71 (recovered to its $380 stop, borderline un-fired, robotaxi fully unsupervised 22 June), SNAP $4.41 (new lows, stop fired), IONQ $49.31 (the most rate- and financing-sensitive holding), SAP ~$155 ADR (Friday's up-day +4.75%), VWAGY $8.58 (near 52-week lows), SYM ~$41.50, UKW.L 104.40p (the income anchor). The week ahead is dense — the Mag7 floor test (whether the Nasdaq's 5-day slide finds a floor or extends), whether MU stabilizes after the fade, the rate-path-versus-oil tension, whether the OpenAI / AI-capex-financing narrative fades as a one-headline scare or hardens into a sustained de-rate, QCOM's confirmation around ~$205, and quarter/half-year-end rebalancing flows around 30 June. The honest read: a quiet weekend on the tape, but a louder one underneath — the AI-capex-financing question has a name now, and the disciplined tilt (rate-insensitive ballast over the highest-multiple AI-capex names, AI-infra winners held but not chased) is reinforced, not changed. Next briefing follows the next scheduled run.</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
