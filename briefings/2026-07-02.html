@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Thursday, 2 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Thursday, 2 July 2026 — <strong>the mirror completed: Tuesday's record close did not hold.</strong> Wednesday 1 July was a textbook <strong class="neg">sell-the-news chip rout</strong> — Micron printed a blowout FQ3 and then <strong class="neg">fell −10.57%</strong> off the $1,145 ATH to ~$1,024, Intel <strong class="neg">−9.03%</strong> (back below the $130 trim), SanDisk −10%, ~$200B of chip mcap wiped, and the rout <strong>spread to Asia</strong> today (Samsung/SK Hynix −7%). But breadth <strong class="pos">held</strong>: S&amp;P ~flat (~7,483), Nasdaq −0.66% (26,040.03), Dow −0.03% (52,305.24) — a <strong>rotation out of the parabola, not a crash</strong>. Today is a <strong class="warn">double-binary day</strong>: <strong>June nonfarm payrolls at 8:30am ET</strong> (a day early; ADP came soft at +98k) and <strong>Tesla Q2 deliveries</strong> (consensus ~406k). The one book move: <strong class="neg">QCOM kept bleeding to ~$185</strong> below its base → <strong>SWAPPED OUT for AVGO</strong> (~$370, a Medium dislocation entry). Net: <strong>9 KEEP · 1 swap (QCOM → AVGO).</strong></div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Thursday 2 July 2026, before this morning's 8:30am ET payrolls print and Tesla's delivery release, and before today's US cash open. Prices shown are the <strong>1 July close</strong> unless flagged otherwise; a few EU/holding names (SAP, VWAGY, SYM, UKW.L) carry the latest verified prior print, dated in-line. Intraday Thursday levels will move once payrolls and deliveries hit. The value-add today is the recognition that Tuesday's record close gave way to a sell-the-news chip rotation (Micron's blowout became exit liquidity), the one book move it forced (QCOM broke its base twice → replaced by a cheaper, higher-quality AVGO), and the two binaries that land this morning — June payrolls and Tesla deliveries. Verify with your broker before any trade.</section>
+
+<h2>The record close didn't hold — a sell-the-news chip rout, but breadth held</h2>
+<div class="card lede">
+  <p>The three-day arc completed its mirror. Monday's floor-test rally justified an upgrade; Tuesday's follow-through <strong class="pos">confirmed</strong> it and Q2 closed at records; Wednesday that record close <strong class="neg">gave way to a textbook sell-the-news digestion</strong>. The tape did exactly what an over-extended parabola does when the catalyst everyone waited for finally prints:</p>
+  <ul>
+    <li><strong class="neg">Micron's blowout became the exit liquidity.</strong> MU printed a record FQ3 (HBM sold out through 2026) and then <strong>fell −10.57%</strong> off the $1,145 all-time high to ~$1,024 — profit-taking after a +260% YTD run, amplified by valuation/technical debate and a few fresh sell ratings. The super-cycle thesis is intact; the <em>positioning</em> was stretched.</li>
+    <li><strong class="neg">The whole chip complex followed.</strong> Intel gave back <strong>−9.03%</strong> from its 25-year high (~$139) to ~$127 — <strong>back below the $130 trim line</strong>; SanDisk shed −10%; roughly <strong>$200B of chip market cap was wiped</strong>. The rout <strong>spread to Asia</strong> today: Samsung and SK Hynix each ~−7%, dragging the Kospi.</li>
+    <li><strong class="pos">But breadth held — this was a rotation, not a crash.</strong> The S&amp;P finished roughly flat (~7,483 — actually <em>above</em> Tuesday's 7,449 close), the Nasdaq only −0.66% (26,040.03), the Dow −0.03% (52,305.24). Money rotated <strong>out of the parabolic memory/foundry names</strong>, not out of the market.</li>
+    <li><strong class="neg">QCOM broke its base twice — SWAPPED OUT.</strong> The swap-in we downgraded yesterday kept bleeding to <strong>~$184.79</strong> (range $180.60–$190.99), decisively below the ~$205 base it had to re-prove. The rule was explicit — another leg down = replace. A base broken twice is broken. <strong>Out; AVGO in at Medium</strong> (a cheaper, higher-quality version of the same beaten-down-semi trade).</li>
+  </ul>
+  <p><strong>And today the calendar forces the issue — twice, both this morning.</strong> <strong>(1) June nonfarm payrolls land at 8:30am ET</strong>, pulled a day early ahead of the July 3 early close / July 4 holiday: consensus ~100–115k (May was 172k), unemployment ~4.3% — and Wednesday's <strong>ADP came soft at +98k</strong> (vs ~110k est), so the whisper leans cool. A cool print is the up-branch trigger (it bends the ~62% September-hike odds and re-expands the AI multiple); a hot print re-hardens the hawkish Fed and extends the chip give-back. <strong>(2) Tesla's Q2 deliveries</strong> also drop today (consensus ~406k IR / ~396.5k Bloomberg; Barclays sees 418k, Cantor 397k; Q1 missed at 358,023). So the discipline is unchanged in spirit but sharper in practice: <strong>own the AI-infra winners but don't chase them at the highs</strong> (MU/INTC just showed why), <strong>hold the rate-insensitive ballast</strong> (TLN/CEG/CCJ + LLY) through the digestion, and replace the one broken name. The response: <strong>9 KEEP, 1 swap (QCOM → AVGO at Medium).</strong></p>
+</div>
+
+<h2>Where things stand (1 July close, into Thursday 2 July)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v">~7,483 <span class="warn">~flat</span></div><div class="k">breadth held — rotation, not a crash</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v">26,040.03 <span class="neg">−0.66%</span></div><div class="k">chip-led drop; memory/foundry routed</div></div>
+  <div class="stat"><div class="k">Dow</div><div class="v">52,305.24 <span class="neg">−0.03%</span></div><div class="k">roughly unchanged</div></div>
+  <div class="stat"><div class="k">MU (was the engine)</div><div class="v"><span class="neg">~$1,024</span></div><div class="k">−10.57% sell-the-news off the ATH</div></div>
+  <div class="stat"><div class="k">Today · payrolls</div><div class="v"><span class="warn">8:30am ET</span></div><div class="k">est ~100–115k; ADP soft (+98k)</div></div>
+  <div class="stat"><div class="k">Today · TSLA</div><div class="v"><span class="accent">deliveries</span></div><div class="k">consensus ~406k IR / ~396.5k Bbg</div></div>
+  <div class="stat"><div class="k">Sept-hike odds</div><div class="v"><span class="warn">~62%</span></div><div class="k">PCE hot (~4.1% / core 3.4%); 10-yr 4.39%</div></div>
+  <div class="stat"><div class="k">Brent / WTI</div><div class="v"><span class="warn">~$73 / ~$70</span></div><div class="k">ceasefire holds (fragile); crude capped</div></div>
+</div>
+<p class="sub">The digestion resolved Tuesday's open question — <strong>the record close did not hold</strong>, and the give-back was concentrated in the exact names that went parabolic (memory/foundry), while the broad tape held. The tilt stays <strong>owned but not chased</strong> on the AI-infra winners (MU/NVDA/TSM), with the <strong>rate-insensitive ballast</strong> (TLN/CEG/CCJ + LLY) carrying the book through a digestion day that is also a double-binary day — because payrolls, not geopolitics, is now the swing factor, and it prints this morning.</p>
+
+<h2>Your portfolio — Thursday read (11 positions, prices = Wed 1 Jul close unless noted)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (1 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="neg">~$1,024</span></td><td><strong class="neg">The sell-the-news landed</strong> — −10.57% off the $1,145 all-time high after the blowout FQ3, on profit-taking (a +260% YTD run), valuation/technical debate, and a few fresh sell ratings. Thesis unchanged (HBM sold out through 2026, 16 LTAs) — this is a <strong>digestion of a parabola, not a break</strong>. Core hold; the ~$1,080–$1,120 trail was breached intraday — let it base, <strong>don't chase</strong>.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="warn">~$197</span></td><td><strong>The relative-strength tell</strong> — down only ~1.25% while memory/foundry got routed. Still ~16% below the 14 May ATH ($235.47). Overhangs (B200 rental softness, China loophole) linger. Street avg ~$309, Strong Buy; earnings 26 Aug. Hold; a <strong>$215 close</strong> re-arms full upside.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$127</span></td><td><strong class="neg">Gave back ~9.03%</strong> of the parabola from the 25-year high (~$139) — <strong>back below the $130 third-trim line</strong>. The trim was already banked into the run; now <strong>trail the remainder</strong> (~$120–$125) and let the self-help story (Apple US-foundry deal, BofA →$160) re-prove.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="neg">~$142.50</span></td><td><span class="neg">A fresh low — still the lone laggard.</span> The ~21,000-job cut / $1.8B severance + $50B AI-buildout financing fear still weighs; −19% for the week (worst since the 2001 dot-com bust). But <strong>28/33 analysts still Buy, avg PT ~$264</strong>. Core hold, <strong>no add</strong>; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="pos">~$420</span></td><td><strong>Q2 deliveries land TODAY.</strong> Consensus ~406k IR / ~396.5k Bloomberg (Barclays 418k beat, Cantor 397k miss; Q1 missed at 358,023). The $380 stop stays VOIDED; a beat extends >$400, a <strong>miss below ~396.5k is the risk</strong> into the 22 Jul financials.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="pos">~$4.75</span></td><td><strong class="pos">+8.45% — the narrative improved.</strong> S&amp;P upgraded the credit rating to <strong>BB− (positive outlook)</strong> citing 12% Q1 revenue growth + >$500M annualized cost cuts, plus an AR/Illumix deal and a ratings upgrade. Still below the $5.50 stop (FIRED), but the first genuinely constructive tape in weeks. Reclaim $5.50 on a close to void.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="warn">~$52.33</span></td><td>Buy consensus, avg PT ~$71.25; cash ~$3.1B, revenue +755% YoY but heavy burn. Quantum stays the hot policy theme (Trump's 22 Jun EOs). No size-up while Sept-hike odds (~62%) stay live and the tape digests.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="pos">~$45.20</span></td><td><strong>Recovering toward the $46 line</strong> the trim fired on. A close back above $46 voids the trim and re-opens adds; below, the stop framework runs. FQ2 was solid (rev $676M, +23% YoY).</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num">~$153 ADR</td><td>~€130 Xetra. <strong>Q2/H1 results 23 Jul</strong> — the market is watching an already-flagged "expected deceleration of cloud growth in Q2." Business-AI platform the live fundamental. Add &lt;€130 dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.75</span></td><td>Near 52-week lows. Dormant ballast; Q2 print 24 Jul is the next catalyst.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num">~103.5p</td><td>The steady-income anchor; the bond-proxy benefits if yields ease — a <strong>cool payrolls print this morning would help</strong>. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The name-specific moves: <strong>MU</strong> printed the blowout and then got sold (−10.57% — the parabola digested); <strong>INTC</strong> fell back below its $130 trim (trail the rest); <strong>NVDA</strong> held up best (relative strength); <strong>SNAP</strong> jumped +8.45% on the credit upgrade (the first good news in weeks); <strong>TSLA</strong> awaits today's deliveries. <strong>ORCL</strong> made a fresh low, still the lone laggard. On the target side, <strong>QCOM</strong> was replaced (broke its base twice). The center of gravity stays the AI cluster (<strong>MU, NVDA</strong>) — now digesting — with the value/income tail (<strong>SAP, UKW.L, VWAGY</strong>) as ballast into this morning's payrolls print.</p>
+</div>
+
+<h2>The 10 buy targets — Thursday (9 KEEP · 1 swap: QCOM → AVGO)</h2>
+<p class="sub">The sell-the-news digestion cracked the parabola but didn't break the theses, so the list is stable — nine names carry over, and the one broken name is replaced. <strong>QCOM is OUT</strong> (it kept bleeding to ~$185, below the ~$205 base it failed to re-prove — a base broken twice is broken). <strong>AVGO is IN at Medium</strong> — a deliberate dislocation entry (~$370, ~26% off highs, the higher-quality custom-AI franchise), not a chase; its gate to High is a clean close above $400. The rate-insensitive power/uranium sleeve (TLN/CEG/CCJ) + the LLY anchor stay as ballast into a digestion day that is also a double-binary day. <strong>CEG stands out</strong> — near a 52-week low on a fresh Walmart nuclear deal despite a $360 avg PT. Prices are Wednesday's 1 July close.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (1 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 1 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>MU</strong></td><td>Super-cycle is a <strong>printed quarter</strong> (record FQ3, HBM sold out through 2026), but the <strong class="neg">sell-the-news hit</strong> — −10.57% off the $1,145 ATH to ~$1,024 on profit-taking after +260% YTD. The dip you wanted, but volatile — own the core, <strong>don't chase</strong></td><td class="num"><span class="neg">~$1,024</span></td><td class="num">$1,500–$2,000</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>2</td><td><strong>NVDA</strong></td><td>AI bellwether; <strong class="pos">held up best in the memory rout</strong> (~$197, −1.25%) — the relative-strength tell; still ~16% below the May ATH; a $215 close re-arms full upside; Street avg ~$309, earnings 26 Aug</td><td class="num">~$197</td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>TLN</strong></td><td><strong>The rate-insensitive power leader</strong> — contracted cashflow (AWS $18B PPA to 2042); the book's primary rate hedge; pulled back to ~$361 with the tape (add zone); Moderate Buy, avg PT ~$449</td><td class="num">~$361</td><td class="num">$449 avg / $548 (BNP)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>CEG</strong></td><td><strong class="pos">The value dislocation</strong> — near a 52-week low (~$247, −8% on the month) despite a fresh Walmart nuclear deal, FY26 EPS $11–12, Buy consensus / $360 avg PT; the clearest add-zone, and rate-insensitive ballast for a digestion day</td><td class="num">~$247</td><td class="num">$360 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, CoWoS sold out through 2027; the <strong>lower-multiple AI-logic core</strong> — <strong class="pos">sold off in the rout to ~$444</strong> (from a $477.57 prior close), a better entry; Q2 earnings 16 Jul</td><td class="num"><span class="neg">~$444</span></td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; world's largest listed producer + Westinghouse stake; &lt;$110 add zone live (~$103); Buy consensus, median PT ~$140</td><td class="num">~$103</td><td class="num">~$140 median</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor</strong> — near record highs (~$1,227) on strong retatrutide obesity data + oral GLP-1 progress; the ballast that works while the Fed cloud persists and the AI complex digests. Extended — trim-and-hold</td><td class="num">~$1,227</td><td class="num">record highs</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>ADI</strong></td><td>Record industrial/data-center demand; $1.5B Empower (AI-power) deal; the <strong>steady, lower-beta analog</strong> ballast — ~$388, a better entry after the pullback</td><td class="num">~$388</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; the re-priced add zone (~$304, low end of $303–315), +89% YTD; thesis intact (Bernstein Buy, Roth $355). <strong class="warn">Note: chip-selloff-correlated</strong> — size into weakness, don't over-add on a digestion day</td><td class="num">~$304</td><td class="num">~$355 (Roth)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>10</td><td><strong>AVGO</strong></td><td><span class="warn">SWAP-IN (replaces QCOM), at Medium.</span> ~$370, ~26% off highs; the higher-quality custom-AI franchise (OpenAI/Google/Meta custom silicon, >$100B AI revenue target by 2027). A <strong>dislocation entry, not a chase</strong> — gate to High is a clean <strong>close above $400</strong> (not yet met)</td><td class="num">~$370</td><td class="num">~$400+ (gate)</td><td><span class="tag new">Med · NEW</span></td><td><span class="pos">SWAP IN</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>Out of the active 10: QCOM</strong> — <span class="neg">SWAPPED OUT</span> (kept bleeding to ~$184.79, below the ~$205 base it failed to re-prove; a base broken twice is broken; thesis intact — Dragonfly C1000, Meta, FY29 non-handset $40B, ~12× — but no near-term catalyst, back to the watch-list, re-entry only on a confirmed base &gt;$205). <strong>ASML</strong> stays on the watch-list (very strong ~$1,795 but the gate is <em>rate</em> clarity, and the Fed is still hawkish). <strong>AMAT</strong> stays out (same rate gate). <strong>MRVL</strong> stays out — re-entry needs a confirmed base above ~$300 (~$267). <strong>NEM</strong> stays out (the ceasefire removes the last haven bid). <strong>The honest read:</strong> the confirmed follow-through of yesterday gave way to the sell-the-news digestion today — so you don't chase the names that just went parabolic, you hold the ballast and replace the one thing that broke, with a cheaper, higher-quality version of the same trade — at Medium, on probation until it proves $400.</p>
+
+<h2>What's new since Wednesday (1 Jul → 2 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>The record close</strong></td><td>DID NOT hold — sell-the-news chip rout: MU −10.57%, INTC −9.03%, SNDK −10%; ~$200B chip mcap wiped; spread to Asia (Samsung/SK Hynix −7%)</td><td><span class="warn">A rotation, not a crash</span> — breadth held (S&amp;P ~flat); own AI-infra but don't chase the highs</td></tr>
+      <tr><td><strong>MU (was engine)</strong></td><td>Blowout FQ3 became exit liquidity — −10.57% off the $1,145 ATH to ~$1,024 on profit-taking after +260% YTD</td><td><span class="neg">Parabola digested</span> — thesis intact; let it base, don't chase</td></tr>
+      <tr><td><strong>QCOM (target)</strong></td><td>Kept bleeding to ~$184.79 — below the ~$205 base it had to re-prove</td><td><span class="neg">SWAPPED OUT → AVGO</span> — a base broken twice is broken; AVGO in at Medium</td></tr>
+      <tr><td><strong>Today · payrolls</strong></td><td><strong>June NFP at 8:30am ET</strong> (a day early); consensus ~100–115k, unemp ~4.3%; ADP soft (+98k)</td><td><span class="accent">The week's biggest swing factor</span> — cool bends the Sept-hike odds; hot extends the give-back</td></tr>
+      <tr><td><strong>Today · TSLA</strong></td><td><strong>Q2 deliveries</strong> — consensus ~406k IR / ~396.5k Bloomberg (Barclays 418k, Cantor 397k; Q1 missed at 358,023)</td><td>A beat extends >$400; a miss &lt;396.5k is the risk into 22 Jul financials</td></tr>
+      <tr><td><strong>SNAP (holding)</strong></td><td>+8.45% — S&amp;P credit upgrade to BB− (positive), >$500M cost cuts, AR/Illumix deal, ratings upgrade</td><td><span class="pos">First constructive tape in weeks</span> — still &lt;$5.50 stop, but the narrative shifted</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (Thu 2 Jul → holiday-shortened)</h2>
+<div class="card">
+  <ul>
+    <li><strong>June nonfarm payrolls — TODAY, 8:30am ET.</strong> A day early (July 3 early close, July 4 holiday). Consensus ~100–115k (May 172k), unemployment ~4.3%; <strong>ADP's +98k leans the whisper cool</strong>. The single biggest swing factor of the week — a cool print bends the ~62% September-hike odds; a hot print re-hardens the hawkish Fed and extends the chip give-back.</li>
+    <li><strong>TSLA Q2 deliveries — TODAY.</strong> Consensus ~406k IR / ~396.5k Bloomberg. A beat extends the reclaim above $400; a miss below ~396.5k is the risk into the 22 Jul financials.</li>
+    <li><strong>Does the chip give-back stabilize or extend?</strong> After MU −10.57% / INTC −9% / the Asia spillover — a one-day rotation flush, or the start of a deeper AI-multiple compression? Watch MU base and INTC hold above ~$120.</li>
+    <li><strong>Does AVGO reclaim $400?</strong> The swap-in's gate to re-arm from Medium to High.</li>
+    <li><strong>The ceasefire.</strong> The US–Iran 60-day framework holds but is fragile — keeps oil capped and risk-on alive unless it breaks.</li>
+    <li><strong>ORCL.</strong> Base at the fresh low, or keep bleeding as the lone laggard?</li>
+    <li><strong>Holiday tape.</strong> Markets close early July 3 and are closed July 4 — expect thin, choppy trading after this morning's binaries.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into the July 4 holiday week</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — a healthy digestion, then the tape resumes</strong> — the sell-the-news rotation cleans out the parabola (memory/foundry) without breaking breadth, the ceasefire holds, and the rate-insensitive power/uranium + LLY sleeve provides ballast while MU/TSM base. AVGO proves or stays Medium; ORCL bases on its own clock.</div>
+  <div class="scenario up"><strong>Up branch — a cool payrolls print</strong> — if June NFP comes in soft enough (ADP's +98k as the tell) to bend the ~62% September-hike odds AND the ceasefire holds, the AI multiple re-expands, the chip give-back reverses, NVDA reclaims $215, AVGO clears $400 (re-arms to High), and ASML re-promotes off the bench.</div>
+  <div class="scenario down"><strong>Down branch — a hot payrolls print OR a TSLA delivery miss</strong> — if the data re-hardens the September-hike toward a near-certainty (or the ceasefire breaks), the chip give-back extends, the rate-exposed AI names keep bleeding, ORCL makes fresh lows, and the power/uranium + LLY ballast leads. A TSLA miss below ~396.5k pressures the holding under $400.</div>
+  <p class="sub">The tells: <strong>(1) June payrolls at 8:30am</strong> vs. the Sept-hike odds (~62%) and the 10-year (~4.39%); <strong>(2) TSLA's Q2 deliveries</strong> today (beat >$400 / miss &lt;396.5k); <strong>(3) does the chip give-back stabilize</strong> (MU base, INTC hold >$120) or extend; and <strong>(4) does AVGO reclaim $400.</strong></p>
+</div>
+
+<h2>Action checklist (melt-up digested · sell-the-news rout · double-binary day)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the record close <span class="neg">did not hold</span> — a sell-the-news chip rotation (MU −10.57%, INTC −9%), but breadth held. 9 KEEP, <strong>1 swap (QCOM → AVGO at Medium)</strong>. Own the AI-infra winners but <strong>don't chase them at the highs</strong>; hold the rate-insensitive ballast through the digestion.</li>
+    <li><strong class="neg">MU (holding + target):</strong> ~$1,024, −10.57% off the ATH on a sell-the-news flush. Thesis intact — <strong>let it base, don't chase</strong>; the ~$1,080–$1,120 trail was breached intraday.</li>
+    <li><strong class="warn">TSLA (holding):</strong> ~$420; <strong>Q2 deliveries land TODAY</strong> (consensus ~406k IR / ~396.5k Bbg) — the near-term binary. $380 stop stays VOIDED; a miss &lt;396.5k is the risk.</li>
+    <li><strong class="pos">AVGO (target, swap-in):</strong> ~$370, ~26% off highs — a Medium dislocation entry (custom-AI franchise). Re-arms to High on a <strong>close above $400.</strong></li>
+    <li><strong class="neg">QCOM (target, swapped out):</strong> ~$185, broke the ~$205 base twice → OUT. Re-entry only on a confirmed base &gt;$205.</li>
+    <li><strong class="neg">INTC (holding):</strong> ~$127, gave back the parabola — <strong>back below the $130 trim</strong>; the trim was banked, now trail (~$120–$125).</li>
+    <li><strong>NVDA (holding):</strong> ~$197, held up best in the rout (relative strength); <strong>$215 close</strong> re-arms full upside.</li>
+    <li><strong class="pos">SNAP (holding):</strong> ~$4.75, +8.45% on the S&amp;P credit upgrade + AR deal — first good news in weeks; still &lt;$5.50 stop.</li>
+    <li><strong>CEG (target):</strong> <span class="pos">the value dislocation</span> — near a 52-week low (~$247) on a fresh Walmart nuclear deal despite a $360 avg PT; the clearest add-zone.</li>
+    <li><strong class="neg">ORCL (holding):</strong> <span class="neg">~$142.50, a fresh low</span>, the lone laggard. No add; reclaim $185 to repair.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close <span class="pos">VOIDED</span> (~$420; deliveries today) · SNAP $5.50 (FIRED, ~$4.75, +8.45%) · SYM $46 close (recovering, ~$45.20) · INTC $130 trim <span class="neg">back below</span> (~$127; trail ~$120–$125) · MU trail ~$1,080–$1,120 <span class="neg">breached</span> (~$1,024, let it base) · NVDA $215-reclaim to flip fully bullish (~$197) · ORCL must reclaim $185 to repair (far off, ~$142.50) · <strong>AVGO swap-in at Medium</strong> (~$370; gate to High is a $400 close) · <strong>QCOM swapped OUT</strong> (~$185; re-entry only >$205) · <strong>ASML on the watch-list</strong> (rate gate) · AMAT / MRVL / NEM stay out · <strong>primary tells: June payrolls (8:30am ET), TSLA's deliveries today, whether the chip give-back stabilizes, and whether AVGO reclaims $400.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Thursday 2 July 2026 edition is built around the completion of the three-day mirror: Monday's floor-test rally justified an upgrade, Tuesday's follow-through confirmed it and Q2 closed at records, and Wednesday 1 July that record close did not hold — it gave way to a textbook sell-the-news chip rout. Micron printed its blowout FQ3 (record revenue $41.46B, HBM sold out through 2026) and then fell about 10.57% off the $1,145 all-time high to roughly $1,024, as a +260% year-to-date run met profit-taking, valuation and technical debate, and a handful of fresh sell ratings; Intel gave back about 9.03% from its 25-year high near $139 to roughly $127 (back below the $130 third-trim line), SanDisk shed about 10%, and roughly $200B of chip market capitalization was wiped, with the rout spreading to Asia on Thursday (Samsung and SK Hynix each down about 7%, dragging the Kospi). But breadth held — the S&amp;P finished roughly flat near 7,483 (actually above Tuesday's 7,449 close), the Nasdaq only −0.66% at 26,040.03, and the Dow −0.03% at 52,305.24 — so this reads as a rotation out of the parabolic memory and foundry names rather than a broad market crash. The one internal book move is the Qualcomm replace set up yesterday: the swap-in already downgraded High→Medium kept bleeding to about $184.79 (range $180.60–$190.99), decisively below the roughly $205 base it was supposed to re-prove, and since the rule was explicit — another leg down turns the downgrade into a replace — QCOM is out (its FY29 data-center thesis, Dragonfly C1000, Meta as launch customer, and non-handset target lifted to $40B, stays intact and cheap at about 12×, but there is no near-term catalyst, so it returns to the watch-list with re-entry only on a confirmed base above $205). The swap-in is Broadcom (AVGO) at Medium conviction — a deliberate dislocation entry, not a chase: it sits near $370, roughly 26% off its highs after the post-earnings drop, but it is the higher-quality custom-AI franchise (OpenAI, Google and Meta custom silicon, the more than $100B AI-revenue-by-2027 target), and it enters at Medium precisely because its stated re-entry gate — a clean close back above $400 — is not yet met, re-arming to High on that close. Everything else is a keep, and the composition is the point: into a digestion day that is also a double-binary day, the rate-insensitive power and uranium sleeve (TLN, CEG, CCJ) plus the LLY anchor is exactly the book you want. Two catalysts land today, both this morning: June nonfarm payrolls at 8:30am ET (pulled a day early ahead of the July 3 early close and July 4 holiday; consensus about 100–115k versus 172k in May, unemployment about 4.3%, with Wednesday's ADP soft at +98k), and Tesla's Q2 deliveries (consensus about 406,024 per Tesla IR / about 396,466 per Bloomberg; Barclays sees 418k, Cantor 397k; Q1 was a miss at 358,023). Two holdings improved against the tape: Snap jumped about 8.45% to roughly $4.75 on an S&amp;P credit upgrade to BB− (positive outlook, more than $500M annualized cost cuts) plus an AR/Illumix deal and a ratings upgrade — still below the $5.50 stop, but the first genuinely constructive tape in weeks — and NVIDIA held up best in the memory rout (about $197, −1.25%), the relative-strength tell. Oracle made a fresh low (about $142.50), still the lone laggard on the workforce-cut and financing story, though 28 of 33 analysts still rate it Buy with an average target near $264. Holdings at Wednesday's close: MU ~$1,024 (sell-the-news off the ATH, still up about 260% YTD — the dip you wanted but volatile); NVDA ~$197 (relative strength, still ~16% below the May ATH $235.47, earnings 26 Aug); INTC ~$127 (gave back the parabola, back below the $130 trim — the third trim already banked, now trail); ORCL ~$142.50 (fresh low, the lone laggard, reclaim $185 to repair); TSLA ~$420 (deliveries today); SNAP ~$4.75 (+8.45%, credit upgrade, narrative improving, still below $5.50); IONQ ~$52.33 (Buy consensus, PT ~$71.25, heavy burn); SAP ~$153 ADR / ~€130 Xetra (Q2 23 Jul, expected cloud deceleration flagged); VWAGY ~$8.75 (Q2 print 24 Jul); SYM ~$45.20 (recovering toward the $46 trim line); UKW.L ~103.5p (the income anchor). The week ahead: June payrolls this morning, TSLA's Q2 deliveries today, whether the chip give-back stabilizes or extends, whether AVGO reclaims $400, whether the ceasefire holds, and whether ORCL bases — into a holiday-shortened week (early close July 3, closed July 4). Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 2 July 2026 from public web sources, before this morning's 8:30am ET payrolls print and Tesla's delivery release (prices shown are the 1 July close unless noted). This Thursday edition completes the three-day mirror: Monday's floor-test rally and Tuesday's confirmed follow-through gave way to a sell-the-news chip rout on Wednesday — Micron printed a blowout FQ3 and then fell −10.57% off the $1,145 ATH to ~$1,024, Intel −9.03% (back below the $130 trim), SanDisk −10%, ~$200B of chip mcap wiped, and the rout spread to Asia (Samsung/SK Hynix −7%) — but breadth held (S&amp;P ~flat near 7,483, Nasdaq −0.66% at 26,040.03, Dow −0.03% at 52,305.24), a rotation out of the parabola rather than a crash. The one book move: QCOM kept bleeding to ~$185 below its ~$205 base (a base broken twice is broken) → SWAPPED OUT for AVGO (~$370, a Medium dislocation entry; gate to High is a $400 close). Two binaries land today, both this morning: June nonfarm payrolls at 8:30am ET (a day early; consensus ~100–115k, ADP soft at +98k) and Tesla Q2 deliveries (consensus ~406k IR / ~396.5k Bloomberg). Two holdings improved: SNAP +8.45% on an S&amp;P credit upgrade to BB−, and NVDA held up best in the rout (~$197). Response: 9 KEEP, 1 swap (QCOM → AVGO); CEG (~$247, near a 52-wk low on a fresh Walmart nuclear deal) is the standout add-zone. The week ahead: June payrolls, TSLA deliveries, whether the chip give-back stabilizes, whether AVGO reclaims $400, and whether the ceasefire holds — into a holiday-shortened week (early close July 3, closed July 4). Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
