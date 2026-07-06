@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Monday, 6 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Monday, 6 July 2026 — <strong>the chip de-rate found its base — and the bear thesis is being refuted.</strong> The down-branch the book feared on Thursday (MU toward $850, a broad AI unwind) <strong>did not fire</strong>: Micron <strong class="pos">based ~$977</strong> (tested ~$950 and bounced, still +260% YTD), the SOX stopped bleeding, and Monday's tape rotated <em>back</em> into tech — Nasdaq-100 futures <strong class="pos">+1%</strong>, a "return of faith in the AI trade." The tell is <strong>Samsung</strong>: its Q2 preview (reports Tuesday) points to a <strong class="pos">record ~₩86T ($56B) operating profit</strong>, DRAM contract prices <strong>+44% QoQ</strong>, NAND <strong>+53%</strong>, a further <strong>+20% DRAM hike guided for Q3</strong>, and June the first profitable month for its chip unit since 2023 — the "Korean-capacity glut" cited when MU fell is exactly backwards; the memory market is the <em>tightest in years</em>. On rates, the cold-jobs dovish turn held (Sept-hike odds ~50%; Fed Chair Warsh: inflation expectations eased, "no urgency" to hike). Net: <strong>10 KEEP · 0 swaps</strong> — but for a new reason. The AI/chip cohort upgrades from "own, don't chase the knife" to <strong>"the base is in, the glut fear is breaking — this is the dip you wanted."</strong> Prices are Monday 6 July intraday.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Monday 6 July 2026, the first full session after the Independence Day holiday. Prices are Monday intraday and move during the day; verify with your broker before any trade. The value-add today is the recognition that the chip de-rate that dominated last week <em>found a base</em> — MU held ~$977 rather than losing support toward $850 — and that the memory-glut narrative driving the selloff is being <em>refuted</em> by Samsung's own Q2 numbers (record profit, DRAM +44% QoQ, another +20% Q3 hike). That flips the AI/chip sleeve from "don't chase the knife" to "accumulate the dislocation," while the rate-insensitive ballast (TLN/CEG/CCJ/LLY/ADI) stays intact and cheap. Do your own diligence.</section>
+
+<h2>The knife found a floor — and Samsung is refuting the bear case</h2>
+<div class="card lede">
+  <p>Thursday's briefing named the single open question into this week: does the chip de-rate stabilize, or deepen into a broad AI-valuation unwind (MU toward $850)? Monday answered it — <strong>it stabilized</strong>, and the answer came with a fundamental tell:</p>
+  <ul>
+    <li><strong class="pos">MU based instead of breaking.</strong> Micron tested ~$950 and <strong>bounced back to ~$977</strong> — it did <em>not</em> lose support toward the $850 bears were floating. Down ~19% on the week, yes, but still <strong>+260% YTD</strong>: a parabola that reset a notch, not a thesis that broke. NVDA held the $190s (~$194), and the SOX stopped bleeding.</li>
+    <li><strong class="pos">Samsung refutes the glut thesis — with numbers.</strong> Ahead of Tuesday's Q2 report, Samsung is guiding to a <strong>record ~₩86 trillion (~$56B) operating profit</strong>, its third straight record quarter, with Citi pegging <strong>DRAM contract prices +44% QoQ</strong> and <strong>NAND +53%</strong>, and Samsung negotiating a further <strong>up to +20% DRAM ASP hike for Q3</strong>. June was the <em>first profitable month</em> for its chip business since 2023. The "South-Korean capacity glut" headline that helped knock MU down is exactly inverted by Korea's own P&amp;L — the memory market is the tightest it's been in years, and Micron's 16 signed long-term agreements are stabilizing its pricing into it.</li>
+    <li><strong class="pos">The tape rotated back toward tech.</strong> After a week of value leadership (the Dow near a record ~53,000), Monday's futures flipped: <strong>Nasdaq-100 +1%</strong>, S&amp;P +0.45%, Dow ~flat — a "return of faith in the AI trade" as chips based. The rotation didn't reverse the ballast; it <em>broadened</em> the bid back to growth.</li>
+    <li><strong class="pos">The dovish rate turn held.</strong> The cold June print (+57k) still anchors Sept-hike odds at ~50% with a July hike off the table; the 10-year sits ~4.48%; Fed Chair Warsh said inflation expectations have eased and there's "no urgency" to raise. FOMC minutes land Wednesday, the 28–29 July meeting is expected to hold. The rate cloud that hung over the book stays lifted.</li>
+  </ul>
+  <p><strong>Response: 10 KEEP · 0 swaps — but the character flipped bullish.</strong> Friday's zero-swap was defensive (the ballast leads a value rotation). Today's zero-swap is offensive: the chip cohort (MU/NVDA/TSM/VRT) upgrades from "own but don't chase the knife" to <strong>"the base is in, the bear thesis is breaking — this is the dislocation to accumulate."</strong> I considered two swap-ins and disqualified both: <strong>SNDK/WDC</strong> — the NAND derivatives that most directly benefit from Samsung's read-through — are <em>too parabolic to chase</em> (SNDK ~$1,762, up ~6,000% since its spinoff, a ~25% intraday range Monday); and <strong>ASML</strong> — whose rate gate just eased — has a <em>fresh</em> overhang (the Dutch "Pax Silica" export-control alignment threatens DUV shipments/servicing to China, ~20% of 2026 systems revenue, plus TSMC High-NA pushouts), so it stays benched for a new reason. No clean swap-in ⇒ the honest call is 10 KEEP. The list re-orders: chips move back up; ballast holds as the still-cheap dislocation (CEG a fresh 52-wk low ~$240, CCJ ~$96).</p>
+</div>
+
+<h2>Where things stand (Monday 6 July, intraday)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">Nasdaq-100 (fut.)</div><div class="v"><span class="pos">~+1%</span></div><div class="k">"return of faith in the AI trade"</div></div>
+  <div class="stat"><div class="k">Dow Jones</div><div class="v"><span class="pos">~53,000</span></div><div class="k">near last week's record</div></div>
+  <div class="stat"><div class="k">MU (the base)</div><div class="v"><span class="pos">~$977</span></div><div class="k">tested ~$950, bounced — held support</div></div>
+  <div class="stat"><div class="k">Samsung Q2 op. profit</div><div class="v"><span class="pos">~₩86T</span></div><div class="k">record; DRAM +44% QoQ, NAND +53%</div></div>
+  <div class="stat"><div class="k">Sept-hike odds</div><div class="v"><span class="pos">~50%</span></div><div class="k">dovish turn held; Warsh "no urgency"</div></div>
+  <div class="stat"><div class="k">10-yr Treasury</div><div class="v"><span class="warn">~4.48%</span></div><div class="k">FOMC minutes Wed · 28–29 Jul hold</div></div>
+  <div class="stat"><div class="k">TSLA</div><div class="v"><span class="pos">~$399</span></div><div class="k">holding ~$400 into 22 Jul financials</div></div>
+  <div class="stat"><div class="k">Brent / WTI</div><div class="v"><span class="warn">capped</span></div><div class="k">Hormuz flows up, US–Iran talks; premium gone</div></div>
+</div>
+<p class="sub">The two threads the book tracks are both cooperating. <strong>Rates</strong> stay dovish (cold jobs held, Warsh dovish, minutes Wed) — a tailwind for the rate-insensitive/power/income sleeve. The <strong>AI/chip</strong> thread — the one still de-rating on Friday — turned: MU based, the SOX stopped bleeding, and Samsung's record memory numbers refute the glut fear that drove the selloff. That's the difference between a healthy multiple reset (what happened) and the start of a deeper unwind (the down-branch that didn't fire). The one laggard note is a name-specific breakdown in <strong>SYM</strong> (below), not a macro signal.</p>
+
+<h2>Your portfolio — Monday read (11 positions, prices = 6 Jul intraday)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (6 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="pos">~$977</span></td><td><strong class="pos">The base held — the knife found a floor.</strong> Tested ~$950 and bounced; did <em>not</em> lose support toward $850. Down ~19% on the week but still +260% YTD — a parabola reset, not a break. And the bear thesis is being refuted: <strong>Samsung's record Q2 (DRAM +44% QoQ, NAND +53%, +20% Q3 hike guided)</strong> shows the tightest memory market in years, inverting the "Korean glut" headline. Thesis (record FQ3, HBM sold out through 2026, $50B FQ4 guide, 346% YoY rev, 16 LTAs) intact. Core hold; <strong>the dislocation is now the dip you wanted</strong>.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="warn">~$194</span></td><td>Held the $190s through the rout — the <strong>relative-strength name</strong>; ~18% below the 14 May ATH ($235.47). Street avg ~$309, Strong Buy; earnings 26 Aug. A <strong>$215 close</strong> re-arms full upside — and the rate turn helps the multiple now that chips have based.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$121</span></td><td>Slipped to ~$121, still <strong>below the $130 third-trim line</strong>. Trim was banked into the run; now <strong>trail</strong> (~$120–$125) and let the self-help story (Apple US-foundry deal, BofA →$160) re-prove above $130. Lagging the chip rebound.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="warn">~$142</span></td><td><span class="pos">Basing near $138–$140 as flagged</span> — bounced off a fresh low toward ~$142. Still −28% YTD (June was its worst month since 1990 on AI-capex/debt fear), but <strong>28/33 Buy, avg PT ~$264</strong>. Core hold, <strong>no add</strong>; the base is forming; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="pos">~$399</span></td><td>Holding ~$400 (wide range) after the <strong class="pos">blowout Q2 (480,126 deliveries, +25% YoY, best-ever Q2)</strong>. $380 stop stays VOIDED. Next catalyst: the <strong>22 July financials</strong> — watch margins/ASPs behind the volume.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="pos">~$4.86</span></td><td><strong class="pos">Recovered — reclaiming toward the stop.</strong> Bounced from ~$4.44 to ~$4.86, up toward the $5.50 stop line. Still −YTD and Hold consensus (avg PT ~$7.92), but the tone improved. A <strong>close above $5.50 voids</strong> the fired stop; watch it.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="warn">~$53</span></td><td>Buy consensus, avg PT ~$71; cash-rich but heavy burn. High-beta, rate-sensitive — the dovish turn + the AI-risk-on Monday are both modest tailwinds for the long-duration quantum theme. No size-up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="neg">~$42</span></td><td><span class="neg">Broke down — the trim framework is fully in control.</span> Slid below ~$42, now well under the $46 trim line and pressing toward the 52-wk low ($38.19). The lone name-specific breakdown in the book. <strong>No add; respect the stop</strong> — a reclaim of $46 on a close is required to re-open the name.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="pos">~$162 ADR</span></td><td>Firmed to ~$162 ADR (~€138 Xetra) ahead of <strong>Q2/H1 results 23 Jul</strong> — the market watching an already-flagged "expected deceleration of cloud growth." Business-AI platform the live fundamental. Add on weakness dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.52</span></td><td>Near 52-week lows (range $8.07–$12.83). Dormant ballast; Q2 print 24 Jul the next catalyst. A softer-rate/weaker-dollar turn is a marginal help for the EU exporters.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num"><span class="pos">~104p</span></td><td><strong class="pos">The bond-proxy tailwind persists.</strong> The steady-income anchor benefits directly as yields stay eased on the dovish jobs turn. Reinvest the dividend; the rate turn is a continuing tailwind for the income sleeve.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The name-specific moves: <strong>MU</strong> based and bounced (the knife found a floor — the week's key event); <strong>NVDA</strong> held the $190s (relative strength); <strong>ORCL</strong> is basing near $138–$140 as flagged (bounced to ~$142); <strong>SNAP</strong> recovered toward its stop (~$4.86); <strong>SYM</strong> broke down below $42 (the lone breakdown — respect the stop); <strong>INTC</strong> lags at ~$121. The income/EU tail (<strong>UKW.L, SAP, VWAGY</strong>) is steady. Center of gravity: the AI cluster (<strong>MU, NVDA</strong>) that just re-based, with the rate-sensitive/income tail as ballast the dovish turn keeps rewarding.</p>
+</div>
+
+<h2>The 10 buy targets — Monday (10 KEEP · 0 swaps · the chip cohort re-rates up)</h2>
+<p class="sub">All ten theses are intact, so the list carries — but the <em>reason</em> changed. Friday the ballast led a defensive value rotation; today the <strong>AI/chip cohort (MU/NVDA/TSM/VRT) re-rates up</strong> as the de-rate bases and Samsung's record memory numbers refute the glut fear. The rate-insensitive sleeve (TLN/CEG/CCJ/LLY/ADI) stays intact and cheap — CEG at a fresh 52-wk low ~$240, CCJ ~$96 — the two deepened dislocations. <strong>AVGO stays Medium on probation</strong> — but note it drifted to ~$362 (below Friday's ~$370) and <em>lagged</em> the chip rebound; it's on its last leash. I considered swapping in the NAND derivatives (SNDK/WDC) and ASML and disqualified both (too parabolic / fresh China overhang) — details below the table. Prices are 6 July intraday.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (6 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 3 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>MU</strong></td><td><strong class="pos">The base held — and the bear thesis is breaking.</strong> Tested ~$950 and bounced to ~$977 (still +260% YTD); <strong>Samsung's record Q2 (DRAM +44% QoQ, NAND +53%, +20% Q3 hike) refutes the memory-glut fear</strong> that drove the selloff. Record FQ3, HBM sold out through 2026, $50B FQ4 guide, 16 LTAs — <strong>the dislocation to accumulate</strong></td><td class="num"><span class="pos">~$977</span></td><td class="num">$1,500–$2,000</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>2</td><td><strong>NVDA</strong></td><td>AI bellwether; the <strong>relative-strength name</strong> that held the $190s through the rout; ~18% below the May ATH. A <strong>$215 close</strong> re-arms full upside; the rate turn helps the multiple now that chips have based; Street avg ~$309, earnings 26 Aug</td><td class="num"><span class="pos">~$194</span></td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>3</td><td><strong>CEG</strong></td><td><strong class="pos">The value dislocation — the clearest add-zone.</strong> Near a <strong>fresh 52-week low (~$240)</strong> despite the Walmart nuclear deal, FY26 EPS $11–12, Buy / $360 avg PT; rate-insensitive ballast the dovish turn keeps rewarding</td><td class="num"><span class="neg">~$240</span></td><td class="num">$360 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, CoWoS sold out through 2027; the <strong>lower-multiple AI-logic core</strong>, cheaper after the rout; <strong>Q2 earnings 16 Jul</strong> — the next read on whether AI-hardware demand is intact beneath the de-rate; far less China/rate-exposed than ASML</td><td class="num"><span class="pos">~$445</span></td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>5</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; world's largest listed producer + Westinghouse stake; <strong>~$96, well under the &lt;$110 add zone</strong>, avg PT ~$173 — a deepened dislocation the dovish turn favors</td><td class="num"><span class="neg">~$96</span></td><td class="num">~$173 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>TLN</strong></td><td><strong>The rate-insensitive power leader</strong> — contracted cashflow (AWS $18B PPA to 2042); the book's primary rate hedge, validated by the cold print; Goldman Buy PT ~$499; off the highs (add zone)</td><td class="num">~$362</td><td class="num">$499 (GS) / $449 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor</strong> — near record highs (~$1,216 vs ATH $1,229.93) on strong retatrutide obesity data + oral GLP-1 progress; the ballast that works in any regime. Extended — trim-and-hold</td><td class="num">~$1,216</td><td class="num">record highs</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>ADI</strong></td><td>Record industrial/data-center demand; the <strong>steady, lower-beta analog</strong> ballast; new $3B credit facility; ~$378 — a better entry on a name outperforming its sector YTD</td><td class="num">~$378</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; ~$315, +YTD, Strong Buy (avg PT ~$377). <strong>Chip-correlated</strong> — it benefits directly as the AI complex re-rates up off the base; size into weakness, don't over-chase the bounce</td><td class="num">~$315</td><td class="num">~$377 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>10</td><td><strong>AVGO</strong></td><td><span class="warn">Medium — the gate is still not met, and it lagged the bounce.</span> ~$362 (down from ~$370 Friday), ~27% off highs; the higher-quality custom-AI franchise (OpenAI/Google/Meta custom silicon, &gt;$100B AI-rev target by 2027). <strong>Last leash</strong> — re-arms to High only on a clean close above $400; if it can't join the chip base, it's the replace candidate</td><td class="num"><span class="neg">~$362</span></td><td class="num">~$400+ (gate)</td><td><span class="tag med">Med</span></td><td>KEEP ⚠</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>The list re-ordered up the chip cohort.</strong> With the de-rate based and Samsung refuting the glut, the AI/chip names (MU/NVDA/TSM/VRT) move back to the top as the dislocation to accumulate, while the rate-insensitive ballast (CEG/CCJ/TLN/LLY/ADI) holds as the still-cheap value sleeve the dovish turn rewards. <strong>The two swap-ins I considered and rejected:</strong> <strong>SNDK / WDC</strong> — the NAND/storage derivatives that most directly benefit from Samsung's +53% NAND read-through — are <em>too parabolic to promote</em> (SNDK ~$1,762, up ~6,000% since its 2025 spinoff, a ~25% intraday range Monday; WDC ~$539 after a −10% day): the same parabola risk the book has been disciplined about not chasing. <strong>ASML</strong> — its rate gate eased on the cold print, but a <em>fresh</em> overhang opened: the Dutch government's "Pax Silica" export-control alignment threatens DUV shipments/servicing to China (~20% of 2026 systems revenue) and TSMC has pushed back High-NA EUV adoption — so it stays benched for a <em>new</em> reason, not the old one. <strong>Out of the active 10:</strong> QCOM stays out (re-entry only &gt;$205; ~$185); AMAT stays out (same China-WFE risk as ASML); MRVL out (needs a base &gt;$300, ~$267); NEM out (ceasefire removes the haven bid). <strong>The honest read:</strong> the down-branch didn't fire, the chip de-rate based, and the bear thesis (a memory glut) is being refuted by Samsung's own record numbers — so the cohort you owned but wouldn't chase is now the dislocation to accumulate, with no cleaner swap-in available and AVGO on its last leash.</p>
+
+<h2>What's new since Friday (3 Jul → 6 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chip de-rate</strong></td><td><strong class="pos">MU based ~$977</strong> (tested ~$950, bounced); the SOX stopped bleeding; Nasdaq-100 futures +1%</td><td><span class="pos">The down-branch didn't fire</span> — a healthy multiple reset, not a deeper unwind; the cohort re-rates up off the base</td></tr>
+      <tr><td><strong>Samsung Q2 (Tue)</strong></td><td><strong class="pos">Record ~₩86T profit</strong>; DRAM +44% QoQ, NAND +53%, +20% Q3 DRAM hike guided; June first profitable chip month since 2023</td><td><span class="pos">Refutes the memory-glut thesis</span> — the "Korean glut" headline is inverted by Korea's own P&amp;L; direct positive for MU</td></tr>
+      <tr><td><strong>Rates / Fed</strong></td><td>Dovish turn held: Sept-hike odds ~50%, 10-yr ~4.48%; <strong>Warsh: "no urgency" to hike</strong>; FOMC minutes Wed</td><td><span class="pos">Rate cloud stays lifted</span> — tailwind for the power/uranium/income ballast and the AI multiple alike</td></tr>
+      <tr><td><strong>SNAP (holding)</strong></td><td><strong class="pos">Recovered to ~$4.86</strong> from ~$4.44 — climbing back toward the $5.50 stop</td><td><span class="pos">Tone improved</span> — a close above $5.50 voids the fired stop; watch it</td></tr>
+      <tr><td><strong>SYM (holding)</strong></td><td><strong class="neg">Broke down below ~$42</strong>, pressing the 52-wk low ($38.19); well under the $46 trim line</td><td><span class="neg">The lone name-specific breakdown</span> — respect the stop; reclaim $46 on a close to re-open</td></tr>
+      <tr><td><strong>ASML (watch)</strong></td><td>Rate gate eased, but a <strong class="neg">fresh China export-control overhang</strong> (Dutch "Pax Silica" / DUV restrictions, ~20% of rev) + TSMC High-NA pushouts</td><td><span class="neg">Stays benched — for a new reason</span> — don't promote into fresh regulatory risk</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (week of 6 Jul)</h2>
+<div class="card">
+  <ul>
+    <li><strong class="pos">Samsung Q2 earnings — Tuesday 7 Jul.</strong> The confirmation of the record-memory / glut-refutation read; the single most important print for the MU thesis this week. Watch the actual DRAM/NAND ASP commentary and the Q3 guide.</li>
+    <li><strong>FOMC minutes — Wednesday 8 Jul.</strong> Does the record confirm the dovish tilt (Sept-hike odds ~50%) or reveal more hawkish dissent? The 28–29 July meeting is expected to hold.</li>
+    <li><strong>Does the chip base hold and broaden?</strong> MU held ~$977 and NVDA the $190s — watch whether the bounce extends (NVDA toward the $215 re-arm) or fades back into the de-rate.</li>
+    <li><strong>TSM Q2 earnings — 16 Jul.</strong> The lower-multiple logic core; a read on whether AI-hardware demand is intact beneath the valuation reset.</li>
+    <li><strong>Does AVGO join the bounce or get replaced?</strong> ~$362, lagging; it re-arms to High on a $400 close — or becomes the replace candidate if it can't join the chip base.</li>
+    <li><strong>ORCL</strong> — is the base near $138–$140 holding (bounced to ~$142), or does the lone-laggard bleed resume?</li>
+    <li><strong>SYM</strong> — does it stabilize above the 52-wk low, or does the breakdown extend?</li>
+    <li><strong>Earnings cluster ahead:</strong> TSLA financials 22 Jul, SAP 23 Jul, VWAGY 24 Jul.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into mid-July</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the chip base holds, the rotation broadens.</strong> Samsung's Tuesday print confirms record memory, the glut fear keeps fading, MU consolidates ~$950–$1,050, NVDA works toward $215, and the dovish rate turn holds (minutes Wed benign). The AI/chip cohort re-rates up off the base while the rate-insensitive ballast (TLN/CEG/CCJ/LLY/ADI) stays bid — a broadening bull tape rather than a narrow one.</div>
+  <div class="scenario up"><strong>Up branch — the de-rate fully reverses into a melt-up.</strong> If Samsung blows out, the memory-glut narrative is decisively buried, MU reclaims $1,050+, NVDA clears $215, AVGO finally takes $400 (re-arms to High), and the benign minutes bend Sept-hike odds lower — the AI multiple re-expands on <em>top</em> of the rate relief and the tape melts up, growth and value together.</div>
+  <div class="scenario down"><strong>Down branch — the bounce is a dead-cat and the glut fear returns.</strong> If Samsung's guide disappoints on ASP durability, or MU loses ~$950 and the selling re-spreads across the AI complex faster than the rate relief offsets, the base fails and the Nasdaq rolls back over. A hawkish surprise in the Wednesday minutes that un-does the dovish jobs read is the accelerant.</div>
+  <p class="sub">The tells: <strong>(1) Samsung's Tuesday print</strong> — does it confirm the record-memory/glut-refutation read; <strong>(2) does MU hold ~$950</strong> and does NVDA push toward $215; <strong>(3) do the FOMC minutes</strong> keep the dovish turn intact; and <strong>(4) does AVGO reclaim $400</strong> or get replaced.</p>
+</div>
+
+<h2>Action checklist (the chip de-rate based · the glut thesis is breaking)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the down-branch <span class="pos">did not fire</span> — MU based ~$977 (held support), the SOX stopped bleeding, and Samsung's record Q2 (DRAM +44% QoQ, NAND +53%, +20% Q3 hike) is <strong>refuting the memory-glut thesis</strong> that drove the selloff. The dovish rate turn held (Warsh "no urgency"). <strong>10 KEEP · 0 swaps</strong> — but the chip cohort upgrades from "don't chase the knife" to <strong>"accumulate the dislocation."</strong></li>
+    <li><strong class="pos">MU (holding + target):</strong> based ~$977, thesis intact and the bear case breaking — the dip you wanted. Accumulate the dislocation; the trail is well behind.</li>
+    <li><strong>NVDA (holding + target):</strong> held the $190s (relative strength); a <strong>$215 close</strong> re-arms full upside now that chips based.</li>
+    <li><strong class="pos">CEG / CCJ (targets):</strong> the still-cheap ballast — CEG a fresh 52-wk low <span class="pos">~$240</span> (Walmart nuclear deal / $360 avg PT), CCJ ~$96 (well under the $110 add zone, avg PT ~$173).</li>
+    <li><strong>TSM (target):</strong> ~$445, the lower-multiple logic core; <strong>Q2 earnings 16 Jul</strong> the next read; far less China/rate-exposed than ASML.</li>
+    <li><strong class="pos">SNAP (holding):</strong> recovered to ~$4.86 toward the $5.50 stop — a close above $5.50 voids the fired stop.</li>
+    <li><strong class="neg">SYM (holding):</strong> broke down below ~$42 toward the 52-wk low — the lone breakdown; respect the stop, reclaim $46 to re-open.</li>
+    <li><strong>ORCL (holding):</strong> basing near $138–$140 (bounced to ~$142); no add; reclaim $185 to repair.</li>
+    <li><strong class="neg">INTC (holding):</strong> ~$121, below the $130 trim; trail ~$120–$125.</li>
+    <li><strong>AVGO (target):</strong> ~$362, lagged the bounce — <strong>stays Medium, last leash</strong>; re-arms to High on a $400 close or becomes the replace candidate.</li>
+    <li><strong>Stops / levels live:</strong> TSLA $380 close <span class="pos">VOIDED</span> (~$399) · SNAP $5.50 (recovering, ~$4.86) · SYM $46 close <span class="neg">below</span> (~$42, pressing 52-wk low) · INTC $130 trim <span class="neg">below</span> (~$121; trail ~$120–$125) · MU <span class="pos">based ~$977</span> (accumulate the dislocation) · NVDA $215-reclaim to flip fully bullish (~$194) · ORCL reclaim $185 to repair (~$142, basing) · <strong>AVGO Medium, last leash</strong> (~$362; gate $400) · QCOM / MRVL / NEM stay out · <strong>ASML / AMAT — benched on a fresh China export-control overhang</strong> (not just rates) · <strong>primary tells: Samsung Tuesday, MU holds ~$950, the FOMC minutes, and AVGO reclaims $400.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Monday 6 July 2026 edition is built around the recognition that the chip de-rate that dominated last week found its base — Micron tested roughly $950 and bounced back to about $977 rather than losing support toward the $850 the bears floated, still up ~260% year-to-date, while NVIDIA held the $190s (~$194) and the Philadelphia Semiconductor Index stopped bleeding — and that Monday's tape rotated back toward technology (Nasdaq-100 futures +1%, a "return of faith in the AI trade"). The fundamental tell is Samsung: ahead of Tuesday's Q2 report it is guiding to a record ~₩86 trillion (~$56B) operating profit, its third straight record quarter, with Citi pegging DRAM contract prices up ~44% quarter-on-quarter and NAND up ~53%, and Samsung negotiating a further up-to-20% DRAM average-selling-price hike for the third quarter, with June the first profitable month for its chip business since 2023 — the "South-Korean capacity glut" headline that helped knock Micron lower is inverted by Korea's own profit numbers, and Micron's sixteen signed long-term agreements are stabilizing its pricing into the tightest memory market in years. On rates, the cold June payrolls print (+57k) still anchors September-hike odds near 50% with a July hike off the table, the 10-year sits ~4.48%, Fed Chair Kevin Warsh has said inflation expectations eased with "no urgency" to raise, and the FOMC minutes land Wednesday ahead of a 28–29 July meeting expected to hold. The response is 10 KEEP, 0 swaps — but the character flipped from Friday's defensive posture to an offensive one: the AI/chip cohort (MU, NVDA, TSM, VRT) upgrades from "own but don't chase the knife" to "the base is in and the bear thesis is breaking — accumulate the dislocation," while the rate-insensitive ballast (TLN, CEG, CCJ, LLY, ADI) stays intact and cheap, with Constellation Energy near a fresh 52-week low around $240 and Cameco near $96 the two deepened dislocations. Two potential swap-ins were considered and disqualified: SanDisk and Western Digital, the NAND/storage derivatives that most directly benefit from Samsung's read-through, are too parabolic to promote (SNDK ~$1,762, up ~6,000% since its 2025 spinoff, a ~25% intraday range; WDC ~$539 after a −10% session), the same parabola risk the book avoids; and ASML, whose rate gate eased, has a fresh overhang — the Dutch government's "Pax Silica" export-control alignment threatens deep-ultraviolet shipments and servicing to China (~20% of 2026 systems revenue) and TSMC has pushed back High-NA EUV adoption — so it stays benched for a new reason. Broadcom stays at Medium on probation and lagged the bounce (~$362, below Friday's ~$370), on its last leash: it re-arms to High only on a clean close above $400 or becomes the replace candidate. Holdings at Monday's intraday: MU ~$977 (based, the bear thesis breaking, accumulate); NVDA ~$194 (relative strength, $215 re-arms); INTC ~$121 (below the $130 trim, trail ~$120–$125); ORCL ~$142 (basing near $138–$140 as flagged, still 28/33 Buy, ~$264 avg PT, reclaim $185 to repair); TSLA ~$399 (holding ~$400 into the 22 Jul financials); SNAP ~$4.86 (recovered toward the $5.50 stop); IONQ ~$53 (Buy, PT ~$71, heavy burn); SYM ~$42 (broke down toward the 52-wk low — respect the stop); SAP ~$162 ADR / ~€138 Xetra (Q2 23 Jul); VWAGY ~$8.52 (near 52-wk lows, Q2 24 Jul); UKW.L ~104p (income anchor, easing-yield tailwind). The week ahead: Samsung Q2 Tuesday, FOMC minutes Wednesday, TSM Q2 16 Jul, whether the chip base holds and broadens, whether AVGO reclaims $400 or gets replaced, and whether ORCL's base holds. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 6 July 2026 from public web sources; prices are Monday intraday and move during the session. This edition is built around the chip de-rate finding its base: Micron tested ~$950 and bounced to ~$977 (still +260% YTD) instead of losing support toward $850, NVDA held the $190s, the SOX stopped bleeding, and Monday's tape rotated back to tech (Nasdaq-100 futures +1%). The tell is Samsung — a record ~₩86T Q2 operating profit, DRAM +44% QoQ, NAND +53%, a +20% Q3 DRAM hike guided, June the first profitable chip month since 2023 — which refutes the memory-glut thesis that drove last week's selloff. The dovish rate turn held (Sept-hike odds ~50%, Warsh "no urgency," FOMC minutes Wed). Response: 10 KEEP, 0 swaps — but the AI/chip cohort (MU/NVDA/TSM/VRT) upgrades from "don't chase the knife" to "accumulate the dislocation," while the rate-insensitive ballast (TLN/CEG/CCJ/LLY/ADI) stays intact and cheap (CEG a fresh 52-wk low ~$240, CCJ ~$96). Two swap-ins were considered and disqualified: SNDK/WDC (too parabolic) and ASML (a fresh China export-control overhang). AVGO stays Medium on its last leash (~$362, lagged the bounce; gate $400). The week ahead: Samsung Q2 Tuesday, FOMC minutes Wednesday, TSM Q2 16 Jul, whether the chip base holds and AVGO reclaims $400. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
