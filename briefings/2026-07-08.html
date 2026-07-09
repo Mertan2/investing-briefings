@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Wednesday, 8 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Wednesday, 8 July 2026 — <strong>Monday's "the base is in — accumulate the dislocation" call was premature, and Tuesday refuted it.</strong> Micron <strong class="neg">broke the ~$950 support</strong> the book named as the tell and fell to <strong class="neg">~$912</strong> (−14% over five sessions). The base failed — but the <em>driver</em> flipped: Samsung's Q2 <strong>actual</strong> came in even bigger than its record preview (<strong class="pos">~₩89.4T / ~$58.6B operating profit, +1,811% YoY</strong>, DRAM +44%, NAND +53% — overtaking Nvidia <em>and</em> Apple as the largest quarterly operating profit ever), which <strong>kills the supply-glut thesis</strong> — yet chips sold off anyway because the fear rotated to <strong>demand</strong>: DeepSeek is building <strong class="neg">its own AI inference chip</strong> (Reuters), BofA flagged "bubble risk," and AI-capex durability is in doubt. Samsung's supply numbers can't refute a demand fear. Response: <strong>10 KEEP · 0 swaps · 2 downgrades</strong> — reverse Monday's offensive tilt (chips back to "own, don't chase the knife"), cut CEG High→Med on a Citi downgrade + lock-up overhang, let the rate-insensitive ballast lead again. The <strong>FOMC minutes drop today</strong> (Wed 8 July, 2pm ET). Prices are Tuesday 7 July close.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Wednesday 8 July 2026. Prices are Tuesday 7 July close and move during the session; verify with your broker before any trade. The honest value-add today is a <em>correction</em>: Monday's briefing called the chip base too early. Micron broke the ~$950 support and fell to ~$912, so "accumulate the dislocation" was premature. But the reason the base broke is <em>not</em> the reason Monday feared — the memory-glut thesis is now dead (Samsung's record Q2 proves memory is the tightest ever); the new fear is <em>demand</em> (DeepSeek's own inference chip + a BofA "bubble" flag). So the disciplined move is to un-do the premature upgrade, put the chip cohort back on "don't chase the knife," downgrade CEG on its Citi cut, and let the rate-insensitive ballast lead again — with the FOMC minutes the live macro variable. Do your own diligence.</section>
+
+<h2>Monday called the base too early — Tuesday broke it — but the driver flipped</h2>
+<div class="card lede">
+  <p>Monday's edition upgraded the AI/chip cohort from "own but don't chase the knife" to <strong>"the base is in, the bear thesis is breaking — accumulate the dislocation,"</strong> on the read that Micron had based ~$977 and Samsung's record numbers refuted the glut. <strong>Tuesday 7 July refuted that call.</strong> Here is the honest re-score:</p>
+  <ul>
+    <li><strong class="neg">The base failed.</strong> Micron did <em>not</em> hold the ~$950 support the book explicitly named as the tell — it broke it and fell to <strong>~$912</strong> (down ~14% over five sessions, ~22% below the $1,200+ post-earnings high). "Accumulate the dislocation" was <strong>premature</strong> — the knife had not finished falling.</li>
+    <li><strong class="pos">But the supply-glut thesis is now dead.</strong> Samsung's Q2 <em>actual</em> beat even its record preview: a <strong>record ~₩89.4 trillion (~$58.6B) operating profit</strong>, revenue ~₩171T, <strong>+1,811% YoY</strong> (an ~18x jump), with DRAM prices <strong>+44%</strong> and NAND <strong>+53%</strong> — Samsung <strong>overtook both Nvidia and Apple</strong> as the largest quarterly operating profit any tech company has ever reported. Its smartphone unit even slipped to a <em>first operating loss</em> on its own soaring memory costs — the tell of how tight memory is. The "Korean glut" fear that started this de-rate is decisively refuted.</li>
+    <li><strong class="neg">Yet chips sold off anyway — because the fear rotated from supply to <em>demand</em>.</strong> Samsung's record "failed to turn around" the Nasdaq because a new scare took over: <strong>DeepSeek is reportedly building its own AI inference chip</strong> (Reuters, 7 July) to cut Nvidia reliance — a direct shot at the merchant-GPU demand thesis — layered on a <strong>BofA "bubble risk"</strong> flag on AI chips and broad AI-capex-durability doubt. <em>Samsung's supply numbers cannot refute a demand fear.</em> (The mitigant: DeepSeek's chip is inference-only, and China's leading-edge foundry and HBM access is export-gated.)</li>
+    <li><strong>The tape confirmed it.</strong> Tuesday: Nasdaq <strong class="neg">−1.16%</strong> (25,818), S&amp;P <strong class="neg">−0.45%</strong> (7,503), Dow <strong class="neg">−0.25%</strong> (52,925) — a chip-led drop that erased Monday's record-Dow (53,055) optimism.</li>
+  </ul>
+  <p><strong>Response: 10 KEEP · 0 swaps · 2 downgrades.</strong> This is a correction of Monday's over-eager upgrade, not a re-composition. (1) The chip cohort (MU/NVDA) goes <strong>back to "own, don't chase the knife"</strong> — Friday's posture. Micron's fundamental thesis is intact and actually <em>reinforced</em> by Samsung (tightest memory ever, 16 LTAs), but the level broke and the driver is now a demand scare, so you hold and let it base rather than add into it. (2) <strong>CEG is downgraded High→Med</strong> — it made a fresh 52-week low (~$228.63) but now with a genuine negative: <strong>Citi cut its PT to $297 (Neutral)</strong> and ~5.1M Calpine lock-up shares turned sellable on 30 June, so the "value dislocation" is now a falling knife with an analyst cut and a supply overhang. The rate-insensitive power/income ballast (TLN/CCJ/LLY/ADI) leads the list again defensively. The one bright spot: <strong>AVGO rose to ~$374 while chips fell</strong> — the "everyone builds their own silicon" theme the DeepSeek headline embodies is a <em>tailwind</em> for its custom-ASIC franchise even as it's a headwind for Nvidia. No clean swap-in exists, so 10 KEEP with 2 downgrades is the honest call.</p>
+</div>
+
+<h2>Where things stand (Tuesday 7 July close · FOMC minutes today 2pm ET)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">MU (the broken base)</div><div class="v"><span class="neg">~$912</span></div><div class="k">broke ~$950 support · −14% over 5 sessions</div></div>
+  <div class="stat"><div class="k">Samsung Q2 op. profit</div><div class="v"><span class="pos">~₩89.4T</span></div><div class="k">record · +1,811% YoY · glut thesis dead</div></div>
+  <div class="stat"><div class="k">Nasdaq (7 Jul)</div><div class="v"><span class="neg">−1.16%</span></div><div class="k">25,818 · chip-led · DeepSeek shock</div></div>
+  <div class="stat"><div class="k">DeepSeek own chip</div><div class="v"><span class="neg">demand fear</span></div><div class="k">inference-only · China export-gated</div></div>
+  <div class="stat"><div class="k">FOMC minutes</div><div class="v"><span class="warn">today 2pm</span></div><div class="k">committee 9–9 · Warsh withheld his dot</div></div>
+  <div class="stat"><div class="k">Sept-hike odds</div><div class="v"><span class="pos">~50–55%</span></div><div class="k">down from ~66% pre-jobs</div></div>
+  <div class="stat"><div class="k">AVGO (the surprise)</div><div class="v"><span class="pos">~$374</span></div><div class="k">ROSE while chips fell · custom-silicon winner</div></div>
+  <div class="stat"><div class="k">TSLA</div><div class="v"><span class="pos">~$404</span></div><div class="k">holding ~$400 into 22 Jul financials</div></div>
+</div>
+<p class="sub">The two threads split again. <strong>Rates</strong> stay dovish (Sept-hike odds ~50–55%; the FOMC minutes land today) — a tailwind for the rate-insensitive ballast. The <strong>AI/chip</strong> thread turned back down, but the <em>reason changed</em>: the memory-glut fear that drove last week's de-rate is dead (Samsung's record proves it), replaced by a <em>demand</em> fear (DeepSeek's own inference chip + a bubble flag). That distinction matters — a demand scare is answered by demand data (TSM 16 Jul, hyperscaler capex), not by Samsung's supply numbers. The one name the new theme <em>helps</em> is AVGO (custom silicon).</p>
+
+<h2>Your portfolio — Tuesday read (11 positions, prices = 7 Jul close)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (7 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="neg">~$912</span></td><td><strong class="neg">The base failed — respect the broken level.</strong> Broke the ~$950 support the book named as the tell and fell to ~$912 (−14% over five sessions, ~22% off the $1,200+ high). Samsung's record Q2 (the largest tech operating profit ever) <strong>kills the supply-glut fear</strong> — but the selloff is now a <em>demand</em> scare (DeepSeek's own inference chip + BofA "bubble risk"), which Samsung's numbers can't refute. Thesis intact and reinforced (HBM sold out through 2026, 16 LTAs). Core hold; <strong>let it base ~$880–$950, don't catch the knife.</strong> Monday's "accumulate" was early.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="warn">~$196</span></td><td>Held the $190s again — the <strong>relative-strength name</strong> — but <strong class="neg">DeepSeek building its own inference chip is a direct demand-negative</strong> for the merchant-GPU thesis (mitigated: inference-only, China's foundry/HBM export-gated). Own it, <strong>don't chase</strong>; a <strong>$215 close</strong> re-arms; Street avg ~$309, earnings 26 Aug.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$121</span></td><td><strong class="neg">Fell ~9.9% on 7 July</strong> on fears its <strong>18A process won't reach profitable yields until 2026/27</strong> (HSBC bull-case $200 vs BofA "bubble"). Still below the $130 third-trim; <strong>trail ~$115–$125</strong>. The worst-lagging name in the cohort.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="warn">~$143.53</span></td><td><span class="pos">Basing near $138–$143 as flagged.</span> Still −YTD but 28/33 Buy, avg PT ~$264. Core hold, <strong>no add</strong>; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="pos">~$404</span></td><td><strong>Holding ~$400</strong> after the <strong class="neg">−7% selloff on 2 July</strong> — the market sold the record delivery beat (480,126). $380 stop stays VOIDED. Next catalyst: the <strong>22 July financials</strong> — margins/ASPs behind the volume.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">~$4.62</span></td><td><strong class="neg">The recovery failed.</strong> Faded from ~$4.86 back to ~$4.62, <strong>still well below the $5.50 stop</strong>. The credit-upgrade bounce is spent; the fired stop stands.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="warn">~$52</span></td><td>Buy consensus, avg PT ~$71; heavy burn. High-beta — hurt by the AI-risk-off, helped at the margin by the dovish rate tilt. No size-up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="warn">~$41.32</span></td><td><span class="warn">Stabilized above the 52-wk low ($38.19)</span> but still under the $46 trim line. No add; respect the stop — a reclaim of $46 on a close re-opens the name.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="pos">~$162 ADR</span></td><td>Steady (~€138 Xetra) ahead of <strong>Q2/H1 results 23 Jul</strong> — the market watching the flagged cloud-growth deceleration. Add on weakness dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.5</span></td><td>Near 52-week lows. Dormant ballast; Q2 print 24 Jul the next catalyst.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num"><span class="pos">~104p</span></td><td><strong class="pos">The bond-proxy tailwind persists.</strong> The steady-income anchor benefits as yields stay eased on the dovish jobs turn. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The name-specific moves: <strong>MU</strong> broke the ~$950 support to ~$912 (the base failed — the week's key event); <strong>INTC</strong> fell ~9.9% on 18A-yield fear; <strong>NVDA</strong> held the $190s (relative strength) but faces the DeepSeek demand headline; <strong>SNAP</strong> faded below its stop again; <strong>SYM</strong> stabilized above its 52-wk low; <strong>ORCL</strong> is basing near $138–$143; <strong>TSLA</strong> holds ~$400. The income/EU tail (<strong>UKW.L, SAP, VWAGY</strong>) is steady. Center of gravity: an AI/chip cohort re-rating <em>down</em> on a demand scare, with the rate-sensitive/income tail as the ballast that leads.</p>
+</div>
+
+<h2>The 10 buy targets — Wednesday (10 KEEP · 0 swaps · 2 downgrades · ballast leads again)</h2>
+<p class="sub">The list re-orders back to <strong>defensive</strong>: the rate-insensitive power/income ballast (TLN/CCJ/LLY/ADI) leads, the chip cohort (MU/NVDA/TSM) drops to "own, don't chase the knife," and two names are downgraded — <strong>CEG High→Med</strong> on a Citi cut + lock-up overhang, and the chip cohort's <em>posture</em> is pulled back from Monday's "accumulate" to "hold." <strong>AVGO stays Medium</strong> but is the relative-strength surprise — the one chip name the DeepSeek/custom-silicon theme <em>helps</em>. No clean swap-in exists (MRVL still needs a base &gt;$300; SNDK/WDC too parabolic), so 10 KEEP with 2 downgrades is the honest call. Prices are 7 July close.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (7 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 6 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>TLN</strong></td><td><strong class="pos">The rate-insensitive power leader — and it firmed while chips fell</strong> (~$381, up from ~$362). Contracted cashflow (AWS $18B PPA to 2042); the book's primary rate hedge, validated by the cold jobs print; Goldman Buy PT ~$499</td><td class="num"><span class="pos">~$381</span></td><td class="num">$499 (GS) / $449 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>2</td><td><strong>CCJ</strong></td><td>Uranium / energy-security — <strong>structural, real-asset, rate-insensitive</strong>; world's largest listed producer + Westinghouse stake; ~$98, near the &lt;$110 add zone, avg PT ~$173 — the ballast the DeepSeek/AI-capex scare doesn't touch</td><td class="num">~$98</td><td class="num">~$173 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor</strong> — near record highs on strong retatrutide obesity data + oral GLP-1 progress; the ballast that leads when the AI trade de-rates. Extended — trim-and-hold</td><td class="num">~$1,216</td><td class="num">record highs</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>ADI</strong></td><td>Record industrial/data-center demand; the <strong>steady, lower-beta analog</strong> ballast; new $3B credit facility; ~$378 — a name that outperforms its sector in exactly this kind of chip-cohort de-rate</td><td class="num">~$378</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; ~$302 (pulled back with the tape). <strong>Chip-agnostic</strong> — it sells the power/cooling whether the datacenter runs Nvidia GPUs or DeepSeek's own inference chips; Strong Buy (avg PT ~$377); size into weakness</td><td class="num">~$302</td><td class="num">~$377 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>NVDA</strong></td><td>AI bellwether; <strong>held ~$196 (relative strength again)</strong> — but <strong class="neg">DeepSeek's own-chip news is a direct demand-negative</strong>, so own it, <strong>don't chase</strong>; ~17% below the May ATH; a <strong>$215 close</strong> re-arms; Street avg ~$309, earnings 26 Aug</td><td class="num"><span class="warn">~$196</span></td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP ▼</td></tr>
+      <tr><td>7</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, CoWoS sold out through 2027; the <strong>lower-multiple logic core</strong> — and it <em>makes</em> the custom chips (DeepSeek's foundry path is export-gated); <strong>Q2 earnings 16 Jul</strong> the next demand read; far less exposed than ASML</td><td class="num">~$430</td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>MU</strong></td><td><strong class="neg">The base FAILED — respect the broken level.</strong> Broke ~$950 to ~$912 (−14% over 5 sessions). Fundamental thesis intact and <em>reinforced</em> by Samsung (tightest memory ever, 16 LTAs), but the driver is now a demand scare — <strong>hold, let it base, don't catch the knife</strong></td><td class="num"><span class="neg">~$912</span></td><td class="num">$1,500–$2,000</td><td><span class="tag high">High</span></td><td>KEEP ▼</td></tr>
+      <tr><td>9</td><td><strong>AVGO</strong></td><td><strong class="pos">The relative-strength surprise — the one chip name the new theme HELPS.</strong> ROSE to ~$374 while chips fell; the "everyone builds own silicon" wave (DeepSeek/OpenAI/Google/Meta custom ASICs, &gt;$100B AI-rev target by 2027) is its <strong>tailwind</strong>. Still <strong>Medium</strong> — gate to High is a clean <strong>close above $400</strong></td><td class="num"><span class="pos">~$374</span></td><td class="num">~$400+ (gate)</td><td><span class="tag med">Med</span></td><td>KEEP ▲</td></tr>
+      <tr><td>10</td><td><strong>CEG</strong></td><td><span class="neg">Downgraded High→Med.</span> Fresh 52-wk low ~$228.63, but now with a genuine negative — <strong>Citi cut PT to $297 (Neutral)</strong> + ~5.1M Calpine lock-up shares sellable since 30 Jun. Still a long-term value setup (Walmart 15-yr nuclear deal, FY26 EPS $11–12) but a <strong>falling knife</strong> now, not a clean add</td><td class="num"><span class="neg">~$240</span></td><td class="num">$360→$297 (Citi)</td><td><span class="tag med">Med</span></td><td>DOWNGRADE ▼</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>The list re-ordered back to defensive.</strong> With the chip base failed and the driver flipped to a demand scare, the rate-insensitive ballast (TLN/CCJ/LLY/ADI) returns to the top and the AI/chip names drop to "own, don't chase." <strong>Two downgrades:</strong> CEG (High→Med on the Citi cut + Calpine lock-up overhang) and the chip cohort's posture (from Monday's "accumulate" back to "hold"). <strong>AVGO is the standout</strong> — it rose while chips fell, and the DeepSeek/custom-silicon theme is a tailwind for its ASIC franchise; it stays Medium only because the $400 gate isn't met. <strong>Out of the active 10:</strong> MRVL (~$267) is the theme-relevant bench name (custom ASICs) but needs a base &gt;$300; SNDK/WDC too parabolic to chase; ASML/AMAT benched on the China export overhang (the same gate DeepSeek's chip faces); QCOM out (&gt;$205); NEM out. <strong>The honest read:</strong> Monday called the base too early and Tuesday broke it — but the reason it broke is <em>not</em> the reason Monday feared (the glut is dead on Samsung's record); it's a new demand scare. So un-do the premature upgrade, put the chips back on "don't chase," downgrade CEG on its cut, and let the ballast lead.</p>
+
+<h2>What's new since Monday (6 Jul → 7 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>The chip base</strong></td><td><strong class="neg">MU broke ~$950 → ~$912</strong>; the Nasdaq −1.16%, chip-led; Monday's record-Dow optimism erased</td><td><span class="neg">Monday's "accumulate" was premature</span> — the base failed; put the cohort back on "don't chase the knife"</td></tr>
+      <tr><td><strong>Samsung Q2 actual</strong></td><td><strong class="pos">Record ~₩89.4T (~$58.6B) profit</strong>, +1,811% YoY; overtook Nvidia &amp; Apple; DRAM +44%, NAND +53%; smartphone unit first operating loss on memory costs</td><td><span class="pos">The supply-glut thesis is DEAD</span> — memory is the tightest ever; but supply data can't answer a demand fear</td></tr>
+      <tr><td><strong>DeepSeek shock</strong></td><td><strong class="neg">DeepSeek building its own AI inference chip</strong> (Reuters) to cut Nvidia reliance; BofA flagged "bubble risk"</td><td><span class="neg">A demand-side de-rate</span> — direct negative for NVDA's merchant GPUs (mitigant: inference-only, export-gated); a tailwind for AVGO's custom ASICs</td></tr>
+      <tr><td><strong>CEG (target)</strong></td><td><strong class="neg">Citi cut PT to $297 (Neutral)</strong>; fresh 52-wk low ~$228.63; ~5.1M Calpine lock-up shares sellable since 30 Jun</td><td><span class="neg">Downgraded High→Med</span> — the value dislocation is now a falling knife with an analyst cut and a supply overhang</td></tr>
+      <tr><td><strong>AVGO (target)</strong></td><td><strong class="pos">Rose to ~$374</strong> (from ~$362) while the chip complex fell</td><td><span class="pos">The relative-strength winner</span> — the custom-silicon theme helps its ASIC franchise; still gated at $400</td></tr>
+      <tr><td><strong>Rates / Fed</strong></td><td><strong>FOMC minutes today</strong> (Wed 8 Jul, 2pm ET); committee 9–9 on a 2026 hike, Warsh withheld his dot; Sept-hike odds ~50–55%</td><td><span class="pos">Dovish tilt intact</span> — the rate cushion under the ballast holds unless the minutes reveal hawkish dissent</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (week of 6 Jul)</h2>
+<div class="card">
+  <ul>
+    <li><strong>FOMC minutes — Wednesday 8 Jul, 2pm ET.</strong> The June 16–17 minutes; the committee split 9–9 on a 2026 hike and Chair Warsh withheld his own dot, so the minutes are the only on-record read. Dovish-intact re-arms the multiple; hawkish-dissent removes the cushion under a de-rating chip tape.</li>
+    <li><strong>Does the chip base re-form or fail further?</strong> MU broke ~$950 to ~$912 — watch ~$880–$950 for a base vs. a deeper leg toward the low-$800s.</li>
+    <li><strong>Is the DeepSeek own-chip theme faded or extended?</strong> Inference-only + export-gated (contained read) vs. structural demand shift (bearish read) — and whether it re-rates AVGO/MRVL (custom-ASIC winners) up.</li>
+    <li><strong>TSM Q2 earnings — 16 Jul.</strong> The lower-multiple logic core; the read on whether AI-hardware <em>demand</em> is intact beneath the scare.</li>
+    <li><strong>Does AVGO reclaim $400?</strong> ~$374, the relative-strength name; a $400 close re-arms it to High as the custom-silicon winner.</li>
+    <li><strong>CEG</strong> — did the Citi cut / lock-up overhang keep pressuring it, or does it base near ~$228?</li>
+    <li><strong>ORCL</strong> — does the base near $138–$143 hold?</li>
+    <li><strong>Earnings cluster ahead:</strong> TSLA financials 22 Jul, SAP 23 Jul, VWAGY 24 Jul.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into mid-July</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the demand scare is a scare, not a break.</strong> The FOMC minutes read benign, DeepSeek's own-chip is priced as a slow/export-gated threat, MU bases ~$880–$950, NVDA holds the $190s, and the rate-insensitive ballast (TLN/CCJ/LLY/ADI) leads while the chip cohort digests. A choppy, rotational tape — own the ballast, hold the chips, don't chase.</div>
+  <div class="scenario up"><strong>Up branch — the demand fear fades and the base re-forms.</strong> The minutes confirm the dovish tilt, the DeepSeek headline is faded (inference-only, export-gated), MU reclaims ~$950, NVDA works toward $215, AVGO takes $400 (re-arms to High) as the custom-silicon theme is read as bullish for ASICs, and the whole complex re-rates back up — Monday's call was just two days early.</div>
+  <div class="scenario down"><strong>Down branch — the demand de-rate deepens into a broad AI unwind.</strong> The DeepSeek/own-silicon theme is read as structural demand destruction for merchant GPUs, BofA's "bubble" call gains followers, MU loses ~$880 and NVDA breaks the $190s, and a hawkish surprise in the minutes removes the rate cushion. The chip cohort leads the tape lower and the ballast is the only thing that holds.</div>
+  <p class="sub">The tells: <strong>(1) the FOMC minutes</strong> (today) — dovish-intact or hawkish-dissent; <strong>(2) does MU base</strong> ~$880–$950 or lose $880; <strong>(3) is the DeepSeek theme</strong> faded or extended; and <strong>(4) does AVGO reclaim $400</strong> as the custom-silicon winner.</p>
+</div>
+
+<h2>Action checklist (Monday's base call was premature · the driver flipped to demand)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the chip base <span class="neg">failed</span> — MU broke ~$950 to ~$912 — but the memory-glut thesis is <span class="pos">dead</span> (Samsung's record Q2 proves memory is the tightest ever); the new fear is <strong>demand</strong> (DeepSeek's own inference chip + a BofA "bubble" flag). <strong>10 KEEP · 0 swaps · 2 downgrades</strong> — reverse Monday's "accumulate," put the chips back on "don't chase the knife."</li>
+    <li><strong class="neg">MU (holding + target):</strong> broke the ~$950 support to ~$912 — the base failed. Thesis intact/reinforced by Samsung, but respect the broken level; <strong>let it base ~$880–$950, don't add into the knife.</strong></li>
+    <li><strong>NVDA (holding + target):</strong> held the $190s (relative strength) but DeepSeek is a direct demand-negative; own it, don't chase; a <strong>$215 close</strong> re-arms.</li>
+    <li><strong class="pos">TLN / CCJ (targets):</strong> the ballast that leads — TLN firmed to ~$381 while chips fell (Goldman $499); CCJ ~$98 (uranium, avg PT ~$173), the sleeve the AI-demand scare doesn't touch.</li>
+    <li><strong class="pos">AVGO (target):</strong> the surprise — ~$374, rose while chips fell; the custom-silicon theme is its tailwind. Stays Medium; a <strong>$400 close</strong> re-arms it to High.</li>
+    <li><strong class="neg">CEG (target):</strong> <strong>downgraded High→Med</strong> — fresh 52-wk low ~$228.63 + Citi cut to $297 (Neutral) + Calpine lock-up overhang; a base-confirmation buy only now.</li>
+    <li><strong class="neg">INTC (holding):</strong> ~$121, fell ~9.9% on the 18A-yield fear; below the $130 trim, trail ~$115–$125.</li>
+    <li><strong class="neg">SNAP (holding):</strong> the recovery failed (~$4.62, back below the $5.50 stop); the fired stop stands.</li>
+    <li><strong>ORCL / SYM / TSLA (holdings):</strong> ORCL basing near $138–$143 (reclaim $185 to repair); SYM stabilized above the 52-wk low $38.19 (reclaim $46 to re-open); TSLA holding ~$400 into the 22 Jul financials.</li>
+    <li><strong>Stops / levels live:</strong> MU <span class="neg">base FAILED ~$912</span> (let it base ~$880–$950) · NVDA $215-reclaim to flip bullish (~$196) · TSLA $380 close <span class="pos">VOIDED</span> (~$404) · SNAP $5.50 <span class="neg">below</span> (~$4.62, recovery failed) · SYM $46 close <span class="warn">below</span> (~$41.32, above the 52-wk low) · INTC $130 trim <span class="neg">below</span> (~$121; trail ~$115–$125) · ORCL reclaim $185 to repair (~$143.53) · <strong>AVGO Medium</strong> (~$374; gate $400) · <strong>CEG DOWNGRADED High→Med</strong> (~$240; Citi $297) · QCOM / MRVL / NEM stay out (MRVL the theme-relevant bench name, needs &gt;$300) · <strong>ASML / AMAT benched</strong> on the China export overhang · <strong>primary tells: the FOMC minutes today, whether MU bases ~$880–$950, whether the DeepSeek theme fades, and whether AVGO reclaims $400.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Wednesday 8 July 2026 edition is a candid correction: Monday's briefing upgraded the AI/chip cohort to "the base is in — accumulate the dislocation," and Tuesday 7 July refuted it — Micron broke the roughly $950 support the book had named as the tell and fell to about $912 (down ~14% over five sessions, ~22% below the $1,200-plus post-earnings high), so the "accumulate" call was premature. But the reason the base broke is not the reason Monday feared. Samsung's Q2 actual came in even bigger than its record preview — a record ~₩89.4 trillion (~$58.6 billion) operating profit, revenue ~₩171 trillion, up ~1,811% year on year, with DRAM prices up ~44% and NAND up ~53%, overtaking both Nvidia and Apple as the largest quarterly operating profit any technology company has ever reported, and its own smartphone unit slipping to a first operating loss on soaring memory costs — which decisively kills the memory-glut thesis; memory is the tightest it has ever been. Yet the chip complex sold off anyway because the fear rotated from supply to demand: China's DeepSeek is reportedly building its own AI inference chip to cut Nvidia reliance (a direct shot at the merchant-GPU demand thesis, though inference-only and gated by US export controls on leading-edge foundry and high-bandwidth memory), layered on a Bank of America "bubble risk" flag on AI chips and broad AI-capex-durability doubt — and Samsung's supply numbers cannot refute a demand fear. The response is 10 KEEP, 0 swaps, 2 downgrades: the chip cohort (Micron, Nvidia) goes back to "own but don't chase the knife," reversing Monday's offensive tilt, while Micron's fundamental thesis stays intact and is in fact reinforced by Samsung (record memory, sixteen long-term agreements); and Constellation Energy is downgraded from High to Medium after a fresh 52-week low near $228.63 accompanied by a genuine negative — Citi cut its price target to $297 from $348 (Neutral) and roughly 5.1 million Calpine lock-up shares became sellable on 30 June — so the value dislocation has become a falling knife with an analyst cut and a supply overhang rather than a clean add, though it remains a long-term setup on the Walmart fifteen-year nuclear deal. The rate-insensitive power and income ballast (Talen, Cameco, Eli Lilly, Analog Devices) leads the list again defensively, exactly as it did Friday before Monday's premature upgrade, with Talen firming to about $381 while chips fell. The one genuine positive surprise is Broadcom, which rose to about $374 while the chip complex fell, because the "everyone builds their own silicon" theme the DeepSeek headline embodies is a tailwind for its custom-ASIC franchise (it designs the custom chips for OpenAI, Google and Meta) even as it is a headwind for Nvidia's merchant GPUs; Broadcom stays Medium only because its gate — a clean close above $400 — is not yet met, and it is the one chip name to watch. No clean swap-in exists: the custom-ASIC peer Marvell (~$267) still needs a confirmed base above $300, and the NAND derivatives SanDisk and Western Digital remain too parabolic to chase. Holdings at Tuesday's close: MU ~$912 (broke the ~$950 support — the base failed, respect the broken level); INTC ~$121 (fell ~9.9% on fears its 18A process won't reach profitable yields until 2026/27, below the $130 trim, trail ~$115–$125); NVDA ~$196 (relative strength, but DeepSeek is a direct demand-negative, $215 reclaim required, earnings 26 Aug); ORCL ~$143.53 (basing near $138–$143, still 28/33 Buy, ~$264 avg PT, reclaim $185 to repair); TSLA ~$404 (holding ~$400 after the −7% delivery-beat selloff on 2 Jul, financials 22 Jul); SNAP ~$4.62 (the recovery failed, back below the $5.50 stop); IONQ ~$52 (Buy, PT ~$71, heavy burn); SYM ~$41.32 (stabilized above the 52-wk low $38.19, below the $46 trim); SAP ~$162 ADR / ~€138 Xetra (Q2 23 Jul); VWAGY ~$8.5 (near 52-wk lows, Q2 24 Jul); UKW.L ~104p (income anchor, easing-yield tailwind). The week ahead: the FOMC minutes today (the committee split 9–9 on a 2026 hike and Chair Warsh withheld his own dot, making the minutes the only on-record read; September-hike odds ~50–55%), whether Micron bases ~$880–$950 or leg lower, whether the DeepSeek own-chip theme fades as export-gated or extends as a structural demand shift, TSM Q2 on 16 Jul, whether AVGO reclaims $400, and whether CEG bases after its Citi cut. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 8 July 2026 from public web sources; prices are Tuesday 7 July close and move during the session. This edition is a candid correction of Monday's premature "the base is in — accumulate the dislocation" call: Micron broke the ~$950 support and fell to ~$912, so the base failed. But the driver flipped — Samsung's record Q2 actual (~₩89.4T / ~$58.6B operating profit, +1,811% YoY, DRAM +44%, NAND +53%, overtaking Nvidia and Apple) kills the memory-glut thesis, while the new fear is demand: DeepSeek building its own AI inference chip (Reuters) plus a BofA "bubble risk" flag. Response: 10 KEEP, 0 swaps, 2 downgrades — the chip cohort (MU/NVDA) back to "own, don't chase the knife," CEG cut High→Med on a Citi downgrade ($297 Neutral) + Calpine lock-up overhang, the rate-insensitive ballast (TLN/CCJ/LLY/ADI) leads again, and AVGO (~$374, rose while chips fell) is the custom-silicon surprise, still gated at $400. The FOMC minutes land today (Wed 8 Jul, 2pm ET; committee 9–9, Warsh withheld his dot). The week ahead: the minutes, whether MU bases ~$880–$950, whether the DeepSeek theme fades or extends, TSM Q2 16 Jul, and whether AVGO reclaims $400. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>

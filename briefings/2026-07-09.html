@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Thursday, 9 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Thursday, 9 July 2026 — <strong>the tape split, and the dominant risk rotated.</strong> The AI-<em>demand</em> scare that drove Monday–Wednesday <strong class="pos">faded</strong>: chips bounced on Wednesday — <strong class="pos">Nvidia +3.6%</strong> (fresh H200 China-demand reports), <strong class="pos">Broadcom +4.8%</strong> (a ~$30B Apple custom-chip deal through 2031), Micron <strong class="pos">held ~$949</strong> (the ~$880–$950 base held, did <em>not</em> break $880), and BofA's Vivek Arya called the DeepSeek sell-off <strong>"a summer correction, not a bear turn"</strong> (cloud capex to $1.5T by 2027). Samsung is even teeing up <strong>another ~+20% DRAM hike in Q3</strong> — memory is tightening further. <strong>But a new shock replaced the old one:</strong> the <strong class="neg">US–Iran ceasefire collapsed</strong> — Trump declared it "over" and CENTCOM struck 80+ targets overnight — so <strong class="neg">Brent spiked to ~$78 (+5.4%)</strong>, the 10-year yield jumped to <strong class="neg">4.57%</strong> (highest since mid-May), and the same-day <strong>FOMC minutes read mixed-to-hawkish</strong> (a "family fight," 9 hike / 8 hold / 1 cut, Warsh withheld his dot). The Dow fell <strong class="neg">−1.09% (−577 pts)</strong> on the oil/yield combo <em>even as chips rose</em>: Nasdaq <strong class="pos">+0.20%</strong>, S&amp;P <strong class="neg">−0.28%</strong> (~7,482), Dow <strong class="neg">−1.09%</strong>. Response: <strong>10 KEEP · 0 swaps · a posture pivot</strong> — the chip cohort re-firms off "don't chase" as the demand scare fades, but the risk rotates back to <strong>geopolitics + rates/oil</strong>, so the energy-security ballast (CCJ) leads, the war sleeve (RTX/LMT) re-arms toward the front — <em>sub-trigger</em>, Brent still &lt; $95 — and AVGO sits right on its $400 gate. Prices are Wednesday 8 July close.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Thursday 9 July 2026. Prices are Wednesday 8 July close and move during the session; verify with your broker before any trade. The honest value-add today is a <em>regime read</em>: the fear that ran the tape for three days (AI demand, on the DeepSeek own-chip headline) faded — chips bounced, Micron's base held, BofA called it a summer correction — but it was immediately replaced by an older enemy: the US–Iran ceasefire collapsed, oil and yields spiked, and the FOMC minutes leaned hawkish. So the tape split (chips up, the Dow down), and the disciplined move is to let the chip cohort re-firm without chasing while rotating the ballast toward the energy-security/rate-insensitive names the oil-and-rates shock rewards. No name broke, so there is no swap; the war sleeve arms but its Brent-&gt;$95 trigger is not met. Do your own diligence.</section>
+
+<h2>The scare that ran the tape faded — but a new one took its place</h2>
+<div class="card lede">
+  <p>For three sessions the book was fighting an AI-<em>demand</em> scare: DeepSeek building its own inference chip, a BofA "bubble" flag, Micron breaking ~$950. Wednesday resolved that fear in the <strong class="pos">up direction</strong> — and then handed the tape a completely different problem. The honest re-score:</p>
+  <ul>
+    <li><strong class="pos">The demand scare faded — the up-branch fired.</strong> Chips bounced: <strong class="pos">Nvidia +3.6%</strong> on fresh H200 China-demand reports, <strong class="pos">Broadcom +4.8%</strong> on a <strong>~$30B Apple custom-chip (FBAR/wireless) deal running through 2031</strong>, and <strong>Micron held ~$949</strong> — the ~$880–$950 base the book named held; it did <em>not</em> break $880. Crucially, <strong>BofA's Vivek Arya called the DeepSeek sell-off "a summer correction, not a bear turn,"</strong> likening it to the overblown January-2025 DeepSeek reaction and reiterating a $1.5T cloud-capex path by 2027. And <strong>Samsung is guiding to a further ~+20% DRAM price hike in Q3</strong> (plus +10–15% NAND) — memory is tightening <em>more</em>, reinforcing Micron.</li>
+    <li><strong class="neg">But the US–Iran ceasefire collapsed — the old enemy is back.</strong> <strong>Trump declared the ceasefire "over"</strong> and CENTCOM struck <strong>80+ targets in Iran overnight.</strong> Oil spiked — <strong class="neg">Brent ~$78 (+5.4%)</strong>, WTI ~$73.5 (a &gt;7% two-day gain) — and the war premium the book had written off for weeks is back on the tape. This is the reversal branch the book has carried the whole time: a collapse re-arms the geopolitics/oil risk (and, on a further leg, the defense sleeve).</li>
+    <li><strong class="neg">Rates jumped, and the FOMC minutes did not help.</strong> The 10-year yield leapt to <strong class="neg">4.57%</strong> (highest since mid-May) on the oil-driven inflation scare, and the <strong>June 16–17 FOMC minutes (released Wed 2pm ET) read mixed-to-hawkish</strong> — Warsh called it a "family fight," the committee split <strong>9 hike / 8 hold / 1 cut</strong> for 2026 (Chair Warsh submitted no dot), hawks citing inflation still above 3%. Sept-hike odds held ~50–55% — no dovish confirmation.</li>
+    <li><strong>So the tape split.</strong> Wednesday: Nasdaq <strong class="pos">+0.20%</strong> (chip-led up), S&amp;P <strong class="neg">−0.28%</strong> (~7,482), Dow <strong class="neg">−1.09% (−577 pts)</strong> — the oil/yield shock hammered the cyclical Dow (AmEx, Sherwin-Williams, Boeing) even as Nvidia and Broadcom carried the Nasdaq green.</li>
+  </ul>
+  <p><strong>Response: 10 KEEP · 0 swaps · a posture pivot.</strong> Two things changed at once and they point opposite ways, so the list re-orders rather than re-composes. (1) The chip cohort (MU/NVDA/AVGO/TSM) <strong>re-firms off "don't chase the knife"</strong> — the demand scare faded, the base held, BofA reframed it as a correction, Samsung's further hike reinforces Micron. But this is <em>not</em> a return to Monday's premature "accumulate" — it's "own it, the base held," one notch more constructive, still disciplined. (2) The dominant risk rotates back to <strong>geopolitics + rates/oil</strong>, which is exactly the regime the rate-insensitive-power + energy-security ballast was built for — so <strong>CCJ (uranium/energy-security) leads</strong> (fresh ~$2.6B India supply deal), TLN/LLY/ADI stay the anchors, and the <strong>war sleeve (RTX/LMT) re-arms toward the front of the queue</strong>. The one restraint: the book's own trigger for the war sleeve is <strong>Brent &gt; $95</strong>, and Brent is ~$78 — so RTX/LMT <em>arm but do not fire</em>. No holding or target broke, so there is no swap; forcing one would violate the book's discipline. <strong>AVGO</strong> is the standout — the Apple $30B deal drove it to ~$390 intraday, right on its <strong>$400 gate</strong>; a clean close above $400 re-arms it to High.</p>
+</div>
+
+<h2>Where things stand (Wednesday 8 July close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">Iran ceasefire</div><div class="v"><span class="neg">COLLAPSED</span></div><div class="k">Trump "over" · CENTCOM 80+ targets</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="neg">~$78</span></div><div class="k">+5.4% · &gt;7% over 2 days · war premium back</div></div>
+  <div class="stat"><div class="k">10-yr Treasury</div><div class="v"><span class="neg">4.57%</span></div><div class="k">highest since mid-May · oil-inflation scare</div></div>
+  <div class="stat"><div class="k">FOMC minutes</div><div class="v"><span class="warn">split 9–8–1</span></div><div class="k">"family fight" · mixed-to-hawkish · Sept ~50–55%</div></div>
+  <div class="stat"><div class="k">NVDA (8 Jul)</div><div class="v"><span class="pos">+3.6%</span></div><div class="k">~$204 · H200 China-demand reports</div></div>
+  <div class="stat"><div class="k">AVGO (8 Jul)</div><div class="v"><span class="pos">+4.8%</span></div><div class="k">~$390 · $30B Apple deal · at the $400 gate</div></div>
+  <div class="stat"><div class="k">MU (8 Jul)</div><div class="v"><span class="pos">~$949</span></div><div class="k">base held · Samsung +20% DRAM Q3 hike</div></div>
+  <div class="stat"><div class="k">Dow (8 Jul)</div><div class="v"><span class="neg">−1.09%</span></div><div class="k">−577 pts · oil/yield hit the cyclicals</div></div>
+</div>
+<p class="sub">The two threads swapped places. The <strong>AI/chip</strong> thread turned back <em>up</em> — the demand scare faded, the base held, and BofA called it a correction, with the Apple/Broadcom deal and Samsung's further DRAM hike as fresh positives. But the <strong>macro</strong> thread turned <em>down</em>: the Iran ceasefire collapsed, oil and yields spiked, and the FOMC minutes leaned hawkish. That is why the Dow fell hard while the Nasdaq rose. The book's response follows the rotation: let the chips re-firm, but lean the ballast toward the energy-security and rate-insensitive names (CCJ, TLN, LLY) that the oil-and-rates shock rewards, and arm — without yet firing — the war sleeve.</p>
+
+<h2>Your portfolio — Wednesday read (11 positions, prices = 8 Jul close)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (8 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="pos">~$949</span></td><td><strong class="pos">The base held.</strong> Closed ~$948.80 (+1.1%), holding the ~$880–$950 zone — did <em>not</em> break $880. The demand scare faded and the fundamental thesis is <em>reinforced</em>: Samsung is guiding to a further <strong>~+20% DRAM hike in Q3</strong> (memory tighter still), HBM sold out through 2026, 16 LTAs. Core hold; the base held, but don't chase — Monday's "accumulate" mistake stands as the caution.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="pos">~$204</span></td><td><strong class="pos">Bounced +3.6% on 8 July</strong> on fresh <strong>H200 China-demand reports</strong> — the relative-strength name led the Nasdaq green. The DeepSeek demand-negative faded (BofA: "a summer correction, not a bear turn"). Own it; a <strong>$215 close</strong> re-arms full upside; Street avg ~$309, earnings 26 Aug.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$109</span></td><td><strong class="neg">The worst-lagging name — fell ~21% over 7 sessions</strong> on fears its <strong>18A process won't reach profitable yields until late 2026/27</strong> (HSBC bull-case $200 vs BofA "bubble"). Well below the $130 third-trim; <strong>trail ~$105–$115</strong>. Did not participate in the chip bounce.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="neg">~$138.33</span></td><td><strong class="neg">Broke to the low end of the base.</strong> Closed $138.33 (−2.3%), the bottom of the $138–$143 range flagged. Still 28/33 Buy, avg PT ~$264, but the lone laggard again — the AI-capex-financing overhang plus the yield spike. Core hold, <strong>no add</strong>; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="warn">~$403</span></td><td><strong>Holding ~$400 but soft</strong> — dipped to ~$390 intraday before recovering. $380 stop stays VOIDED. Next catalyst: the <strong>22 July financials</strong> — margins/ASPs behind the record delivery beat (480,126).</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">~$4.8</span></td><td>Still below the <strong>$5.50 stop</strong> (~$4.75–$4.84). The credit-upgrade bounce is spent; the fired stop stands. No change.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="neg">~$45</span></td><td><strong class="neg">Fell from ~$52 to ~$45</strong> (range $43.54–$46.22) as the quantum sleeve gave back its Trump-executive-order pop. Buy consensus, avg PT ~$71; heavy burn. High-beta — hurt by the risk-off; the yield spike is a headwind. No size-up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="warn">~$41.32</span></td><td><span class="warn">Holding just above the 52-wk low ($38.19)</span>, still under the $46 trim line. No add; respect the stop — a reclaim of $46 on a close re-opens the name.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="warn">~$157 ADR</span></td><td>Eased to ~$157 ADR / ~€144 Xetra ahead of <strong>Q2/H1 results 23 Jul</strong> — the market watching the flagged cloud-growth deceleration. Add on weakness dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.78</span></td><td>Near a 16-year low (price/book ~0.18). Dormant deep-value ballast; Q2 print 24 Jul the next catalyst.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num"><span class="warn">~104p</span></td><td><strong class="warn">The yield spike is a modest headwind</strong> for the bond-proxy — the 10-yr at 4.57% pressures the income anchor's relative appeal. Steady ~104p; reinvest the dividend, watch the rate turn.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The name-specific moves: <strong>NVDA +3.6%</strong> (H200 China demand) and <strong>MU ~$949</strong> (base held, Samsung's further DRAM hike) led the chip re-firm; <strong>INTC ~$109</strong> stayed the laggard (18A-yield fear, −21% over 7 days) and did not bounce; <strong>ORCL broke to $138.33</strong> (low end of the base); <strong>IONQ fell to ~$45</strong> on the quantum give-back; <strong>TSLA ~$403</strong> soft into 22 Jul; the income/EU tail (<strong>UKW.L, SAP, VWAGY</strong>) is steady, with UKW.L now facing a modest yield headwind. Center of gravity: an AI/chip cohort re-firming on a faded scare, offset by a geopolitics/rate shock that rewards the energy-security and rate-insensitive ballast.</p>
+</div>
+
+<h2>The 10 buy targets — Thursday (10 KEEP · 0 swaps · posture pivot · CCJ leads · war sleeve arming)</h2>
+<p class="sub">The list re-orders around the rotation: the <strong>energy-security / rate-insensitive ballast</strong> (CCJ/TLN/LLY) leads as the Iran-collapse oil-and-rates shock rewards it, the <strong>chip cohort re-firms</strong> off "don't chase" (the demand scare faded, the base held), and <strong>AVGO</strong> sits right on its $400 gate on the fresh $30B Apple deal. No name broke, so <strong>10 KEEP, 0 swaps</strong>; the war sleeve (RTX/LMT) arms toward the front but its <strong>Brent-&gt;$95 trigger is not met</strong> (~$78), so it stays a watch, not a swap-in. Prices are 8 July close (or most-recent where a Wednesday close was unpublished).</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (8 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 8 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>CCJ</strong></td><td><strong class="pos">The energy-security leader — the cleanest beneficiary of the ceasefire collapse.</strong> Uranium / real-asset, rate-insensitive; world's largest listed producer + Westinghouse stake. Fresh <strong>~$2.6B, 9-yr India supply deal (22M lb)</strong> + buying TEPCO's Cigar Lake stake; ~$98, avg PT ~$132 Buy</td><td class="num"><span class="pos">~$98</span></td><td class="num">~$132 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>2</td><td><strong>TLN</strong></td><td><strong class="pos">The rate-insensitive power leader.</strong> Contracted cashflow (AWS $18B PPA to 2042); the book's primary rate hedge, more valuable now the yield spike is back; Goldman Buy PT ~$499</td><td class="num"><span class="pos">~$381</span></td><td class="num">$499 (GS) / $449 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor — a fresh record high.</strong> Closed ~$1,219 (intraday record $1,242); JPMorgan raised its PT to <strong>$1,400</strong> (Overweight) on Mounjaro/Zepbound + the new oral obesity drug Foundayo. The ballast that leads when the tape gets choppy. Extended — trim-and-hold</td><td class="num"><span class="pos">~$1,219</span></td><td class="num">$1,400 (JPM)</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>4</td><td><strong>NVDA</strong></td><td><strong class="pos">The demand scare faded — bounced +3.6%.</strong> Fresh H200 China-demand reports; BofA reframed DeepSeek as "a summer correction, not a bear turn." Own it — the base held; a <strong>$215 close</strong> re-arms full upside; Street avg ~$309, earnings 26 Aug</td><td class="num"><span class="pos">~$204</span></td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>5</td><td><strong>MU</strong></td><td><strong class="pos">The base held — and Samsung reinforced it.</strong> ~$949 (+1.1%), held ~$880–$950. Samsung guiding to a <strong>further ~+20% DRAM hike in Q3</strong> — memory tighter still; HBM sold out through 2026, 16 LTAs. Own it; the base held, but don't chase</td><td class="num"><span class="pos">~$949</span></td><td class="num">$1,500–$2,000</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>6</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; ~$306 (pulled back −4%). <strong>Chip-agnostic</strong> — it sells the power/cooling whether the datacenter runs GPUs or custom inference chips; Roth raised PT to $355 (Buy); new Johor plant; earnings 29 Jul. Size into weakness</td><td class="num">~$306</td><td class="num">$355 (Roth)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>ADI</strong></td><td>Record industrial/data-center demand; the <strong>steady, lower-beta analog</strong> ballast; ~$384 — a name that holds up in exactly this kind of split, rotational tape</td><td class="num">~$384</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, CoWoS sold out through 2027; the <strong>lower-multiple logic core</strong> — and it <em>makes</em> the custom chips (incl. the Apple/Broadcom silicon); <strong>Q2 earnings 16 Jul</strong> the next demand read; Citi PT raised (NT$3,800)</td><td class="num">~$437</td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>AVGO</strong></td><td><strong class="pos">The standout — a fresh $30B Apple deal, right on the gate.</strong> Rose +4.8% to ~$390 intraday on a ~$30B Apple custom-chip deal through 2031; the "everyone builds own silicon" wave is its <strong>tailwind</strong> (12-mo avg PT ~$524). Still <strong>Medium</strong> — the gate to High is a clean <strong>close above $400</strong>, now within reach</td><td class="num"><span class="pos">~$390</span></td><td class="num">~$400 gate / $524 avg</td><td><span class="tag med">Med</span></td><td>KEEP ▲</td></tr>
+      <tr><td>10</td><td><strong>CEG</strong></td><td><span class="warn">Med — but stabilizing.</span> Bounced +2.0% to ~$244.52, recovering off the ~$228.63 52-wk low. Citi's $297 (Neutral) stands and the yield spike is a modest headwind, but the level held. Long-term value setup (Walmart 15-yr nuclear deal, FY26 EPS $11–12); a base-confirmation add</td><td class="num"><span class="warn">~$245</span></td><td class="num">$297 (Citi)</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>The list re-ordered around the rotation.</strong> The energy-security / rate-insensitive ballast (CCJ/TLN/LLY) leads because the Iran-ceasefire collapse + oil-and-yield spike reward it; the chip cohort (NVDA/MU/AVGO/TSM) re-firms because the demand scare faded, the base held, and BofA reframed it. <strong>No downgrades this run</strong> — nothing broke — and no upgrades to formal conviction, but several posture ▲: CCJ to the top, NVDA/MU re-firm, LLY on its record + JPM $1,400, AVGO on the Apple deal at the gate. <strong>Out of the active 10 / on watch:</strong> <strong>RTX / LMT</strong> — the war sleeve, re-arming toward the front on the ceasefire collapse but <em>sub-trigger</em> (fires only on <strong>Brent &gt; $95</strong>; ~$78 now). <strong>COP / EOG / XOM</strong> — the energy names the oil spike most directly helps; on watch if the war premium extends. <strong>MRVL (~$232)</strong> — the custom-ASIC peer, sold off from ~$267, still needs a base &gt;$300. <strong>SNDK / WDC</strong> — too parabolic to chase (SNDK ~$1,683, WDC ~$548). <strong>OKLO / SMR / UEC</strong> — AI-power / uranium adjacencies the CCJ+TLN sleeve already carries. <strong>ASML / AMAT</strong> — benched on the China export overhang. <strong>QCOM / NEM</strong> — stay out. <strong>The honest read:</strong> the scare that ran the tape faded, but a new one replaced it — so you re-firm the chips without chasing, rotate the ballast toward the energy-security names the oil-and-rates shock rewards, and arm the war sleeve without firing it until Brent proves $95.</p>
+
+<h2>What's new since Wednesday (7 Jul → 8 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Iran / oil</strong></td><td><strong class="neg">Ceasefire COLLAPSED</strong> — Trump declared it "over," CENTCOM struck 80+ targets; Brent ~$78 (+5.4%), WTI ~$73.5 (&gt;7% over 2 days)</td><td><span class="neg">The war premium is back</span> — the dominant risk rotates to geopolitics/oil; energy-security (CCJ) leads; the war sleeve (RTX/LMT) arms, fires on Brent &gt;$95</td></tr>
+      <tr><td><strong>Rates / Fed</strong></td><td><strong class="neg">10-yr jumped to 4.57%</strong> (highest since mid-May); FOMC minutes mixed-to-hawkish — a "family fight," 9 hike / 8 hold / 1 cut, Warsh no dot</td><td><span class="neg">No dovish confirmation</span> + an oil-driven inflation scare; a headwind for high-multiple and bond-proxy names, a tailwind for rate-insensitive power</td></tr>
+      <tr><td><strong>The chip scare</strong></td><td><strong class="pos">Faded.</strong> NVDA +3.6% (H200 China demand), AVGO +4.8% ($30B Apple deal), MU held ~$949; BofA: "a summer correction, not a bear turn"</td><td><span class="pos">The up-branch fired</span> — the base held; the chip cohort re-firms off "don't chase," but not back to "accumulate"</td></tr>
+      <tr><td><strong>Samsung / memory</strong></td><td><strong class="pos">Another ~+20% DRAM hike guided for Q3</strong> (+10–15% NAND); Q2 op. profit ~₩89.4T (+1,811% YoY)</td><td><span class="pos">Memory tightening extends</span> — directly reinforces MU; the glut thesis is dead and getting deader</td></tr>
+      <tr><td><strong>AVGO (target)</strong></td><td><strong class="pos">~$30B Apple custom-chip deal through 2031</strong>; rose +4.8% to ~$390 intraday, at the $400 gate</td><td><span class="pos">The custom-silicon winner</span> — a fresh catalyst on the gate; a $400 close re-arms it to High</td></tr>
+      <tr><td><strong>CCJ (target)</strong></td><td><strong class="pos">~$2.6B, 9-yr India uranium supply deal (22M lb)</strong>; buying TEPCO's Cigar Lake stake</td><td><span class="pos">Energy-security bid</span> — the ballast the oil/geopolitics shock rewards; leads the list</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (week of 6 Jul)</h2>
+<div class="card">
+  <ul>
+    <li><strong class="neg">Does the Iran conflict escalate or re-de-escalate?</strong> The ceasefire collapse is the new dominant variable. Watch Brent: a push <strong>&gt; $95</strong> re-arms the war sleeve (RTX/LMT) as a swap; a return toward $70 caps it again and re-frames the tape.</li>
+    <li><strong>Rates:</strong> the 10-yr at 4.57% and mixed-to-hawkish minutes remove the dovish cushion — watch whether the oil-driven inflation scare hardens the Sept-hike odds back above ~55%.</li>
+    <li><strong>Does the chip base hold and broaden?</strong> MU held ~$949 and NVDA bounced; watch whether the re-firm sticks or fades back with a risk-off tape.</li>
+    <li><strong>Does AVGO close above $400?</strong> ~$390 on the Apple deal — a clean $400 close re-arms it to High as the custom-silicon winner.</li>
+    <li><strong>TSM Q2 earnings — 16 Jul.</strong> The lower-multiple logic core; the read on whether AI-hardware demand is intact.</li>
+    <li><strong>ORCL</strong> — does $138 hold or break the base low? <strong>CEG</strong> — does the ~$244 recovery hold vs. the yield headwind?</li>
+    <li><strong>Earnings cluster ahead:</strong> TSLA financials 22 Jul, SAP 23 Jul, VWAGY 24 Jul, VRT 29 Jul.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into mid-July</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — a split, rotational tape.</strong> The chip cohort re-firms on the faded demand scare (MU holds ~$949, NVDA works toward $215), while the Iran-collapse oil/rate shock keeps the cyclicals and bond-proxies under pressure and rewards the energy-security / rate-insensitive ballast (CCJ/TLN/LLY). Brent stays $75–$90 (below the $95 war-sleeve trigger). Own the ballast, hold the re-firming chips, don't chase, keep the war sleeve armed but unfired.</div>
+  <div class="scenario up"><strong>Up branch — the conflict re-de-escalates and the base broadens.</strong> A fresh ceasefire caps oil back toward $70, yields ease, the chip re-firm broadens, MU reclaims $1,000, NVDA takes $215, and AVGO closes above $400 (re-arms to High). The demand scare is confirmed a "summer correction," and the whole complex re-rates up.</div>
+  <div class="scenario down"><strong>Down branch — the war premium extends and rates spike.</strong> Brent pushes above $95 (re-arming RTX/LMT as a swap), the 10-yr breaks higher, the hawkish minutes get an inflation confirmation, and the high-multiple AI names give back the bounce. The energy-security/defense sleeve leads and everything rate-sensitive (ORCL, UKW.L, the chips' multiple) gets hit.</div>
+  <p class="sub">The tells: <strong>(1) Brent vs. $95</strong> — the war-sleeve trigger; <strong>(2) the 10-yr</strong> — does the oil-inflation scare harden the hike odds; <strong>(3) does the chip re-firm hold</strong> (MU ~$949, NVDA toward $215); and <strong>(4) does AVGO close above $400</strong> as the custom-silicon winner.</p>
+</div>
+
+<h2>Action checklist (the demand scare faded · a geopolitics/oil/rate shock replaced it)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the AI-<span class="pos">demand scare faded</span> (chips bounced, the base held, BofA called it a correction) but the <span class="neg">US–Iran ceasefire collapsed</span> — oil ~$78 (+5.4%), the 10-yr 4.57%, mixed-to-hawkish minutes. The tape split (Nasdaq +0.20%, Dow −1.09%). <strong>10 KEEP · 0 swaps · a posture pivot.</strong></li>
+    <li><strong class="pos">CCJ (target):</strong> the leader now — uranium/energy-security is the cleanest beneficiary of the ceasefire collapse; fresh ~$2.6B India supply deal; ~$98, avg PT ~$132.</li>
+    <li><strong class="pos">NVDA / MU (holdings + targets):</strong> the demand scare faded — NVDA +3.6% (H200 China demand), MU held ~$949 (Samsung's further +20% DRAM hike reinforces). Own them; the base held, but don't chase.</li>
+    <li><strong class="pos">AVGO (target):</strong> the standout — ~$30B Apple deal, +4.8% to ~$390, on the $400 gate. Stays Medium; a <strong>$400 close</strong> re-arms it to High.</li>
+    <li><strong class="pos">LLY / TLN (targets):</strong> the anchors — LLY a fresh record (JPM $1,400), TLN the rate hedge (Goldman $499), both more valuable with the yield spike back.</li>
+    <li><strong class="neg">War sleeve (watch):</strong> RTX/LMT re-arm toward the front on the ceasefire collapse but <strong>fire only on Brent &gt; $95</strong> (~$78 now); COP/EOG/XOM on watch if the war premium extends.</li>
+    <li><strong class="neg">INTC (holding):</strong> ~$109, the laggard — didn't bounce; below the $130 trim, trail ~$105–$115.</li>
+    <li><strong class="neg">ORCL (holding):</strong> broke to $138.33 (low end of the base); reclaim $185 to repair. <strong>IONQ</strong> fell to ~$45; <strong>UKW.L</strong> faces a yield headwind.</li>
+    <li><strong>Stops / levels live:</strong> MU <span class="pos">base HELD ~$949</span> (don't chase) · NVDA <span class="pos">+3.6%</span>, $215-reclaim to flip fully bullish (~$204) · TSLA $380 close <span class="pos">VOIDED</span> (~$403, soft) · SNAP $5.50 <span class="neg">below</span> (~$4.8) · SYM $46 close <span class="warn">below</span> (~$41.32) · INTC $130 trim <span class="neg">below</span> (~$109; trail ~$105–$115) · ORCL reclaim $185 (~$138.33, base low) · <strong>AVGO Medium</strong> (~$390; gate $400) · <strong>CEG Medium</strong> (~$245, recovering; Citi $297) · <strong>war sleeve RTX/LMT armed, fires on Brent &gt;$95</strong> (~$78) · QCOM / MRVL / NEM stay out · ASML / AMAT benched · <strong>primary tells: Brent vs. $95, the 10-yr, whether the chip re-firm holds, and whether AVGO closes above $400.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Thursday 9 July 2026 edition reads a regime rotation. For three sessions the tape was driven by an AI-demand scare — DeepSeek reportedly building its own inference chip, a Bank of America "bubble" flag, Micron breaking roughly $950. On Wednesday 8 July that fear faded: chips bounced, with Nvidia up about 3.6% on fresh H200 China-demand reports, Broadcom up about 4.8% on a roughly $30 billion Apple custom-chip deal running through 2031, and Micron holding about $949 — the $880-to-$950 base held rather than breaking $880 — while BofA's Vivek Arya called the sell-off "a summer correction, not a bear turn," likening it to the overblown January-2025 DeepSeek reaction and reiterating a $1.5 trillion cloud-capex path by 2027; Samsung, meanwhile, is guiding to a further roughly 20% DRAM price hike in the third quarter, so memory is tightening further and Micron's thesis is reinforced. But that faded scare was immediately replaced by an older enemy: the US-Iran ceasefire collapsed — President Trump declared it "over" and US Central Command struck more than 80 targets in Iran overnight — sending Brent crude to about $78 (up 5.4%, a more than 7% two-day gain) and the ten-year Treasury yield to 4.57%, its highest since mid-May, on the oil-driven inflation scare; and the same-day June FOMC minutes read mixed-to-hawkish, described as a "family fight," with the 2026 committee split roughly 9 for a hike, 8 for a hold and 1 for a cut and Chair Warsh withholding his own dot, leaving September-hike odds around 50-55% with no dovish confirmation. The result was a split tape: the Nasdaq rose about 0.2% (chip-led), while the Dow fell about 1.09%, or 577 points, on the oil and yield spike hitting the cyclicals, and the S&amp;P 500 slipped about 0.28% to roughly 7,482. The response is 10 KEEP, 0 swaps and a posture pivot rather than a re-composition, because the two developments point opposite ways and no holding or target broke. The chip cohort (Micron, Nvidia, Broadcom, TSMC) re-firms off "don't chase the knife" as the demand scare fades and the base holds — but this is deliberately not a return to Monday's premature "accumulate the dislocation" call. The dominant risk rotates back to geopolitics and rates and oil, the regime the rate-insensitive-power and energy-security ballast was built for, so Cameco (uranium, energy-security, with a fresh roughly $2.6 billion nine-year India supply deal) leads the list, with Talen (the rate hedge, Goldman $499) and Eli Lilly (a fresh record high, JPMorgan raising its target to $1,400 on Mounjaro/Zepbound and the new oral obesity drug Foundayo) the anchors. The war sleeve — Raytheon and Lockheed — re-arms toward the front of the queue on the ceasefire collapse, but the book's own trigger is a Brent close above $95, and Brent is about $78, so the war sleeve arms without firing, and the energy names (ConocoPhillips, EOG, Exxon) sit on watch if the war premium extends. Broadcom is the standout, rising to about $390 intraday on the Apple deal and sitting right on its $400 gate, staying Medium only until it closes above $400. Holdings at Wednesday's close: MU about $949 (the base held, Samsung's further DRAM hike reinforcing); NVDA about $204 (bounced 3.6%, $215 reclaim required, earnings 26 Aug); INTC about $109 (the laggard, down about 21% over seven sessions on 18A-yield fears, below the $130 trim, trail about $105-$115); ORCL about $138.33 (broke to the low end of its base, reclaim $185 to repair); TSLA about $403 (holding $400 but soft, financials 22 Jul); SNAP about $4.80 (below the $5.50 stop); IONQ about $45 (fell from about $52 on the quantum give-back); SYM about $41.32 (above the 52-week low $38.19, below the $46 trim); SAP about $157 ADR / about €144 Xetra (Q2 23 Jul); VWAGY about $8.78 (near a 16-year low, Q2 24 Jul); UKW.L about 104p (income anchor, now facing a modest yield headwind). The week ahead: whether the Iran conflict escalates (Brent versus $95) or re-de-escalates, whether the oil-driven inflation scare hardens the hike odds, whether the chip re-firm holds, whether AVGO closes above $400, TSM's Q2 on 16 July, and whether ORCL and CEG hold their levels. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 9 July 2026 from public web sources; prices are Wednesday 8 July close and move during the session. This edition reads a regime rotation: the AI-demand scare that ran the tape for three days faded (chips bounced — NVDA +3.6% on H200 China demand, AVGO +4.8% on a ~$30B Apple deal, MU held ~$949; BofA called it "a summer correction, not a bear turn"; Samsung guided a further +20% DRAM hike), but the US–Iran ceasefire collapsed (Trump "over," CENTCOM 80+ targets), spiking Brent to ~$78 (+5.4%) and the 10-yr to 4.57%, with the FOMC minutes mixed-to-hawkish. The tape split: Nasdaq +0.20%, Dow −1.09% (−577 pts). Response: 10 KEEP, 0 swaps, a posture pivot — the chip cohort re-firms off "don't chase" (not back to "accumulate"), the energy-security / rate-insensitive ballast (CCJ/TLN/LLY) leads, the war sleeve (RTX/LMT) arms toward the front but fires only on Brent &gt;$95 (~$78), and AVGO (~$390 on the Apple deal) sits on its $400 gate. The week ahead: Brent vs. $95, the 10-yr, whether the chip re-firm holds, whether AVGO closes above $400, and TSM Q2 16 Jul. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
