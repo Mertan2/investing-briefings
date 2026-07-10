@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Friday, 10 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Friday, 10 July 2026 — <strong>the up-branch fired.</strong> Wednesday's split tape <strong class="pos">resolved to the upside</strong> on Thursday. The US–Iran conflict <strong class="pos">de-escalated</strong>: regional mediators (Qatar, Pakistan, Turkey, Egypt, Saudi Arabia) pulled both sides back from the brink and peace talks resumed, so <strong class="pos">Brent slid from ~$79 to below $76</strong> and the 10-year yield eased to <strong class="pos">4.54%</strong> (off the 4.57% peak). With the macro overhang lifting, the chip cohort <strong class="pos">broke out</strong> on three catalysts at once: <strong class="pos">Micron broke out of its base to ~$991.64 (+4.52%)</strong>, driving toward $1,000; <strong class="pos">Broadcom cleared its $400 gate</strong>, closing $401.11 (+3.2%) — the exact trigger the book has flagged for two runs, so <strong>AVGO upgrades Medium→High</strong>; and <strong class="pos">SK Hynix priced the biggest-ever foreign US IPO</strong> ($26.5B, 7× oversubscribed, +14% debut) — a massive validation of the AI-memory cycle and a direct read-through to Micron. The tape confirmed risk-on: S&amp;P <strong class="pos">+0.81%</strong> to a record ~7,543.64, Dow <strong class="pos">+0.27%</strong> (~52,487), Nasdaq strongly higher — the mirror image of Wednesday's Dow-down/oil-up split. Response: <strong>10 KEEP · 0 swaps · one real upgrade (AVGO Med→High)</strong> — the chip cohort re-leads, the energy-security ballast (CCJ) de-emphasizes from #1 as oil falls (structural thesis intact), and the war sleeve (RTX/LMT) <strong>stands down</strong> as the Brent→$95 trigger recedes. Prices are Thursday 9 July close.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Friday 10 July 2026. Prices are Thursday 9 July close and move during the session; verify with your broker before any trade. The honest value-add today is a <em>regime read</em>: the split tape from Wednesday (Iran ceasefire collapse, oil and yields up, chips up) resolved to the upside on Thursday — the conflict de-escalated as regional mediators intervened, oil and yields eased, and the chip cohort broke out on Micron's breakout, Broadcom clearing $400, and SK Hynix's record IPO. So the disciplined move is to let the chip cohort re-lead, take Broadcom's earned upgrade (it actually cleared its gate), keep the ballast without chasing it, and stand the war sleeve back down as the Brent-&gt;$95 trigger recedes. Do your own diligence.</section>
+
+<h2>The split resolved up — the up-branch fired</h2>
+<div class="card lede">
+  <p>Wednesday handed the tape two opposite shocks — a faded AI-demand scare (bullish) and a collapsed Iran ceasefire that spiked oil and yields (bearish). Thursday resolved the tension in the <strong class="pos">up direction</strong>, exactly along the up-branch the book carried. The honest re-score:</p>
+  <ul>
+    <li><strong class="pos">The Iran conflict de-escalated — the dominant Wednesday shock reversed.</strong> Regional mediators — <strong>Qatar, Pakistan, Turkey, Egypt and Saudi Arabia</strong> — held intensive consultations and pulled both sides back from the brink; peace talks resumed and an uneasy calm holds. Oil slid: <strong class="pos">Brent from ~$79 Thursday to below $76 Friday</strong>, the war premium bleeding out. The war sleeve (RTX/LMT) that re-armed Wednesday now <strong>stands down</strong> — Lockheed fell −1.84% — and the book's Brent-&gt;$95 trigger is <em>receding</em>, not approaching.</li>
+    <li><strong class="pos">Micron broke out — the base resolved UP.</strong> MU closed <strong class="pos">~$991.64 (+4.52%)</strong>, driving toward $1,000. The ~$880–$950 base the book named didn't just hold — it <em>resolved to the upside</em>. It is now the strongest name in the book.</li>
+    <li><strong class="pos">Broadcom cleared the $400 gate — upgrade Med→High.</strong> AVGO closed <strong class="pos">$401.11 (+3.2%)</strong> — the exact trigger the book has flagged for two runs. It is now the confirmed custom-silicon winner on the ~$30B Apple deal, and it earns a genuine conviction upgrade (not just a posture note).</li>
+    <li><strong class="pos">SK Hynix priced the biggest-ever foreign US IPO.</strong> $26.5B raised at $149/ADS, demand running ~7× the available shares, and a <strong class="pos">+14% debut Friday to ~$170</strong>. A massive validation of the AI-memory demand cycle — and a direct read-through to Micron, whose memory-shortage thesis the prospectus itself cites.</li>
+    <li><strong class="pos">The tape confirmed risk-on.</strong> S&amp;P 500 <strong class="pos">+0.81%</strong> to a record ~7,543.64, Dow <strong class="pos">+0.27%</strong> (~52,487), Nasdaq strongly higher (~26,207) — the mirror image of Wednesday's Dow-down/oil-up split. The 10-year eased to <strong class="pos">4.54%</strong> as the oil-inflation scare faded.</li>
+  </ul>
+  <p><strong>Response: 10 KEEP · 0 swaps · one real upgrade (AVGO Med→High).</strong> This is <em>not</em> another "posture pivot" — this time a name actually cleared its gate, so Broadcom earns a genuine upgrade. The chip cohort (MU/AVGO/NVDA/TSM) <strong>re-leads</strong> the list because the de-escalation, the breakout and the SK Hynix validation all reward it. The energy-security ballast (CCJ) <strong>de-emphasizes from #1</strong> as oil falls — its structural uranium/India/TEPCO thesis is intact, but the tactical "cleanest oil-spike beneficiary" driver from Wednesday has reversed. LLY and TLN stay the anchors (TLN's rate-hedge value eases marginally as yields tick down, but the AWS-PPA thesis is untouched). No holding or target broke, and the one name on the cusp cleared it up — so no swap, no downgrade, only the Broadcom upgrade.</p>
+</div>
+
+<h2>Where things stand (Thursday 9 July close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">Iran conflict</div><div class="v"><span class="pos">DE-ESCALATED</span></div><div class="k">mediators pull both sides back · talks resume</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="pos">&lt;$76</span></div><div class="k">from ~$79 · war premium bleeding out</div></div>
+  <div class="stat"><div class="k">10-yr Treasury</div><div class="v"><span class="pos">4.54%</span></div><div class="k">eased off the 4.57% peak</div></div>
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v"><span class="pos">+0.81%</span></div><div class="k">record ~7,543.64 · risk-on</div></div>
+  <div class="stat"><div class="k">MU (9 Jul)</div><div class="v"><span class="pos">~$991.64</span></div><div class="k">+4.52% · broke out toward $1,000</div></div>
+  <div class="stat"><div class="k">AVGO (9 Jul)</div><div class="v"><span class="pos">$401.11</span></div><div class="k">+3.2% · CLEARED the $400 gate</div></div>
+  <div class="stat"><div class="k">SK Hynix IPO</div><div class="v"><span class="pos">+14%</span></div><div class="k">$26.5B raised · biggest-ever foreign US IPO</div></div>
+  <div class="stat"><div class="k">War sleeve</div><div class="v"><span class="warn">STAND DOWN</span></div><div class="k">LMT −1.84% · Brent→$95 trigger receding</div></div>
+</div>
+<p class="sub">The two threads that split Wednesday both turned the <strong>same way</strong> Thursday. The <strong>macro</strong> thread turned back <em>up</em>: the Iran conflict de-escalated, oil and yields eased. The <strong>AI/chip</strong> thread <em>broke out</em>: Micron cleared its base, Broadcom cleared $400, and SK Hynix's record IPO validated the memory cycle. That is why the whole tape went risk-on — the mirror image of Wednesday. The book's response follows: re-lead with the chips, take Broadcom's earned upgrade, keep the ballast without chasing it, and stand the war sleeve back down.</p>
+
+<h2>Your portfolio — Thursday read (11 positions, prices = 9 Jul close)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (9 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="pos">~$991.64</span></td><td><strong class="pos">Broke out (+4.52%).</strong> Resolved the ~$880–$950 base to the <em>upside</em>, driving toward $1,000. SK Hynix's record IPO validates the memory cycle; Samsung's further ~+20% Q3 DRAM hike, HBM sold out through 2026, 16 LTAs. The strongest name in the book — but at $990+ it's <strong>extended</strong>; own it, don't chase the breakout candle.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="pos">~$208</span></td><td><strong class="pos">Up on the chip rebound.</strong> The demand scare stayed faded (BofA: "a summer correction, not a bear turn"). The <strong>$215 reclaim</strong> is now in reach; Street avg ~$309, earnings 26 Aug.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$110</span></td><td><strong class="neg">Still the laggard.</strong> A token bounce with the cohort but structurally weak on the fear its <strong>18A process won't reach profitable yields until late 2026/27</strong>. Below the $130 third-trim; <strong>trail ~$105–$115</strong>.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="warn">~$140</span></td><td><strong>Bounced off the $138 base low</strong> on the risk-on tape. Still 28/33 Buy, avg PT ~$264, but the lone AI-name laggard (the AI-capex-financing overhang). Core hold, <strong>no add</strong>; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="pos">~$408</span></td><td><strong class="pos">Firmer on risk-on</strong> — holding &gt;$400. $380 stop stays VOIDED. Next catalyst: the <strong>22 July financials</strong> — margins/ASPs behind the record delivery beat.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">~$4.8</span></td><td>Still below the <strong>$5.50 stop</strong>. Unchanged; the fired stop stands. No change.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="warn">~$46</span></td><td><strong>A small bounce</strong> with the risk-on quantum sleeve. Buy consensus, avg PT ~$71; heavy burn. High-beta — the yield-easing a small tailwind. No size-up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="warn">~$41.5</span></td><td><span class="warn">Holding above the 52-wk low ($38.19)</span>, still under the $46 trim line. No add; a reclaim of $46 on a close re-opens the name.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="warn">~$158 ADR</span></td><td>Steady ~$158 ADR / ~€145 Xetra ahead of <strong>Q2/H1 results 23 Jul</strong> — the market watching the flagged cloud-growth deceleration. Add on weakness dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.8</span></td><td>Near a 16-year low (price/book ~0.18). Dormant deep-value ballast; Q2 print 24 Jul the next catalyst.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num"><span class="pos">~104p</span></td><td><strong class="pos">The yield-easing is a small relief</strong> for the bond-proxy — the 10-yr back to 4.54%. Steady ~104p; reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The name-specific moves: <strong class="pos">MU +4.52% (~$991.64)</strong> broke out and led the chip cohort; <strong>NVDA ~$208</strong> firmed on the rebound with $215 now in reach; <strong>ORCL bounced off $138</strong> and <strong>TSLA firmed &gt;$400</strong> on the risk-on tape; <strong>INTC ~$110</strong> stayed the laggard; the income/EU tail (<strong>UKW.L, SAP, VWAGY</strong>) is steady, with UKW.L now getting a small yield-relief. Center of gravity: an AI/chip cohort breaking out as the Iran de-escalation lifts the macro overhang.</p>
+</div>
+
+<h2>The 10 buy targets — Friday (10 KEEP · 0 swaps · AVGO UPGRADE Med→High · chip cohort re-leads)</h2>
+<p class="sub">The list re-orders around the breakout: the <strong>chip cohort</strong> (MU/AVGO/NVDA/TSM) re-leads as the de-escalation lifts the overhang and three catalysts land at once, while the <strong>energy-security ballast</strong> (CCJ) de-emphasizes from #1 as oil falls (structural thesis intact). The one real change: <strong>AVGO upgrades Medium→High</strong> — it closed above its $400 gate. No name broke, so <strong>10 KEEP, 0 swaps</strong>; the war sleeve (RTX/LMT) stands down as the Brent-&gt;$95 trigger recedes. Prices are 9 July close.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (9 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 9 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>MU</strong></td><td><strong class="pos">The breakout — the base resolved UP.</strong> ~$991.64 (+4.52%), driving toward $1,000. SK Hynix's record IPO validates the memory cycle; HBM sold out through 2026, 16 LTAs, Samsung's further +20% Q3 DRAM hike. The strongest name in the book — but extended; own it, don't chase the candle</td><td class="num"><span class="pos">~$991.64</span></td><td class="num">$1,500–$2,000</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>2</td><td><strong>AVGO</strong></td><td><strong class="pos">CLEARED the $400 gate — UPGRADE Med→High.</strong> Closed $401.11 (+3.2%) — the exact trigger flagged for two runs. The confirmed custom-silicon winner on the ~$30B Apple deal through 2031; the "everyone builds own silicon" wave is its <strong>tailwind</strong> (avg PT ~$524)</td><td class="num"><span class="pos">$401.11</span></td><td class="num">~$524 avg</td><td><span class="tag high">High</span></td><td><strong class="pos">▲ Med→High</strong></td></tr>
+      <tr><td>3</td><td><strong>NVDA</strong></td><td><strong class="pos">Up on the rebound — $215 in reach.</strong> Fresh H200 China-demand reports; BofA reframed DeepSeek as "a summer correction." Own it; a <strong>$215 close</strong> re-arms full upside; Street avg ~$309, earnings 26 Aug</td><td class="num"><span class="pos">~$208</span></td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>TSM</strong></td><td>2026 revenue guided ~+30%, CoWoS sold out through 2027; the <strong>lower-multiple logic core</strong> — and it <em>makes</em> the custom chips (incl. the Apple/Broadcom silicon); <strong>Q2 earnings 16 Jul</strong> the next demand read; Citi PT raised (NT$3,800)</td><td class="num">~$445</td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor — a fresh record.</strong> ~$1,225; JPMorgan raised its PT to <strong>$1,400</strong> (Overweight) on Mounjaro/Zepbound + the new oral obesity drug Foundayo. The ballast that leads when the tape gets choppy. Extended — trim-and-hold</td><td class="num"><span class="pos">~$1,225</span></td><td class="num">$1,400 (JPM)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>TLN</strong></td><td><strong class="pos">The rate-insensitive power leader.</strong> Contracted cashflow (AWS PPA); the book's primary rate hedge — value eases marginally as yields tick down, but the PPA thesis is untouched; Goldman Buy PT ~$499</td><td class="num"><span class="pos">~$388</span></td><td class="num">$499 (GS) / $449 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>CCJ</strong></td><td><strong>De-emphasizes from #1 as oil falls — structural thesis intact.</strong> Uranium / real-asset; world's largest listed producer + Westinghouse stake; ~$2.6B India supply deal + TEPCO's Cigar Lake stake (now 57.4%). The tactical "oil-spike beneficiary" driver reversed; the uranium/AI-power one did not</td><td class="num">~$98</td><td class="num">~$132 avg</td><td><span class="tag high">High</span></td><td>KEEP ▼</td></tr>
+      <tr><td>8</td><td><strong>VRT</strong></td><td>AI-power / data-center cooling; ~$315. <strong>Chip-agnostic</strong> — it sells the power/cooling whatever silicon runs; Roth PT $355 (Buy); new Johor plant; <strong>earnings 29 Jul</strong>. Size into weakness</td><td class="num">~$315</td><td class="num">$355 (Roth)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>ADI</strong></td><td>Record industrial/data-center demand; the <strong>steady, lower-beta analog</strong> ballast; ~$388 — the name that holds up whether the tape is split or risk-on</td><td class="num">~$388</td><td class="num">PT raises</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>10</td><td><strong>CEG</strong></td><td><span class="warn">Med — stabilizing.</span> ~$244.52, holding off the ~$228.63 52-wk low. Citi's $297 (Neutral) stands; the yield-easing is a small relief. Long-term value (Walmart 15-yr nuclear deal, FY26 EPS $11–12); a base-confirmation add</td><td class="num"><span class="warn">~$245</span></td><td class="num">$297 (Citi)</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>The list re-ordered around the breakout.</strong> The chip cohort (MU/AVGO/NVDA/TSM) re-leads because the de-escalation lifted the overhang and three catalysts landed at once; the energy-security ballast (CCJ) de-emphasizes from #1 as oil falls. <strong>One real change this run:</strong> AVGO upgrades Medium→High on the $400 close — a genuine conviction upgrade, not just a posture note. <strong>Out of the active 10 / on watch:</strong> <strong>RTX / LMT</strong> — the war sleeve, now <em>standing down</em> on the de-escalation (LMT −1.84%); the Brent-&gt;$95 trigger is receding. <strong>SKHY (SK Hynix)</strong> — the new AI-memory listing (+14% debut, $26.5B raised); a fresh watch name and a direct MU read-through, but too new to chase — watch for a base. <strong>COP / EOG / XOM</strong> — de-emphasized as Brent falls back below $76. <strong>MRVL (~$235)</strong> — the custom-ASIC peer, still needs a base &gt;$300. <strong>SNDK / WDC</strong> — too parabolic to chase. <strong>OKLO / SMR / UEC</strong> — AI-power / uranium adjacencies the CCJ+TLN sleeve already carries. <strong>ASML / AMAT</strong> — benched on the China export overhang. <strong>QCOM / NEM</strong> — stay out. <strong>The honest read:</strong> the up-branch fired — the conflict de-escalated, oil and yields eased, and the chip cohort broke out — so you re-lead with the chips, take Broadcom's earned upgrade, keep the ballast without chasing it, and stand the war sleeve back down.</p>
+
+<h2>What's new since Wednesday (8 Jul → 9 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Iran / oil</strong></td><td><strong class="pos">DE-ESCALATED</strong> — mediators (Qatar, Pakistan, Turkey, Egypt, Saudi) pulled both sides back; talks resume; Brent ~$79 → below $76</td><td><span class="pos">The war premium is bleeding out</span> — the war sleeve (RTX/LMT) stands down; the Brent-&gt;$95 trigger recedes; energy (COP/EOG/XOM) de-emphasizes</td></tr>
+      <tr><td><strong>Rates / Fed</strong></td><td><strong class="pos">10-yr eased to 4.54%</strong> (off the 4.57% peak) as the oil-inflation scare faded</td><td><span class="pos">A small relief</span> for the high-multiple and bond-proxy names (ORCL, UKW.L, the chips' multiple)</td></tr>
+      <tr><td><strong>Micron</strong></td><td><strong class="pos">BROKE OUT</strong> — ~$991.64 (+4.52%), resolving the ~$880–$950 base to the upside, toward $1,000</td><td><span class="pos">The base resolved UP</span> — the strongest name in the book; but extended at $990+, don't chase the candle</td></tr>
+      <tr><td><strong>Broadcom</strong></td><td><strong class="pos">CLEARED the $400 gate</strong> — closed $401.11 (+3.2%), the exact trigger flagged for two runs</td><td><span class="pos">Upgrade Med→High</span> — the confirmed custom-silicon winner on the $30B Apple deal</td></tr>
+      <tr><td><strong>SK Hynix IPO</strong></td><td><strong class="pos">Biggest-ever foreign US IPO</strong> — $26.5B raised at $149/ADS, ~7× oversubscribed, +14% debut to ~$170</td><td><span class="pos">The AI-memory cycle validated</span> — a direct read-through to MU; a fresh watch name (SKHY), too new to chase</td></tr>
+      <tr><td><strong>The tape</strong></td><td><strong class="pos">Risk-on</strong> — S&amp;P +0.81% (record ~7,543.64), Dow +0.27% (~52,487), Nasdaq strongly higher</td><td><span class="pos">The mirror of Wednesday</span> — the split resolved up; the chip cohort re-leads</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (week of 6 Jul)</h2>
+<div class="card">
+  <ul>
+    <li><strong class="pos">Does the Iran de-escalation hold?</strong> The calm is uneasy — a break re-arms the war sleeve (Brent &gt; $95); a durable peace caps oil toward $70 and extends the risk-on.</li>
+    <li><strong>Does the chip breakout hold?</strong> MU broke out (~$992), AVGO cleared $400 — watch whether they hold the levels or the breakout fades into a blow-off.</li>
+    <li><strong>TSM Q2 earnings — 16 Jul.</strong> The lower-multiple logic core; the demand confirmation for the whole cohort.</li>
+    <li><strong>Does AVGO hold &gt;$400?</strong> The upgrade to High confirms only if the $400 close sticks.</li>
+    <li><strong>SK Hynix (SKHY)</strong> — does the debut hold; the memory-cycle read-through to MU. <strong>ORCL</strong> — does the bounce off $138 extend or fail?</li>
+    <li><strong>Rates:</strong> does the 10-yr keep easing off 4.54% as the oil-inflation scare fades?</li>
+    <li><strong>Earnings cluster ahead:</strong> TSLA financials 22 Jul, SAP 23 Jul, VWAGY 24 Jul, VRT 29 Jul.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into mid-July</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the risk-on relief holds, rotational.</strong> The de-escalation sticks, oil stays $70–$80 (well below the $95 war-sleeve trigger), yields drift lower, and the chip cohort holds the breakout (MU toward $1,000, NVDA toward $215, AVGO holds &gt;$400). The ballast (CCJ/TLN/LLY) holds without leading. Own the chips, hold the ballast, don't chase the breakout candle.</div>
+  <div class="scenario up"><strong>Up branch — the breakout broadens.</strong> TSM's Q2 (16 Jul) confirms the demand, NVDA takes $215, AVGO extends above $400, MU clears $1,000, and the SK Hynix debut pulls the whole memory/AI complex higher. The de-escalation becomes a durable peace and the tape re-rates up.</div>
+  <div class="scenario down"><strong>Down branch — the de-escalation fails or the breakout is a blow-off.</strong> The Iran calm breaks again (Brent back toward $95, re-arming RTX/LMT), or the chip breakout proves a parabolic blow-off (MU rejects $1,000, AVGO loses $400 back to Medium) and the risk-on unwinds. The ballast leads again and the extended names give back.</div>
+  <p class="sub">The tells: <strong>(1) does AVGO hold &gt;$400</strong> — the upgrade confirms only if it stays; <strong>(2) does MU hold the breakout</strong> or reject $1,000; <strong>(3) TSM Q2 16 Jul</strong> — the demand confirmation; and <strong>(4) does the Iran calm hold</strong> (Brent vs. $95 the re-arm trigger).</p>
+</div>
+
+<h2>Action checklist (the up-branch fired · Iran de-escalated · the chip cohort broke out)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> Wednesday's split <span class="pos">resolved UP</span> — the Iran conflict de-escalated (Brent below $76, the 10-yr 4.54%), and the chip cohort broke out (MU +4.52%, AVGO cleared $400, SK Hynix's record IPO). The tape went risk-on (S&amp;P +0.81% to a record). <strong>10 KEEP · 0 swaps · AVGO UPGRADE Med→High.</strong></li>
+    <li><strong class="pos">MU (holding + target):</strong> the breakout — ~$991.64 (+4.52%), toward $1,000, SK Hynix validates the memory cycle. The strongest name in the book; but extended — don't chase the candle.</li>
+    <li><strong class="pos">AVGO (target):</strong> the upgrade — closed $401.11, cleared the $400 gate. Med→High, the confirmed custom-silicon winner; the upgrade holds only if it stays &gt;$400.</li>
+    <li><strong class="pos">NVDA (holding + target):</strong> up on the rebound; the $215 reclaim now in reach; earnings 26 Aug.</li>
+    <li><strong class="pos">LLY / TLN (targets):</strong> the anchors — LLY a fresh record (JPM $1,400), TLN the rate hedge (Goldman $499); the ballast holds without leading.</li>
+    <li><strong>CCJ (target):</strong> de-emphasizes from #1 as oil falls — but the structural uranium/India/TEPCO thesis is intact; ~$98, avg PT ~$132.</li>
+    <li><strong class="warn">War sleeve (watch):</strong> RTX/LMT stand down on the de-escalation (LMT −1.84%); the Brent-&gt;$95 trigger is receding. COP/EOG/XOM de-emphasized.</li>
+    <li><strong>Stops / levels live:</strong> MU <span class="pos">BROKE OUT ~$991.64</span> (don't chase) · NVDA <span class="pos">up</span>, $215-reclaim to flip fully bullish (~$208) · TSLA $380 close <span class="pos">VOIDED</span> (~$408, firmer) · SNAP $5.50 <span class="neg">below</span> (~$4.8) · SYM $46 close <span class="warn">below</span> (~$41.5) · INTC $130 trim <span class="neg">below</span> (~$110; trail ~$105–$115) · ORCL reclaim $185 (~$140, bounced off the base low) · <strong>AVGO UPGRADED to High</strong> (~$401.11; holds only if &gt;$400) · <strong>CEG Medium</strong> (~$245; Citi $297) · <strong>war sleeve RTX/LMT standing down, re-arms on Brent &gt;$95</strong> (~$76, falling) · QCOM / MRVL / NEM stay out · ASML / AMAT benched · <strong>primary tells: does AVGO hold &gt;$400, does MU hold the breakout, TSM Q2 16 Jul, and does the Iran calm hold.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Friday 10 July 2026 edition reads a regime resolution. Wednesday's tape had split — a faded AI-demand scare pulling one way and a collapsed US-Iran ceasefire that spiked oil and yields pulling the other. Thursday 9 July resolved that tension in the up direction, along the up-branch the book had carried. The US-Iran conflict de-escalated: regional mediators — Qatar, Pakistan, Turkey, Egypt and Saudi Arabia — held intensive consultations and pulled both sides back from the brink, peace talks resumed, and an uneasy calm holds, so Brent crude slid from about $79 Thursday morning to below $76 by Friday and the ten-year Treasury yield eased to 4.54%, off its 4.57% two-session peak, as the oil-driven inflation scare faded. With the macro overhang lifting, the chip cohort broke out on three catalysts at once: Micron broke out of its roughly $880-to-$950 base to about $991.64, up 4.52%, driving toward $1,000; Broadcom cleared its $400 gate, closing $401.11, up 3.2%, the exact trigger the book has flagged for two runs, so Broadcom upgrades from Medium to High as the confirmed custom-silicon winner on its roughly $30 billion Apple deal running through 2031; and SK Hynix priced the biggest-ever foreign initial public offering in the United States, raising $26.5 billion at $149 per American depositary share with demand running about seven times the available shares and a roughly 14% debut Friday to about $170 — a major validation of the AI-memory demand cycle and a direct read-through to Micron. The broad tape confirmed the risk-on move: the S&amp;P 500 rose about 0.81% to a record near 7,543.64, the Dow rose about 0.27% to roughly 52,487, and the Nasdaq Composite finished strongly higher near 26,207 — the mirror image of Wednesday's Dow-down, oil-up split. The response is 10 KEEP, 0 swaps and one genuine upgrade, Broadcom from Medium to High, because this time a name actually cleared its gate rather than merely sitting on it. The chip cohort — Micron, Broadcom, Nvidia and TSMC — re-leads the list because the de-escalation, the breakout and the SK Hynix validation all reward it, while the energy-security ballast, Cameco, de-emphasizes from the top spot as oil falls; its structural uranium thesis (the roughly $2.6 billion India supply deal, the increased TEPCO Cigar Lake stake) is intact, but the tactical "cleanest oil-spike beneficiary" driver from Wednesday has reversed. Eli Lilly (a fresh record, JPMorgan target $1,400 on Mounjaro/Zepbound and the new oral obesity drug Foundayo) and Talen (the rate hedge, Goldman $499) stay the anchors, with Talen's rate-hedge value easing marginally as yields tick down but its AWS power-purchase thesis untouched. The war sleeve, Raytheon and Lockheed, stands down on the de-escalation — Lockheed fell 1.84% — and the book's Brent-above-$95 trigger is now receding rather than approaching. Holdings at Thursday's close: MU about $991.64 (broke out, +4.52%, toward $1,000, but extended); NVDA about $208 (up on the rebound, the $215 reclaim in reach, earnings 26 Aug); INTC about $110 (still the laggard on the 18A-yield fear, below the $130 trim, trail about $105-$115); ORCL about $140 (bounced off the $138 base low, reclaim $185 to repair); TSLA about $408 (firmer above $400, financials 22 Jul); SNAP about $4.80 (below the $5.50 stop); IONQ about $46 (a small bounce with the risk-on quantum sleeve); SYM about $41.5 (above the 52-week low $38.19, below the $46 trim); SAP about $158 ADR / about €145 Xetra (Q2 23 Jul); VWAGY about $8.8 (near a 16-year low, Q2 24 Jul); UKW.L about 104p (income anchor, the yield-easing a small relief). The week ahead: whether the Iran calm holds (Brent versus $95), whether the chip breakout holds or fades into a blow-off, whether AVGO holds above $400 to confirm the upgrade, TSM's Q2 on 16 July, whether SK Hynix's debut holds, and whether the 10-year keeps easing. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 10 July 2026 from public web sources; prices are Thursday 9 July close and move during the session. This edition reads a regime resolution: Wednesday's split tape resolved to the upside — the US–Iran conflict de-escalated (regional mediators pulled both sides back, talks resumed), so Brent slid from ~$79 to below $76 and the 10-yr eased to 4.54%, and the chip cohort broke out on three catalysts at once (Micron broke out to ~$991.64 (+4.52%) toward $1,000, Broadcom cleared its $400 gate closing $401.11 (+3.2%), and SK Hynix priced the biggest-ever foreign US IPO — $26.5B, +14% debut). The tape went risk-on: S&amp;P +0.81% to a record ~7,543.64, Dow +0.27%, Nasdaq strongly higher. Response: 10 KEEP, 0 swaps, one real upgrade — AVGO Medium→High on the $400 close. The chip cohort re-leads, the energy-security ballast (CCJ) de-emphasizes from #1 as oil falls (structural thesis intact), and the war sleeve (RTX/LMT) stands down as the Brent-&gt;$95 trigger recedes. The week ahead: does AVGO hold &gt;$400, does MU hold the breakout, TSM Q2 16 Jul, and does the Iran calm hold. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
