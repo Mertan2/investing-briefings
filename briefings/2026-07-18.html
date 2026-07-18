@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Saturday, 18 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Saturday, 18 July 2026 — <strong>a NEW shock landed on the down-branch.</strong> The Iran/oil down-branch was still running when a second, bigger driver hit: <strong class="neg">China's Moonshot AI released Kimi K3 on Friday</strong> — an open-weight model that beats every US rival except Claude Fable 5 and GPT-5.6 — a <strong class="neg">"DeepSeek 2.0" shock</strong> that undercuts the core bull thesis that US firms hold their lead by <em>outspending</em> on compute. The chip rout <strong class="neg">deepened</strong>: even <strong>TSMC's record Q2</strong> (16 Jul — revenue $40.2B, +33.7% YoY, profit +77%, capex <em>raised</em> to $60–64B, +$100B more for Arizona) <strong class="neg">could not hold the tape — TSM fell ~7% Friday</strong>. The market has stopped rewarding demand confirmation. And the Iran overhang stayed on: <strong class="neg">Brent held ~$85</strong> (Sep futures $84.95) as US–Iran strikes continued and Hormuz traffic fell to two-month lows — <strong>energy was the only sector green Friday.</strong> Friday's close: S&amp;P <strong class="neg">−1.02%</strong> to 7,457, Dow <strong class="neg">−0.77%</strong> to 52,146, Nasdaq <strong class="neg">−1.40%</strong> to 25,520 (week: S&amp;P −1.6%, Nasdaq −2.9%). <strong class="neg">MU broke its ~$880 base to $853</strong> — the exact tell the book flagged, so <strong>MU downgrades High→Med</strong>. Response: <strong>1 swap (CEG out → XOM in, the direct oil beneficiary) · 1 downgrade (MU High→Med) · 0 upgrades</strong> — the defensives (LLY), energy (CCJ/XOM/LMT) and chip-agnostic power (TLN/VRT) re-lead; the pure-compute chips de-emphasize. Prices are Friday 17 July close.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Saturday 18 July 2026. Prices are Friday 17 July close and move during the session; verify with your broker before any trade. The honest value-add today is a <em>regime read</em>: the Iran/oil down-branch the book has carried was <em>joined by a second, larger driver</em> — the Moonshot Kimi K3 "DeepSeek 2.0" shock, which reframes the AI trade from "who spends the most on compute" to "who is most efficient," and hit the pure-compute chips hardest. The tell that matters most: <strong>TSMC posted a record Q2 and raised capex — the strongest possible refutation of the "less compute needed" scare — and the tape sold it off ~7% anyway.</strong> When a record beat can't hold, the regime has shifted from demand-led to sentiment-led. So the disciplined move is to re-lead with the defensives and the energy/power sleeve (which actually rose), take Micron's earned downgrade for losing its base, own TSMC as the confirmed-demand value name into the fear, and hold the pure-compute chips without chasing. Do your own diligence.</section>
+
+<h2>A new shock joined the down-branch — the compute thesis got re-priced</h2>
+<div class="card lede">
+  <p>The book has been running the Iran/oil down-branch since 14 July. This weekend that branch was <strong class="neg">joined by a second, bigger one</strong> — a China-AI-efficiency shock that hits the exact center of the portfolio. The honest re-score:</p>
+  <ul>
+    <li><strong class="neg">The Moonshot "DeepSeek 2.0" shock — the dominant new driver.</strong> On Friday 17 July China's <strong>Moonshot AI released Kimi K3</strong>, an open-weight model whose benchmarks beat every US rival <em>except</em> Anthropic's Claude Fable 5 and OpenAI's GPT-5.6. The read-through investors took: if a Chinese lab can close the gap without a US-scale compute budget, the thesis that US firms defend their lead by <em>outspending</em> on GPUs is undercut — the same "less compute needed" fear that drove the original DeepSeek shock, now back at larger scale. The pure-compute chips (NVDA, MU, the memory complex) took it hardest.</li>
+    <li><strong class="warn">TSMC posted a record Q2 — and the tape sold it anyway.</strong> On 16 July TSMC reported <strong>$40.2B revenue (+33.7% YoY), net income +77%, EPS $4.31/ADR, gross margin 67.7%</strong>, <strong>raised 2026 capex to $60–64B</strong> (from $52–56B) and added <strong>$100B to its Arizona build ($265B total)</strong> — the single strongest refutation of the "AI capex is about to roll over" scare. Yet <strong class="neg">TSM fell ~7% Friday</strong> on the Moonshot headline. <em>That</em> is the regime tell: the market has stopped rewarding demand confirmation. It de-rates the whole complex on sentiment, not fundamentals.</li>
+    <li><strong class="neg">Micron broke its ~$880 base — downgrade High→Med.</strong> MU closed <strong class="neg">$853.48</strong> (from ~$932 Monday), <em>losing</em> the ~$880 base low the book had flagged as the line. That was the explicit down-branch tell ("does MU hold ~$880 — or lose it under the Burry overhang"). It lost it, with <strong>Michael Burry's short</strong> (2 Jul, $1,051.87) now well in the money. The demand cycle is intact (HBM sold out, TSMC just <em>raised</em> capex) but the technical broke, so <strong>MU downgrades High→Med</strong>.</li>
+    <li><strong class="neg">The Iran overhang stayed on.</strong> Brent held <strong class="neg">~$85</strong> (September futures settled $84.95) as US–Iran strikes continued and tanker traffic through Hormuz fell to two-month lows (seven vessels one day); Tehran reportedly told the Houthis to threaten the Bab el-Mandeb. <strong>Energy was the only sector green Friday.</strong> Brent is still shy of the $95 full war-sleeve trigger, but the premium is firmly on.</li>
+    <li><strong class="neg">The tape confirmed a second risk-off week.</strong> S&amp;P 500 <strong class="neg">−1.02%</strong> to 7,457, Dow <strong class="neg">−0.77%</strong> to 52,146, Nasdaq <strong class="neg">−1.40%</strong> to 25,520 — on the week S&amp;P −1.6%, Nasdaq −2.9%, Dow −0.9%. Semiconductors led lower; energy led higher.</li>
+  </ul>
+  <p><strong>Response: 1 swap (CEG out → XOM in) · 1 downgrade (MU High→Med) · 0 upgrades.</strong> This is <em>still not</em> a thesis break — TSMC just proved the demand cycle is real by raising capex — but the tape has re-priced the pure-compute trade on the Moonshot efficiency scare, so the <strong>defensives (LLY) and the energy/power sleeve (CCJ/XOM/LMT/TLN/VRT) re-lead</strong>, and the pure-compute chips (MU/NVDA) de-emphasize. <strong>CEG swaps out for XOM</strong> — energy was the only sector that rose, and XOM is the cleanest direct oil-spike beneficiary with Brent at ~$85. Micron takes its earned downgrade for losing its base.</p>
+</div>
+
+<h2>Where things stand (Friday 17 July close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">New driver</div><div class="v"><span class="neg">MOONSHOT K3</span></div><div class="k">"DeepSeek 2.0" — China AI-efficiency shock</div></div>
+  <div class="stat"><div class="k">TSMC Q2 (16 Jul)</div><div class="v"><span class="pos">RECORD</span></div><div class="k">$40.2B rev, +77% profit, capex raised — yet −7% Fri</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="neg">~$85</span></div><div class="k">Iran strikes ongoing · energy only sector green</div></div>
+  <div class="stat"><div class="k">Nasdaq</div><div class="v"><span class="neg">−1.40%</span></div><div class="k">25,520 · week −2.9% · chip rout deepened</div></div>
+  <div class="stat"><div class="k">MU (17 Jul)</div><div class="v"><span class="neg">$853.48</span></div><div class="k">LOST the ~$880 base · Burry short in the money</div></div>
+  <div class="stat"><div class="k">NVDA (17 Jul)</div><div class="v"><span class="neg">~$200</span></div><div class="k">below $215 · most Moonshot-exposed</div></div>
+  <div class="stat"><div class="k">AVGO (17 Jul)</div><div class="v"><span class="neg">$374.50</span></div><div class="k">still below $400 · stays Med</div></div>
+  <div class="stat"><div class="k">S&amp;P 500</div><div class="v"><span class="neg">−1.02%</span></div><div class="k">7,457 · week −1.6% · risk-off</div></div>
+</div>
+<p class="sub">Two threads are now pushing the same way. The <strong>macro</strong> thread stayed down (Iran strikes continue, Brent ~$85, energy the only green). The <strong>AI/chip</strong> thread got a <em>new, larger</em> down-driver: the Moonshot Kimi K3 efficiency shock re-priced the pure-compute trade — and even TSMC's record beat couldn't stop it. The book's response follows: re-lead with the defensives and the energy/power sleeve that actually rose, take Micron's earned downgrade, own TSMC as the confirmed-demand value name into the fear, and hold the pure-compute chips without chasing.</p>
+
+<h2>Your portfolio — Friday read (11 positions, prices = 17 Jul close)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (17 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="neg">~$853.48</span></td><td><strong class="neg">Lost the ~$880 base.</strong> Fell from ~$932 to $853 — <em>through</em> the base low the book flagged as the line, with <strong>Burry's short</strong> now well in the money and the Moonshot efficiency scare a fresh overhang. Demand intact (HBM sold out, TSMC just <em>raised</em> capex), but the technical broke — <strong>downgrade in the target book High→Med</strong>. Own it; next support ~$800, don't add into the overhang.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="neg">~$200</span></td><td><strong class="neg">The most Moonshot-exposed name (~$200, below $215).</strong> The compute-spend poster child took the K3 efficiency scare hardest (Thu close $207.40 → ~$200 Fri). Demand intact (H200 China, Kyber on track); a <strong>$215 close</strong> re-arms upside; Street avg ~$309, earnings 26 Aug.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$105–110</span></td><td><strong class="neg">Still the laggard.</strong> The double risk-off adds pressure on the 18A-yield fear. Below the $130 third-trim; <strong>trail ~$105–$115</strong>.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="neg">~$124</span></td><td><strong class="neg">Fresh 52-week low ($120.39 intraday).</strong> The $138 bounce failed and the base keeps giving — the AI-capex-financing overhang is exactly what the Moonshot scare amplifies. Still Buy-rated, avg PT well above, but the lone AI-name laggard. Core hold, <strong>no add</strong>; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="warn">~$400</span></td><td><strong class="warn">Q2 financials Wednesday 22 July — the catalyst.</strong> The record 480,126 Q2 deliveries (+25% YoY) are known; the print is about <strong>automotive gross margins, the $25B capex plan, Cybercab and Optimus</strong>, not units. Choppy into the number.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">~$4.8</span></td><td>Still below the <strong>$5.50 stop</strong>. Unchanged; the fired stop stands. No change.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="neg">~$42.86</span></td><td><strong class="neg">Quantum valuation reset continues.</strong> A new listed rival (IQM on Nasdaq) adds competition for capital; heavy burn (FY26 EBITDA loss $310–330M). Northland <em>raised</em> PT to $70 (Outperform) into the <strong>8 Sep investor day</strong>. High-beta sleeve, no size-up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="warn">~$43</span></td><td><span class="warn">Holding the $41–44 range</span>, above the 52-wk low ($38.19), under the $46 trim. No add; a reclaim of $46 on a close re-opens the name.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="warn">~$158 ADR</span></td><td><strong class="warn">Its big day is Thursday 23 July.</strong> Q2 results (call 21 Jul) <em>and</em> an EU antitrust settlement decision collide — consensus ~€9.85B rev / €1.76 EPS; the <strong>cloud backlog</strong> (disappointed at +16% in January) is the single most-watched metric. Trades near a 52-wk low; Dremio acquisition closed 6 Jul. Add on weakness dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.8</span></td><td>Near a 16-year low (price/book ~0.18). Dormant deep-value ballast; Q2 print 24 Jul the next catalyst.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num"><span class="warn">~104p</span></td><td>The bond-proxy income anchor; steady ~104p. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">The name-specific moves: <strong class="neg">MU $853.48</strong> lost the ~$880 base (Burry short in the money); <strong class="neg">NVDA ~$200</strong> took the Moonshot scare hardest; <strong>ORCL fresh 52-wk low ~$124</strong>; <strong>TSLA ~$400</strong> into Wednesday's Q2 print; <strong>SAP ~$158</strong> into its 23 Jul results-plus-EU-decision day. The income/EU tail (<strong>UKW.L, SAP, VWAGY</strong>) is steady. Center of gravity: a pure-compute cohort being re-priced by the Moonshot efficiency shock, with the Iran oil premium still on top.</p>
+</div>
+
+<h2>The 10 buy targets — Saturday (1 SWAP · 1 DOWNGRADE · defensives + energy/power re-lead)</h2>
+<p class="sub">The list re-orders around the new driver: the <strong>defensive anchor</strong> (LLY) and the <strong>energy / power sleeve</strong> (CCJ/XOM/LMT/TLN/VRT) re-lead — energy was the only sector green Friday and AI-power is the "Jevons" winner if inference gets cheaper — while the <strong>pure-compute chips</strong> (NVDA/MU) de-emphasize. Two real changes: <strong>XOM swaps in for CEG</strong> (the direct oil-spike beneficiary with Brent ~$85), and <strong>MU downgrades High→Med</strong> for losing its ~$880 base. Prices are 17 July close.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (17 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 14 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor — with a fresh positive catalyst.</strong> ~$1,180 (held while the chips fell); <strong>raised FY guidance to $82–85B revenue / $35.50–37 EPS</strong>, Mounjaro >$8.66B, Zepbound +80%, added the ~$3.8B AtaiBeckley neuroscience deal. The ballast that earns its keep in a risk-off tape; 24/7 PT ~$1,336</td><td class="num"><span class="pos">~$1,180</span></td><td class="num">~$1,336 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>2</td><td><strong>CCJ</strong></td><td><strong class="pos">Energy security — in the only sector that rose.</strong> ~$87.36 (pulled back on risk-off — an add zone). World's largest listed uranium producer + Westinghouse; the conflict/energy-security thesis <em>strengthens</em> with Brent ~$85; <strong>Q2 preview flags earnings could restart the nuclear rally</strong>; avg PT ~$132 (~54% upside)</td><td class="num">~$87.36</td><td class="num">~$132 avg</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>3</td><td><strong>LMT</strong></td><td><strong class="pos">The war sleeve stays armed.</strong> Pure-play defense (72% US-gov revenue); US–Iran strikes continued and Hormuz traffic fell to two-month lows — the premium is firmly on. Brent ~$85, still driving toward the $95 full-trigger; PT ~$520</td><td class="num">~$470</td><td class="num">PT ~$520</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>XOM</strong></td><td><strong class="warn">NEW — the direct oil-spike beneficiary.</strong> Swapped in for CEG. Energy was the <em>only</em> sector green Friday; integrated major (lower beta than the E&amp;Ps — the right oil vehicle in a risk-off tape) with Brent holding ~$85 on the Iran strikes. The cleanest direct beneficiary the watch-list has flagged for a week</td><td class="num">~$118</td><td class="num">PT ~$135</td><td><span class="tag new">SWAP IN</span></td><td><strong class="warn">▲ IN (for CEG)</strong></td></tr>
+      <tr><td>5</td><td><strong>TLN</strong></td><td><strong class="pos">Rate hedge + AI-power — a Jevons winner if inference gets cheaper.</strong> Contracted cashflow (AWS PPA); the primary rate hedge, and if the Moonshot scare means <em>more</em> (cheaper) inference, power demand only rises. ~$370; Goldman Buy ~$499 (52-wk high $451)</td><td class="num">~$370</td><td class="num">$499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>TSM</strong></td><td><strong class="warn">The confirmed-demand value name — bought the fear.</strong> Posted a <strong>record Q2</strong> (rev $40.2B +33.7%, profit +77%, GM 67.7%) and <em>raised</em> 2026 capex to $60–64B + $100B more for Arizona — the strongest refutation of the "less compute" scare — yet fell ~7% Friday on Moonshot. The demand read that says the pullback is a <em>de-rating, not a demand roll-over</em>; Barclays $625</td><td class="num">~$418</td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP ▲</td></tr>
+      <tr><td>7</td><td><strong>VRT</strong></td><td><strong>Chip-agnostic AI-power/cooling — the other Jevons winner.</strong> ~$300; sells the power/cooling whatever silicon runs and whoever wins the efficiency race; Q1 rev +30% YoY to $2.65B; Roth PT $355 (Buy); <strong>earnings 29 Jul</strong>. Size into the weakness</td><td class="num">~$300</td><td class="num">$355 (Roth)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>NVDA</strong></td><td><strong class="neg">The most Moonshot-exposed — held for the demand, not the tape.</strong> ~$200, below $215; the compute-spend poster child took the K3 efficiency scare hardest. Demand intact (H200 China, Kyber on track); a <strong>$215 close</strong> re-arms upside; Street avg ~$309, earnings 26 Aug</td><td class="num"><span class="neg">~$200</span></td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>MU</strong></td><td><strong class="neg">LOST the ~$880 base — DOWNGRADE High→Med.</strong> ~$853.48 (from ~$932), <em>through</em> the base low the book flagged, with <strong>Burry's short</strong> now in the money and the Moonshot overhang fresh. Demand intact (HBM sold out, TSMC raised capex) but the technical broke — re-upgrades only on a reclaim of ~$880; next support ~$800</td><td class="num"><span class="neg">~$853.48</span></td><td class="num">$1,500–$2,000</td><td><span class="tag med">Med ▼</span></td><td><strong class="neg">▼ High→Med</strong></td></tr>
+      <tr><td>10</td><td><strong>AVGO</strong></td><td><strong class="neg">Still below $400 — stays Med.</strong> ~$374.50 (range $371.90–$388.65). Did not re-take the $400 gate and is hovering just above the $370 line. Custom-silicon thesis (the ~$30B Apple deal) intact — re-upgrades only on a fresh $400 close, loses conviction below $370</td><td class="num"><span class="neg">$374.50</span></td><td class="num">~$502 avg</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>The list re-ordered around the Moonshot shock.</strong> The defensive anchor (LLY, with a raised-guidance catalyst) and the energy/power sleeve (CCJ/XOM/LMT/TLN/VRT) re-lead — energy was the only sector green, and AI-power is the Jevons winner if inference gets cheaper; the pure-compute chips (NVDA/MU) de-emphasize. <strong>Two real changes:</strong> XOM swaps in for CEG (the direct oil-spike beneficiary at Brent ~$85), and MU downgrades High→Med (it lost its ~$880 base). <strong>Out of the active 10 / on watch:</strong> <strong>CEG (swapped OUT 18 Jul)</strong> — the nuclear-utility ballast, a milder energy read than a direct oil name in a live oil spike; re-add on a calmer oil tape. <strong>COP / EOG</strong> — the E&amp;P peers of XOM; higher beta, watch if Brent breaks $95. <strong>RTX</strong> — the war-sleeve peer of LMT. <strong>SKHY / IQM</strong> — the new memory / quantum listings led their sectors lower; too new to chase. <strong>MRVL (~$235)</strong> — still needs a base &gt;$300. <strong>SNDK / WDC</strong> — NAND/storage, watch for a base. <strong>OKLO / SMR / UEC</strong> — AI-power / uranium adjacencies the CCJ+TLN sleeve carries. <strong>ASML / AMAT</strong> — benched (AMAT a Burry short). <strong>QCOM</strong> — out. <strong>NEM / GLD</strong> — the war-premium keeps the haven case a tail. <strong>The honest read:</strong> a second, larger driver joined the down-branch — the Moonshot Kimi K3 efficiency shock re-priced the pure-compute trade, and even TSMC's record beat couldn't hold — so you re-lead with the defensives and the energy/power sleeve that actually rose, take Micron's earned downgrade, own TSMC as the confirmed-demand value name into the fear, and hold the pure-compute chips without chasing.</p>
+
+<h2>What's new since Tuesday (14 Jul → 17 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Moonshot AI</strong></td><td><strong class="neg">Kimi K3 released 17 Jul</strong> — open-weight, beats every US rival except Claude Fable 5 &amp; GPT-5.6; a "DeepSeek 2.0" shock</td><td><span class="neg">Re-prices the compute trade</span> — the "US wins by outspending on GPUs" thesis is undercut; the pure-compute chips (NVDA/MU) hit hardest; AI-power (TLN/VRT) is the Jevons winner</td></tr>
+      <tr><td><strong>TSMC Q2</strong></td><td><strong class="pos">Record</strong> — rev $40.2B (+33.7%), profit +77%, GM 67.7%, <strong>capex raised to $60–64B</strong>, +$100B Arizona — but the stock <strong class="neg">fell ~7% Friday</strong></td><td><span class="warn">The regime tell</span> — demand is confirmed (raised capex), but the tape sold it anyway; the pullback is a de-rating, not a demand roll-over. Own TSM into the fear</td></tr>
+      <tr><td><strong>Micron</strong></td><td><strong class="neg">LOST the ~$880 base</strong> — closed $853.48; Burry's short (2 Jul, $1,051.87) now in the money</td><td><span class="neg">Downgrade High→Med</span> — the technical broke; re-upgrades only on a reclaim of ~$880</td></tr>
+      <tr><td><strong>Iran / oil</strong></td><td><strong class="neg">Still hot</strong> — US–Iran strikes continued, Hormuz traffic at two-month lows, Brent held ~$85 (Sep $84.95)</td><td><span class="neg">Energy the only sector green</span> — XOM swaps in as the direct beneficiary; LMT/CCJ stay armed; Brent still shy of the $95 full-trigger</td></tr>
+      <tr><td><strong>The tape</strong></td><td><strong class="neg">Second risk-off week</strong> — S&amp;P −1.02% (7,457), Nasdaq −1.40% (25,520); week S&amp;P −1.6%, Nasdaq −2.9%</td><td><span class="neg">Semis led lower, energy higher</span> — the defensives and the energy/power sleeve re-lead</td></tr>
+      <tr><td><strong>LLY</strong></td><td><strong class="pos">Raised FY guidance</strong> to $82–85B rev / $35.50–37 EPS; Mounjaro >$8.66B; added the ~$3.8B AtaiBeckley deal</td><td><span class="pos">A real positive catalyst</span> — the defensive anchor now leads on fundamentals, not just relative safety</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (week of 20 Jul)</h2>
+<div class="card">
+  <ul>
+    <li><strong class="neg">Does the Moonshot scare stick or fade?</strong> The key question for the whole book — is Kimi K3 a durable re-rating of the compute trade, or (like the first DeepSeek shock) a fear that fades as hyperscaler capex holds? TSMC's raised capex argues the latter.</li>
+    <li><strong>SAP Q2 + EU antitrust decision — Thursday 23 July</strong> (call 21 Jul). The <strong>cloud backlog</strong> is the single most-watched metric after January's +16% miss; the EU settlement decision collides the same day. A holding <em>and</em> a read on enterprise-AI demand.</li>
+    <li><strong>Tesla Q2 financials — Wednesday 22 July.</strong> Margins, the $25B capex plan, Cybercab and Optimus — not units (480K deliveries known).</li>
+    <li><strong class="neg">Iran / oil:</strong> does Brent break <strong>$95</strong> (the full war-sleeve trigger, LMT/XOM lead outright) or ease back below $76 (de-escalation)?</li>
+    <li><strong>MU ~$880 reclaim</strong> (re-upgrade) or lose $800; <strong>NVDA $215 reclaim</strong> or fall further; <strong>AVGO $400 reclaim</strong> or lose $370.</li>
+    <li><strong>Earnings cluster:</strong> SAP 23 Jul, TSLA 22 Jul, VWAGY 24 Jul, VRT 29 Jul, Cameco Q2 (nuclear-rally test).</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into late July</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the Moonshot fear fades slowly, choppy.</strong> Like the first DeepSeek shock, the "less compute" scare cools as hyperscaler capex holds (TSMC just raised its); Brent stays $80–$90 (elevated, below the $95 full-trigger); the chip cohort consolidates (MU rebuilds toward $880, NVDA toward $215, AVGO bases below $400). The defensives (LLY) and the energy/power sleeve (CCJ/XOM/LMT/TLN/VRT) lead. Own the defensives and power, hold the chips, don't chase.</div>
+  <div class="scenario down"><strong>Down branch — the shocks compound.</strong> The Moonshot re-rating sticks <em>and</em> Brent breaks <strong>$95</strong> (the full war-sleeve trigger fires, LMT/XOM lead outright); the chip cohort breaks further (MU loses $800, NVDA loses $190, AVGO loses $370). The defensives lead hard; NEM/GLD get a haven bid. Trim the extended pure-compute chips into strength, lean the book to energy/power/defensives.</div>
+  <div class="scenario up"><strong>Up branch — the fear fades fast + Iran de-escalates.</strong> Investors conclude K3 doesn't dent hyperscaler capex (TSMC's raise is the proof), the Iran strikes ease, Brent falls below $76, and the chip cohort re-rates back up (MU reclaims $880 then $932, NVDA reclaims $215, AVGO clears $400 — re-upgrade). The pure-compute chips re-lead. Add back the chip weightings on the reclaim.</div>
+  <p class="sub">The tells: <strong>(1) does the Moonshot re-rating stick</strong> or fade like DeepSeek-1; <strong>(2) does hyperscaler capex hold</strong> (TSMC raised — the strongest evidence it does); <strong>(3) does Brent break $95</strong> — the full war-sleeve trigger; and <strong>(4) does MU reclaim ~$880</strong> (re-upgrade) or lose $800.</p>
+</div>
+
+<h2>Action checklist (a new shock joined the down-branch · the compute trade got re-priced)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> the Iran/oil down-branch was <span class="neg">joined by a bigger one</span> — the Moonshot Kimi K3 "DeepSeek 2.0" efficiency shock re-priced the pure-compute trade, and even TSMC's record beat (capex <em>raised</em> to $60–64B) fell ~7%. The tape went risk-off a second week (S&amp;P −1.02%, Nasdaq −1.40%); energy was the only green. <strong>1 SWAP (CEG→XOM) · 1 DOWNGRADE (MU High→Med).</strong></li>
+    <li><strong class="pos">LLY (target):</strong> the anchor leads on a real catalyst — raised FY guidance ($82–85B rev), the AtaiBeckley deal; 24/7 PT ~$1,336.</li>
+    <li><strong class="pos">CCJ / XOM / LMT (targets):</strong> the energy sleeve re-leads — energy the only sector green. XOM swaps in as the direct oil beneficiary (Brent ~$85), CCJ's Q2 could restart the nuclear rally, LMT stays armed on the ongoing strikes.</li>
+    <li><strong>TLN / VRT (targets):</strong> the AI-power Jevons winners — if inference gets cheaper, <em>more</em> of it runs, and power demand only rises; TLN also the rate hedge, VRT chip-agnostic (earnings 29 Jul).</li>
+    <li><strong class="warn">TSM (target):</strong> own the fear — a record Q2 and a raised capex guide, sold off ~7% on sentiment; the pullback is a de-rating, not a demand roll-over. Barclays $625.</li>
+    <li><strong class="neg">MU (holding + target):</strong> the downgrade — lost the ~$880 base to $853, Burry short in the money; own it, re-upgrade only on a reclaim of ~$880, next support ~$800.</li>
+    <li><strong>Stops / levels live:</strong> MU <span class="neg">lost ~$880</span> ($853.48; reclaim ~$880 to re-upgrade, next support ~$800) · NVDA <span class="neg">below $215</span> (~$200) · AVGO <span class="neg">below $400</span> ($374.50; loses conviction below $370) · TSLA <span class="warn">~$400</span> (Q2 22 Jul) · SNAP $5.50 <span class="neg">below</span> (~$4.8) · SYM $46 close <span class="warn">below</span> (~$43) · INTC $130 trim <span class="neg">below</span> (~$105–110; trail ~$105–$115) · ORCL reclaim $185 (~$124, fresh 52-wk low) · <strong>CEG swapped OUT → XOM IN</strong> · <strong>war sleeve LMT/XOM lead outright on Brent &gt;$95</strong> (~$85) · QCOM / MRVL / NEM stay out · ASML / AMAT benched · <strong>primary tells: does the Moonshot re-rating stick or fade, does hyperscaler capex hold, does Brent break $95, does MU reclaim ~$880.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Saturday 18 July 2026 edition reads a new shock landing on an existing down-branch. The book had been running the Iran/oil down-branch since mid-month; this weekend it was joined by a second, larger driver — a China-artificial-intelligence-efficiency shock. On Friday 17 July, China's Moonshot AI released Kimi K3, an open-weight model whose benchmarks beat every US rival except Anthropic's Claude Fable 5 and OpenAI's GPT-5.6, a "DeepSeek 2.0" event that undercuts the core bull thesis that US firms defend their lead by outspending competitors on computing power, and it hit the pure-compute chips hardest. The regime tell that matters most: on 16 July Taiwan Semiconductor reported a record second quarter — revenue of $40.2 billion, up 33.7% year over year, net income up 77%, a 67.7% gross margin — and raised its 2026 capital-expenditure guidance to a range of $60 to $64 billion while adding $100 billion to its Arizona investment, the single strongest possible refutation of the fear that artificial-intelligence capital spending is about to roll over; yet the stock fell about 7% on Friday on the Moonshot headline. When a record beat and a raised capex guide cannot hold the tape, the market has shifted from rewarding demand to pricing sentiment. Meanwhile the Iran overhang stayed on: United States and Iran strikes continued, tanker traffic through the Strait of Hormuz fell to two-month lows, and Brent crude held around $85 a barrel (September futures settled at $84.95), leaving energy the only sector to finish green on Friday. The broad tape confirmed a second risk-off week: the S&amp;P 500 fell about 1.02% to 7,457, the Dow fell about 0.77% to 52,146, and the Nasdaq Composite fell about 1.40% to 25,520, with the S&amp;P down 1.6% and the Nasdaq down 2.9% on the week. Micron lost its roughly $880 base, closing at $853.48 with Michael Burry's disclosed short (initiated 2 July at $1,051.87) now in the money, so Micron downgrades in the target book from High to Medium; the demand cycle is intact but the technical broke. The response is one swap, one downgrade and no upgrades. Constellation Energy — the nuclear-utility ballast, a milder read than a direct oil name during a live oil spike — swaps out for Exxon Mobil, the cleanest direct oil-spike beneficiary with Brent near $85 and energy the only sector rising. The defensives — Eli Lilly, which raised full-year guidance to $82 to $85 billion of revenue and $35.50 to $37 earnings per share and added the roughly $3.8 billion AtaiBeckley neuroscience deal — and the energy and power sleeve (Cameco, whose second-quarter preview flags earnings that could restart the nuclear rally; Lockheed Martin, still armed on the strikes; Talen and Vertiv, the chip-agnostic power names that win if cheaper inference means more of it) re-lead, while the pure-compute chips (Nvidia around $200 and below $215; Micron) de-emphasize. Taiwan Semiconductor stays a High-conviction target as the confirmed-demand value name to own into the fear. Holdings at Friday's close: MU about $853.48 (lost the base, Burry short in the money); NVDA about $200 (below $215, most Moonshot-exposed, earnings 26 Aug); INTC about $105-$110 (still the laggard); ORCL about $124 (fresh 52-week low, reclaim $185 to repair); TSLA about $400 (Q2 financials 22 Jul); SNAP about $4.80 (below the $5.50 stop); IONQ about $42.86 (quantum valuation reset, investor day 8 Sep); SYM about $43 (holding the $41-44 range); SAP about $158 ADR (Q2 and an EU antitrust decision both 23 Jul, call 21 Jul); VWAGY about $8.8 (near a 16-year low, Q2 24 Jul); UKW.L about 104p (income anchor). The week ahead: whether the Moonshot re-rating sticks or fades like the first DeepSeek shock, whether hyperscaler capex holds (TSMC's raise argues it does), SAP's Q2 and EU decision on 23 July, Tesla's financials on 22 July, whether Brent breaks $95, and whether Micron reclaims its roughly $880 base. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 18 July 2026 from public web sources; prices are Friday 17 July close and move during the session. This edition reads a new shock joining the down-branch: China's Moonshot AI released Kimi K3 on 17 July — a "DeepSeek 2.0" open-weight model that beats every US rival except Claude Fable 5 and GPT-5.6 — re-pricing the pure-compute AI trade even as TSMC posted a record Q2 (rev $40.2B, +77% profit, capex raised to $60–64B) and still fell ~7% Friday. The Iran overhang stayed on (Brent ~$85, energy the only sector green). The tape went risk-off a second week: S&amp;P −1.02% to 7,457, Nasdaq −1.40% to 25,520 (week −2.9%). MU lost its ~$880 base to $853 (Burry short in the money). Response: 1 swap (CEG out → XOM in, the direct oil beneficiary), 1 downgrade (MU High→Med for losing its base), 0 upgrades. The defensives (LLY) and the energy/power sleeve (CCJ/XOM/LMT/TLN/VRT) re-lead; the pure-compute chips de-emphasize; TSM stays High as the confirmed-demand value name. The week ahead: does the Moonshot re-rating stick or fade, does hyperscaler capex hold, SAP Q2 + EU decision 23 Jul, TSLA 22 Jul, does Brent break $95, does MU reclaim ~$880. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
