@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Monday, 20 July 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Monday, 20 July 2026 — <strong>markets reopen, and the book goes live into the capex verdict.</strong> After a second risk-off week, US markets reopen today into the single most important week the <strong class="neg">Moonshot Kimi K3 "DeepSeek 2.0" shock</strong> will face. One disciplined change today: <strong class="neg">AVGO out</strong> (Medium; failed the $400 gate, sitting on its $370 conviction-loss line, and pure-custom-silicon is squarely Moonshot-exposed) → <strong class="pos">RTX in</strong>, the diversified war-sleeve name, promoted from the queue as <strong class="neg">Iran escalates back toward all-out war</strong> (NPR's read) — at least <strong>9 ships hit since 6 July</strong>, Hormuz transits at a three-week low, Brent above <strong>$85</strong>. So: <strong>1 swap · 1 downgrade-to-exit (AVGO) · 0 upgrades.</strong> The chip complex stays priced for the efficiency scare (SOX −12.5% last week, its worst in 15 months) even after TSMC's record Q2 and <em>raised</em> capex. <strong>The fork is Wednesday 22 July: Alphabet reports alongside Tesla</strong>, and the Street already models Alphabet <em>raising</em> 2026 capex to <strong>~$175–185B</strong> — if it holds/raises, it corroborates TSMC and the "fade like DeepSeek-1" base case; if it trims/hedges, the Moonshot re-rating sticks. Prices below are Friday 17 July close (last confirmed); today's reopen session is live.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Monday 20 July 2026. Prices are Friday 17 July close (the last confirmed print); the US reopen session is live as of writing. Two drivers still push the same way and both get their first hard tests this week: the <strong>Moonshot Kimi K3 "DeepSeek 2.0" efficiency shock</strong> that re-priced the pure-compute chips, and the <strong>Iran/Hormuz oil premium</strong>, which worsened over the weekend. The whole debate reduces to one question — <strong>does hyperscaler capex hold, or does the "less compute needed" fear start cutting real orders?</strong> — and it gets its first hard data point <strong>Wednesday 22 July, when Alphabet reports</strong> (alongside Tesla). Today's one change leans the book slightly more toward the confirmed war/energy trade (RTX in for AVGO) while holding the confirmed-demand value name (TSM) and the pure-compute chips (NVDA/MU) into the verdict. Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<h2>Markets reopen — one swap into the make-or-break capex week</h2>
+<div class="card lede">
+  <p>US markets reopen today after a second straight risk-off week. Nothing that closed Friday is thesis-broken, but two things earned a change: <strong>AVGO sits on the exact line the book flagged</strong> ($370 conviction-loss, still no $400 reclaim) and is one of the most Moonshot-exposed custom-silicon names, while <strong>the Iran conflict escalated over the weekend</strong> — so the war sleeve gets reinforced. The honest re-score:</p>
+  <ul>
+    <li><strong class="warn">The week ahead is the whole ballgame — Alphabet capex, Wednesday 22 July.</strong> The entire Moonshot debate reduces to one question: <em>does hyperscaler capex hold?</em> <strong>Alphabet reports Wednesday</strong> (with Tesla), and the Street already models a capex <em>raise</em> to <strong>~$175–185B</strong> for 2026 alongside ~$22.8B Google Cloud revenue (+67% YoY) on a ~$462B backlog. Holds/raises → corroborates TSMC, the "fade like DeepSeek-1" base case (chips re-rate up). Trims/hedges → validates the Moonshot re-rating (chips de-rate further, energy/power/defensives lead outright).</li>
+    <li><strong class="neg">Iran escalated over the weekend — the war sleeve gets reinforced (RTX in for AVGO).</strong> The US and Iran "blew past red lines" toward all-out war (NPR, 18 Jul); <strong>at least 9 ships have been attacked since 6 July</strong>, a seafarer was killed and mariners injured on two crude tankers off Oman, and <strong>Hormuz transits fell to a three-week low</strong> (8 vessels Thursday vs 15 the day prior). Brent held <strong>above $85</strong>. This is a <em>worsening</em>, not a de-escalation — so the diversified defense name <strong>RTX</strong> (Raytheon + Pratt + Collins) is promoted from the queue to join LMT/XOM/CCJ.</li>
+    <li><strong class="neg">AVGO out — failed $400, on its $370 line, Moonshot-exposed.</strong> AVGO closed <strong>~$370.16</strong> (Friday range $357.80–$377.31) — it never re-took the $400 gate and is sitting <em>on</em> the $370 line the book set as the conviction-loss level. As a pure custom-silicon name it is squarely in the efficiency-scare crosshairs. The Apple ~$30B custom-silicon thesis is intact — it returns to the queue on a fresh $400 close — but it does not earn a target slot into the verdict.</li>
+    <li><strong class="warn">The chip complex is still priced for the scare — even after TSMC's record.</strong> The SOX fell <strong>12.5% last week — its worst week in over 15 months</strong>; the semi ETFs shed ~9–17% on the month. Yet TSMC's 16 Jul Q2 was a record ($40.2B rev +33.7%, profit +77%, GM 67.7%) and it <em>raised</em> 2026 capex to $60–64B plus $100B more for Arizona — the strongest refutation of "AI capex rolls over." The tape sold sentiment, not fundamentals. Own TSM into the fear.</li>
+    <li><strong class="neg">Micron stays Med; the pure-compute chips are held, not chased.</strong> MU closed <strong>$848.95</strong> (lost its ~$880 base, Burry's 2 Jul short at $1,051.87 in the money) — demand intact (HBM sold out, avg PT ~$1,486) but the technical broke; re-upgrade only on a reclaim of ~$880, next support ~$800. NVDA <strong>~$202.81</strong>, below $215, remains the most Moonshot-exposed megacap into Wednesday's read-through.</li>
+  </ul>
+  <p><strong>Response: 1 swap (AVGO → RTX) · 1 downgrade-to-exit (AVGO) · 0 upgrades.</strong> The defensive anchor (LLY) and the reinforced war/energy sleeve (CCJ/XOM/LMT/RTX/TLN/VRT) lead, TSM stays High as the confirmed-demand value name, and the pure-compute chips (NVDA/MU) are held, not chased, into Wednesday's Alphabet capex verdict.</p>
+</div>
+
+<h2>Where things stand (prices = Friday 17 July close; reopen session live)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">Market status</div><div class="v"><span class="warn">REOPEN</span></div><div class="k">Monday session live · prices = Fri 17 Jul close</div></div>
+  <div class="stat"><div class="k">The fork</div><div class="v"><span class="warn">ALPHABET Wed</span></div><div class="k">GOOGL capex 22 Jul — Street models a raise to ~$175–185B</div></div>
+  <div class="stat"><div class="k">SOX (last week)</div><div class="v"><span class="neg">−12.5%</span></div><div class="k">worst week in over 15 months · Moonshot de-rate</div></div>
+  <div class="stat"><div class="k">TSMC Q2 (16 Jul)</div><div class="v"><span class="pos">RECORD</span></div><div class="k">$40.2B rev, +77% profit, capex raised — yet −7% Fri</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="neg">&gt;$85</span></div><div class="k">Iran escalating · 9 ships hit since 6 Jul · Hormuz transits 3-wk low</div></div>
+  <div class="stat"><div class="k">MU (17 Jul)</div><div class="v"><span class="neg">$848.95</span></div><div class="k">lost the ~$880 base · Burry short in the money · Med</div></div>
+  <div class="stat"><div class="k">NVDA (17 Jul)</div><div class="v"><span class="neg">~$202.81</span></div><div class="k">below $215 · most Moonshot-exposed megacap</div></div>
+  <div class="stat"><div class="k">Nasdaq (Fri)</div><div class="v"><span class="neg">−1.40%</span></div><div class="k">25,520 · week −2.9% · Netflix whiff + chip rout</div></div>
+</div>
+<p class="sub">The <strong>macro</strong> thread worsened over the weekend (Iran escalating toward all-out war, Hormuz transits at a three-week low, Brent &gt;$85). The <strong>AI/chip</strong> thread carries the <em>Moonshot Kimi K3</em> efficiency shock — a broad de-rate (SOX −12.5% last week) that even TSMC's record beat couldn't stop. The reopen response: reinforce the war sleeve (RTX in for AVGO), keep the defensives and energy/power leading, own TSMC into the fear, and hold the pure-compute chips into Wednesday's Alphabet capex print — the first hard read on whether hyperscaler spend flinches.</p>
+
+<h2>Your portfolio — Monday read (11 positions, prices = 17 Jul close)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (17 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong> · Micron</td><td class="num"><span class="neg">$848.95</span></td><td><strong class="neg">Lost the ~$880 base.</strong> Fell <em>through</em> the base low with <strong>Burry's short</strong> (2 Jul, $1,051.87) in the money and the Moonshot overhang fresh. Demand intact (HBM sold out, TSMC <em>raised</em> capex, avg PT ~$1,486) but the technical broke — <strong>Med</strong> (downgraded Saturday). Own it; next support ~$800, re-upgrade only on a reclaim of ~$880.</td></tr>
+      <tr><td><strong>NVDA</strong> · NVIDIA</td><td class="num"><span class="neg">~$202.81</span></td><td><strong class="neg">The most Moonshot-exposed megacap (below $215).</strong> The compute-spend poster child took the K3 scare hardest. Demand intact (record FY26 rev $215.9B, H200 China, Kyber on track; Goldman calls 21.7× "compelling"). <strong>Alphabet's Wed capex print is the key read-through</strong>; a <strong>$215 close</strong> re-arms upside; earnings 26 Aug.</td></tr>
+      <tr><td><strong>INTC</strong> · Intel</td><td class="num"><span class="neg">~$105–110</span></td><td><strong class="neg">Still the laggard.</strong> The double risk-off adds pressure on the 18A-yield fear; fell ~4% in Friday's chip rout. Below the $130 third-trim; <strong>trail ~$105–$115</strong>. <strong>Reports Thu 24 Jul</strong> this week.</td></tr>
+      <tr><td><strong>ORCL</strong> · Oracle</td><td class="num"><span class="neg">$126.41</span></td><td><strong class="neg">Near its fresh 52-week low</strong> (~$120.39 intraday last week). The AI-capex-financing overhang is exactly what the Moonshot scare amplifies. Still Buy-rated with a PT well above, but the lone AI-name laggard. Core hold, <strong>no add</strong>; reclaim $185 on a close to repair.</td></tr>
+      <tr><td><strong>TSLA</strong> · Tesla</td><td class="num"><span class="neg">$380.84</span></td><td><strong class="neg">Corrected lower — closed $380.84 Friday (−2.6%), on the $380 line.</strong> <strong class="warn">Q2 financials Wednesday 22 July</strong> (with Alphabet): consensus ~$26.4B rev, EPS ~$0.54, auto gross margin ex-credits ~18%. The record 480,126 deliveries are known — the print is <strong>margins, the $25B+ capex plan, Cybercab, Optimus</strong>. A $380 loss on a close opens the next leg down.</td></tr>
+      <tr><td><strong>SNAP</strong> · Snap</td><td class="num"><span class="neg">~$4.8</span></td><td>Still below the <strong>$5.50 stop</strong>. The fired stop stands. No change.</td></tr>
+      <tr><td><strong>IONQ</strong> · IonQ</td><td class="num"><span class="neg">$34.78</span></td><td><strong class="neg">Corrected sharply lower — $34.78 (not the ~$42.86 carried).</strong> The quantum valuation reset deepened; a new listed rival (IQM) adds competition for capital and burn is heavy (FY26 EBITDA loss $310–330M). Northland's $70 Outperform stands into the <strong>8 Sep investor day</strong>. High-beta sleeve, no size-up.</td></tr>
+      <tr><td><strong>SYM</strong> · Symbotic</td><td class="num"><span class="warn">$41.98</span></td><td><span class="warn">Holding the low $40s</span>, just above the 52-wk low ($38.19), under the $46 trim. No add; a reclaim of $46 on a close re-opens the name.</td></tr>
+      <tr><td><strong>SAP</strong> · SAP SE</td><td class="num"><span class="warn">~$158 ADR</span></td><td><strong class="warn">Its big day is Thursday 23 July.</strong> Q2 results (call 21 Jul) <em>and</em> an EU antitrust settlement decision collide — consensus ~€9.85B rev (+~9%) / €1.76 EPS (from €1.46); the <strong>cloud backlog</strong> and <strong>cloud gross margin</strong> are the single most-watched metrics after January's disappointment. Trades ~31% off its high, near a floor. Add on weakness dormant.</td></tr>
+      <tr><td><strong>VWAGY</strong> · Volkswagen ADR</td><td class="num"><span class="neg">~$8.8</span></td><td>Near a 16-year low (price/book ~0.18). Dormant deep-value ballast; <strong>Q2 print 24 Jul</strong> the next catalyst.</td></tr>
+      <tr><td><strong>UKW.L</strong> · Greencoat UK Wind</td><td class="num"><span class="warn">~104p</span></td><td>The bond-proxy income anchor; steady ~104p. Reinvest the dividend.</td></tr>
+    </tbody>
+  </table>
+  <p class="sub">Two data corrections vs Friday's carried figures: <strong class="neg">TSLA $380.84</strong> (not ~$400 — it is on the $380 line, into Wednesday's Q2 print) and <strong class="neg">IONQ $34.78</strong> (not ~$42.86 — the quantum reset ran deeper than carried). Otherwise the reads hold: <strong class="neg">MU $848.95</strong> lost the base (Med); <strong class="neg">NVDA ~$202.81</strong> the most Moonshot-exposed; <strong>ORCL $126.41</strong> near its 52-wk low; <strong>SAP ~$158</strong> into its 23 Jul results-plus-EU day; <strong>INTC reports 24 Jul</strong>. This is a heavy earnings week for the book: TSLA 22 Jul, SAP 23 Jul, INTC 24 Jul, VWAGY 24 Jul.</p>
+</div>
+
+<h2>The 10 buy targets — Monday (1 swap · AVGO → RTX · 1 downgrade-to-exit · 0 upgrades)</h2>
+<p class="sub">The <strong>defensive anchor</strong> (LLY) and the <strong>reinforced war / energy sleeve</strong> (CCJ/XOM/LMT/RTX/TLN/VRT) lead — energy was the only green sector and the Iran conflict escalated over the weekend, while AI-power is the "Jevons" winner if inference gets cheaper. <strong>TSM</strong> stays High as the confirmed-demand value name and the <strong>pure-compute chips</strong> (NVDA/MU) are held, not chased, into Wednesday's Alphabet capex verdict. Prices are 17 July close.</p>
+<div class="card">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis (one line)</th><th class="num">Px (17 Jul)</th><th class="num">PT / note</th><th>Conv.</th><th>vs. 19 Jul</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>LLY</strong></td><td><strong class="pos">The defensive anchor — with a fresh positive catalyst.</strong> ~$1,180 (held while the chips fell); <strong>raised FY guidance to $82–85B revenue / $35.50–37 EPS</strong>, Mounjaro &gt;$8.66B, Zepbound +80%, added the ~$3.8B AtaiBeckley neuroscience deal. The ballast that earns its keep in a risk-off tape; avg PT ~$1,336</td><td class="num"><span class="pos">~$1,180</span></td><td class="num">~$1,336 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>2</td><td><strong>CCJ</strong></td><td><strong class="pos">Energy security — in the only sector that rose.</strong> ~$87.36 (an add zone). World's largest listed uranium producer + Westinghouse; the thesis <em>strengthens</em> as Iran escalates and Brent holds &gt;$85; RBC raised its PT to C$175, <strong>Q2 could restart the nuclear rally</strong> (Barclays a lone Hold at $104). AI-power tailwind on top</td><td class="num">~$87.36</td><td class="num">~$132 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>LMT</strong></td><td><strong class="pos">The war sleeve — armed and escalating.</strong> Pure-play defense (72% US-gov revenue); the US and Iran are lurching back toward all-out war, 9 ships hit since 6 Jul, Hormuz transits a three-week low. Brent &gt;$85, driving toward the $95 full-trigger; PT ~$520</td><td class="num">~$470</td><td class="num">PT ~$520</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>XOM</strong></td><td><strong class="pos">The direct oil-spike beneficiary.</strong> Energy was the <em>only</em> sector green Friday; integrated major (lower beta than the E&amp;Ps — the right oil vehicle in a risk-off tape) with Brent &gt;$85 and the conflict escalating. The cleanest direct beneficiary as Hormuz transits fall</td><td class="num">~$118</td><td class="num">PT ~$135</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>RTX</strong></td><td><strong class="pos">The diversified war-sleeve add — promoted on the escalation.</strong> Raytheon + Pratt &amp; Whitney + Collins; the diversified alternative to LMT as the US–Iran conflict worsens toward all-out war and Hormuz stays hot. Air-defense + missiles demand rises directly with the escalation; the queue name the book flagged for exactly this tape</td><td class="num">~$150s</td><td class="num">defense sleeve</td><td><span class="tag high">High</span></td><td><span class="tag up">NEW</span> (AVGO out)</td></tr>
+      <tr><td>6</td><td><strong>TSM</strong></td><td><strong class="warn">The confirmed-demand value name — bought the fear.</strong> Record Q2 (rev $40.2B +33.7%, profit +77%, GM 67.7%) and <em>raised</em> 2026 capex to $60–64B + $100B Arizona — the strongest refutation of the "less compute" scare — yet fell ~7% Friday on Moonshot. A <em>de-rating, not a demand roll-over</em>; Barclays $625</td><td class="num">~$410</td><td class="num">$625 (Barclays)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>TLN</strong></td><td><strong class="pos">Rate hedge + AI-power — a Jevons winner if inference gets cheaper.</strong> Contracted cashflow (Susquehanna nuclear + AWS PPA); if the Moonshot scare means <em>more</em> (cheaper) inference, power demand only rises. ~$370; Goldman Buy ~$499 (52-wk high $451)</td><td class="num">~$370</td><td class="num">$499 (GS)</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>VRT</strong></td><td><strong>Chip-agnostic AI-power/cooling — the other Jevons winner.</strong> ~$300; sells the power/cooling whatever silicon runs and whoever wins the efficiency race; Q1 rev +30% YoY to $2.65B; PT range ~$363–$398; <strong>earnings 29 Jul</strong>. Size into weakness</td><td class="num">~$300</td><td class="num">~$363–398</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>9</td><td><strong>NVDA</strong></td><td><strong class="neg">The most Moonshot-exposed — held for the demand, not the tape.</strong> ~$202.81, below $215; the compute-spend poster child took the K3 scare hardest. Demand intact (record FY26 rev $215.9B, H200 China, Kyber on track; Goldman 21.7× "compelling"); <strong>Alphabet's Wed capex is the key read-through</strong>; a <strong>$215 close</strong> re-arms upside; earnings 26 Aug</td><td class="num"><span class="neg">~$202.81</span></td><td class="num">~$309 avg</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>10</td><td><strong>MU</strong></td><td><strong class="neg">LOST the ~$880 base — stays Med.</strong> $848.95, <em>through</em> the base low, with <strong>Burry's short</strong> in the money and the Moonshot overhang fresh. Demand intact (HBM sold out, TSMC raised capex, avg PT ~$1,486) but the technical broke — re-upgrades only on a reclaim of ~$880; next support ~$800</td><td class="num"><span class="neg">$848.95</span></td><td class="num">$1,486 avg</td><td><span class="tag med">Med</span></td><td>KEEP (Med)</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="sub"><strong>One swap on the reopen: AVGO → RTX.</strong> The Iran conflict escalated over the weekend, so the diversified war-sleeve name (RTX) is promoted from the queue; AVGO — failed $400, on its $370 conviction-loss line, and a pure custom-silicon name in the efficiency-scare crosshairs — moves to the queue (re-add on a fresh $400 close). <strong>Out of the active 10 / on watch:</strong> <strong>AVGO (swapped OUT 20 Jul)</strong> — re-add on a $400 close; loses conviction below $370. <strong>CEG (swapped OUT 18 Jul)</strong> — the nuclear-utility ballast; re-add on a calmer oil tape. <strong>COP / EOG</strong> — the E&amp;P peers of XOM; higher beta, the full-war leaders if Brent breaks $95. <strong>SKHY / IQM</strong> — the new memory / quantum listings led their sectors lower; too new to chase. <strong>MRVL (~$235)</strong> — the custom-ASIC peer; still needs a base &gt;$300. <strong>SNDK / WDC</strong> — NAND/storage; watch for a base. <strong>OKLO / SMR / UEC</strong> — AI-power / uranium adjacencies the CCJ+TLN sleeve carries. <strong>ASML / AMAT</strong> — benched (AMAT a Burry short). <strong>QCOM</strong> — out (re-entry &gt;$205). <strong>RGTI / QBTS</strong> — quantum peers of IONQ. <strong>NEM / GLD</strong> — the war-premium keeps the haven case a tail; watch on further escalation. <strong>SAP / VWAGY (own)</strong> — EU holdings, not adds; dormant into their prints. <strong>The honest read:</strong> markets reopen into a make-or-break capex week; the disciplined move is to reinforce the confirmed war/energy trade (RTX in) while holding TSM as the confirmed-demand value name and the pure-compute chips into Wednesday's Alphabet number — the first hard verdict on whether the Moonshot fear sticks or fades.</p>
+
+<h2>What's new since Sunday (19 Jul → 20 Jul)</h2>
+<div class="card">
+  <table>
+    <thead><tr><th>Thread</th><th>What's new</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Markets</strong></td><td><strong>Reopen today</strong> after a second risk-off week (Fri: S&amp;P −1.02% / Nasdaq −1.40%, dragged by a Netflix whiff + chip rout)</td><td><span class="warn">The book goes live</span> — one swap (AVGO → RTX); the reopen reaction and Wednesday's capex print set the tone</td></tr>
+      <tr><td><strong>Iran / oil</strong></td><td><strong class="neg">Escalated toward all-out war</strong> (NPR, 18 Jul) — 9 ships hit since 6 Jul, a seafarer killed off Oman, Hormuz transits a 3-week low; Brent &gt;$85</td><td><span class="neg">War sleeve reinforced</span> — RTX promoted from the queue to join LMT/XOM/CCJ; Brent still shy of the $95 full-trigger</td></tr>
+      <tr><td><strong>AVGO</strong></td><td><strong class="neg">Closed ~$370.16</strong> — never re-took $400, sitting on the $370 conviction-loss line</td><td><span class="neg">Swapped OUT</span> — a Moonshot-exposed custom-silicon laggard; re-add on a fresh $400 close</td></tr>
+      <tr><td><strong>Alphabet</strong></td><td><strong class="warn">Q2 Wednesday 22 Jul</strong> — Street models capex <em>raised</em> to ~$175–185B, Cloud ~$22.8B (+67%), backlog ~$462B</td><td><span class="warn">The fork</span> — a modeled capex <em>raise</em> tilts toward the base case (chips re-rate); a trim/hedge validates the re-rating</td></tr>
+      <tr><td><strong>Data fixes</strong></td><td><strong class="neg">TSLA $380.84</strong> (not ~$400, on the $380 line) · <strong class="neg">IONQ $34.78</strong> (not ~$42.86)</td><td><span class="neg">Both lower than carried</span> — TSLA into its 22 Jul print on the stop line; IONQ's quantum reset deeper</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>The week ahead (week of 20 Jul) — the make-or-break capex week</h2>
+<div class="card">
+  <ul>
+    <li><strong class="warn">Alphabet Q2 — Wednesday 22 July — the single most important tell for the whole chip book.</strong> GOOGL's capex line is the first hard read on whether a top-3 AI spender is flinching after Kimi K3. The Street models a <em>raise</em> to ~$175–185B; holds/raises → the Moonshot fear fades (chips re-rate up); trims/hedges → the re-rating sticks (energy/power/defensives lead outright).</li>
+    <li><strong>Tesla Q2 financials — Wednesday 22 July</strong> (same day as Alphabet). Consensus ~$26.4B rev, EPS ~$0.54, auto gross margin ex-credits ~18%; margins, the $25B+ capex plan, Cybercab, Optimus — not units (480K deliveries known). TSLA on the $380 line into it.</li>
+    <li><strong>SAP Q2 + EU antitrust decision — Thursday 23 July</strong> (call 21 Jul). The <strong>cloud backlog + cloud gross margin</strong> are the most-watched metrics; the EU decision collides the same day. A holding <em>and</em> a read on enterprise-AI demand.</li>
+    <li><strong>Intel Q2 — Thursday 24 July;</strong> <strong>Volkswagen Q2 — Friday 24 July.</strong> Two more holdings print this week — INTC on the 18A-yield question, VWAGY the deep-value ballast.</li>
+    <li><strong class="neg">Iran / oil:</strong> does Brent break <strong>$95</strong> (the full war-sleeve trigger, LMT/XOM/RTX lead outright) or ease below $76 (de-escalation)? The conflict is escalating, not cooling.</li>
+    <li><strong>MU ~$880 reclaim</strong> (re-upgrade) or lose $800; <strong>NVDA $215 reclaim</strong> or fall; <strong>AVGO $400 reclaim</strong> to earn a slot back; <strong>VRT earnings 29 Jul.</strong></li>
+  </ul>
+</div>
+
+<h2>Scenario tree — into late July (the Alphabet capex print is the fork)</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base case — the Moonshot fear fades slowly; Alphabet holds/raises capex.</strong> Like the first DeepSeek shock, the "less compute" scare cools as hyperscaler capex holds — <strong>Alphabet's Wed 22 Jul print corroborates TSMC's raise</strong> (the Street already models ~$175–185B); Brent stays $80–$90 (below the $95 full-trigger); the chip cohort consolidates (MU rebuilds toward $880, NVDA toward $215). The defensives (LLY) and the war/energy sleeve (CCJ/XOM/LMT/RTX/TLN/VRT) lead. Own the defensives and power, hold the chips, don't chase.</div>
+  <div class="scenario down"><strong>Down branch — the shocks compound; Alphabet trims/hedges capex.</strong> GOOGL flinches on capex language, validating the Moonshot re-rating, <em>and</em> Brent breaks <strong>$95</strong> (the full war-sleeve trigger fires, LMT/XOM/RTX lead outright); the chip cohort breaks further (MU loses $800, NVDA loses $190). The defensives lead hard; NEM/GLD get a haven bid.</div>
+  <div class="scenario up"><strong>Up branch — the fear fades fast + Iran de-escalates.</strong> Alphabet <em>raises</em> capex (the proof hyperscaler spend holds), the strikes ease, Brent falls below $76, and the chip cohort re-rates up (MU reclaims $880 then $932, NVDA reclaims $215, AVGO clears $400 — re-add). The pure-compute chips re-lead.</div>
+  <p class="sub">The tells: <strong>(1) does Alphabet hold/raise capex Wed</strong> — the first hard verdict; <strong>(2) does the Moonshot re-rating stick</strong> or fade like DeepSeek-1; <strong>(3) does Brent break $95</strong> — the full war-sleeve trigger; and <strong>(4) does MU reclaim ~$880</strong> (re-upgrade) or lose $800.</p>
+</div>
+
+<h2>Action checklist (Monday · reopen · 1 swap into the capex week)</h2>
+<div class="card">
+  <ul>
+    <li><strong>Regime:</strong> markets reopen after a second risk-off week. <strong>1 swap (AVGO → RTX) · 1 downgrade-to-exit (AVGO) · 0 upgrades.</strong> Both live threads (the Moonshot Kimi K3 de-rate — SOX −12.5% last week — and the Iran/oil premium, now escalating) get their first hard tests this week.</li>
+    <li><strong class="warn">The week's key event:</strong> <span class="warn">Alphabet capex, Wednesday 22 July</span> — the Street models a <em>raise</em> to ~$175–185B. Holds/raises → chips re-rate up; trims/hedges → energy/power/defensives lead outright.</li>
+    <li><strong class="pos">RTX (new target):</strong> the diversified war-sleeve add — the US–Iran conflict is escalating toward all-out war (9 ships hit, Hormuz transits a 3-week low); air-defense + missiles demand rises with it.</li>
+    <li><strong class="neg">AVGO (removed):</strong> failed $400, on its $370 line, a Moonshot-exposed custom-silicon name — to the queue; re-add on a fresh $400 close.</li>
+    <li><strong class="pos">LLY / CCJ / XOM / LMT (targets):</strong> the defensive + energy/war sleeve leads — LLY on raised guidance; XOM the direct oil beneficiary (Brent &gt;$85), CCJ's Q2 could restart the nuclear rally, LMT armed on the escalation.</li>
+    <li><strong>TLN / VRT (targets):</strong> the AI-power Jevons winners — cheaper inference means <em>more</em> of it runs, so power demand only rises; TLN also the rate hedge, VRT chip-agnostic (earnings 29 Jul).</li>
+    <li><strong class="warn">TSM (target):</strong> own the fear — a record Q2 and a raised capex guide sold off ~7% on sentiment; the pullback is a de-rating, not a demand roll-over. Barclays $625.</li>
+    <li><strong class="neg">MU / NVDA (holdings + targets):</strong> held, not chased — MU stays Med (lost ~$880 base, Burry short in the money; reclaim ~$880 to re-upgrade, next support ~$800); NVDA ~$202.81, below $215 into Wednesday's read-through.</li>
+    <li><strong>Stops / levels live:</strong> MU <span class="neg">lost ~$880</span> ($848.95; reclaim ~$880 to re-upgrade, next support ~$800) · NVDA <span class="neg">below $215</span> (~$202.81) · AVGO <span class="neg">removed</span> (~$370.16; re-add on a $400 close) · TSLA <span class="neg">on the $380 line</span> ($380.84; Q2 22 Jul) · SNAP $5.50 <span class="neg">below</span> (~$4.8) · SYM $46 close <span class="warn">below</span> ($41.98) · INTC $130 trim <span class="neg">below</span> (~$105–110; Q2 24 Jul) · ORCL reclaim $185 ($126.41, near 52-wk low) · IONQ <span class="neg">$34.78</span> (quantum reset, no size-up) · <strong>war sleeve LMT/XOM/RTX lead outright on Brent &gt;$95</strong> (&gt;$85, escalating) · QCOM / MRVL / NEM stay out · ASML / AMAT benched · <strong>primary tell this week: does Alphabet hold/raise capex Wed, then does MU reclaim ~$880 and does Brent break $95.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer">
+  <strong>Reminder:</strong> automated research note, not personalized financial advice. This Monday 20 July 2026 edition reopens the book after a weekend of no trading and makes one disciplined change on the reopen: Broadcom leaves the ten-name target list and Raytheon (RTX) takes its place. Broadcom closed Friday around $370.16, never re-took the $400 gate it needed to reclaim, and sits on the $370 line the book set as its conviction-loss level; as a pure custom-silicon name it is squarely exposed to the artificial-intelligence efficiency scare, so it returns to the watch queue and re-earns a slot only on a fresh $400 close. Raytheon is promoted from that queue because the Iran conflict escalated over the weekend: the United States and Iran, in the words of NPR's 18 July report, blew past red lines back toward all-out war, at least nine ships have been attacked in and around the Strait of Hormuz since 6 July, a seafarer was killed and mariners injured on two crude tankers off Oman, and Strait transits fell to a three-week low of eight vessels, while Brent crude held above $85 a barrel — a worsening, not a de-escalation, that reinforces the defense sleeve alongside Lockheed Martin, Exxon Mobil and Cameco. The larger backdrop is unchanged and still pushing the same way: on Friday 17 July China's Moonshot AI released Kimi K3, a 2.8-trillion-parameter open-weight model whose benchmarks beat every United States rival except Anthropic's Claude Fable 5 and OpenAI's GPT-5.6, undercutting the thesis that United States firms defend their lead by outspending competitors on computing power, and the pure-compute chips took it hardest — the Philadelphia Semiconductor Index fell 12.5% last week, its worst week in over fifteen months, even though Taiwan Semiconductor reported a record second quarter on 16 July (revenue of $40.2 billion, up 33.7%, net income up 77%, a 67.7% gross margin) and raised its 2026 capital-expenditure guidance to a range of $60 to $64 billion while adding $100 billion to its Arizona investment. The entire debate now reduces to one question — does hyperscaler capital spending hold, or does the fear of needing less compute start cutting real orders? — and that question gets its first hard data point on Wednesday 22 July, when Alphabet reports alongside Tesla; the Street already models Alphabet raising its 2026 capital-expenditure guidance to roughly $175 to $185 billion, so a hold or raise would corroborate Taiwan Semiconductor and the case that the Moonshot fear fades like the first DeepSeek shock (chips re-rate higher), while a trim or a hedge in the capital-spending language would validate the re-rating (energy, power and defensive names lead outright). Micron lost its roughly $880 base, closing at $848.95 with Michael Burry's disclosed short (initiated 2 July at $1,051.87) now in the money, so Micron stays at Medium conviction; the demand cycle is intact — high-bandwidth memory sold out, Taiwan Semiconductor just raised capex, analyst average price target around $1,486 — but the technical broke, and a reclaim of roughly $880 is required to re-upgrade, with next support near $800. Two data corrections carry into this edition: Tesla actually closed Friday at $380.84, down about 2.6% and on the $380 line, into its Wednesday second-quarter print (consensus revenue around $26.4 billion, earnings per share around $0.54, automotive gross margin excluding credits around 18%, with the record 480,126 deliveries already known so the print turns on margins, the $25-billion-plus capital plan, Cybercab and Optimus); and IonQ actually trades around $34.78, well below the roughly $42.86 previously carried, as the quantum-valuation reset ran deeper than reflected, with Northland's $70 Outperform standing into the 8 September investor day. It is a heavy earnings week for the book: Tesla and Alphabet on 22 July, SAP's second quarter and an EU antitrust decision colliding on 23 July (the cloud backlog and cloud gross margin the most-watched metrics), and Intel and Volkswagen on 24 July. The disciplined reopen move is to reinforce the confirmed war-and-energy trade (Raytheon in for Broadcom), keep the defensive anchor (Eli Lilly, on raised full-year guidance) and the energy and power sleeve (Cameco, Exxon Mobil, Lockheed Martin, Raytheon, Talen and Vertiv) leading, own Taiwan Semiconductor as the confirmed-demand value name to buy into the fear, and hold the pure-compute chips (Nvidia around $202.81 and below $215, and Micron) without chasing, into Wednesday's capital-spending verdict. Holdings at Friday's close: MU $848.95; NVDA about $202.81 (below $215, earnings 26 August); INTC about $105-$110 (still the laggard, Q2 24 July); ORCL $126.41 (near a fresh 52-week low, reclaim $185 to repair); TSLA $380.84 (Q2 22 July); SNAP about $4.80 (below the $5.50 stop); IONQ $34.78 (quantum reset, investor day 8 September); SYM $41.98 (holding the low $40s); SAP about $158 American depositary receipt (Q2 and an EU decision both 23 July); VWAGY about $8.8 (near a 16-year low, Q2 24 July); UKW.L about 104p (income anchor). Sizing, stops and entries illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.</section>
+
+<footer>
+  Generated automatically on 20 July 2026 from public web sources; prices are Friday 17 July close (last confirmed print) with the Monday reopen session live. This edition makes one change on the reopen: AVGO out (Med; failed $400, on its $370 conviction-loss line, Moonshot-exposed custom silicon — to the queue, re-add on a $400 close) → RTX in, the diversified war-sleeve name promoted from the queue as the Iran conflict escalated toward all-out war (9 ships hit since 6 Jul, Hormuz transits a 3-week low, Brent &gt;$85). 1 swap · 1 downgrade-to-exit · 0 upgrades. The chip complex stays priced for the Moonshot Kimi K3 efficiency scare (SOX −12.5% last week, its worst in 15 months) even after TSMC's record Q2 and raised capex; the fork is Wednesday 22 Jul, when Alphabet reports alongside Tesla and the Street already models a capex raise to ~$175–185B. Data fixes: TSLA $380.84 (on the $380 line, Q2 22 Jul), IONQ $34.78 (quantum reset deeper than carried). MU stays Med (lost ~$880 base, $848.95, Burry short in the money). Heavy earnings week: TSLA + Alphabet 22 Jul, SAP + EU decision 23 Jul, INTC + VWAGY 24 Jul, VRT 29 Jul. The defensives (LLY) and the war/energy sleeve (CCJ/XOM/LMT/RTX/TLN/VRT) lead; TSM stays High as the confirmed-demand value name; the pure-compute chips (NVDA/MU) are held, not chased. Next briefing follows the next scheduled run.
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
