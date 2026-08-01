@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Saturday, 1 August 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tablewrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  .correction { background: rgba(255,90,110,0.07); border: 1px solid rgba(255,90,110,0.28); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Saturday, 1 August 2026 — <strong>Friday broke this book's best idea and confirmed its biggest fear, in the same session.</strong> The best idea: <strong class="neg">MU fell 5.90% to $823.03</strong>, straight through the <strong>~$880 base this book named in writing as its stop one day earlier</strong>, leaving Micron ~28% below its 25 June high of $1,255 with the memory complex in a bear market. And the cause is not a tape wobble — <strong class="neg">China's CXMT has IPO'd and Apple has reportedly sought permission to buy its memory</strong>, which is a question about the moat, not the cycle. The biggest fear: <strong class="neg">Iran stopped hitting regional targets and hit the chokepoint</strong> — the IRGC says it struck and <strong>disabled two oil tankers in the southern Strait of Hormuz</strong>, claiming they moved under CENTCOM direction with US air escort. <strong class="warn">Brent is above $88 and up more than 20% for July</strong>; the <strong class="neg">10-year Treasury closed at 4.75%, the highest since January 2025</strong>. Response: <strong class="neg">MU High → Med</strong>, <strong class="neg">CCJ High → Med</strong> after a 50% EPS miss, and one swap — <strong class="neg">CEG out</strong> → <strong class="pos">XOM in</strong>, because when oil and yields are what is breaking your book, you should own some oil. Prices are Friday 31 July close.</div>
+  <div class="sub back"><a href="index.html">← All briefings</a></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Saturday 1 August 2026. Prices are <strong>Friday 31 July close</strong> unless noted. Markets are closed this weekend; the next session is Monday 3 August. Sizing, stops and entry zones illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<h2>Two things happened on Friday, and they point in opposite directions</h2>
+<div class="card lede">
+  <p>This is a weekend edition, so it is worth being blunt about what it is scoring. On Thursday this book wrote that Micron was <em>"the single best-corroborated thesis in the book."</em> On Friday that thesis lost its stop. On Tuesday this book downgraded the war hedge because <em>"the conflict it was armed for has paused."</em> On Friday that conflict reached the Strait of Hormuz. Both moves were made with the information available at the time, and both need adjusting now:</p>
+  <ul>
+    <li><strong class="neg">The MU base broke, and the reason is structural.</strong> Micron fell <strong>5.90% to $823.03</strong>. The last briefing's published stop was explicit: <em>"the reclaimed ~$880 base is now well below spot and remains the stop."</em> It is gone. The stock sits roughly <strong>28% below its 25 June 52-week high of $1,255</strong>, and the whole memory complex — SanDisk, Western Digital, Seagate, the Korean names — has been dragged into a bear market. The new fact is <strong>ChangXin Memory Technologies (CXMT)</strong>, China's state-backed DRAM maker, which has now <strong>gone public</strong>, and reports that <strong>Apple has sought permission to purchase memory from it</strong>. A qualified Chinese entrant at the largest consumer-electronics buyer on earth is a question about Micron's <em>moat</em>. That is a different and more serious category of problem than the cyclical "is the shortage ending" question the market was arguing about a week ago.</li>
+    <li><strong class="pos">But the bull case did not disappear, and it is only days old.</strong> Samsung warned of <strong>memory shortages through 2028</strong>. SK Hynix projects memory wafer demand <strong>exceeding supply by 20% through 2030</strong>. Amazon raised 2026 capex by $20B and named <strong>higher memory costs</strong> as the cause. And Micron now trades at <strong>5.74× forward earnings</strong> with 45 analysts averaging a <strong>$1,507.38</strong> target. Both stories are true at the same time. <strong>When both are true and the base has broken, the right answer is a smaller position — not a reversed one.</strong> Hence Medium, not out.</li>
+    <li><strong class="neg">Iran escalated to the chokepoint itself.</strong> The Revolutionary Guards said they <strong>struck and disabled two oil tankers in the southern Strait of Hormuz</strong> on Friday, claiming the vessels were operating under CENTCOM direction and US air escort through a corridor Iran had declared "unsafe and illegal." Iran also halted two vessels attempting to exit. This followed a drone attack on ships at a Mediterranean Egyptian port earlier in the week. Brent rose <strong>above $88</strong> and is up <strong>more than 20% for the month</strong>. Saudi Arabia has now held talks with <strong>43 countries</strong> about a maritime coalition to protect shipping.</li>
+    <li><strong class="neg">Rates are how an oil shock becomes a portfolio problem.</strong> The <strong>10-year Treasury finished Friday at 4.75%</strong> — the highest since January 2025 — after breaking above 4.7% on Thursday, driven by oil-fed inflation fear layered on top of the 9–3 FOMC hold with three dissents wanting <em>higher</em> rates. Every long-duration name in this book pays for that: the power sleeve, the renewable income holding, and the AI infrastructure complex all discount off that curve.</li>
+    <li><strong class="pos">And the tape ignored all of it.</strong> The S&P rose <strong>0.7% to 7,489.72</strong>, the Nasdaq <strong>1% to 25,373.85</strong>, and the Dow booked a <strong>fourth straight winning month</strong> — led by <strong>Amazon +15.32% to $271.58</strong> as the market decided that AWS accelerating to +37% justified the $220B capex. Of roughly 300 S&P 500 companies reported, <strong>85% have beaten</strong> and aggregate profits are tracking <strong>above 47% growth</strong>. The market is paying up for AI spending with visible revenue behind it, while simultaneously re-pricing the memory that spending consumes. Those two facts are in tension, and next week's SanDisk print is where the tension gets tested.</li>
+  </ul>
+  <p><strong>Response: 1 swap (CEG → XOM) · 2 downgrades (MU High→Med, CCJ High→Med) · 0 upgrades.</strong> Nothing earned an upgrade this week and none is invented to balance the ledger. The book keeps its funded-growth core, cuts the two names whose stated gates failed, and buys the hedge against the exact chain — oil up, yields up, long-duration re-rates — that is currently doing the damage.</p>
+</div>
+
+<section class="card correction">
+  <h3 style="margin-top:0">Scorecard: the entry rule cost the book the Microsoft trade</h3>
+  <p class="sub" style="font-size:13.5px">On 31 July this book wrote, in bold: <em>"Add zone $415–$435 — do NOT buy the gap."</em> The reasoning was sound — it had just been burned selling XOM and RTX the day after their catalyst, and refused to make the mirror-image mistake. <strong>That zone never printed.</strong> Microsoft rose another <strong>3.02% to $464.72</strong> and is now roughly 7% above the top of the zone that was published one day earlier.</p>
+  <p class="sub" style="font-size:13.5px">The zone is revised up to <strong>$440–$455</strong>. But the honest note attached to that revision matters more than the numbers: <strong>a rule that is only ever revised upward is a rule that is losing.</strong> It gets <strong>one</strong> more revision. If $440 does not print by the next run, MSFT is scored as a <em>miss</em> rather than quietly re-marked again. Discipline that never triggers is not discipline; it is a way of being right on paper while owning nothing.</p>
+</section>
+
+<h2>Where things stand (prices = Friday 31 July close)</h2>
+<div class="grid2">
+  <div class="stat"><div class="k">MU — the base broke</div><div class="v"><span class="neg">$823.03</span></div><div class="k">−5.90% · through the ~$880 stop · ~28% below the 25 Jun high of $1,255</div></div>
+  <div class="stat"><div class="k">The new bear leg</div><div class="v"><span class="neg">CXMT</span></div><div class="k">China's ChangXin Memory IPO'd · Apple reportedly sought permission to buy its memory</div></div>
+  <div class="stat"><div class="k">Strait of Hormuz</div><div class="v"><span class="neg">2 tankers hit</span></div><div class="k">IRGC says it disabled two tankers it claims were under CENTCOM direction / US air escort</div></div>
+  <div class="stat"><div class="k">Brent crude</div><div class="v"><span class="warn">$88+</span></div><div class="k">up more than <strong>20% for July</strong> · Saudi talks with 43 countries on a maritime coalition</div></div>
+  <div class="stat"><div class="k">10-year Treasury</div><div class="v"><span class="neg">4.75%</span></div><div class="k">highest since January 2025 · oil-fed inflation fear on top of a 9–3 hawkish hold</div></div>
+  <div class="stat"><div class="k">S&amp;P / Nasdaq (Fri)</div><div class="v">7,489.72 / 25,373.85</div><div class="k">+0.7% / +1.0% · Dow's fourth straight winning month · AMZN <span class="pos">+15.32%</span></div></div>
+</div>
+<p class="sub">The split is the story. <strong>Amazon +15.32%</strong> on AWS +37% is the market rewarding spending it can see revenue behind. <strong>Micron −5.90%</strong> is the market questioning who captures the value in the memory that spending consumes. <strong>Brent +20% for the month and a 4.75% ten-year</strong> is the bill for both, arriving through the discount rate. A book that owns AI infrastructure and owns no energy is short all three of those risks at once — which is what today's swap fixes.</p>
+
+<h2>Your portfolio — 11 positions, scored (prices = Friday 31 July close)</h2>
+<div class="card">
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Last (31 Jul)</th><th>Status / action</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>MU</strong><br><span class="sub">Micron</span></td>
+        <td class="num"><span class="neg">$823.03</span><br><span class="sub">−5.90%</span></td>
+        <td><span class="tag down">STOP BROKEN</span> The <strong>~$880 base is gone</strong> — the stop published one day earlier. ~28% below the 25 June high of $1,255, and the complex is in a bear market. The bear case gained a structural leg (<strong>CXMT's IPO</strong>, <strong>Apple reportedly seeking permission to buy CXMT memory</strong>, Chinese chipmaking-equipment progress, deficit-to-balance-by-late-2026 fears, leveraged-fund liquidations). The bull case is equally fresh and intact (Samsung shortage-to-2028, SK Hynix deficit-to-2030, Amazon's memory-cost capex revision, <strong>5.74× forward earnings</strong>, 45 analysts at <strong>$1,507</strong>). <strong>This is a trim-to-core decision, not a sell-everything decision. No adds. Re-entry for adds only on a close back above $880.</strong> The SanDisk print on 5 Aug is the tell.</td>
+      </tr>
+      <tr>
+        <td><strong>NVDA</strong><br><span class="sub">NVIDIA</span></td>
+        <td class="num"><span class="pos">$200.75</span><br><span class="sub">+2.93%</span></td>
+        <td><span class="tag med">HOLD</span> Reclaimed $200 <em>while memory fell</em>, which is itself informative — the market is pricing the accelerator and the memory that feeds it as separate things. Demand keeps confirming (Amazon's capex raise and chip commitments). The <strong>$250B OpenAI guarantee</strong> and <strong>~$350B chip-purchase financing</strong> reports keep the balance-sheet question live. <strong>$215 close re-arms full upside; $190 is the line below.</strong> Earnings 26 Aug.</td>
+      </tr>
+      <tr>
+        <td><strong>SAP</strong><br><span class="sub">SAP SE ADR</span></td>
+        <td class="num"><span class="pos">$183.62</span><br><span class="sub">+1.51%</span></td>
+        <td><span class="tag hold">HOLD</span> 52-wk $144.97–$299.48. Continued recovery from the ~$146 low; Q2 cloud results were read as reassuring on cloud resilience against AI-disruption fears. The analyst tape is split — <strong>Barclays cut to $242 from $255</strong>, <strong>BMO raised to $177</strong> — with 16 analysts averaging $242.92. The add-on-weakness case has largely played out.</td>
+      </tr>
+      <tr>
+        <td><strong>ORCL</strong><br><span class="sub">Oracle</span></td>
+        <td class="num"><span class="pos">$129.87</span><br><span class="sub">+1.81%</span></td>
+        <td><span class="tag trim">WEAKEST</span> 52-wk $114.50–$345.72 — roughly <strong>50% below its high</strong>. Two genuinely good datapoints: a <strong>$7B Pentagon contract</strong> and an expanded Google Cloud partnership integrating Gemini into enterprise apps. Neither fixes the core issue — $55.7B of capex funded substantially with debt against a $638B RPO converting only ~12% within twelve months. That is the unfunded-growth profile the market is punishing. <strong>No add; reclaim $185 on a close to repair.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>INTC</strong><br><span class="sub">Intel</span></td>
+        <td class="num">$90.20<br><span class="sub">−1.02%</span></td>
+        <td><span class="tag hold">HOLD</span> Held the corrected <strong>$80–85</strong> trail comfortably. Operating story still good (Q2 EPS $0.42 vs $0.21, revenue $16.13B +25%, 18A yields ~85%), but the Street sits at <strong>Hold</strong> with a $115.27 average and TTM net income is still −$11.29B. <strong>Promotion gate unchanged: a close above ~$110.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>TSLA</strong><br><span class="sub">Tesla</span></td>
+        <td class="num">$311.21<br><span class="sub">+0.76%</span></td>
+        <td><span class="tag trim">NO ADD</span> 52-wk <strong>$297.38</strong>–$498.83 — it is sitting ~4.5% above its own 52-week low. New negatives: an <strong>NHTSA investigation into suspension failures across 1.2 million vehicles</strong>, and renewed SpaceX-merger speculation Musk has publicly pushed back on. New positive: the <strong>10-millionth EV</strong> produced. At a 288 P/E with EPS −35.6% YoY, the multiple is doing all the work. <strong>$380 remains overhead resistance.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>IONQ</strong><br><span class="sub">IonQ</span></td>
+        <td class="num"><span class="pos">$36.44</span><br><span class="sub">+1.87%</span></td>
+        <td><span class="tag new">EVENT</span> IonQ <strong>closed its $1.8B acquisition of SkyWater Technology on 31 July</strong> after FTC approval, bringing domestic fab capacity in-house. TTM revenue $187.12M (+334.6%); 52-wk $25.89–$84.64. <strong>Q2 lands Wednesday 5 August</strong> and now carries integration questions on top of burn questions. <strong>No size-up into the print.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>SYM</strong><br><span class="sub">Symbotic</span></td>
+        <td class="num">$43.05<br><span class="sub">+0.26%</span></td>
+        <td><span class="tag hold">HOLD</span> Holding the low $40s above the $38.19 52-week low, still below the $46 trim line. <strong>Q3 FY2026 on Wednesday 5 August.</strong> Acquired UK software firm ARMS Innovations; 18 analysts average $66.32. <strong>Reclaim $46 on a close to re-open.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>SNAP</strong><br><span class="sub">Snap Inc</span></td>
+        <td class="num"><span class="neg">$4.69</span><br><span class="sub">unchanged</span></td>
+        <td><span class="tag down">EARNINGS MONDAY</span> Below the fired <strong>$5.50</strong> stop; 52-wk $3.81–$9.77. The tape into the print is bad: <strong>UBS, Bernstein and Mizuho all cut targets into the $5–6 range</strong>, the <strong>$2,195 Specs AR glasses</strong> were widely panned on weight and price, and the company settled social-media addiction litigation involving minors. Offsetting: it will no longer reward fully AI-generated Spotlight content, a quality signal. <strong>The stop stands; Monday 3 August is the event.</strong></td>
+      </tr>
+      <tr>
+        <td><strong>UKW.L</strong><br><span class="sub">Greencoat UK Wind</span></td>
+        <td class="num"><span class="warn">~108.6p</span><br><span class="sub">NOT VERIFIED</span></td>
+        <td><span class="tag hold">STALE</span> No reliable 31 July mark was obtainable this run; the last good print is <strong>~108.6p on 30 July</strong>. Flagged as stale rather than assumed to have held. The direction of travel is unhelpful regardless — <strong>a 10-year at 4.75% is the wrong tape for a bond-proxy renewable income fund.</strong> Reinvest the dividend; do not add.</td>
+      </tr>
+      <tr>
+        <td><strong>VWAGY</strong><br><span class="sub">Volkswagen ADR</span></td>
+        <td class="num">$8.75<br><span class="sub">−0.79%</span></td>
+        <td><span class="tag trim">VERIFIED — WORSE</span> Verified this run after being flagged stale last time, and the operating news is worse than the book carried: <strong>job-cut targets DOUBLED to 100,000 positions</strong>, <strong>China deliveries −37%</strong>, Q2 operating profit −10%, 2026 revenue growth forecast lowered. Offsetting: P/E 7.26, a <strong>4.30% dividend</strong>, battery-plant partnerships with Chinese partners. A balance-sheet position, not an operating one — and the operating trend deteriorated. <strong>No add.</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<h2>Today's 10 buy targets</h2>
+<p class="sub"><strong>1 swap</strong> (CEG → XOM) · <strong>2 downgrades</strong> (MU High→Med, CCJ High→Med) · <strong>0 upgrades</strong>. Prices are Friday 31 July close.</p>
+<div class="card">
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis</th><th class="num">Price</th><th>Conviction</th><th>Δ</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><strong>MSFT</strong><br><span class="sub">Microsoft</span></td>
+        <td><strong>Still the proof the buildout is affordable — and it walked away from the entry.</strong> Capex held flat at $175B for calendar 2026, <strong>Azure +43%</strong>, FY26 revenue $331.84B (+17.8%) and net income $133.75B (+31.3%), mcap ~$3.45T. 57 analysts average <strong>$562.31</strong>. The $415–435 zone published Friday never printed. <strong>Revised add zone $440–$455 — one revision only; if it does not print, this is scored a miss.</strong></td>
+        <td class="num">$464.72<br><span class="sub pos">+3.02%</span></td>
+        <td><span class="tag high">High</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>GEV</strong><br><span class="sub">GE Vernova</span></td>
+        <td><strong>The physical bottleneck — it took the entry zone back with interest.</strong> Up ~8% from the $914.20 carried Friday and back above the $987.60 entry; 52-wk $530.16–$1,195.94. Q2 orders +88% to $24.2B, backlog $176B, guided 2026 FCF $11.5–12.5B. 38 analysts average <strong>$1,233.10</strong> (~25% above spot). Gas turbines and grid gear remain the hard constraint on every dollar MSFT and AMZN just committed.</td>
+        <td class="num">$990.29<br><span class="sub pos">+0.85%</span></td>
+        <td><span class="tag high">High</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>TSM</strong><br><span class="sub">TSMC ADR</span></td>
+        <td><strong>The confirmed-demand value name — boringly, reliably fine.</strong> Record Q2 (rev $40.2B +33.7%, GM 67.7%), 2026 capex $60–64B plus $100B Arizona; 2025 revenue +31.6%, earnings +46.6%; mcap ~$1.95T. 19 analysts average <strong>$537.43</strong>. Note it did <em>not</em> participate in the memory unwind — the foundry and the memory cycle are being priced as separate things, which is the correct read.</td>
+        <td class="num">$404.25<br><span class="sub pos">+0.23%</span></td>
+        <td><span class="tag high">High</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>XOM</strong><br><span class="sub">ExxonMobil</span></td>
+        <td><strong>BACK IN — the hedge against the thing that is actually breaking the book.</strong> Q2 adjusted EPS <strong>missed $3.52 vs $3.76</strong> on refinery maintenance that stopped it capturing the fuel-margin windfall — but revenue <strong>$116.0B vs $97.81B expected</strong>, earnings <strong>$14.5B, a four-year high</strong>, CFO $23.6B, <strong>FCF $17.2B</strong>, <strong>$9.4B returned</strong> ($4.3B dividends + $5.1B buybacks), upstream adjusted earnings $9.2B from $6.3B, production 4.5M boe/d on <strong>record Permian output above 1.8M boe/d</strong>. Yield <strong>2.65%</strong>, beta <strong>0.16</strong>. Iran is now interdicting tankers in Hormuz. <strong>This is the position that gets paid if oil and yields keep hurting everything else.</strong></td>
+        <td class="num">$155.44<br><span class="sub neg">−0.97%</span></td>
+        <td><span class="tag high">High</span></td>
+        <td><span class="tag new">NEW</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>LMT</strong><br><span class="sub">Lockheed Martin</span></td>
+        <td><strong>The war hedge, and the war reached the chokepoint.</strong> Landmark <strong>$58.62B multiyear PAC-3 contract</strong>, expanded weapons capacity, <strong>2026 guidance raised</strong>; TTM revenue $77.01B (+7.2%), net income $6.29B (+49.5%), EPS $27.14 (+52.5%). <strong>Honest caveat:</strong> the consensus rating is <strong>Hold</strong> and the $628.21 average PT is only ~8% above spot — the Street has already re-rated it. Held at High on the escalation, not on the valuation.</td>
+        <td class="num">$582.74<br><span class="sub pos">+1.50%</span></td>
+        <td><span class="tag high">High</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><strong>LLY</strong><br><span class="sub">Eli Lilly</span></td>
+        <td><strong>The defensive anchor, and the pipeline delivered.</strong> <strong>Retatrutide Phase 3 positive</strong> — significant improvements in weight and A1C, FDA filing planned <strong>Q1 2027</strong> — plus $750M of US manufacturing inside a $55B domestic programme. TTM revenue $72.25B (+47.4%), net income $25.28B (+127.6%), mcap ~$1.02T. Same caveat as always: at ~41× trailing it is priced for perfection and sells off on small news. 28 analysts average $1,276.96.</td>
+        <td class="num">$1,148.84<br><span class="sub neg">−0.53%</span></td>
+        <td><span class="tag high">High</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><strong>MU</strong><br><span class="sub">Micron</span></td>
+        <td><strong>DOWNGRADED — the stop broke and the reason is a moat question.</strong> Through the <strong>~$880</strong> base named as the stop one day earlier; ~28% below the 25 June high of <strong>$1,255</strong>; 52-wk $103.38–$1,255.00. <strong>CXMT has IPO'd in China and Apple reportedly sought permission to buy its memory.</strong> Against that: Samsung's shortage-to-2028 warning, SK Hynix's supply-deficit-to-2030 projection, Amazon's memory-cost capex revision, and <strong>5.74× forward earnings</strong> with 45 analysts averaging <strong>$1,507.38</strong>. Both true; base broken; position smaller, not reversed. <strong>Re-upgrade on a close back above $880.</strong></td>
+        <td class="num"><span class="neg">$823.03</span><br><span class="sub neg">−5.90%</span></td>
+        <td><span class="tag med">Med</span></td>
+        <td><span class="tag down">DOWN</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>NVDA</strong><br><span class="sub">NVIDIA</span></td>
+        <td><strong>Stays Medium — closer to the gate, same overhang.</strong> Reclaimed $200; 52-wk $164.07–$236.54; mcap ~$4.86T; TTM revenue $253.49B (+70.7%), net income $159.61B (+107.9%). Amazon's capex raise is another direct demand confirmation. The <strong>$250B OpenAI guarantee</strong> and <strong>~$350B chip-purchase financing</strong> reports keep the balance-sheet question live and unpriced. <strong>$215 close re-arms; $190 is the line below.</strong> Earnings 26 Aug.</td>
+        <td class="num">$200.75<br><span class="sub pos">+2.93%</span></td>
+        <td><span class="tag med">Med</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>CCJ</strong><br><span class="sub">Cameco</span></td>
+        <td><strong>DOWNGRADED — the two-sided risk resolved to the downside.</strong> Opened <strong>+4.3% at $92.02</strong> and faded all day. <strong>EPS $0.13 vs $0.26</strong>, revenue $814M, net earnings $25M, adjusted net $77M, adjusted EBITDA $391M, cash costs <strong>$55.84/lb</strong>, produced 3.9M lb against 7.1M lb sold. Offsetting and real: realized price <strong>$93.13/lb</strong>, 2026 revenue guidance <strong>raised</strong> to $3,320–3,570M, and <strong>Westinghouse confidentially filed for an IPO</strong> — an un-modelled value-crystallisation catalyst. <strong>Re-upgrade on a close above ~$100 or on Westinghouse IPO terms.</strong></td>
+        <td class="num">$86.38<br><span class="sub neg">−2.10%</span></td>
+        <td><span class="tag med">Med</span></td>
+        <td><span class="tag down">DOWN</span></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><strong>VRT</strong><br><span class="sub">Vertiv</span></td>
+        <td><strong>Held at Medium — the bounce started, the gate has not been cleared.</strong> <strong>+6.18%</strong> from the ~$227 at which it was downgraded Friday; 52-wk $118.70–$379.94. Q2 revenue missed $3.27B vs $3.38B on what management called temporary project timing and supply-chain issues; adjusted EPS beat $1.52 vs $1.43; margin +410bps; FY guidance raised; $15B backlog. The Street trimmed but stayed positive — <strong>Goldman $301, RBC $337, Citi $358</strong>, 28 analysts averaging $339.35. <strong>Re-upgrade unchanged: a close above ~$270.</strong></td>
+        <td class="num">$241.57<br><span class="sub pos">+6.18%</span></td>
+        <td><span class="tag med">Med</span></td>
+        <td><span class="tag">KEEP</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<h2>Why CEG goes out and XOM comes in</h2>
+<div class="card">
+  <p><strong class="neg">CEG out at $262.75 (−0.31%).</strong> Constellation was downgraded to Medium on 31 July because it had been re-added on an explicit "calmer oil tape" condition that lasted 48 hours, and because a capital-intensive utility is the wrong thing to own with hikes newly priced. Friday delivered a second and worse leg of exactly that risk: <strong>the 10-year at 4.75%, the highest since January 2025.</strong> CEG is the most rate-exposed name left in the book, it sits at Medium conviction, and its 52-week range ($228.63–$412.70) shows how far it has already de-rated from the AI-power euphoria. <strong>The uncomfortable part, stated plainly: it is being removed three sessions before its own Q2 on 6 August.</strong> That is churn, and the previous briefing said the print would be its chance to earn the conviction back. The re-add gate is therefore specific rather than vague — <strong>a clean Q2 on 6 August AND a close above $285.</strong> If the print is good, it comes straight back.</p>
+  <p><strong class="pos">XOM in at $155.44.</strong> This corrects an error this book has already named: on 28 July it sold XOM and RTX on a "catalyst spent" reading of an Iran pause that broke the next day. Friday's print was genuinely mixed — <strong>adjusted EPS missed at $3.52 against $3.76</strong> because refinery maintenance prevented it from capturing the stronger fuel margins the oil spike created. Everything underneath is a fortress: <strong>revenue $116.0B against $97.81B expected</strong>, <strong>earnings $14.5B — a four-year high</strong>, cash flow from operations $23.6B, <strong>free cash flow $17.2B</strong>, <strong>$9.4B returned to shareholders</strong>, upstream adjusted earnings up to $9.2B from $6.3B, and production of 4.5M boe/d on <strong>record Permian output above 1.8M boe/d</strong>.</p>
+  <p>The portfolio argument matters more than the earnings one. This book is long AI infrastructure (GEV, VRT, TSM, MSFT), long semis (MU, NVDA, plus INTC and MU in the holdings), and long two rate-sensitive income positions in the portfolio itself. <strong>Every one of those is hurt by the same chain: Hormuz tightens → oil rises → inflation expectations rise → yields rise → long-duration equity de-rates.</strong> With a <strong>0.16 beta</strong> and a <strong>2.65% yield</strong>, XOM is the one position that gets paid when that chain runs. It is not a bet that oil goes up; it is insurance priced at a four-year earnings high.</p>
+  <p class="sub"><strong>On overriding this book's own gate:</strong> the 31 July briefing set "a Brent close above $95 re-arms the full war sleeve." Brent is above $88, not $95, so <strong>the gate has not been met — and it is being overridden anyway.</strong> The reason is that the $95 level was always a <em>proxy</em> for escalation, and the escalation arrived directly, in a more serious form than a price print: physical interdiction of tankers inside the Strait of Hormuz is a larger event than five dollars of Brent. Naming the override is the point; a gate that gets quietly ignored is worse than one that is publicly revised.</p>
+</div>
+
+<h2>Macro state (Friday 31 July close)</h2>
+<div class="card">
+  <ul>
+    <li><strong class="neg">Iran moved to the chokepoint.</strong> The IRGC said it <strong>struck and disabled two oil tankers in the southern Strait of Hormuz</strong>, claiming they were under CENTCOM direction with US air escort in a corridor it had declared "unsafe and illegal"; Iran also stopped two vessels seeking to exit. This followed a drone attack on ships at a Mediterranean Egyptian port earlier in the week. <strong>Brent above $88, up more than 20% for July.</strong> Saudi Arabia has held talks with <strong>43 countries</strong> on a maritime coalition.</li>
+    <li><strong class="neg">Rates are the transmission mechanism.</strong> The <strong>10-year closed at 4.75%</strong>, the highest since January 2025 (through 4.7% Thursday, the highest since 15 Jan 2025), driven by oil-fed inflation fear on top of the 9–3 FOMC hold with three dissents wanting hikes. This is what turns an oil shock from an energy-sector story into a portfolio problem.</li>
+    <li><strong class="neg">Memory entered a bear market.</strong> MU <strong>−5.90% to $823.03</strong>, ~28% below its 25 June high, with SanDisk and the Korean names the epicentre. Causes: <strong>CXMT's IPO</strong>, <strong>Apple reportedly seeking permission to buy CXMT memory</strong>, Chinese chipmaking-equipment progress, deficit-to-balance-by-late-2026 fears, and leveraged liquidations. SK Hynix +28% and Samsung +25% in Seoul on Friday was a bounce inside a downtrend, not a reversal.</li>
+    <li><strong class="pos">The tape stayed strong anyway.</strong> S&amp;P <strong>+0.7% to 7,489.72</strong>, Nasdaq <strong>+1% to 25,373.85</strong>, Dow a <strong>fourth straight winning month</strong>, led by <strong>AMZN +15.32% to $271.58</strong>. Of ~300 S&amp;P 500 companies reported, <strong>85% have beaten</strong> and aggregate profits are tracking <strong>above 47% growth</strong>.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree (into the first week of August)</h2>
+<div class="card">
+  <div class="scenario base">
+    <strong>Base case — the split market persists: funded growth leads, memory chops, energy hedges.</strong> The self-funded spenders and the physical bottleneck (MSFT, GEV, TSM, VRT) keep working; memory trades sideways-to-lower while the market digests CXMT and waits for SanDisk on 5 August; Hormuz stays hot without closing, Brent holds $85–95, and XOM and LMT pay for the volatility. Yields stay elevated but do not break 5%. <strong>This is what the book is positioned for.</strong>
+  </div>
+  <div class="scenario down">
+    <strong>Down branch — Hormuz actually closes.</strong> A genuine interdiction of transit takes Brent through $100 and the 10-year through 5%, and every long-duration name re-rates regardless of order books. GEV, VRT, NVDA and MU fall together; only XOM, LMT and LLY work. <em>Tells:</em> more tankers hit, insurers withdrawing Gulf cover, a Brent close above $95 heading to $100. <em>Response:</em> raise cash, cut the infrastructure sleeve to GEV alone, let the energy/defence pair run.
+  </div>
+  <div class="scenario up">
+    <strong>Up branch — the memory panic is the buying opportunity and the strait reopens.</strong> SanDisk prints strong NAND pricing on 5 August, the CXMT threat proves to be years from qualification at scale, and MU snaps back through $880 toward the $1,507 average target; simultaneously the Saudi-led coalition secures transit, Brent falls under $80, yields fall, and the whole AI complex re-rates. <strong>In that world today's MU downgrade is the wrong call and gets reversed fast — which is exactly why it is a downgrade and not a removal.</strong>
+  </div>
+  <p><strong>The tells, in order:</strong> (1) <strong>SanDisk's print, Wednesday 5 Aug</strong> — the first pure-play NAND read since the crash; (2) does another tanker get hit, or does the 43-country coalition actually deploy; (3) does the 10-year break 5% or fall back under 4.5%; (4) <strong>July payrolls, Friday 7 Aug</strong> — a hot number with $88 oil is the worst combination available; (5) does MU close back above $880.</p>
+</div>
+
+<h2>The week ahead — 3–7 August 2026</h2>
+<div class="card">
+  <ul>
+    <li><strong>Monday 3 Aug — SNAP Q2 (a holding) and PLTR Q2.</strong> Snap goes into the print below its stop, with three brokers freshly cutting to $5–6 and its flagship hardware launch panned. Palantir is expected at ~<strong>$1.81B revenue, +81%</strong>, and is the market's purest sentiment gauge for AI software multiples.</li>
+    <li><strong>Tuesday 4 Aug — AMD Q2.</strong> Consensus <strong>$1.61 EPS</strong> (from $0.48) on <strong>$11.3B revenue, +47%</strong>, with <strong>MI450 and Helios</strong> production commentary the thing that matters. A strong AMD is second-source confirmation of accelerator demand that reads across to NVDA and TSM.</li>
+    <li><strong class="warn">Wednesday 5 Aug — the big one for this book: SanDisk Q2, plus IONQ Q2 and SYM Q3.</strong> SanDisk is the <strong>first pure-play NAND print after the memory crash</strong> and the cleanest available read on whether pricing is genuinely rolling over or whether this is positioning. <strong>IONQ</strong> reports with a freshly closed $1.8B SkyWater deal to explain. <strong>SYM</strong> reports Q3 FY26 while sitting near its 52-week low.</li>
+    <li><strong>Thursday 6 Aug — CEG Q2.</strong> Removed from the list today; this print, plus a close above $285, is the stated route back in.</li>
+    <li><strong>Friday 7 Aug — July nonfarm payrolls, 8:30am ET.</strong> With Brent above $88 and the 10-year at 4.75%, a hot print is the single most dangerous macro outcome available to this book — it would harden the two-hikes-in-2026 pricing into something closer to consensus.</li>
+  </ul>
+</div>
+
+<h2>Stops and add zones live going into Monday</h2>
+<div class="card">
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Name</th><th>Level</th><th>State (31 Jul)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MU</strong></td><td class="num">~$880 base</td><td><span class="neg">BROKEN</span> — $823.03. No adds. Re-upgrade only on a close back above $880.</td></tr>
+      <tr><td><strong>MSFT</strong></td><td class="num">$440–$455 add zone</td><td>$464.72 — <strong>final revision</strong>; unfilled next run = scored a miss.</td></tr>
+      <tr><td><strong>GEV</strong></td><td class="num">trail ~$900</td><td>$990.29 — entry zone reclaimed and exceeded.</td></tr>
+      <tr><td><strong>XOM</strong></td><td class="num">Brent close &lt;$80</td><td>New position at $155.44; the thesis breaks if Brent closes back under $80.</td></tr>
+      <tr><td><strong>NVDA</strong></td><td class="num">$215 close / $190 break</td><td>$200.75 — reclaimed $200, gate not yet cleared.</td></tr>
+      <tr><td><strong>CCJ</strong></td><td class="num">~$100 close</td><td>$86.38 — or Westinghouse IPO terms, whichever comes first.</td></tr>
+      <tr><td><strong>VRT</strong></td><td class="num">~$270 close</td><td>$241.57 — bounced 6.18%, gate not cleared.</td></tr>
+      <tr><td><strong>CEG</strong></td><td class="num">$285 close + clean Q2</td><td>$262.75 — out of the list; both conditions required to re-add.</td></tr>
+      <tr><td><strong>TSLA</strong></td><td class="num">$380</td><td><span class="neg">LOST</span> — $311.21; 52-week low $297.38 is 4.5% away.</td></tr>
+      <tr><td><strong>ORCL</strong></td><td class="num">$185 close</td><td>$129.87 — reclaim to repair.</td></tr>
+      <tr><td><strong>INTC</strong></td><td class="num">trail $80–$85 / gate ~$110</td><td>$90.20 — trail held comfortably.</td></tr>
+      <tr><td><strong>SNAP</strong></td><td class="num">$5.50</td><td><span class="neg">BELOW</span> — $4.69; earnings Monday 3 Aug.</td></tr>
+      <tr><td><strong>SYM</strong></td><td class="num">$46 close</td><td>$43.05 — below; Q3 on 5 Aug.</td></tr>
+      <tr><td><strong>IONQ</strong></td><td class="num">no size-up</td><td>$36.44 — Q2 on 5 Aug, now with SkyWater integration risk.</td></tr>
+      <tr><td><strong>Brent</strong></td><td class="num">$80 floor</td><td><span class="warn">$88+</span> — a close below $80 takes the war sleeve off. +20% for July.</td></tr>
+      <tr><td><strong>10-year</strong></td><td class="num">5.00%</td><td><span class="neg">4.75%</span> — a break through 5% forces a cut to the whole long-duration sleeve.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="sub"><strong>Add zones live:</strong> XOM <strong>$150–$158</strong> (in the zone) · MSFT <strong>$440–$455</strong> (final revision) · GEV <strong>$930–$975</strong> · TSM <strong>$385–$410</strong> (in the zone) · LMT <strong>$565–$590</strong> (in the zone, but the Street is at Hold) · LLY <strong>$1,100–$1,175</strong> (in the zone) · NVDA <strong>$190s or a $215 close</strong> · CCJ <strong>$80–$88</strong> (in the zone but downgraded — size small) · VRT <strong>$230–$250</strong> pending the $270 reclaim · <strong class="neg">MU — no add zone while below $880. Deliberately blank. Core only.</strong></p>
+</div>
+
+<h2>Watch-list — swap queue</h2>
+<div class="card">
+  <ul>
+    <li><strong>CEG (swapped OUT 1 Aug)</strong> — $262.75; re-add on <strong>a clean Q2 on 6 Aug AND a close above $285</strong>.</li>
+    <li><strong>AMZN</strong> — +15.32% to $271.58 on AWS +37% and the $220B capex raise, now within 2.5% of the 52-week high $278.56. Right thesis, wrong entry, and this book has just been burned in both directions on gap-chasing. Wait for a base near <strong>$250</strong>.</li>
+    <li><strong>SNDK / WDC / STX / SKHY</strong> — the epicentre of the memory bear market, not a dip. <strong>SanDisk's 5 Aug print is the gate for the whole complex, MU included.</strong></li>
+    <li><strong>RTX</strong> — the escalation it was sold ahead of has now reached Hormuz; re-add on a genuine pullback.</li>
+    <li><strong>COP / EOG</strong> — higher-beta E&amp;P; XOM's balance sheet is the better expression while yields are rising.</li>
+    <li><strong>TLN</strong> — re-entry only above <strong>$365</strong>.</li>
+    <li><strong>INTC (own)</strong> — promotion on a close above <strong>~$110</strong> ($90.20 now).</li>
+    <li><strong>AVGO</strong> — the <strong>$400</strong> gate stands.</li>
+    <li><strong>PLTR / AMD</strong> — both report 3–4 Aug; no position before the prints.</li>
+    <li><strong>OKLO / SMR / UEC</strong> — leveraged power; wrong side of a 4.75% ten-year.</li>
+    <li><strong>META / GOOGL / AAPL</strong> — the punished spenders. Note that Apple's reported CXMT interest is a <em>bearish MU</em> datapoint, not a bullish AAPL one.</li>
+    <li><strong>MRVL (&gt;$300) / QCOM (&gt;$205)</strong> — gates unchanged.</li>
+    <li><strong>RGTI / QBTS</strong> — quantum peers; IONQ carries the sleeve.</li>
+    <li><strong>NEM / GLD</strong> — the haven tail, live with tankers being struck.</li>
+    <li><strong>SAP / VWAGY (own)</strong> — holdings, not adds.</li>
+  </ul>
+</div>
+
+<h2>Review rules for the next run</h2>
+<div class="card">
+  <p class="sub">For each name: <strong>Keep</strong> if thesis intact, no negative print, no broken level. <strong>Downgrade</strong> if the thesis weakened, the name got materially extended or newly rate-exposed, an analyst cut or overhang appeared, a conditional gate failed, or a base broke. <strong>Replace</strong> if the thesis broke, a better watch-list setup confirmed, or the target/catalyst is spent.</p>
+  <ul>
+    <li><strong>MU</strong> → close back above <strong>$880</strong> (re-upgrade) or a new leg down? What did <strong>SanDisk</strong> say about NAND pricing? Any concrete evidence on <strong>CXMT qualification timelines</strong>?</li>
+    <li><strong>MSFT</strong> → did <strong>$440–455</strong> print? This is the last revision; if not, score it a miss and stop re-marking.</li>
+    <li><strong>XOM</strong> → did the Hormuz premium hold, and did XOM outperform on the week? Further tanker strikes?</li>
+    <li><strong>CCJ</strong> → any <strong>Westinghouse IPO terms</strong>? A close above <strong>$100</strong>?</li>
+    <li><strong>CEG</strong> → what did the 6 Aug Q2 show, and did it close above <strong>$285</strong>?</li>
+    <li><strong>SNAP</strong> → Monday's print: does it hold $4, and does anything justify a position below a fired stop?</li>
+    <li><strong>IONQ / SYM</strong> → both print 5 Aug; IONQ now carries SkyWater integration risk on top of burn.</li>
+    <li><strong>NVDA</strong> → <strong>$215 close</strong> or <strong>$190 break</strong>? Any clarification on the OpenAI financing structures?</li>
+    <li><strong>VRT</strong> → did it clear <strong>$270</strong> on a close after the +6.18% bounce?</li>
+    <li><strong>Rates / macro</strong> → 10-year through 5% or back under 4.5%? What did <strong>July payrolls</strong> print on 7 Aug?</li>
+  </ul>
+</div>
+
+<footer>
+  Generated automatically on Saturday, 1 August 2026 from public web sources. Prices are Friday 31 July close. Previous edition: <a href="2026-07-31.html">Friday, 31 July 2026</a> · <a href="index.html">All briefings</a>
+</footer>
+
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
