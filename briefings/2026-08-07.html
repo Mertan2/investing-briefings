@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Investing Briefing — Friday, 7 August 2026</title>
+<style>
+  :root {
+    --bg: #0e1014;
+    --panel: #161a22;
+    --panel-2: #1d2330;
+    --line: #262d3b;
+    --text: #e7ecf3;
+    --muted: #9aa4b2;
+    --accent: #4ea1ff;
+    --pos: #2ecc71;
+    --neg: #ff5a6e;
+    --warn: #f5b14b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-2: #f0f2f6;
+      --line: #dde1e8;
+      --text: #1a1d23;
+      --muted: #5b6573;
+      --accent: #0969da;
+      --pos: #1a7f37;
+      --neg: #cf222e;
+      --warn: #9a6700;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 22px 90px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 34px 0 12px; font-size: 19px; letter-spacing: -0.01em; }
+  h3 { margin: 20px 0 8px; font-size: 15px; color: var(--text); }
+  a { color: var(--accent); }
+  .back { font-size: 13px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .lede { font-size: 15px; }
+  .lede strong { color: var(--text); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 680px) { .grid2, .grid3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 460px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+  .stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  .stat .k { color: var(--muted); font-size: 12px; }
+  .stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .stat .d { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tablewrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); white-space: nowrap; }
+  .tag.high { color: var(--pos); border-color: rgba(46,204,113,0.35); }
+  .tag.med { color: var(--accent); border-color: rgba(78,161,255,0.35); }
+  .tag.trim { color: var(--neg); border-color: rgba(255,90,110,0.35); }
+  .tag.hold { color: var(--warn); border-color: rgba(245,177,75,0.35); }
+  .tag.new { color: var(--warn); border-color: rgba(245,177,75,0.45); font-weight: 600; }
+  .tag.up { color: var(--pos); border-color: rgba(46,204,113,0.45); font-weight: 600; }
+  .tag.down { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .tag.miss { color: var(--neg); border-color: rgba(255,90,110,0.45); font-weight: 600; }
+  .tag.fired { color: var(--pos); border-color: rgba(46,204,113,0.55); font-weight: 600; }
+  .tag.out { color: var(--neg); border-color: rgba(255,90,110,0.55); font-weight: 600; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .warn { color: var(--warn); }
+  ul { margin: 6px 0 6px; padding-left: 20px; }
+  li { margin: 5px 0; }
+  .scenario { border-left: 3px solid var(--line); padding-left: 12px; margin: 10px 0; }
+  .scenario.up { border-color: var(--pos); }
+  .scenario.base { border-color: var(--accent); }
+  .scenario.down { border-color: var(--neg); }
+  .scenario.odd { border-color: var(--warn); }
+  .disclaimer { background: rgba(245,177,75,0.08); border: 1px solid rgba(245,177,75,0.25); border-radius: 10px; padding: 12px 14px; color: var(--muted); font-size: 12.5px; }
+  .correction { background: rgba(255,90,110,0.07); border: 1px solid rgba(255,90,110,0.28); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  .legend { background: rgba(78,161,255,0.07); border: 1px solid rgba(78,161,255,0.28); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  .legend ul { margin: 8px 0 0; }
+  .legend li { font-size: 13.5px; color: var(--muted); }
+  .legend li strong { color: var(--text); }
+  .good { background: rgba(46,204,113,0.07); border: 1px solid rgba(46,204,113,0.28); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  /* gate proximity meter */
+  .gates { margin-top: 8px; }
+  .gate { display: grid; grid-template-columns: 74px 1fr 150px; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .gate:last-child { border-bottom: none; }
+  .gate .tk { font-weight: 600; font-size: 13.5px; }
+  .gate .bar { position: relative; height: 10px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .gate .fill { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, rgba(78,161,255,0.35), rgba(78,161,255,0.85)); }
+  .gate .fill.close { background: linear-gradient(90deg, rgba(245,177,75,0.35), rgba(245,177,75,0.95)); }
+  .gate .fill.done { background: linear-gradient(90deg, rgba(46,204,113,0.4), rgba(46,204,113,0.95)); }
+  .gate .fill.failed { background: linear-gradient(90deg, rgba(255,90,110,0.35), rgba(255,90,110,0.9)); }
+  .gate .lbl { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  @media (max-width: 560px) { .gate { grid-template-columns: 62px 1fr; } .gate .lbl { grid-column: 1 / -1; text-align: left; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Daily Investing Briefing</h1>
+  <div class="sub">Friday, 7 August 2026 — <strong>The shock arrived on the date this book named, at the threshold it named, in the variable it named — and with the opposite sign.</strong> Yesterday's "down" branch was <em>payrolls hot, 10-year through 4.85%</em>. This morning July payrolls printed <strong class="neg">−23,000 — an outright job loss</strong> against +80–86k expected, June was revised down from +57,000 to <strong>+20,000</strong>, and the <strong class="pos">10-year fell to 4.621%</strong>. Second: <strong class="neg">the XOM removal executed yesterday was wrong inside one session.</strong> Brent rose <strong>3.8% to $82.49</strong> on Iran's restrictive Hormuz draft and <strong class="neg">XOM closed $154.84, +2.12%</strong>, against the $151.63 exit. Third: <strong class="neg">SYM collapsed 14.88% to $39.60</strong>, breaking the $46 line by $6.40 and landing <strong>$1.41 above its 52-week low</strong> — which is exactly why refusing to buy it the night before its print was right. Against those, <strong class="pos">MU held $880 by $1.47</strong>, the narrowest hold this book has recorded. <strong>Response: 1 swap · 0 upgrades · 0 downgrades.</strong> <strong class="warn">MSFT is removed — a target you have ruled out ever buying is not a target — and NEM enters, restoring the non-AI count to four and lifting the composition block.</strong></div>
+</header>
+
+<section class="card disclaimer">
+  <strong>Research, not financial advice.</strong> Generated automatically from public web sources on Friday 7 August 2026, <strong>pre-open at 08:35 ET</strong> — after the 08:30 payroll release and before the 09:30 bell. Every price is the <strong>Thursday 6 August close</strong> unless explicitly flagged Friday pre-market. <strong>Today's SNAP weekly close has not happened yet and is the only live decision in the book.</strong> Sizing, stops and entry zones illustrate a process, not instructions. Do your own diligence and consult a licensed advisor.
+</section>
+
+<section class="card legend">
+  <h3 style="margin-top:0">How to read this page — the UI, stated explicitly</h3>
+  <p class="sub" style="font-size:13.5px;margin:6px 0">Nothing here asks you to infer meaning from a colour or guess what a section is for. Every control, tag and section is defined below. If you read only one thing before the tables, read this.</p>
+  <ul>
+    <li><strong>The two buttons at the bottom of your screen.</strong> <strong>🔊 Listen</strong> reads this briefing aloud, highlighting each paragraph as it goes — tap it again to pause, and tap any paragraph to jump the reader straight to it. <strong>🇹🇷 Türkçe</strong> translates the whole page into Turkish in place, via Google Translate; tap it again to return to English. Both buttons stay stuck to the bottom of the screen while you scroll, both work on mobile, and both are on <em>every</em> briefing in this archive — not just this one.</li>
+    <li><strong>Conviction pills.</strong> <span class="tag high">High</span> = full intended position size, thesis confirmed by something outside the price. <span class="tag med">Med</span> = thesis alive but a stated gate has failed or has not yet fired, so the position is held at reduced size and is <em>not</em> added to. A row with no change-tag changed nothing today.</li>
+    <li><strong>Change tags.</strong> <span class="tag up">UPGRADE</span> <span class="tag down">DOWNGRADE</span> <span class="tag new">NEW</span> <span class="tag miss">MISS</span> <span class="tag fired">GATE FIRED</span> <span class="tag out">REMOVED</span> mark what changed <em>since the previous briefing</em>. Today there are exactly two: <span class="tag out">REMOVED</span> on MSFT and <span class="tag new">NEW</span> on NEM. No upgrades and no downgrades — on a day this eventful, that is a deliberate statement that <strong>a violent tape is not itself new information about a thesis.</strong></li>
+    <li><strong>Gates — the core mechanism of this whole book.</strong> Every position carries one numeric condition that must print <em>on a closing basis</em> before its status can move. A gate is not an opinion; it fires or it does not, and it is never moved because the price came close to it. The <a href="#gates"><strong>gate proximity meter</strong></a> below shows how each one resolved. <strong>Read it first — it is the entire scorecard in a dozen bars.</strong> Today two bars are red for the worst reason available: a gate that fired correctly and was <em>wrong</em>.</li>
+    <li><strong>Pre-commitments.</strong> The <a href="#precommit"><strong>pre-commitment section</strong></a> is where rules get written <em>before</em> the events that test them, so they cannot be quietly rewritten afterwards. Yesterday it removed XOM on one Brent settle and the settle reversed the next day. <strong>Today that section retires single-settle commodity gates entirely — and forbids buying XOM back at a higher price.</strong> Both halves matter: fixing the design is legitimate, un-doing the trade to escape the embarrassment is not.</li>
+    <li><strong>The two sections that are about you personally, and exactly how they differ.</strong> <a href="#portfolio"><strong>Your portfolio</strong></a> scores the <strong>11 positions you actually hold</strong> — read fresh from <code>portfolio/my-portofilo.md</code> at the start of every run — and gives exactly one action per line: <em>hold · no-add · trim-to-core · stop-broken · not-verified</em>. Nothing there is a suggestion to buy something new. <a href="#watchlist"><strong>The watch-list</strong></a> is the opposite: it is the <strong>queue of names you do <em>not</em> hold and this book has <em>not</em> bought</strong>, and each row carries one specific price or event — the <em>gate</em> — that would promote it into the ten targets. <strong>Read the watch-list right-hand column as a shopping list of conditions, not prices you should pay today.</strong> Nothing enters the ten targets without first appearing on the watch-list with a gate attached.</li>
+    <li><strong>The ten targets</strong> are research ideas, deliberately capped at ten so that adding one <em>requires</em> removing one. They are <strong>not</strong> your holdings. They overlap only where a holding is also the best current expression of a live thesis — today MU and NVDA, both of which you own.</li>
+    <li><strong>Colour.</strong> <span class="pos">Green</span> = confirmed positive. <span class="neg">Red</span> = confirmed negative. <span class="warn">Amber</span> = unresolved, pending, or a figure this book could not verify. Amber never means "mildly bad"; it means "not settled." <strong>NEM's price on this page is amber-quality</strong> and the page says so in three separate places rather than one.</li>
+  </ul>
+</section>
+
+<h2>The one-paragraph version</h2>
+<div class="card lede">
+  <p>Yesterday's edition ended with a scenario tree whose "down" branch read: <em>payrolls run hot and the 10-year takes out 4.85%.</em> The date was right, the variable was right, the threshold was right, and <strong class="neg">the sign was wrong</strong>. July payrolls printed <strong class="neg">−23,000</strong> — not a slowdown, an outright decline — against +80,000 from Bloomberg, +83,000 from Dow Jones, +85,000 consensus and +97,500 from FactSet. <strong>June was revised down from +57,000 to +20,000.</strong> The unemployment rate <em>fell</em> to 4.1%, which in a month of negative payrolls tells you about participation rather than employment. The 10-year went to <strong class="pos">4.621%</strong> and the 2-year to <strong class="pos">4.176%</strong>, both moving away from the pain threshold rather than toward it, and <strong class="pos">December gold futures ran to $4,411.70 by 08:45 ET</strong> — the best week for the metal since November. <strong>This book had no branch at all for a negative payroll print, and that is the first thing worth saying today.</strong> The second is worse and it is about execution rather than forecasting: <strong class="neg">the XOM removal, published in advance and executed exactly as written, was wrong within one session.</strong> Brent rose 3.8% to settle $82.49 on Iran's Fars-published Hormuz draft — a plan that would bar US and Israeli vessels and charge "hostile" countries for transit — and <strong class="neg">XOM closed $154.84, +2.12%</strong>, $3.21 above the $151.63 exit. The rule fired correctly and the rule was badly designed, and those are different failures with different fixes. The third event was <strong class="neg">SYM, down 14.88% to $39.60</strong>, straight through the $46 line without testing it, now $1.41 above its 52-week low — and the only reason that is not a loss in this book is the sentence written the night before: <em>wait for the print.</em> Against all of that, <strong class="pos">MU closed $881.47 and held the $880 line by $1.47</strong>, so the do-nothing-for-a-week rule did not trigger; a $1.47 margin is arithmetic, not vindication, and the same gate is live again tonight. <strong>Net: one swap. MSFT leaves — three sessions after this book correctly refused to re-quote its add zone upward, the stock is 10% above the top of that dead zone and there is no price at which the book has said it would buy it, which makes it a stock being watched rather than a target. NEM enters as the non-AI seat, at Med, with a purchase ceiling written before the first share could be bought.</strong></p>
+</div>
+
+<h2 id="gates">Gate proximity — the scorecard in bars</h2>
+<div class="card">
+  <p class="sub" style="font-size:13.5px;margin:0 0 4px">Each bar shows how far <strong>Thursday's close</strong> travelled toward the gate that would change that position's status. <span class="pos">Green</span> = fired or held. <span class="warn">Amber</span> = within ~5% and unresolved. <span class="neg">Red</span> = a condition tested and resolved against the position. <strong>Read the two red bars at the top together: one is a gate that fired and was wrong, the other is a line that was not tested but skipped.</strong></p>
+  <div class="gates">
+    <div class="gate"><div class="tk">Brent/XOM</div><div class="bar"><div class="fill failed" style="width:100%"></div></div><div class="lbl">$82.49 settle <span class="neg">REVERSED — sold at $151.63, closed $154.84</span></div></div>
+    <div class="gate"><div class="tk">SYM</div><div class="bar"><div class="fill failed" style="width:100%"></div></div><div class="lbl">$39.60 → $46 · <span class="neg">−$6.40 BROKEN, −14.88%</span></div></div>
+    <div class="gate"><div class="tk">Payrolls</div><div class="bar"><div class="fill failed" style="width:100%"></div></div><div class="lbl">−23,000 vs +85k · <span class="neg">wrong sign</span></div></div>
+    <div class="gate"><div class="tk">CEG</div><div class="bar"><div class="fill failed" style="width:99.4%"></div></div><div class="lbl">rev $7.5B vs $7.94B · <span class="neg">both legs failed</span></div></div>
+    <div class="gate"><div class="tk">MU</div><div class="bar"><div class="fill done" style="width:100%"></div></div><div class="lbl">$881.47 → hold $880 · <span class="pos">+$1.47 held</span></div></div>
+    <div class="gate"><div class="tk">LMT</div><div class="bar"><div class="fill" style="width:96.1%"></div></div><div class="lbl">$582.85 → $560 exit · $22.85 above, moved away</div></div>
+    <div class="gate"><div class="tk">SNAP</div><div class="bar"><div class="fill close" style="width:94.9%"></div></div><div class="lbl">$5.22 → $5.50 wkly · <span class="warn">resolves at tonight's close</span></div></div>
+    <div class="gate"><div class="tk">DAL</div><div class="bar"><div class="fill close" style="width:97.8%"></div></div><div class="lbl">$91.98 → $86–90 zone · <span class="warn">4 sessions to 13 Aug</span></div></div>
+    <div class="gate"><div class="tk">AMZN</div><div class="bar"><div class="fill close" style="width:97.3%"></div></div><div class="lbl">$272.26 → $265 · <span class="warn">−$7.26, closest ever</span></div></div>
+    <div class="gate"><div class="tk">NEM</div><div class="bar"><div class="fill close" style="width:93.4%"></div></div><div class="lbl">$112.40 → $98–105 zone · <span class="warn">ceiling $108, 5 sessions</span></div></div>
+    <div class="gate"><div class="tk">CAT</div><div class="bar"><div class="fill" style="width:93.4%"></div></div><div class="lbl">$856.96 → $800 · −$56.96 to fall, in from $71.08</div></div>
+    <div class="gate"><div class="tk">CCJ</div><div class="bar"><div class="fill" style="width:93.6%"></div></div><div class="lbl">$93.62 → $100 · −$6.38, <span class="warn">deadline 21 Aug</span></div></div>
+    <div class="gate"><div class="tk">AMD</div><div class="bar"><div class="fill" style="width:92.0%"></div></div><div class="lbl">$489.28 → $450 · −$39.28, moved away</div></div>
+    <div class="gate"><div class="tk">SNDK</div><div class="bar"><div class="fill" style="width:91.4%"></div></div><div class="lbl">$1,258.58 → $1,150 · −$108.58, unblocked</div></div>
+    <div class="gate"><div class="tk">INTC</div><div class="bar"><div class="fill" style="width:90.7%"></div></div><div class="lbl">$99.81 → $110 · −$10.19, gave back $100</div></div>
+    <div class="gate"><div class="tk">ORCL</div><div class="bar"><div class="fill" style="width:77.6%"></div></div><div class="lbl">$143.47 → $185 repair · −$41.53</div></div>
+  </div>
+  <p class="sub" style="font-size:13px;margin:10px 0 0"><strong>The top bar is the one to stare at, and it is drawn differently from every red bar this book has printed before.</strong> Every previous red bar meant <em>a thesis was tested and lost</em>. This one means <em>a rule was tested, executed perfectly, and the design of the rule was the thing that was wrong.</em> A single settle in the most headline-driven commodity on earth was never enough evidence to move a position, and the fix — <a href="#precommit">two consecutive settles</a> — is written below rather than argued about.</p>
+</div>
+
+<h2>What actually happened</h2>
+<div class="card lede">
+  <p><strong>08:30 ET: the labour market shed jobs.</strong> <strong class="neg">−23,000</strong> against expectations that ranged from +80,000 to +97,500, with <strong>June revised down from +57,000 to +20,000</strong>. Wednesday's ADP print had signalled it — 44,000 private jobs against 95,000 the prior month — and the book noted that number without weighting it. The unemployment rate <em>fell</em> to <strong>4.1%</strong> from 4.2%, which is the same participation-driven arithmetic that flattered June, and is why the headline rate is the wrong number to read this cycle. Treasuries rallied hard: <strong class="pos">10-year 4.621%</strong> (−4bp), <strong class="pos">2-year 4.176%</strong> (−6bp+). Equity futures, which had been up 0.2–0.6% before the release, extended into the print as hike risk came off.</p>
+  <p><strong>The Fed pricing is genuinely unsettled, and this book is not going to pretend otherwise.</strong> One feed reads a <strong>55% probability of a September hike, down from 63% a week ago</strong>. Another reads <strong>~93% probability of no hike at all</strong>. Those are not reconcilable, and averaging them would manufacture a precision that does not exist. What is not in dispute: hike odds fell materially within the hour, and "jumbo cut" commentary appeared in the same window. <strong>The September meeting is 15–16 September.</strong> CPI and the July FOMC minutes land next week.</p>
+  <p><strong>Thursday's tape, before any of that:</strong> <strong class="neg">Dow 53,870, −479 points (−0.9%)</strong>, off Wednesday's record; <strong class="neg">S&amp;P 500 −0.2%</strong>; <strong class="neg">Nasdaq −0.1%</strong>. Eight of eleven S&amp;P sectors closed lower and the worst three were <strong>industrials, real estate and materials</strong> — a rate-and-oil day, not an AI day. Yields rose Thursday and fell Friday, which is the whole story of the last 24 hours in one line.</p>
+  <p><strong>And oil went the other way for a reason that matters.</strong> Iran's state news agency Fars published an initial draft plan for the Strait of Hormuz that would <strong>bar US and Israeli vessels entirely</strong> and require countries Tehran deems hostile to <strong>pay compensation before transit</strong>. The US position is unrestricted passage. Brent settled <strong class="neg">$82.49, +3.8%</strong> on Thursday and is <strong>$81.67 (−0.99%)</strong> as this is written. <strong>The distance between "Iran and Oman have agreed a route" and "the strait reopens" turns out to be the entire text of the agreement</strong> — which is precisely the risk this book's own Brent rule was too fast to price.</p>
+</div>
+
+<h2>The 10 targets</h2>
+<div class="card">
+  <p class="sub" style="font-size:13px;margin:0 0 8px">Prices are the <strong>Thursday 6 August close</strong> unless the row says otherwise. <strong>NEM is the single exception and it is flagged in the row, in the corrections and in the pre-commitments</strong> — its mark is a Friday pre-market quote, not a close.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Ticker</th><th>Thesis</th><th class="num">Price</th><th class="num">Day</th><th class="num">PT</th><th>Conviction</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>GEV</strong></td><td><strong>The physical bottleneck, and it fell with the industrials it belongs to.</strong> Back to a four-figure handle on the day industrials were the worst S&amp;P sector. 52-wk $530.16–$1,195.94, mcap $266.41B, P/E 28.63. Q2 orders +88% to $24.2B, backlog $176B, 2026 FCF guidance $11.5–12.5B raised on Power and Electrification demand. Friday pre-market $1,019.99 (+1.97%). Trail unchanged at <strong>~$930</strong></td><td class="num">$1,000.30</td><td class="num neg">−1.73%</td><td class="num">$1,231.48</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>2</td><td><strong>TSM</strong></td><td><strong>Up on a down tape, which is what a bottleneck monopoly does.</strong> Rose while the Dow fell 479 points. Forward P/E <strong>19.04</strong> — the cheapest multiple in the High sleeve. Mcap $1.90T, 52-wk $223.70–$479.00. 3nm capacity expansion running <em>ahead of schedule</em>; N2 capacity being raised on major-client demand. Friday pre-market $423.50</td><td class="num">$418.20</td><td class="num pos">+1.01%</td><td class="num">$540.20</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>3</td><td><strong>LLY</strong></td><td><strong>Rose again, and it is now holding this book's non-AI floor.</strong> Second consecutive gain after the 48% revenue quarter. Mcap $1.06T, P/E 40.01, forward <strong>29.16</strong>. FY guidance $85–87B. Consensus raised again to $1,297.31 — <strong>still the thinnest upside in the book at +8.8%</strong>, which is the honest objection to holding it. The oral-obesity miss ($98M vs ~$103M) stands unrevised</td><td class="num">$1,191.94</td><td class="num pos">+1.89%</td><td class="num">$1,297.31</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>4</td><td><strong>MU</strong></td><td><strong>Held $880 by $1.47 — the narrowest hold this book has recorded.</strong> Fell in a broad semiconductor sell-off. 52-wk $106.75–$1,255.00, mcap ~$1.00T, forward P/E ~6.2. SanDisk's raised guide ($10.3–10.8B on bit growth <em>and</em> higher pricing) is intact; SanDisk itself fell another <strong>6.81%</strong>. The do-nothing-for-a-week rule required a close <em>below</em> $880 and <strong>did not trigger — by $1.47.</strong> It is live again tonight. Add zone <strong>$820–870</strong> unchanged, not revised up</td><td class="num">$881.47</td><td class="num neg">−1.31%</td><td class="num">$1,507.79</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>5</td><td><strong>NVDA</strong></td><td><strong>Flat on a −0.9% Dow, with the new line nowhere near.</strong> $28.99 of room above the $190 line. 52-wk $164.07–$236.54, mcap $5.30T, P/E 33.54. SpaceX's exclusive-NVIDIA build stands; Zayo and Firmus added as scaling partners. Coverage widened to <strong>61 analysts</strong> (from 51) at an unchanged $302.83. Friday pre-market $221.18 (+1.00%). <strong>Earnings 26 August</strong></td><td class="num">$218.99</td><td class="num">−0.10%</td><td class="num">$302.83</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>6</td><td><strong>VRT</strong></td><td><strong>Held $250 comfortably in its first session as a High.</strong> $25.17 above the line set on promotion. Mcap $105.94B, forward P/E 35.29, 52-wk $118.70–$379.94. Q2 unchanged: revenue $3.27B vs ~$3.38B on project timing, adjusted EPS $1.52 beat, FY guidance raised, $15B backlog. Friday pre-market $284.31 (+3.32%)</td><td class="num">$275.17</td><td class="num neg">−1.00%</td><td class="num">$338.15</td><td><span class="tag high">High</span></td><td>KEEP</td></tr>
+      <tr><td>7</td><td><strong>LMT</strong></td><td><strong>The hedge worked, in the week the book nearly stopped needing it.</strong> Rose on the day Iran published a draft barring US and Israeli vessels from Hormuz. <strong>$22.85 above</strong> the $560 exit — it moved <em>away</em> from the exit, not toward it. Mcap $134.52B, P/E 21.48, yield 2.37%; TTM net income +49.5%, EPS $27.14 (+52.5%). $58.62B PAC-3 award intact; negotiating scandium and germanium supply to cut China dependence. Exit gate unchanged: a close below $560 or a <em>signed</em> agreement — <strong>a published draft is not a signature</strong></td><td class="num">$582.85</td><td class="num pos">+0.91%</td><td class="num">$629.53</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+      <tr><td>8</td><td><strong>CCJ</strong></td><td><strong>The Street trimmed again, and the IPO gate is still dormant.</strong> $6.38 below the ~$100 gate — <em>further away</em> than yesterday. Mcap $40.77B, P/E 164.12, 52-wk $68.96–$135.24. Westinghouse has <strong>confidentially submitted a draft registration statement</strong> — still no share count and no price range. Consensus <strong>$128.80 across 24 analysts, down from $129.69</strong>; yesterday's "first uptick after three trims" lasted exactly one session. <strong class="warn">Now on a stated deadline — see pre-commitment 4</strong></td><td class="num">$93.62</td><td class="num neg">−0.69%</td><td class="num">$128.80</td><td><span class="tag med">Med</span></td><td>KEEP — on notice</td></tr>
+      <tr><td>9</td><td><strong>DAL</strong></td><td><strong>Its second day, and the variable it was bought for went the wrong way.</strong> The entire reason DAL replaced XOM is that crude fell; <strong class="neg">crude rose 3.8% the next session</strong>. Forward P/E <strong>10.94</strong>, mcap $60.16B, yield 0.94%, 52-wk $52.88–$95.68. June quarter revenue $19.76B (+19%), a record, delivered with adjusted fuel +77%; FY guidance $6.50–7.50 EPS and $3–4B FCF. <strong>Add zone $86–90 has not printed; four sessions remain to the 13 August deadline</strong></td><td class="num">$91.98</td><td class="num neg">−1.25%</td><td class="num">$105.52</td><td><span class="tag med">Med</span></td><td>KEEP</td></tr>
+      <tr><td>10</td><td><strong>NEM</strong></td><td><strong>NEW — the non-AI seat, filled by the one asset that responded to today's actual shock rather than yesterday's expected one.</strong> Mcap $118.44B, P/E 13.34, <strong>forward P/E 10.46</strong>, <strong>beta 0.50</strong>, yield 0.92%, 52-wk $67.11–$134.88. Record Q2 <strong>FCF $2.2B</strong>, adjusted EBITDA $3.8B, FY guidance reaffirmed at <strong>5.3Moz</strong> <em>through</em> a 13% gold-price correction in Q2. December gold futures <strong>$4,411.70 at 08:45 ET</strong>, spot +2.6%, best week since November. <strong class="warn">Objection stated up front: this is being added after a 7% single-day move, on a Friday pre-market mark rather than a close. Pre-commitment 1 exists because of both facts</strong></td><td class="num warn">$112.40 <span class="tag">Fri pre-mkt</span></td><td class="num pos">+6.97%</td><td class="num">$129.27</td><td><span class="tag med">Med</span></td><td><span class="tag new">NEW</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="card correction">
+  <h3 style="margin-top:0"><span class="tag out">REMOVED</span> &nbsp;MSFT at $499.86 (+2.54%) — and not because anything is wrong with it</h3>
+  <p style="margin:8px 0 0">Azure +43%. FY26 revenue $331.84B (+17.8%). Net income $133.75B (+31.3%). Mcap $3.71T, P/E 27.85, forward 25.41, <strong>56 analysts at Strong Buy $563.16</strong>. The business is not the problem.</p>
+  <p style="margin:8px 0 0"><strong>It is removed because this book scored its $440–455 add zone a MISS on 4 August and then correctly refused to re-quote it upward.</strong> Three sessions later the stock is $499.86 — <strong>10% above the top of a zone the book has permanently closed</strong> — which means there is now no price at which this book has stated it would buy Microsoft. A target you have ruled out ever buying is not a target; it is a stock you are watching go up while calling it research. That is the exact failure mode pre-commitment 1 was written to name, and the consistent thing to do is remove it rather than carry it as a decoration.</p>
+  <p style="margin:8px 0 0">It leaves at <strong>+12.66% consensus upside</strong>, the second-thinnest in the book, and it does <strong>not</strong> go to the watch-list with a chased gate. It returns only on <strong>a close below $450</strong> — below the top of the dead zone, not above it.</p>
+</div>
+
+<h2>Scoring the previous edition — what fired, what failed</h2>
+<div class="card">
+  <ul>
+    <li><strong class="neg">WRONG WITHIN 24 HOURS — the XOM removal.</strong> Executed at <strong>$151.63</strong> on Brent's single $78.44 settle. The next session Brent rose <strong>3.8% to $82.49</strong> on Iran's restrictive Hormuz draft and <strong>XOM closed $154.84, +2.12%</strong>. Cost: <strong>$3.21 per share in one session</strong>, plus a 2.66% dividend the book no longer receives. The rule was written, published in advance, and executed exactly as specified — <strong>and it was still wrong, because a one-settle gate on the most headline-driven commodity on earth is a badly designed gate.</strong> The design flaw is the finding; the loss is just the invoice.</li>
+    <li><strong class="pos">RIGHT, BY $1.47 — MU held $880.</strong> $881.47. The reversal did not fire and the do-nothing-for-a-week rule did not trigger. <strong>This deserves no credit beyond the arithmetic:</strong> a $1.47 margin is indistinguishable from luck, and the same gate is live again tonight.</li>
+    <li><strong class="pos">RIGHT, AND IT SAVED REAL MONEY — deferring SYM.</strong> The book refused to re-open SYM the night before its print, then wrote "a Thursday close below $46 cancels the re-open." Thursday's close: <strong class="neg">$39.60, −14.88%</strong>, $6.40 below the line, $1.41 above the 52-week low. <strong>A buy on Tuesday's $46 clearance would be down ~14% in two sessions.</strong> The rule that produced this was <em>wait for the print</em> — the single most valuable line in this book this week.</li>
+    <li><strong class="warn">PARTLY WRONG — the SYM line's magnitude.</strong> The book treated $46 as a threshold that would be <em>tested</em>. It was not tested; it was skipped. Nothing in the previous edition anticipated a 15% single-day move on a beat-and-raise, and the guidance language — timing shifts in key rollouts — was readable before the close. <strong>Naming a level is not the same as sizing the risk around it.</strong></li>
+    <li><strong class="neg">FIRED AGAINST — the CEG gate, on both legs.</strong> Adjusted operating EPS <strong>$2.55 vs $2.37</strong> (a 7.6% beat) on revenue <strong>$7.5B vs $7.94B — a miss</strong>, so the print was not clean; and the stock touched $283.43 intraday and gave it back <strong>without closing above $285</strong>. Both legs failed. It was blocked from promotion anyway, so the gate cost nothing — which is the only reason a two-leg gate is worth writing.</li>
+    <li><strong class="neg">DIRECTIONALLY WRONG — the macro scenario tree.</strong> The "down" branch was <em>payrolls hot, 10-year through 4.85%</em>. Actual: <strong>payrolls −23,000, 10-year down to 4.621%</strong>. Right variable, right date, right threshold, <strong>wrong sign</strong> — and <strong>no branch at all for a negative print</strong>.</li>
+    <li><strong class="pos">HELD — LMT.</strong> No signature, no $560 close; it rose 0.91% on the day Iran's draft hardened. The hedge behaved as designed, in the direction it was designed for.</li>
+  </ul>
+</div>
+
+<h2 id="precommit">Pre-commitments — written before the data</h2>
+
+<div class="card">
+  <h3 style="margin-top:0">1. NEM — the entry rule is written at entry, because the name is being added after a 7% day</h3>
+  <p style="margin:6px 0">This is the exact circumstance in which this book has historically bought badly. The rule is fixed now and is not revised:</p>
+  <ul>
+    <li><strong>No purchase above $108.00.</strong> Full stop. Today's $112.40 pre-market print <em>is not a buyable price</em>.</li>
+    <li><strong>Add zone $98.00–$105.00, on a pullback only.</strong> Not revised upward under any circumstance.</li>
+    <li><strong>If the zone has not printed by the close of Friday 14 August (five sessions), NEM is scored a MISS and removed</strong> — not re-quoted, not widened. Same terms DAL received; a gold miner does not get a longer rope than an airline.</li>
+    <li><strong>Thesis-break exit regardless of equity price: December gold futures settling below $4,000.</strong> The entire reason this name entered is that gold responded to a labour shock. If gold gives that back, the reason is gone and it should cost the position rather than a paragraph of explanation.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">2. Single-settle commodity gates are retired — and XOM is not bought back</h3>
+  <p style="margin:6px 0">The XOM rule fired correctly and was wrong in one session. <strong>The design failed, not the execution</strong>, and those need different responses.</p>
+  <ul>
+    <li><strong>Any commodity-conditioned entry or removal from today onward requires two consecutive settles through the line</strong>, or one settle plus a confirming close in the equity. <strong>Retroactive to every open rule in this book</strong>, including DAL's.</li>
+    <li><strong class="neg">XOM is not re-added at $154.84.</strong> Repurchasing a name one day later at a price 2.12% <em>above</em> your own exit, because the rule embarrassed you, is precisely the behaviour pre-commitment 1 forbids. It goes to the watch-list with a gate: <strong>a close below $148.00</strong> — below the exit, not above it.</li>
+    <li><strong>DAL's Brent thesis-break is restated under the new standard: two consecutive Brent settles above $88.00</strong>, not one. Brent is $81.67 as this is written.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">3. MU — the $880 gate survived by $1.47 and is live again tonight</h3>
+  <ul>
+    <li><strong>Below $880 on a close with SanDisk's raised guide intact = do nothing for one week.</strong> Unchanged, written 2 August, and <em>not</em> reinterpreted on the day it nearly applied.</li>
+    <li><strong>$820–870 add zone stays live on a pullback and is not revised upward.</strong> Trim-to-core below $800 on a close.</li>
+    <li><strong>A $1.47 margin is not a signal.</strong> Nothing about yesterday's hold justifies adding, and nothing about it justifies trimming.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">4. CCJ is on a deadline, stated before it is convenient</h3>
+  <p style="margin:6px 0">CCJ has been Med for many consecutive runs, has never closed above $100, and its promotion gate depends on IPO terms that do not exist. Yesterday's consensus uptick has already reversed ($129.69 → $128.80).</p>
+  <ul>
+    <li><strong>CCJ is scored a MISS and removed at the close of Friday 21 August</strong> unless it closes above <strong>$100.00</strong> or Westinghouse publishes <strong>actual terms</strong> — a share count and a price range, not a confidential draft.</li>
+    <li>Written now so that the removal, if it comes, is not a reaction to a bad week.</li>
+  </ul>
+</div>
+
+<div class="card good">
+  <h3 style="margin-top:0">5. The composition block lifts today, and the count is stated so it cannot be fudged</h3>
+  <p style="margin:6px 0">Non-AI-linked positions after today: <strong>LLY, LMT, DAL, NEM = 4.</strong> The threshold set in pre-commitment 4 of 6 August is met.</p>
+  <ul>
+    <li><strong>SNDK and CEG are unblocked from the next run</strong> and may be promoted on their own gates. Both gates remain unmet: SNDK needs a close below $1,150 (it is $1,258.58); CEG needs a clean print — which it did not deliver — and a $285 close.</li>
+    <li><strong class="warn">CCJ is classified AI-linked</strong> (nuclear fuel demand from data centres is the whole thesis) and does <em>not</em> count toward the four. <strong>CAT's classification is also weakened</strong> — current coverage attributes its record quarter partly to AI data-centre buildout. Both stated explicitly so the count cannot be flattered later.</li>
+  </ul>
+</div>
+
+<h2 id="portfolio">Your portfolio — the 11 positions you actually hold</h2>
+<div class="card">
+  <p class="sub" style="font-size:13px;margin:0 0 8px">Read fresh from <code>portfolio/my-portofilo.md</code> at the start of this run. One action per line. <strong>Prices are Thursday 6 August closes.</strong></p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Ticker</th><th class="num">Price</th><th class="num">Day</th><th>Action</th><th>Why, and what would change it</th></tr></thead>
+    <tbody>
+      <tr><td><strong>SYM</strong></td><td class="num">$39.60</td><td class="num neg">−14.88%</td><td><span class="tag trim">stop-broken</span></td><td><strong class="neg">The line broke by $6.40 and there is no re-entry rule until a print or a weekly close.</strong> 52-wk <strong>$38.19</strong>–$87.88 — the low is <strong>$1.41 away</strong>. Mcap $23.87B, 18 analysts Buy $64.32. The quarter itself was fine: revenue $720.84M, adjusted EBITDA ~$95M, GAAP profitable, software +57%, operations services +49%, backlog $22.5B, Q4 guided $760–780M. <strong>What was sold was deployment timing, read as execution risk.</strong> Friday pre-market $40.91 (+3.31%). <strong>New rule: no add, no average-down, until either a weekly close back above $46 or the Q4 print. A 52-week low is not a buy signal by itself.</strong></td></tr>
+      <tr><td><strong>SNAP</strong></td><td class="num">$5.22</td><td class="num neg">−2.06%</td><td><span class="tag hold">decides tonight</span></td><td><strong class="warn">Today is the weekly close and the rule resolves at 16:00 ET.</strong> 52-wk $3.81–<strong>$9.28</strong> (high revised down from $9.55), mcap $8.83B, 43 analysts Hold $7.28. Friday pre-market $5.28. The rule is unchanged and is <em>not</em> revised on the day it decides: <strong>a Friday close below $5.50 and the exit stands.</strong> It is $0.28 below with one session to run.</td></tr>
+      <tr><td><strong>MU</strong></td><td class="num">$881.47</td><td class="num neg">−1.31%</td><td><span class="tag hold">hold</span></td><td>Held $880 by <strong>$1.47</strong>. See pre-commitment 3. The gate is live again tonight and the response to a break is one week of nothing, not a trade.</td></tr>
+      <tr><td><strong>NVDA</strong></td><td class="num">$218.99</td><td class="num">−0.10%</td><td><span class="tag hold">hold</span></td><td>$28.99 above the $190 line. Mcap $5.30T. Coverage widened to 61 analysts at $302.83. Friday pre-market $221.18. <strong>Earnings 26 August.</strong></td></tr>
+      <tr><td><strong>INTC</strong></td><td class="num">$99.81</td><td class="num neg">−1.24%</td><td><span class="tag hold">no-add</span></td><td><strong>The $100 handle was given back.</strong> 52-wk $19.60–$142.35, mcap $503.44B, TTM net income <strong class="neg">−$11.29B</strong>. 48 analysts at <strong>Hold</strong>, average $115.17. Friday pre-market $102.37 (+2.56%) on renewed reports of a potential US government stake. <strong>Gate unchanged at a $110 close; trail $80–85. A Hold consensus and negative TTM earnings do not get promoted on a government-stake headline.</strong></td></tr>
+      <tr><td><strong>ORCL</strong></td><td class="num">$143.47</td><td class="num neg">−0.64%</td><td><span class="tag hold">no-add</span></td><td>Repair line stays <strong>$185</strong>. New datapoint: the 52-week <strong>low is $114.50</strong> — the stock is 25% above its own low and 58% below its $345.72 high. Forward P/E 17.82, mcap $413.26B, 44 analysts $247.17. The ~$260B of uncommenced lease commitments against $37.89B recognised is unchanged and remains why this is a repair, not a position. Friday pre-market $146.15. <strong>Earnings 8 September.</strong></td></tr>
+      <tr><td><strong>IONQ</strong></td><td class="num">$39.72</td><td class="num neg">−0.53%</td><td><span class="tag hold">hold, no size-up</span></td><td>52-wk <strong>$25.89–$84.64</strong> (both ends revised), mcap $14.83B, beta 3.30, 13 analysts Strong Buy $67.68. FY guidance $280–290M after the 287% quarter (organic +132%); SkyWater closed; $28M DARPA atomic-clock extension; new NRO agreements for radar and national-security work. <strong>Next quarter is the first full one with SkyWater consolidated — foundry utilisation and burn, not headline revenue.</strong> Investor day 8 September.</td></tr>
+      <tr><td><strong>SAP</strong></td><td class="num">$199.46</td><td class="num pos">+1.08%</td><td><span class="tag hold">hold, no add</span></td><td><strong class="pos">It rose on a day the Dow fell 479 points, for the second session running.</strong> P/E 25.53, mcap $227.41B, 52-wk $144.97–$299.48, 16 analysts Buy $242.92. Accelerating current cloud backlog remains the direct answer to the AI-disrupts-software narrative that took 40% off this stock earlier in the year. Friday pre-market $203.21. <strong>This is the quiet diversification in the portfolio and it is doing its job.</strong></td></tr>
+      <tr><td><strong>TSLA</strong></td><td class="num">$319.53</td><td class="num neg">−0.63%</td><td><span class="tag hold">no-add</span></td><td><strong>The 52-week low is now 6.9% away.</strong> Mcap $1.26T, P/E <strong>295.99</strong>, forward 165.30, 52-wk $297.38–$498.83, EPS $1.08 (−35.6%). New: a <strong>$16.8B "Terafab" semiconductor joint venture with SpaceX in Texas</strong>, FSD expansion in Europe, increased SpaceX Megapack purchases for AI data centres. 47 analysts Buy $397.87. <strong>None of that changes a 296× multiple on falling earnings.</strong></td></tr>
+      <tr><td><strong>VWAGY</strong></td><td class="num">$8.74</td><td class="num neg">−0.57%</td><td><span class="tag hold">no-add</span></td><td>Balance-sheet position only. P/E 7.33, yield <strong>4.03%</strong>, 52-wk $8.07–$12.83 — <strong>8.3% above the low</strong>. Mcap $43.92B, PT $11.09. New: <strong>Porsche SE (53%+ holder) has publicly urged action on competitiveness</strong> after investment impairments; Audi restructuring and battery-plant partnership talks continue. Net income −35.9%.</td></tr>
+      <tr><td><strong>UKW.L</strong></td><td class="num">113.80p</td><td class="num neg">−1.04%</td><td><span class="tag hold">hold</span></td><td>Reinvest the dividend, do not add. Day's range 112.50–115.70p, 52-wk <strong>92.20p–118.70p</strong>, mcap <strong>£2.45B</strong>, yield <strong>9.25%</strong>, consensus Strong Buy 133p. H1 2026 cash generation <strong>+36% to £222M</strong> on 4.9% above-budget output and higher power prices. <strong>Ex-dividend 13 August — six sessions away.</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="sub" style="font-size:13px;margin:12px 0 0"><strong>Portfolio-level read:</strong> the split was clean and it was not about AI. <strong class="neg">SYM −14.88%</strong> and SNAP −2.06% against <strong class="pos">SAP +1.08%</strong>, with the semiconductor complex down modestly and NVDA flat. The three worst S&amp;P sectors were <strong>industrials, real estate and materials</strong> — SYM is an industrial. <strong>Today's payroll print inverts the setup: a labour market that shed jobs is good for the rate-sensitive half of this portfolio and bad for the cyclical half — and this portfolio's cyclicals (SYM, VWAGY, TSLA, DAL) are precisely the names already at or near 52-week lows.</strong> Nothing requires action this morning except tonight's SNAP close.</p>
+</div>
+
+<h2 id="watchlist">Watch-list — the queue, with gates</h2>
+<div class="card">
+  <p class="sub" style="font-size:13px;margin:0 0 8px"><strong>These are names you do NOT own and this book has NOT bought.</strong> The right-hand column is the specific condition that would promote each into the ten targets — read it as a list of conditions, not prices to pay today. <strong>No row is blocked any more</strong> (pre-commitment 5), and three non-AI names are added, which was the explicit assignment written into yesterday's edition.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Ticker</th><th>Why it's queued</th><th>Gate to promote</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MSFT</strong></td><td><span class="tag out">REMOVED</span> from the ten today at $499.86 (+2.54%). Azure +43%, FY26 revenue $331.84B (+17.8%), net income $133.75B (+31.3%), mcap $3.71T, P/E 27.85, forward 25.41, 56 analysts Strong Buy $563.16. <strong>Nothing is wrong with the business</strong></td><td><strong>No gate, deliberately.</strong> The add zone was scored a MISS and this book will not re-quote a zone upward. Returns only on <strong>a close below $450</strong> — below the top of the dead zone, not above it</td></tr>
+      <tr><td><strong>XOM</strong></td><td>Sold yesterday at $151.63; closed <strong class="neg">$154.84 (+2.12%)</strong> the same session Brent rose 3.8%. P/E 19.96, <strong>forward P/E 12.82</strong>, yield 2.66%, mcap $636.69B, 52-wk $105.53–$176.41, 25 analysts Buy $167.73. Record Guyana and Permian production; robust refining margins</td><td><strong>A close below $148.00</strong> — <em>below</em> the exit price. Buying it back higher, one day later, is forbidden by pre-commitment 2</td></tr>
+      <tr><td><strong>UNH</strong> <span class="tag new">NEW</span></td><td><strong>Non-AI, defensive, and the largest healthcare name available at a discount to its own history.</strong> $410.41 (+1.59%, Friday), mcap $372.71B, P/E 26.01, <strong>forward P/E 18.98</strong>, yield 2.27%, 52-wk <strong>$239.50–$461.62</strong>. 2025 revenue $447.57B (+11.8%) on depressed earnings; multiple targets raised after Q2. 27 analysts Buy $475.23 (+15.8%)</td><td><strong>A close below $390</strong> with the raised targets intact — $20.41 away. Non-AI by business model; noted honestly that management describes AI running through claims and prior-authorisation workflows, which is <em>operational</em> AI, not AI capex</td></tr>
+      <tr><td><strong>DHI</strong> <span class="tag new">NEW</span></td><td><strong>The purest non-AI rate play available, and the objection is on the label.</strong> $148.75 (+1.88%, Friday), mcap $41.61B, P/E 14.18, forward 13.31, yield 1.21%, 52-wk <strong>$131.75–$184.55</strong>. Q3 EPS $3.20 beat $2.99 — <strong class="neg">but FY26 revenue guidance was cut to $32.5–33B on sluggish buyer demand.</strong> Consensus <strong>Hold, $162.92</strong> (+9.5%); Goldman $190 Buy against Wells Fargo $155 Equal Weight</td><td><strong>A close above $155 AND the 10-year below 4.40%.</strong> Two legs, because a homebuilder that just cut guidance needs the rate move to be real rather than a one-print reflex. <strong>Neither leg is met</strong></td></tr>
+      <tr><td><strong>CAT</strong></td><td>$856.96 (<strong class="neg">−1.62%</strong>), mcap $393.92B, P/E 36.93, forward 29.83, 52-wk $405.46–$1,073.46, 28 analysts Buy $972.95. Record $20.5B quarter (+24%), backlog $72B. <strong class="warn">Correction: coverage now attributes the demand partly to AI data-centre buildout</strong>, which weakens its classification as clean non-AI diversification</td><td><strong>A close below $800</strong> with backlog intact — <strong>$56.96 away</strong>, in from $71.08. Closest it has been</td></tr>
+      <tr><td><strong>AMZN</strong></td><td>$272.26 (−0.14%), 52-wk $196.00–$287.20, P/E 21.89, mcap $2.94T, <strong>61 analysts $325.81</strong>. New: paid robotaxi service launched in Las Vegas; Amazon Pharmacy weight-loss drugs at $50/month for Medicare beneficiaries</td><td><strong>A close below $265</strong> with the thesis intact — <strong class="warn">$7.26 away, the closest this gate has ever been.</strong> No longer blocked</td></tr>
+      <tr><td><strong>SNDK</strong></td><td>$1,258.58 (<strong class="neg">−6.81%</strong>), a second consecutive heavy decline after the strongest print of the week. Forward P/E <strong>5.92</strong>, mcap $187.53B, PT $2,116.64. Q1 FY27 guided $10.3–10.8B on bit growth <em>and</em> higher pricing; NAND TAM &gt;$300B (2026) → ~$500B (2027). Friday pre-market $1,317.65 (+4.69%)</td><td><strong>A close below $1,150</strong> — <strong>$108.58 away</strong>, in from $200.50. <strong class="pos">Unblocked from the next run.</strong> The 52-week range spans $40.53–$2,354.39, which is a warning about position size, not an opportunity</td></tr>
+      <tr><td><strong>CEG</strong></td><td><strong class="neg">Reported: the gate failed on both legs.</strong> Adjusted operating EPS <strong>$2.55 vs $2.37</strong> (beat) on revenue <strong>$7.5B vs $7.94B (miss)</strong>; FY guidance raised to <strong>$11.50–12.50</strong>; ~920 MW of new long-term nuclear PPAs; a stated path to 20% earnings growth through 2029. Opened $277.92, touched $283.43, gave it back</td><td><strong>Unchanged and unmet: a clean print AND a close above $285.</strong> The revenue miss means the first leg has now been tested and failed; the gate resets only on the next quarter</td></tr>
+      <tr><td><strong>AMD</strong></td><td>$489.28 (<strong class="pos">+1.50%</strong>), recovering from the beat-and-fall. Forward P/E 44.06, mcap $798.74B, 51 analysts Strong Buy $608.23. Acquiring <strong>Taalas</strong>, an AI-inference-chip startup. 52-wk range restated as $149.22–$584.73</td><td><strong>A close below $450</strong> — <strong>$39.28 away and moving away.</strong> A 44× forward multiple remains a crowding problem, not a valuation opportunity</td></tr>
+      <tr><td><strong>SPCX</strong></td><td>Revenue $7.8B (+92%), adjusted EBITDA $3.5B (+191%), Starlink 12M subscribers. Against it: <strong>capex $18.4B in one quarter</strong>, an AI division losing $1.26B, and a ~912M-share lockup with no published expiry. New: the <strong>$16.8B Terafab JV with Tesla</strong> and increased Megapack purchases</td><td><strong>No gate on the equity.</strong> Tracked because its capex line is the cleanest external read-through to GEV and VRT — and now to TSLA, which you own</td></tr>
+      <tr><td><strong>PLTR</strong></td><td>Revenue +93% to $1.94B, US commercial +149%, 62% adjusted operating margin</td><td><strong>No gate.</strong> Valuation is the whole objection</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<h2>Macro state</h2>
+<div class="card">
+  <div class="grid3">
+    <div class="stat"><div class="k">July payrolls</div><div class="v neg">−23,000</div><div class="d">vs +80k to +97.5k expected</div></div>
+    <div class="stat"><div class="k">June, revised</div><div class="v neg">+20,000</div><div class="d">from +57,000</div></div>
+    <div class="stat"><div class="k">Unemployment</div><div class="v">4.1%</div><div class="d">from 4.2% — participation</div></div>
+    <div class="stat"><div class="k">10-year</div><div class="v pos">4.621%</div><div class="d">−4bp · pain line was 4.85%</div></div>
+    <div class="stat"><div class="k">2-year</div><div class="v pos">4.176%</div><div class="d">−6bp+</div></div>
+    <div class="stat"><div class="k">Gold, Dec futures</div><div class="v pos">$4,411.70</div><div class="d">08:45 ET · best week since Nov</div></div>
+    <div class="stat"><div class="k">Brent</div><div class="v warn">$81.67</div><div class="d">after settling $82.49, +3.8%</div></div>
+    <div class="stat"><div class="k">Dow, Thu close</div><div class="v neg">53,870</div><div class="d">−479 (−0.9%), off record</div></div>
+    <div class="stat"><div class="k">S&amp;P / Nasdaq, Thu</div><div class="v neg">−0.2% / −0.1%</div><div class="d">8 of 11 sectors lower</div></div>
+  </div>
+  <ul style="margin-top:14px">
+    <li><strong class="neg">The labour market shed jobs.</strong> ADP had signalled it on Wednesday — 44,000 private against 95,000 prior — and this book recorded that number without weighting it. <strong>The unemployment rate fell in the month payrolls went negative</strong>, which is the same participation arithmetic that flattered June, and is why the headline rate is the wrong number to read this cycle.</li>
+    <li><strong class="warn">Fed pricing is genuinely unsettled and the feeds disagree.</strong> One reads a <strong>55% probability of a September hike, down from 63%</strong>; another reads <strong>~93% probability of no hike</strong>. Those are not reconcilable and <strong>this book does not average them.</strong> What is not in dispute: hike odds fell materially within the hour and "jumbo cut" commentary appeared in the same window. The meeting is <strong>15–16 September</strong>.</li>
+    <li><strong class="warn">Hormuz went backwards, and the text is the reason.</strong> Iran's state agency Fars published an initial draft that would <strong>bar US and Israeli vessels</strong> and require countries Tehran deems hostile to <strong>pay compensation before transit</strong>. The US wants unrestricted passage. Talks are <strong>stalled, not concluded</strong>. Added pressure from reported Iranian strikes near the strait and continued Houthi activity. <strong>The gap between "a route has been agreed" and "the strait reopens" is the entire text of the agreement.</strong></li>
+    <li><strong>Next catalysts:</strong> CPI and the July FOMC minutes next week — <strong class="warn">CPI reported for 14 August, but treat that date as unconfirmed; sources disagree</strong> — then <strong>NVDA earnings 26 August</strong>, and <strong>ORCL earnings plus IONQ investor day on 8 September</strong>.</li>
+  </ul>
+</div>
+
+<h2>Scenario tree — 7–14 August</h2>
+<div class="card">
+  <div class="scenario base"><strong>Base — the hike comes off the table and the rate-sensitive half of the book leads.</strong> Yields drift lower, gold holds above $4,300, and <strong>NEM is the only position in the ten positioned for it</strong> — which is both the point of adding it and the measure of how little else is. DAL benefits from lower rates and is hurt by $82 crude at the same time; those cancel. <em>Tell: the 10-year holding below 4.55% into CPI.</em></div>
+  <div class="scenario down"><strong>Down — Iran's draft hardens into the actual agreement and Brent runs.</strong> Under the new two-settle standard, DAL's thesis-break needs <strong>two consecutive settles above $88.00</strong> — ~7.7% away, and it would fire within days on a real supply event. In that branch <strong>LMT returns toward High</strong>, DAL is removed, and <strong class="neg">the XOM sale becomes the most expensive single decision this book has made.</strong> It is the branch in which yesterday's rule was not merely badly designed but materially costly.</div>
+  <div class="scenario up"><strong>Up — the payroll print is noise and gets revised away.</strong> Revisions have moved this series by 30–40k in both directions for three months running. If August reverses it, hike risk returns, gold gives back the week, <strong>NEM hits its $4,000 gold thesis-break</strong>, and the book will have bought a hedge against a data point that did not survive contact with the next one. <strong>This is the specific risk of adding NEM today and it is stated before the fact rather than after.</strong></div>
+  <div class="scenario odd"><strong>The uncomfortable one — the labour weakness is real, and it is a recession signal rather than a rate-cut signal.</strong> A book that is six-of-ten AI-linked with one gold miner is still six-of-ten AI-linked. In that branch SYM (already −14.88%, $1.41 off its low), VWAGY (8.3% off its low), TSLA (6.9% off its low) and DAL all fall together on demand, while crude stays high on supply. <strong>Gold hedges the rate path. It does not hedge the earnings path, and nothing in this book currently does.</strong></div>
+</div>
+
+<h2>Corrections to the previous edition</h2>
+<div class="card correction">
+  <ul>
+    <li><strong class="warn">NEM's Thursday close is not verified and is not printed as one.</strong> The mark carried is a Friday pre-market/early-session quote of <strong>$112.40 (+6.97%)</strong>; the implied Thursday close of ~$105 is arithmetic, not a source. Every other price in the target table is a verified Thursday close. <strong>The name enters the book with a lower-quality mark than any other row, and pre-commitment 1's $108.00 purchase ceiling exists partly for that reason.</strong></li>
+    <li><strong>The S&amp;P 500's Wednesday close is unresolved across feeds</strong> — 7,723.52 (carried yesterday) versus 7,709.96 (reported today). Thursday's <em>level</em> is therefore not printed on this page; only the −0.2% change and the verified <strong>Dow 53,870 (−479)</strong> are. The spread is noted rather than averaged.</li>
+    <li><strong>UKW.L 113.80p, not 115.23p.</strong> Yesterday's mark was 1.4p high. 52-week range 92.20p–118.70p confirmed for a second session; market cap <strong>£2.45B</strong> (was £2.50B); yield <strong>9.25%</strong> (was 9.29%). <strong>This is the third consecutive edition to correct this name — but the corrections are now small and converging</strong>, which is what a data problem looks like on its way to being fixed.</li>
+    <li><strong>CCJ's consensus fell to $128.80 across 24 analysts</strong>, reversing yesterday's $129.69. The previous edition called that uptick the "first increase after three consecutive trims." <strong>It lasted one session. The trend was cuts, and it still is.</strong></li>
+    <li><strong class="warn">AMD's revenue figure is inconsistent across feeds.</strong> One source reports "record Q2 revenue of <strong>$34.64B</strong> (+34.34%)" against the <strong>$11.54B</strong> quarter this book has carried since 5 August. These cannot both be a quarter; the larger is almost certainly trailing-twelve-month. <strong>The $11.54B quarterly figure is retained and the discrepancy is recorded rather than resolved.</strong></li>
+    <li><strong>52-week reference drift.</strong> SNAP high now <strong>$9.28</strong> (was $9.55) · DAL low now <strong>$52.88</strong> (was $51.52) · IONQ range now $25.89–$84.64 · AMD range now $149.22–$584.73 · SYM low now <strong>$38.19</strong> · ORCL low carried for the first time at <strong>$114.50</strong>.</li>
+    <li><strong>Consensus and coverage drift.</strong> NVDA now <strong>61 analysts</strong> (was 51), target unchanged $302.83 · AMZN $325.81 across 61 (was $325.18 across 62) · LLY $1,297.31 (from $1,293.85) · VRT $338.15 (from $337.50) · LMT $629.53 (from $628.21) · SYM <strong>$64.32</strong> (from $66.12) · AMD $608.23 (from $597.99) · CAT $972.95 across 28 · UNH, DHI, NEM and XOM carried for the first time.</li>
+    <li><strong class="warn">CAT's classification is weakened, not withdrawn.</strong> Yesterday's edition promoted CAT as non-AI diversification on the grounds that its Power &amp; Energy growth was cyclical. Current coverage attributes the record quarter partly to <strong>AI data-centre buildout</strong>. It stays on the watch-list, but it is <strong>no longer clean non-AI</strong> and is not counted toward the four in pre-commitment 5.</li>
+  </ul>
+</div>
+
+<h2>Review rules for next run</h2>
+<div class="card">
+  <p style="margin:0 0 8px"><strong>Keep</strong> if thesis intact AND no negative print AND price didn't break a technical level. <strong>Downgrade</strong> if thesis weakened OR materially extended OR newly rate-exposed OR an analyst cut appeared OR a conditional gate failed OR a base broke. <strong>Replace</strong> if thesis broken, a better watch-list setup confirmed, or the catalyst is spent.</p>
+  <h3>Specific scoring next run</h3>
+  <ul>
+    <li><strong>SNAP</strong> → <strong>what was Friday's close against $5.50?</strong> This is the only decision that resolved today and it must be scored first, in one line, with no qualification.</li>
+    <li><strong>NEM</strong> → did <strong>$98–105</strong> print? Five sessions to the close of <strong>14 August</strong>; unfilled is a <strong>MISS and removal</strong>. Nothing bought above <strong>$108.00</strong>. December gold below <strong>$4,000</strong> is a thesis break regardless of the equity.</li>
+    <li><strong>DAL</strong> → did <strong>$86–90</strong> print? <strong>Four sessions remain to 13 August.</strong> The Brent thesis-break now requires <strong>two consecutive settles above $88.00</strong>.</li>
+    <li><strong>MU</strong> → did it hold <strong>$880</strong> again? Below $880 with SanDisk's guide intact = <strong>do nothing for one week</strong>. Below $800 = trim-to-core. The $820–870 add zone is not revised up.</li>
+    <li><strong>SYM</strong> → no re-entry until a <strong>weekly close above $46</strong> or the Q4 print. Did it take out <strong>$38.19</strong>? Record it; do not act on it.</li>
+    <li><strong>LMT</strong> → was the Hormuz agreement <em>signed</em>? Did it close below <strong>$560</strong>? <strong>Iran's published draft is not an agreement and does not trigger the exit.</strong></li>
+    <li><strong>CCJ</strong> → <strong>$100 close or Westinghouse terms, by 21 August, or it is removed.</strong> Deadline set today.</li>
+    <li><strong>CAT / AMZN / SNDK</strong> → all three gates now sit within 4–7% and <strong>none is blocked</strong>. AMZN is closest at <strong>$7.26</strong>.</li>
+    <li><strong>UNH / DHI</strong> → new non-AI queue entries; check whether either gate fired and, for DHI, whether the <strong>10-year is below 4.40%</strong>.</li>
+    <li><strong>INTC</strong> → does the government-stake report survive contact with a second source? The gate remains a <strong>$110 close</strong>, not a headline.</li>
+    <li><strong class="warn">The macro sign question</strong> → this book got the direction of the payroll shock wrong. <strong>The next run must state, in one line, which branch of today's scenario tree the tape actually took.</strong></li>
+  </ul>
+</div>
+
+<section class="card disclaimer" style="margin-top:24px">
+  <strong>Research, not financial advice.</strong> Automated analysis of public sources, generated pre-open on Friday 7 August 2026. Prices and figures may be stale, revised or wrong, and where this book knows a figure is uncertain it says so on the page rather than in a footnote. Nothing here is a recommendation to buy or sell any security. Consult a licensed financial advisor.
+</section>
+
+<footer>
+  <div><a class="back" href="index.html">← All briefings</a></div>
+  <div style="margin-top:8px">Generated 7 August 2026, 08:35 ET · prices are Thursday 6 August closes unless flagged · <strong>1 swap · 0 upgrades · 0 downgrades</strong> · non-AI count restored to 4</div>
+</footer>
+</div>
+<script src="../tts.js" defer></script>
+</body>
+</html>
